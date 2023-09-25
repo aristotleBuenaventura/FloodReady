@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Evacuation_Essential");
     }
-
+    
     public void MoveToEscape_Survive()
     {
         SceneManager.LoadScene("Escape_Survive");
@@ -25,4 +25,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+    public void MoveToHow_to_Play()
+    {
+        SceneManager.LoadScene("How_to_Play");
+    }
+
 }
