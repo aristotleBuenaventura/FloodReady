@@ -120,6 +120,8 @@ public class OVRGrabbable : MonoBehaviour
     /// <summary>
     /// Notifies the object that it has been grabbed.
     /// </summary>
+    /// 
+    [SerializeField]
     virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
         m_grabbedBy = hand;
