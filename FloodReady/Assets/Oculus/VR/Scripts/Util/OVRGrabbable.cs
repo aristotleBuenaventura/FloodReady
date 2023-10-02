@@ -120,7 +120,10 @@ public class OVRGrabbable : MonoBehaviour
     /// <summary>
     /// Notifies the object that it has been grabbed.
     /// </summary>
+<<<<<<< Updated upstream
     /// 
+=======
+>>>>>>> Stashed changes
     [SerializeField]
     virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
@@ -139,7 +142,7 @@ public class OVRGrabbable : MonoBehaviour
             gameObject.GetComponent<Item>().currentSlot.ResetColor();
             gameObject.GetComponent<Item>().currentSlot = null; 
         }
-
+       
      
         
     }
