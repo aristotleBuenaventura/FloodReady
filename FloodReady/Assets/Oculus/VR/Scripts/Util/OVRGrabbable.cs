@@ -120,10 +120,7 @@ public class OVRGrabbable : MonoBehaviour
     /// <summary>
     /// Notifies the object that it has been grabbed.
     /// </summary>
-<<<<<<< Updated upstream
-    /// 
-=======
->>>>>>> Stashed changes
+
     [SerializeField]
     virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
