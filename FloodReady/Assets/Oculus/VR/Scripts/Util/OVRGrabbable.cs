@@ -130,7 +130,7 @@ public class OVRGrabbable : MonoBehaviour
 
         //Inventory
 
-        if (gameObject.GetComponentInParent<Slot>().ItemInSlot = null) return;
+        /*if (gameObject.GetComponentInParent<Slot>().ItemInSlot = null) return;
         if (gameObject.GetComponent<Item>().inSlot)
         {
             gameObject.GetComponentInParent<Slot>().ItemInSlot = null;
@@ -138,7 +138,7 @@ public class OVRGrabbable : MonoBehaviour
             gameObject.GetComponent<Item>().inSlot = false;
             gameObject.GetComponent<Item>().currentSlot.ResetColor();
             gameObject.GetComponent<Item>().currentSlot = null; 
-        }
+        }*/
        
      
         
