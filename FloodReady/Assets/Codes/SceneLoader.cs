@@ -30,4 +30,9 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("How_to_Play");
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
