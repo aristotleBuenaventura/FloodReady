@@ -3309,6 +3309,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1042109123}
+    - targetCorrespondingSourceObject: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 340100464}
     - targetCorrespondingSourceObject: {fileID: 481164, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1831253553}
@@ -4308,6 +4311,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &223751174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
+  m_PrefabInstance: {fileID: 1600107494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &224242093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,10 +5307,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   bagInventory:
-  - canned_goods
-  - money
-  - bottled_water
-  - 
+  - Canned good
+  - Money
+  - Bottled water
+  - First aid kit
   - 
   - 
   - 
@@ -6364,19 +6372,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340100459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6.43}
+  m_LocalRotation: {x: -0.006685846, y: -0.3414831, z: -0.22457594, w: 0.9126392}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1964114535}
   - {fileID: 1508245859}
   - {fileID: 2105376856}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1091767523}
+  m_LocalEulerAnglesHint: {x: -9.531, y: -38.975, z: -24.269}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.215, y: 1.803}
+  m_AnchoredPosition: {x: 0.1707, y: 0.1373}
   m_SizeDelta: {x: 0.3, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &347535982
@@ -20320,10 +20328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   bagInventory:
-  - canned_goods
-  - money
-  - bottled_water
-  - 
+  - Canned good
+  - Money
+  - Bottled water
+  - First aid kit
   - 
   - 
   - 
@@ -22626,9 +22634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e621feeca7175438b051986da2f025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: {fileID: 0}
-  Anchor: {fileID: 1781434582}
-  UIActive: 0
 --- !u!64 &1095439867
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33373,10 +33378,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   bagInventory:
-  - canned_goods
-  - money
-  - bottled_water
-  - 
+  - Canned good
+  - Money
+  - Bottled water
+  - First aid kit
   - 
   - 
   - 
@@ -35363,7 +35368,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
       propertyPath: m_Name
-      value: firstaid
+      value: First aid kit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
+      propertyPath: m_TagString
+      value: First aid kit
       objectReference: {fileID: 0}
     - target: {fileID: 4792054580643688, guid: b55df95fa6211964e8ad561501250fac, type: 3}
       propertyPath: m_LocalScale.x
@@ -35420,13 +35429,87 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600107501}
+    - targetCorrespondingSourceObject: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600107500}
+    - targetCorrespondingSourceObject: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1600107499}
   m_SourcePrefab: {fileID: 100100000, guid: b55df95fa6211964e8ad561501250fac, type: 3}
 --- !u!4 &1600107495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4792054580643688, guid: b55df95fa6211964e8ad561501250fac, type: 3}
   m_PrefabInstance: {fileID: 1600107494}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1600107499
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223751174}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1600107500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223751174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8154835, y: 0.3475596, z: 0.6294953}
+  m_Center: {x: -0.0068259845, y: 0.1600316, z: 0.002584249}
+--- !u!114 &1600107501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223751174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
 --- !u!1 &1607288132
 GameObject:
   m_ObjectHideFlags: 0
@@ -38287,10 +38370,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   bagInventory:
-  - canned_goods
-  - money
-  - bottled_water
-  - 
+  - Canned good
+  - Money
+  - Bottled water
+  - First aid kit
   - 
   - 
   - 
@@ -42370,10 +42453,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemList: []
   bagInventory:
-  - canned_goods
-  - money
-  - bottled_water
-  - 
+  - Canned good
+  - Money
+  - Bottled water
+  - First aid kit
   - 
   - 
   - 
@@ -50361,4 +50444,3 @@ SceneRoots:
   - {fileID: 715960992}
   - {fileID: 903144747}
   - {fileID: 402975756}
-  - {fileID: 340100464}
