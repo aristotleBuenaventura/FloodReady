@@ -1,18 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 
 public class InventoryManager : MonoBehaviour
 {
-    
-    // Detect collision and remove items from the bag's inventory array
-    void OnCollisionEnter(Collision col)
-    {
+    public List<string> itemList = new List<string>();
+    public string[] bagInventory = new string[10] { "canned_goods", "money", "bottled_water", null, null, null, null, null, null, null };
 
-        if (col.gameObject.name == "canned_goods")
+    // Detect collision and remove items from the bag's inventory array
+    void OnCollisionEnter(Collision collision)
+    {
+        string collidedObjectName = collision.gameObject.name;
+
+        if (collidedObjectName == "canned_goods" || collidedObjectName == "money" || collidedObjectName == "bottled_water")
         {
-            Destroy(col.gameObject);
+            // Find the index of the collided item in the bag's inventory
+            int itemIndex = System.Array.IndexOf(bagInventory, collidedObjectName);
+
+            if (itemIndex >= 0)
+            {
+                bagInventory[itemIndex] = null;
+
+                // Print the name of the collided asset to the console
+                Debug.Log("Collided with: " + collidedObjectName);
+            }
         }
     }
-
 }
