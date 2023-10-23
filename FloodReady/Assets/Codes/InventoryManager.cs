@@ -6,22 +6,52 @@ public class InventoryManager : MonoBehaviour
     public List<string> itemList = new List<string>();
     public string[] bagInventory = new string[10] { "Canned good", "Money", "Bottled water", "First aid kit", null, null, null, null, null, null };
 
-    // Detect collision and remove items from the bag's inventory array
-    void OnCollisionEnter(Collision collision)
+    // Use Trigger events for detecting items entering and exiting the trigger zone
+    void OnTriggerEnter(Collider other)
     {
-        string collidedObjectName = collision.gameObject.name;
+        string collidedObjectName = other.gameObject.name;
 
-        if (collidedObjectName == "Canned good" || collidedObjectName == "Money" || collidedObjectName == "Bottled water" || collidedObjectName == "First aid kit")
+        if (IsItemInBag(collidedObjectName))
         {
-            // Find the index of the collided item in the bag's inventory
-            int itemIndex = System.Array.IndexOf(bagInventory, collidedObjectName);
+            RemoveItemFromBag(collidedObjectName);
+            Debug.Log("Item removed from the bag: " + collidedObjectName);
+        }
+    }
 
-            if (itemIndex >= 0)
+    void OnTriggerExit(Collider other)
+    {
+        string collidedObjectName = other.gameObject.name;
+
+        if (IsItemInBag(collidedObjectName))
+        {
+            AddItemToBag(collidedObjectName);
+            Debug.Log("Item added to the bag: " + collidedObjectName);
+        }
+    }
+
+    // Helper functions to check if an item is in the bag's inventory
+    private bool IsItemInBag(string itemName)
+    {
+        return System.Array.IndexOf(bagInventory, itemName) >= 0;
+    }
+
+    private void RemoveItemFromBag(string itemName)
+    {
+        int itemIndex = System.Array.IndexOf(bagInventory, itemName);
+        if (itemIndex >= 0)
+        {
+            bagInventory[itemIndex] = null;
+        }
+    }
+
+    private void AddItemToBag(string itemName)
+    {
+        for (int i = 0; i < bagInventory.Length; i++)
+        {
+            if (bagInventory[i] == null)
             {
-                bagInventory[itemIndex] = null;
-
-                // Print the name of the collided asset to the console
-                Debug.Log("Collided with: " + collidedObjectName);
+                bagInventory[i] = itemName;
+                break;
             }
         }
     }
