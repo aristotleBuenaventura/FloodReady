@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    /*void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         string collidedObjectName = other.gameObject.name;
 
@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
             RemoveItemFromBag(collidedObjectName);
             Debug.Log("Item removed from the bag: " + collidedObjectName);
         }
-    }*/
+    }
 
     private void AddItemToBag(string itemName)
     {
