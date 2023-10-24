@@ -5,16 +5,17 @@ public class InventoryManager : MonoBehaviour
 {
     public List<string> itemList = new List<string>();
     public string[] bagInventory = new string[10] { "Canned good", "Money", "Bottled water", "First aid kit", null, null, null, null, null, null };
+    public List<string> validItemNames = new List<string>() { "Canned good", "Money", "Bottled water", "First aid kit" };
+    private bool canAddToBag = true;
 
-    // Use Trigger events for detecting items entering and exiting the trigger zone
     void OnTriggerEnter(Collider other)
     {
         string collidedObjectName = other.gameObject.name;
 
-        if (IsItemInBag(collidedObjectName))
+        if (canAddToBag && validItemNames.Contains(collidedObjectName) && !IsItemInBag(collidedObjectName))
         {
-            RemoveItemFromBag(collidedObjectName);
-            Debug.Log("Item removed from the bag: " + collidedObjectName);
+            AddItemToBag(collidedObjectName);
+            Debug.Log("Item added to the bag: " + collidedObjectName);
         }
     }
 
@@ -22,25 +23,12 @@ public class InventoryManager : MonoBehaviour
     {
         string collidedObjectName = other.gameObject.name;
 
-        if (IsItemInBag(collidedObjectName))
-        {
-            AddItemToBag(collidedObjectName);
-            Debug.Log("Item added to the bag: " + collidedObjectName);
-        }
-    }
+        Debug.Log("Trigger exit: " + collidedObjectName);
 
-    // Helper functions to check if an item is in the bag's inventory
-    private bool IsItemInBag(string itemName)
-    {
-        return System.Array.IndexOf(bagInventory, itemName) >= 0;
-    }
-
-    private void RemoveItemFromBag(string itemName)
-    {
-        int itemIndex = System.Array.IndexOf(bagInventory, itemName);
-        if (itemIndex >= 0)
+        if (validItemNames.Contains(collidedObjectName) && IsItemInBag(collidedObjectName))
         {
-            bagInventory[itemIndex] = null;
+            RemoveItemFromBag(collidedObjectName);
+            Debug.Log("Item removed from the bag: " + collidedObjectName);
         }
     }
 
@@ -54,5 +42,32 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private void RemoveItemFromBag(string itemName)
+    {
+        for (int i = 0; i < bagInventory.Length; i++)
+        {
+            if (bagInventory[i] == itemName)
+            {
+                bagInventory[i] = null;
+                break;
+            }
+        }
+    }
+
+    private bool IsItemInBag(string itemName)
+    {
+        return System.Array.IndexOf(bagInventory, itemName) >= 0;
+    }
+
+    public void EnableAddingToBag()
+    {
+        canAddToBag = true;
+    }
+
+    public void DisableAddingToBag()
+    {
+        canAddToBag = false;
     }
 }
