@@ -24,7 +24,7 @@ public class ItemDisplay : MonoBehaviour
             // Update the TextMeshPro Text element with the array content
             textElement.text = arrayContent;
 
-            Debug.Log(arrayContent);
+         
         }
     }
 }

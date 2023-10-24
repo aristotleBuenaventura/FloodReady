@@ -4,8 +4,8 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public List<string> itemList = new List<string>();
-    public string[] bagInventory = new string[10] { "Canned good", "Money", "Bottled water", "First aid kit", null, null, null, null, null, null };
-    public List<string> validItemNames = new List<string>() { "Canned good", "Money", "Bottled water", "First aid kit" };
+    public string[] bagInventory = new string[7] { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight" };
+    public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight"};
     private bool canAddToBag = true;
 
     void OnTriggerEnter(Collider other)
