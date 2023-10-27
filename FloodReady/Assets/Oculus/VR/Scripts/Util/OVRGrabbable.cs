@@ -45,6 +45,9 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
 
+    public AudioClip grabSound;
+    public AudioClip grabReleaseSound;
+
     /// <summary>
     /// If true, the object can currently be grabbed.
     /// </summary>
