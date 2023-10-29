@@ -10,7 +10,7 @@ public class HandCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Hand")
+        if (other.CompareTag("TurnOnButton"))
         {
             if (isButtonDown)
             {
