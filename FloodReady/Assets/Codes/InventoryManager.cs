@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 else
                 {
-                    RemoveItemFromBag(collidedObjectName);
+                    StartCoroutine(RemoveAndAddBackItem(collidedObjectName, 1.0f)); // Adjust the delay time as needed
                     Debug.Log("Item removed from the bag: " + collidedObjectName);
                 }
             }
@@ -36,10 +37,21 @@ public class InventoryManager : MonoBehaviour
         itemList.Remove(itemName); // Remove the item from the main list
     }
 
+    private IEnumerator RemoveAndAddBackItem(string itemName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        RemoveItemFromBag(itemName);
+        AddItemBackToList(itemName);
+    }
+
     private void RemoveItemFromBag(string itemName)
     {
         bagInventory.Remove(itemName);
-        itemList.Add(itemName); // Add the item back to the main list
+    }
+
+    private void AddItemBackToList(string itemName)
+    {
+        itemList.Add(itemName);
     }
 
     private bool IsItemInBag(string itemName)
