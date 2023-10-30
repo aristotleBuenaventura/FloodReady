@@ -4,61 +4,47 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public List<string> itemList = new List<string>();
-    public string[] bagInventory = new string[7] { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight" };
-    public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight"};
+    public List<string> bagInventory = new List<string>();
+    public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight" };
     private bool canAddToBag = true;
 
     void OnTriggerEnter(Collider other)
     {
         string collidedObjectName = other.gameObject.name;
 
-        if (canAddToBag && validItemNames.Contains(collidedObjectName) && !IsItemInBag(collidedObjectName))
+        if (canAddToBag)
         {
-            AddItemToBag(collidedObjectName);
-            Debug.Log("Item added to the bag: " + collidedObjectName);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        string collidedObjectName = other.gameObject.name;
-
-        Debug.Log("Trigger exit: " + collidedObjectName);
-
-        if (validItemNames.Contains(collidedObjectName) && IsItemInBag(collidedObjectName))
-        {
-            RemoveItemFromBag(collidedObjectName);
-            Debug.Log("Item removed from the bag: " + collidedObjectName);
+            if (validItemNames.Contains(collidedObjectName))
+            {
+                if (!IsItemInBag(collidedObjectName))
+                {
+                    AddItemToBag(collidedObjectName);
+                    Debug.Log("Item added to the bag: " + collidedObjectName);
+                }
+                else
+                {
+                    RemoveItemFromBag(collidedObjectName);
+                    Debug.Log("Item removed from the bag: " + collidedObjectName);
+                }
+            }
         }
     }
 
     private void AddItemToBag(string itemName)
     {
-        for (int i = 0; i < bagInventory.Length; i++)
-        {
-            if (bagInventory[i] == null)
-            {
-                bagInventory[i] = itemName;
-                break;
-            }
-        }
+        bagInventory.Add(itemName);
+        itemList.Remove(itemName); // Remove the item from the main list
     }
 
     private void RemoveItemFromBag(string itemName)
     {
-        for (int i = 0; i < bagInventory.Length; i++)
-        {
-            if (bagInventory[i] == itemName)
-            {
-                bagInventory[i] = null;
-                break;
-            }
-        }
+        bagInventory.Remove(itemName);
+        itemList.Add(itemName); // Add the item back to the main list
     }
 
     private bool IsItemInBag(string itemName)
     {
-        return System.Array.IndexOf(bagInventory, itemName) >= 0;
+        return bagInventory.Contains(itemName);
     }
 
     public void EnableAddingToBag()

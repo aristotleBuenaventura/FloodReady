@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro; // For TextMeshPro
+using System.Collections.Generic; // Add this line
 
 public class ItemDisplay : MonoBehaviour
 {
@@ -10,21 +11,18 @@ public class ItemDisplay : MonoBehaviour
     {
         if (textElement != null && inventoryManager != null)
         {
-            string[] bagInventory = inventoryManager.bagInventory;
+            List<string> bagInventory = inventoryManager.bagInventory; // Change the type to List<string>
 
-            // Create a string to display the array content
-            string arrayContent = "";
+            // Create a string to display the list content
+            string listContent = "";
 
-            for (int i = 0; i < bagInventory.Length; i++)
+            foreach (string item in bagInventory)
             {
-                arrayContent +=  bagInventory[i] + "\n";
+                listContent += item + "\n";
             }
 
-
-            // Update the TextMeshPro Text element with the array content
-            textElement.text = arrayContent;
-
-         
+            // Update the TextMeshPro Text element with the list content
+            textElement.text = listContent;
         }
     }
 }
