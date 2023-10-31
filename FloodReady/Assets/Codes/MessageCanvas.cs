@@ -5,10 +5,11 @@ using UnityEngine;
 public class MessageCanvas : MonoBehaviour
 {
     public Canvas canvas;
+    public float delayTime = 2.0f; // Adjust the delay time as needed
 
     public void Start()
     {
-        canvas.enabled = true; 
+        canvas.enabled = true;
     }
 
     // Update is called once per frame

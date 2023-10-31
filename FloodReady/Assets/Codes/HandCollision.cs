@@ -6,7 +6,7 @@ public class HandCollision : MonoBehaviour
 {
     public TVController tvController;
     public float buttonCooldown = 2.0f; // Adjust the cooldown time as needed
-
+    public CanvasController messageCanvas;
     private bool isButtonDown = false;
     private bool canPressButton = true;
 
@@ -22,6 +22,7 @@ public class HandCollision : MonoBehaviour
             else
             {
                 tvController.TurnOn();
+                CallSwitchCanvasAfterDelayTV();
                 Debug.Log("Button Pressed: TV Turned On");
             }
 
@@ -35,5 +36,11 @@ public class HandCollision : MonoBehaviour
     {
         yield return new WaitForSeconds(buttonCooldown);
         canPressButton = true;
+    }
+
+    public void CallSwitchCanvasAfterDelayTV()
+    {
+        StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
+        Debug.Log("Go bag working");
     }
 }

@@ -6,8 +6,10 @@ public class CanvasController : MonoBehaviour
 {
     public GameObject welcomeCanvas;
     public GameObject tvCanvas;
+    public GameObject GoBagCanvas;
     public MessageCanvas messageCanvas;
-    public float switchDelay = 5f; // Time in seconds to switch to TVCanvas
+    public float switchDelay = 5f;
+    public float switchDelayTV = 5f;
 
 
     private void Start()
@@ -21,12 +23,22 @@ public class CanvasController : MonoBehaviour
     {
         welcomeCanvas.SetActive(true);
         tvCanvas.SetActive(false);
+        GoBagCanvas.SetActive(false);
     }
 
     private void ShowTVCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(true);
+        GoBagCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    private void ShowGoBagCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        tvCanvas.SetActive(false);
+        GoBagCanvas.SetActive(true);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -37,5 +49,12 @@ public class CanvasController : MonoBehaviour
 
         // Switch to the TVCanvas
         ShowTVCanvas();
+    }
+
+    public IEnumerator SwitchCanvasAfterDelayTV()
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(switchDelayTV);
+        ShowGoBagCanvas();
     }
 }
