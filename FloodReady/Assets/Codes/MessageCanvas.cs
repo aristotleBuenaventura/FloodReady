@@ -6,17 +6,23 @@ public class MessageCanvas : MonoBehaviour
 {
     public Canvas canvas;
 
-    private void Start()
+    public void Start()
     {
-        canvas.enabled = true; // Start with the canvas disabled.
+        canvas.enabled = true; 
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One)) // You can replace this with the Oculus button you want to use.
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            canvas.enabled = !canvas.enabled; // Toggle the canvas.
+            canvas.enabled = !canvas.enabled;
+            Debug.Log("Button pressed. Canvas visibility: " + canvas.enabled);
         }
+    }
+
+    public void OpenCanvasAgain()
+    {
+        canvas.enabled = true;
     }
 }
