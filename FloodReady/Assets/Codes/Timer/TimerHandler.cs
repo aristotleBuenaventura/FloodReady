@@ -8,6 +8,7 @@ public class TimerHandler : MonoBehaviour
     private float startTime;
     private string textTime;
     private float remainingTime = 600.0f; // 10 minutes in seconds
+    private bool isTimerRunning = false;
 
     public TextMeshProUGUI textField;
 
@@ -20,21 +21,30 @@ public class TimerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float elapsedTime = Time.time - startTime;
-        remainingTime = Mathf.Max(0, 600.0f - elapsedTime); // Update the remaining time
-
-        int minutes = (int)(remainingTime / 60); // Calculation for minutes
-        int seconds = (int)(remainingTime % 60); // Calculation for seconds
-        int fraction = (int)((remainingTime * 100) % 100);
-        textTime = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction); 
-
-        if (remainingTime <= 0)
+        if (isTimerRunning)
         {
-            textField.text = "Game Over";
+            float elapsedTime = Time.time - startTime;
+            remainingTime = Mathf.Max(0, 600.0f - elapsedTime); // Update the remaining time
+
+            int minutes = (int)(remainingTime / 60); // Calculation for minutes
+            int seconds = (int)(remainingTime % 60); // Calculation for seconds
+            int fraction = (int)((remainingTime * 100) % 100);
+            textTime = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
+
+            if (remainingTime <= 0)
+            {
+                isTimerRunning = false;
+                textField.text = "Game Over";
+            }
+            else
+            {
+                textField.text = textTime;
+            }
         }
-        else
-        {
-            textField.text = textTime;
-        }
+    }
+
+    public void StartTimer()
+    {
+        isTimerRunning = true;
     }
 }
