@@ -6,6 +6,7 @@ public class PryBar : MonoBehaviour
 {
     public OVRGrabber leftGrabber; // Assign the left OVRGrabber component in the Unity Editor
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
+    public TaskManager taskManager; // Reference to the TaskManager script
 
     void Update()
     {
@@ -26,6 +27,9 @@ public class PryBar : MonoBehaviour
                         if (window != null && !window.isBroken)
                         {
                             window.breakWindow();
+
+                            // Mark the task as done
+                            taskManager.MarkTaskAsDone("Break a Window");
                         }
                     }
                 }
