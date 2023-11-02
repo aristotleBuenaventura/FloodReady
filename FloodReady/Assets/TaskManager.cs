@@ -15,7 +15,6 @@ public class TaskManager : MonoBehaviour
        // Add your tasks here
         AddTask("Retrieve the go-bag");
         AddTask("Switch off the Main Power");
-
         AddTask("Retrieve a Survival Tool");
         AddTask("Break a Window");
         AddTask("Locate the emergency Device");

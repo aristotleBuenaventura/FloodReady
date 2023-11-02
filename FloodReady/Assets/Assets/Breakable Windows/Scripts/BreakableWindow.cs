@@ -37,9 +37,6 @@ public class BreakableWindow : MonoBehaviour
 
 
 
-
-
-
     public void breakWindow()
     {
         if (!isBroken)

@@ -14,7 +14,7 @@ public class TaskList : MonoBehaviour
             List<string> taskList = taskManager.taskList;
 
             // Create a string to display the list content
-            string listContent = "TIPS DURING TYPHOON:\n";
+            string listContent = "";
 
             foreach (string task in taskList)
             {

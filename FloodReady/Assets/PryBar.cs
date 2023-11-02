@@ -28,12 +28,16 @@ public class PryBar : MonoBehaviour
                         {
                             window.breakWindow();
 
-                            // Mark the task as done
+                            // Mark the "Break a Window" task as done
                             taskManager.MarkTaskAsDone("Break a Window");
                         }
                     }
                 }
             }
+
+            // Mark the "Retrieve a Survival Tool" task as done
+            taskManager.MarkTaskAsDone("Retrieve a Survival Tool");
         }
     }
+
 }
