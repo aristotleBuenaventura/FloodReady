@@ -62,7 +62,7 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    private void ShowGoBagCompletedCanvas()
+    public void ShowGoBagCompletedCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);
@@ -75,7 +75,7 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    private void ShowRetrieveGoBagCanvas()
+    public void ShowRetrieveGoBagCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);
@@ -143,5 +143,4 @@ public class CanvasController : MonoBehaviour
         ShowGoBagCanvas();
     }
 
- 
 }
