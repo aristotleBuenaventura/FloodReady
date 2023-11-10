@@ -14,7 +14,7 @@ public class CanvasController : MonoBehaviour
     public GameObject SuccessfullCanvas;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
-    public float switchDelayTV = 5f;
+    public float switchDelayTV = 41f;
 
 
     private void Start()
