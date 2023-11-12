@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     private bool canAddToBag = true;
     public CanvasController GoBagCompleted;
     public GameObject GoBag;
+    public GameObject GoBagClosed;
     public GameObject Canned_good;
     public GameObject Energy_bar;
     public GameObject Money;
@@ -46,6 +47,11 @@ public class InventoryManager : MonoBehaviour
         }
 
         
+    }
+
+    private void Start()
+    {
+        GoBagClosed.SetActive(false);
     }
 
     private void AddItemToBag(string itemName)
@@ -88,6 +94,7 @@ public class InventoryManager : MonoBehaviour
         Destroy(First_aid_kit);
         Destroy(Flashlight);
         Destroy(Check_list);
+        GoBagClosed.SetActive(true);
 
         Debug.Log("go bag completed");
     }

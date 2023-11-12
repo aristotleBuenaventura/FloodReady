@@ -14,12 +14,12 @@ public class CanvasController : MonoBehaviour
     public float switchDelayWelcome = 15f;
     public float switchDelayTV = 41f;
 
-
     private void Start()
     {
         // Ensure both canvases start in the desired state
         ShowWelcomeCanvas();
         StartCoroutine(SwitchCanvasAfterDelay());
+
     }
 
     private void ShowWelcomeCanvas()
@@ -54,16 +54,6 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    public void ShowGoBagCompletedCanvas()
-    {
-        welcomeCanvas.SetActive(false);
-        tvCanvas.SetActive(false);
-        GoBagCanvas.SetActive(false);
-        RetrieveGoBagCanvas.SetActive(false);
-        UnplugCableCanvas.SetActive(false);
-        TurnOffBreakerCanvas.SetActive(false);
-        messageCanvas.OpenCanvasAgain();
-    }
 
     public void ShowRetrieveGoBagCanvas()
     {
