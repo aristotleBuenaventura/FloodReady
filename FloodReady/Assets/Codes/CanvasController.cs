@@ -10,6 +10,10 @@ public class CanvasController : MonoBehaviour
     public GameObject RetrieveGoBagCanvas;
     public GameObject UnplugCableCanvas;
     public GameObject TurnOffBreakerCanvas;
+    public GameObject InvisibleWallStair1;
+    public GameObject InvisibleWallStair2;
+    public GameObject InvisibleWallKitchen;
+    public GameObject InvisibleWallBathroom;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
     public float switchDelayTV = 41f;
@@ -51,6 +55,10 @@ public class CanvasController : MonoBehaviour
         RetrieveGoBagCanvas.SetActive(false);
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
+        InvisibleWallStair1.SetActive(false);
+        InvisibleWallStair2.SetActive(false);
+        InvisibleWallKitchen.SetActive(false);
+        InvisibleWallBathroom.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
