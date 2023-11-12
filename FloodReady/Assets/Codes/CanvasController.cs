@@ -14,6 +14,7 @@ public class CanvasController : MonoBehaviour
     public GameObject InvisibleWallStair2;
     public GameObject InvisibleWallKitchen;
     public GameObject InvisibleWallBathroom;
+    public GameObject TVRemote;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
     public float switchDelayTV = 41f;
@@ -23,6 +24,7 @@ public class CanvasController : MonoBehaviour
         // Ensure both canvases start in the desired state
         ShowWelcomeCanvas();
         StartCoroutine(SwitchCanvasAfterDelay());
+        TVRemote.SetActive(false);
 
     }
 
@@ -44,6 +46,7 @@ public class CanvasController : MonoBehaviour
         RetrieveGoBagCanvas.SetActive(false);
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
+        TVRemote.SetActive(true);
         messageCanvas.OpenCanvasAgain();
     }
 
