@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
         if (bagInventory == null || bagInventory.Count == 0)
         {
             // Assuming messageCanvas is an instance of some class that has the ShowGoBagCompletedCanvas method
-            GoBagCompleted.ShowGoBagCompletedCanvas();
+            GoBagCompleted.ShowRetrieveGoBagCanvas();
             Debug.Log("go bag completed");
         }
     }
