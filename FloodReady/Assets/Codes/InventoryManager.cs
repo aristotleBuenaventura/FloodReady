@@ -10,6 +10,14 @@ public class InventoryManager : MonoBehaviour
     private bool canAddToBag = true;
     public CanvasController GoBagCompleted;
     public GameObject GoBag;
+    public GameObject Canned_good;
+    public GameObject Energy_bar;
+    public GameObject Money;
+    public GameObject Bottled_water;
+    public GameObject Clothes;
+    public GameObject First_aid_kit;
+    public GameObject Flashlight;
+    public Canvas Check_list;
 
 
     void OnTriggerEnter(Collider other)
@@ -58,11 +66,30 @@ public class InventoryManager : MonoBehaviour
         bagInventory.Remove(itemName);
         if (bagInventory == null || bagInventory.Count == 0)
         {
-            // Assuming messageCanvas is an instance of some class that has the ShowGoBagCompletedCanvas method
-            GoBagCompleted.ShowRetrieveGoBagCanvas();
-            Destroy(GoBag);
-            Debug.Log("go bag completed");
+            // Invoke the method with a delay of 1 second
+            Invoke("ShowGoBagCompletedCanvasWithDelay", 1f);
         }
+    }
+
+    // Method to be invoked after a 1-second delay
+    private void ShowGoBagCompletedCanvasWithDelay()
+    {
+        // Assuming GoBagCompleted is an instance of some class that has the ShowRetrieveGoBagCanvas method
+        GoBagCompleted.ShowRetrieveGoBagCanvas();
+
+        // Assuming GoBag, Canned_good, Energy_bar, Money, Bottled_water, Clothes, First_aid_kit,
+        // Flashlight, Check_list are GameObjects that you want to destroy
+        Destroy(GoBag);
+        Destroy(Canned_good);
+        Destroy(Energy_bar);
+        Destroy(Money);
+        Destroy(Bottled_water);
+        Destroy(Clothes);
+        Destroy(First_aid_kit);
+        Destroy(Flashlight);
+        Destroy(Check_list);
+
+        Debug.Log("go bag completed");
     }
 
     private void AddItemBackToList(string itemName)
