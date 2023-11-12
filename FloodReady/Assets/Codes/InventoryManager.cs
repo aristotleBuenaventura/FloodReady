@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight" };
     private bool canAddToBag = true;
     public CanvasController GoBagCompleted;
+    public GameObject GoBag;
 
 
     void OnTriggerEnter(Collider other)
@@ -59,6 +60,7 @@ public class InventoryManager : MonoBehaviour
         {
             // Assuming messageCanvas is an instance of some class that has the ShowGoBagCompletedCanvas method
             GoBagCompleted.ShowRetrieveGoBagCanvas();
+            Destroy(GoBag);
             Debug.Log("go bag completed");
         }
     }
