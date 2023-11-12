@@ -66,7 +66,7 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    private void ShowUnplugCableCanvas()
+    public void ShowUnplugCableCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);
@@ -77,7 +77,7 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    private void ShowTurnOffBreakerCanvas()
+    public void ShowTurnOffBreakerCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);
@@ -88,7 +88,7 @@ public class CanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
-    private void ShowSuccessfulCanvas()
+    public void ShowSuccessfulCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);

@@ -6167,7 +6167,6 @@ GameObject:
   - component: {fileID: 259528064}
   - component: {fileID: 259528063}
   - component: {fileID: 259528066}
-  - component: {fileID: 259528067}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Bag
@@ -6283,46 +6282,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000008, y: 0.0000007956987, z: 10.000002}
   m_Center: {x: 0, y: -0.000015258789, z: 0}
---- !u!114 &259528067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259528061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec664fd3162fc4c9802cd4485cc046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  bagInventory:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  validItemNames:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  GoBagCompleted: {fileID: 0}
-  GoBag: {fileID: 0}
-  GoBagClosed: {fileID: 0}
-  Canned_good: {fileID: 0}
-  Energy_bar: {fileID: 0}
-  Money: {fileID: 0}
-  Bottled_water: {fileID: 0}
-  Clothes: {fileID: 0}
-  First_aid_kit: {fileID: 0}
-  Flashlight: {fileID: 0}
-  Check_list: {fileID: 0}
 --- !u!1 &260467533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6841,15 +6800,70 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4814728848157046957, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 287406087}
+      addedObject: {fileID: 287406092}
+    - targetCorrespondingSourceObject: {fileID: 4814728848157046957, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 287406091}
+    - targetCorrespondingSourceObject: {fileID: 4814728848157046957, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 287406090}
+    - targetCorrespondingSourceObject: {fileID: 4814728848157046957, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 287406095}
   m_SourcePrefab: {fileID: 100100000, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
 --- !u!1 &287406086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4814728848157046957, guid: f0054a8af777ef845aa0e30b65684547, type: 3}
   m_PrefabInstance: {fileID: 287406085}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &287406087
-MeshCollider:
+--- !u!114 &287406090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287406086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 1
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  grabSound: {fileID: 0}
+  grabReleaseSound: {fileID: 0}
+--- !u!54 &287406091
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287406086}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &287406092
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6866,10 +6880,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.4101924, z: 1}
+  m_Center: {x: 0, y: 0.7797058, z: 0}
+--- !u!114 &287406095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287406086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0485f52bb6f76c2458361a001a423207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftGrabber: {fileID: 1734387718}
+  rightGrabber: {fileID: 1564609555}
+  GoBagRetrieve: {fileID: 1786757870}
+  delayBeforeDisappear: 1
 --- !u!64 &295279782
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25390,7 +25419,6 @@ GameObject:
   - component: {fileID: 1001497245}
   - component: {fileID: 1001497244}
   - component: {fileID: 1001497247}
-  - component: {fileID: 1001497248}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Bag
@@ -25506,46 +25534,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000005, y: 0.0000016359991, z: 10}
   m_Center: {x: 0, y: -0.000002861023, z: 0}
---- !u!114 &1001497248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001497242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec664fd3162fc4c9802cd4485cc046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  bagInventory:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  validItemNames:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  GoBagCompleted: {fileID: 0}
-  GoBag: {fileID: 0}
-  GoBagClosed: {fileID: 0}
-  Canned_good: {fileID: 0}
-  Energy_bar: {fileID: 0}
-  Money: {fileID: 0}
-  Bottled_water: {fileID: 0}
-  Clothes: {fileID: 0}
-  First_aid_kit: {fileID: 0}
-  Flashlight: {fileID: 0}
-  Check_list: {fileID: 0}
 --- !u!1 &1008811745
 GameObject:
   m_ObjectHideFlags: 0
@@ -42102,7 +42090,6 @@ GameObject:
   - component: {fileID: 1513287013}
   - component: {fileID: 1513287012}
   - component: {fileID: 1513287015}
-  - component: {fileID: 1513287016}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Bag
@@ -42218,46 +42205,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000009, y: 0.000001270742, z: 10.000002}
   m_Center: {x: 0, y: -0.0000038146973, z: 0.0000076293945}
---- !u!114 &1513287016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513287010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec664fd3162fc4c9802cd4485cc046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  bagInventory:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  validItemNames:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  GoBagCompleted: {fileID: 0}
-  GoBag: {fileID: 0}
-  GoBagClosed: {fileID: 0}
-  Canned_good: {fileID: 0}
-  Energy_bar: {fileID: 0}
-  Money: {fileID: 0}
-  Bottled_water: {fileID: 0}
-  Clothes: {fileID: 0}
-  First_aid_kit: {fileID: 0}
-  Flashlight: {fileID: 0}
-  Check_list: {fileID: 0}
 --- !u!1001 &1518121600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43659,6 +43606,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1786757865}
   delayTime: 2
+--- !u!114 &1564609555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11477634, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+  m_PrefabInstance: {fileID: 167687786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435719068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1565769189
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48048,7 +48006,6 @@ GameObject:
   - component: {fileID: 1707309744}
   - component: {fileID: 1707309743}
   - component: {fileID: 1707309746}
-  - component: {fileID: 1707309747}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Bag
@@ -48164,46 +48121,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000004, y: 0.0000019557774, z: 9.999999}
   m_Center: {x: 0, y: 0.000015258789, z: 0}
---- !u!114 &1707309747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707309741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec664fd3162fc4c9802cd4485cc046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  bagInventory:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  validItemNames:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  GoBagCompleted: {fileID: 0}
-  GoBag: {fileID: 0}
-  GoBagClosed: {fileID: 0}
-  Canned_good: {fileID: 0}
-  Energy_bar: {fileID: 0}
-  Money: {fileID: 0}
-  Bottled_water: {fileID: 0}
-  Clothes: {fileID: 0}
-  First_aid_kit: {fileID: 0}
-  Flashlight: {fileID: 0}
-  Check_list: {fileID: 0}
 --- !u!1001 &1710456178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49256,6 +49173,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 340100463}
+--- !u!114 &1734387718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
+  m_PrefabInstance: {fileID: 1613598832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564195121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1739227618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54357,7 +54285,6 @@ GameObject:
   - component: {fileID: 1905262640}
   - component: {fileID: 1905262639}
   - component: {fileID: 1905262642}
-  - component: {fileID: 1905262643}
   m_Layer: 0
   m_Name: Bag
   m_TagString: Bag
@@ -54473,46 +54400,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.000008, y: 2.220446e-16, z: 10.000008}
   m_Center: {x: 0, y: 0, z: -0.000030517578}
---- !u!114 &1905262643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1905262637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eec664fd3162fc4c9802cd4485cc046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  bagInventory:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  validItemNames:
-  - Canned good
-  - Money
-  - Bottled water
-  - First aid kit
-  GoBagCompleted: {fileID: 0}
-  GoBag: {fileID: 0}
-  GoBagClosed: {fileID: 0}
-  Canned_good: {fileID: 0}
-  Energy_bar: {fileID: 0}
-  Money: {fileID: 0}
-  Bottled_water: {fileID: 0}
-  Clothes: {fileID: 0}
-  First_aid_kit: {fileID: 0}
-  Flashlight: {fileID: 0}
-  Check_list: {fileID: 0}
 --- !u!1 &1905433928
 GameObject:
   m_ObjectHideFlags: 0
