@@ -8082,7 +8082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &345766610
 Transform:
   m_ObjectHideFlags: 0
@@ -13131,7 +13131,6 @@ GameObject:
   - component: {fileID: 557260427}
   - component: {fileID: 557260426}
   - component: {fileID: 557260429}
-  - component: {fileID: 557260430}
   - component: {fileID: 557260431}
   m_Layer: 0
   m_Name: Water
@@ -13139,7 +13138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &557260426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13217,37 +13216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d88ec656c8c2a34cbf522d15614f0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 473247893}
-  waterRigidbody: {fileID: 557260430}
-  maxHeight: 300
-  riseSpeed: 1
---- !u!54 &557260430
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557260424}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  risingSpeed: 0.1
 --- !u!65 &557260431
 BoxCollider:
   m_ObjectHideFlags: 0
