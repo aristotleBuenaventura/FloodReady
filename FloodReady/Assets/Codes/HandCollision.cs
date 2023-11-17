@@ -14,10 +14,13 @@ public class HandCollision : MonoBehaviour
     {
         if (other.CompareTag("TurnOnButton") && canPressButton)
         {
+            StopAllCoroutines(); // Stop any existing coroutines
+
             if (isButtonDown)
             {
                 tvController.TurnOff();
                 Debug.Log("Button Pressed: TV Turned Off");
+                CallSwitchCanvasAfterDelayTV();
             }
             else
             {
@@ -31,6 +34,7 @@ public class HandCollision : MonoBehaviour
             StartCoroutine(ButtonCooldown());
         }
     }
+
 
     private IEnumerator ButtonCooldown()
     {
