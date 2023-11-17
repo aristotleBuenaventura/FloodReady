@@ -1,33 +1,36 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Make sure to add this for UI elements
 
 public class SceneChanger : MonoBehaviour
 {
+    public GameObject loadingScreen; // Reference to your loading screen UI element
+
     // This method is called when the button is clicked
     public void MoveToEvacuation_Essential()
     {
-        SceneManager.LoadSceneAsync("Evacuation_Essential");
+        StartCoroutine(LoadScene("Evacuation_Essential"));
     }
-    
+
     public void MoveToEscape_Survive()
     {
-        SceneManager.LoadSceneAsync("Escape_Survive");
+        StartCoroutine(LoadScene("Escape_Survive"));
     }
 
     public void MoveToRecovery_Resilience()
     {
-        SceneManager.LoadSceneAsync("Recovery_Resilience");
+        StartCoroutine(LoadScene("Recovery_Resilience"));
     }
 
     public void MoveToMain_Menu()
     {
-        SceneManager.LoadSceneAsync("MainScene");
+        StartCoroutine(LoadScene("MainScene"));
     }
+
     public void MoveToHow_to_Play()
     {
-        SceneManager.LoadSceneAsync("How_to_Play");
+        StartCoroutine(LoadScene("How_to_Play"));
     }
 
     public void QuitGame()
@@ -35,4 +38,21 @@ public class SceneChanger : MonoBehaviour
         Application.Quit();
     }
 
+    IEnumerator LoadScene(string sceneName)
+    {
+        // Activate the loading screen
+        loadingScreen.SetActive(true);
+
+        // Load the scene synchronously
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Deactivate the loading screen after the scene is loaded
+        loadingScreen.SetActive(false);
+    }
 }
