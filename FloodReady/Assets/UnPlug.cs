@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class UnPlug : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public RotateVRObject rotateVRObject;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Plug"))
+        {
+            RotateVRObject.SetShouldRotate(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Plug"))
+        {
+            RotateVRObject.SetShouldRotate(false);
+        }
     }
 }
