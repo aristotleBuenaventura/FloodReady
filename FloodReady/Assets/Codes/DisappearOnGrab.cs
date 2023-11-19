@@ -7,23 +7,31 @@ public class DisappearOnGrab : MonoBehaviour
     public OVRGrabber leftGrabber; // Assign the left OVRGrabber component in the Unity Editor
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     public TaskManager taskManager; // Reference to the TaskManager script
-    private bool isGrabbed = false;
+    public bool isGrabbed = false;
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 1.0f;
 
     void Update()
     {
+        // Check if the grabbers and taskManager are properly set
+        if (leftGrabber == null || rightGrabber == null || taskManager == null)
+        {
+            // Log an error or handle the situation where references are null
+            Debug.LogError("References not properly set!");
+            return;
+        }
+
         // Check if the user is holding the object using either the left or right OVRGrabber
-        if ((leftGrabber != null && leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
-            (rightGrabber != null && rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
+        if ((leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
+            (rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
         {
             // Mark the "Retrieve the go-bag" task as done
             taskManager.MarkTaskAsDone("Retrieve the go-bag");
 
             // Check for interactions specific to this object, if needed
 
-            // Deactivate the GameObject with a delay
+            // Destroy the GameObject with a delay
             if (!isGrabbed)
             {
                 StartCoroutine(DisappearWithDelay());
@@ -35,7 +43,7 @@ public class DisappearOnGrab : MonoBehaviour
     IEnumerator DisappearWithDelay()
     {
         yield return new WaitForSeconds(delayBeforeDisappear);
-        // Deactivate the GameObject instead of destroying it
-        gameObject.SetActive(false);
+        // Destroy the GameObject instead of deactivating it
+        Destroy(gameObject);
     }
 }
