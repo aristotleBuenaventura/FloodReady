@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterLevelController : MonoBehaviour
 {
-    public float risingSpeed = 0.1f; // Adjust the speed as needed
+    public float risingSpeed = 0.01f; // Adjust the speed as needed
     private float nextRiseTime;
     private float targetWaterLevel; // New variable to store the desired water level
 
@@ -31,6 +31,6 @@ public class WaterLevelController : MonoBehaviour
         // Ensure rotation remains zero for all axes
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
-        nextRiseTime += 1f; // Set the next rise time
+        nextRiseTime += 0.01f; // Set the next rise time
     }
 }
