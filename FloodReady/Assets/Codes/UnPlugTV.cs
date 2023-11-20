@@ -5,7 +5,8 @@ using UnityEngine;
 public class UnPlugTV : MonoBehaviour
 {
     public TVController TV;
-    public CanvasController BreakerCanvas;
+    public ShowBreakerCanvas ShowCanvas;
+    
 
     // Flag to track whether the plug is attached
     private bool isPlugAttached = false;
@@ -16,6 +17,7 @@ public class UnPlugTV : MonoBehaviour
         {
             isPlugAttached = true;
             TV.TurnOn();
+            
         }
     }
 
@@ -36,7 +38,8 @@ public class UnPlugTV : MonoBehaviour
         if (!isPlugAttached)
         {
             TV.TurnOff();
-            BreakerCanvas.ShowTurnOffBreakerCanvas();
+            ShowCanvas.SetBooleanTV(true);
+
         }
     }
 

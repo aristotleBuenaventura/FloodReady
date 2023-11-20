@@ -5,8 +5,7 @@ using UnityEngine;
 public class UnPlug : MonoBehaviour
 {
     public RotateVRObject rotateVRObject;
-    public CanvasController BreakerCanvas;
-
+    public ShowBreakerCanvas ShowCanvas;
     // Flag to track whether the plug is attached
     private bool isPlugAttached = false;
 
@@ -36,7 +35,7 @@ public class UnPlug : MonoBehaviour
         if (!isPlugAttached)
         {
             RotateVRObject.SetShouldRotate(false);
-            BreakerCanvas.ShowTurnOffBreakerCanvas();
+            ShowCanvas.SetBooleanFan(true);
         }
     }
 

@@ -15,7 +15,7 @@ public class TVController : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
 
         // Start with the TV turned off
-        TurnOn();
+        TurnOff();
     }
 
     public void TurnOn()
