@@ -7,6 +7,7 @@ public class DisappearOnGrab : MonoBehaviour
     public OVRGrabber leftGrabber; // Assign the left OVRGrabber component in the Unity Editor
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     public TaskManager taskManager; // Reference to the TaskManager script
+    public EscapeCanvasController ShowMainBreakerCanvas;
     public bool isGrabbed = false;
 
     // You can adjust this variable to control the delay before the object disappears
@@ -45,5 +46,10 @@ public class DisappearOnGrab : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeDisappear);
         // Destroy the GameObject instead of deactivating it
         Destroy(gameObject);
+        ShowMainBreakerCanvas.ShowMainBreakerCanvas();
     }
+
+
+
+
 }
