@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour
 {
     public List<string> itemList = new List<string>();
     public List<string> bagInventory = new List<string>();
-    public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight" };
+    public List<string> validItemNames = new List<string>() { "Canned good", "Energy bar", "Money", "Bottled water", "Clothes", "First aid kit", "Flashlight", "Mobile Phone" };
     private bool canAddToBag = true;
     public CanvasController GoBagCompleted;
     public GameObject GoBag;
