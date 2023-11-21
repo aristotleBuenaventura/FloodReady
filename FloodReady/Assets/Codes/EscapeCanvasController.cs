@@ -18,8 +18,11 @@ public class EscapeCanvasController : MonoBehaviour
 
     // Add the switch delay for the RetrieveGoBagCanvas
     public float switchDelayRetrieveGoBag = 10f;
+    public BoxCollider roomBarrierCollider1;
+    public BoxCollider roomBarrierCollider2;
+    public BoxCollider roomBarrierCollider3;
+    public BoxCollider roomBarrierCollider4;
 
-   
 
     private void Start()
     {
@@ -71,7 +74,7 @@ public class EscapeCanvasController : MonoBehaviour
     {
         welcomeCanvas.SetActive(false);
         retrieveGoBagCanvas.SetActive(false);
-        mainBreakerCanvas.SetActive(true);
+        mainBreakerCanvas.SetActive(false);
         doorJamCanvas.SetActive(true);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
@@ -117,6 +120,13 @@ public class EscapeCanvasController : MonoBehaviour
     }
 
 
+
+    private void SetRoomBarrierColliderActive(bool active)
+    {
+        roomBarrierCollider1.enabled = active;
+    }
+
+
     // Add any new canvas switch functions here
     public IEnumerator SwitchCanvasAfterDelay()
     {
@@ -128,11 +138,13 @@ public class EscapeCanvasController : MonoBehaviour
 
             // Switch to the RetrieveGoBagCanvas
             ShowRetrieveGoBagCanvas();
+        SetRoomBarrierColliderActive(false);
 
-       
+
     }
 
-    // Add similar functions for other canvases
-
-    // ...
+    public void FinishCanvas()
+    {
+        SetRoomBarrierColliderActive(false);
+    }
 }
