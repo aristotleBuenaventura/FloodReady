@@ -5,7 +5,7 @@ using UnityEngine.Video; // Import the Video namespace
 
 public class TVController : MonoBehaviour
 {
-    private bool isTVOn;
+    public bool isTVOn;
 
     public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
 
