@@ -39,8 +39,8 @@ public class NumberArrayManager : MonoBehaviour
         // Ensure the TextMeshProUGUI component is present
         if (textElement != null)
         {
-            // Set the text of TextMeshProUGUI to the content of the array
-            textElement.text = string.Join(", ", numberArray);
+            // Concatenate the array elements without a comma
+            textElement.text = string.Concat(numberArray);
         }
     }
 }
