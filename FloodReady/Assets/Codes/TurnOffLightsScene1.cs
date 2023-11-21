@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TurnOffLightsScene1 : MonoBehaviour
+public class TurnOffLights1 : MonoBehaviour
 {
     public UnityEvent onPress;
     public UnityEvent onRelease;
+    public TaskManager taskManager; // Reference to the TaskManager script
     GameObject presser;
     AudioSource sound;
     bool isPressed;
-    public CanvasController messageCanvas;
+  
 
     void Start()
     {
@@ -30,10 +31,11 @@ public class TurnOffLightsScene1 : MonoBehaviour
             }
 
             // Check if the lights are turned off
-            if (LightsAreTurnedOff(pointLights))
+            if (LightsAreTurnedOff())
             {
                 // Mark the task as done
-                messageCanvas.ShowExitHouseCanvas();
+                taskManager.MarkTaskAsDone("Switch off the Main Power");
+               
             }
 
             presser = other.gameObject;
@@ -53,12 +55,13 @@ public class TurnOffLightsScene1 : MonoBehaviour
         }
     }
 
-    private bool LightsAreTurnedOff(GameObject[] pointLights)
+    private bool LightsAreTurnedOff()
     {
         // Add logic here to check if the lights are turned off
         // You might check the state of the lights or their visibility status
         // For simplicity, let's assume the lights are considered off if there are no active point lights
 
+        GameObject[] pointLights = GameObject.FindGameObjectsWithTag("pointlight");
         return pointLights.Length == 0;
     }
 }
