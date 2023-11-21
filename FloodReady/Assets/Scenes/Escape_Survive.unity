@@ -21833,7 +21833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfecd19b35f049c448822a88d27e2f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!64 &833922299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32678,6 +32678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310656174}
   - component: {fileID: 1310656176}
+  - component: {fileID: 1310656177}
   m_Layer: 0
   m_Name: CallKeyPad
   m_TagString: Untagged
@@ -32725,6 +32726,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1310656177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310656173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4237357101afe448ee3739d5d5b055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &1312251132
 GameObject:
   m_ObjectHideFlags: 0
