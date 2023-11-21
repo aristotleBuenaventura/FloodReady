@@ -5,6 +5,7 @@ public class NumberArrayManager : MonoBehaviour
 {
     private string[] numberArray = new string[0]; // Initialize an empty array
     public TextMeshProUGUI textElement; // Expose the TextMeshProUGUI component
+    public EscapeCanvasController welldone;
 
     private void Start()
     {
@@ -45,9 +46,6 @@ public class NumberArrayManager : MonoBehaviour
             // Resize the array to remove the last number
             System.Array.Resize(ref numberArray, numberArray.Length - 1);
 
-            // Check for emergency call
-            CheckEmergencyCall();
-
             // Update the display
             UpdateDisplay();
         }
@@ -62,6 +60,7 @@ public class NumberArrayManager : MonoBehaviour
         // Check if the currentNumber is equal to "161"
         if (currentNumber == "161")
         {
+            welldone.WelldoneCanvas();
             // Display a debug message for emergency call
             Debug.Log("Call Emergency");
         }

@@ -12,6 +12,7 @@ public class EscapeCanvasController : MonoBehaviour
     public GameObject pryBarCanvas;
     public GameObject breakWindowCanvas;
     public GameObject searchGoBagCanvas;
+    public GameObject welldoneCanvas;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
     
@@ -43,6 +44,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -55,6 +57,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -67,6 +70,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -79,6 +83,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -91,6 +96,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(true);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -103,6 +109,7 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(true);
         searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -116,6 +123,20 @@ public class EscapeCanvasController : MonoBehaviour
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(true);
+        welldoneCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    public void WelldoneCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        retrieveGoBagCanvas.SetActive(false);
+        mainBreakerCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
+        pryBarCanvas.SetActive(false);
+        breakWindowCanvas.SetActive(false);
+        searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(true);
         messageCanvas.OpenCanvasAgain();
     }
 
