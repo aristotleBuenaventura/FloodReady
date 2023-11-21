@@ -33,6 +33,20 @@ public class NumberArrayManager : MonoBehaviour
         UpdateDisplay();
     }
 
+    // Remove the last number from the array
+    public void RemoveNumber()
+    {
+        // Check if there are any numbers to remove
+        if (numberArray.Length > 0)
+        {
+            // Resize the array to remove the last number
+            System.Array.Resize(ref numberArray, numberArray.Length - 1);
+
+            // Update the display
+            UpdateDisplay();
+        }
+    }
+
     // Update the display on the TextMeshProUGUI
     private void UpdateDisplay()
     {

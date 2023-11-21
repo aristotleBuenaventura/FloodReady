@@ -33,7 +33,6 @@ public class NumberButtonController : MonoBehaviour
     public void OnButtonPress()
     {
         // Call the AddNumber function in NumberArrayManager
-        Debug.Log("NAVAL");
         arrayManager.AddNumber(number);
     }
 

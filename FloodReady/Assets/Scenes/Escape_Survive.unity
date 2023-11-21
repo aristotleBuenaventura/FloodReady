@@ -3472,6 +3472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 3
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1001 &127589969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6510,6 +6511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 2
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1001 &280380987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11392,6 +11394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &441206330
 GameObject:
   m_ObjectHideFlags: 0
@@ -21770,6 +21773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826709017}
   - component: {fileID: 826709019}
+  - component: {fileID: 826709020}
   m_Layer: 0
   m_Name: DeleteKeyPad
   m_TagString: Untagged
@@ -21817,6 +21821,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &826709020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826709016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfecd19b35f049c448822a88d27e2f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrayManager: {fileID: 0}
 --- !u!64 &833922299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22470,6 +22487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 9
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &878749069
 GameObject:
   m_ObjectHideFlags: 0
@@ -23979,7 +23997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 1
-  arrayManager: {fileID: 948101987}
+  arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &948101986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6725403541390194898, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
@@ -24766,6 +24785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 7
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &974034581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 143668, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
@@ -28012,6 +28032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 4
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1001 &1085377524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34444,6 +34465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 5
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!64 &1373766782
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47453,6 +47475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 8
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1 &1752426406
 GameObject:
   m_ObjectHideFlags: 0
@@ -47998,6 +48021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 6
   arrayManager: {fileID: 0}
+  cooldownTime: 1
 --- !u!1001 &1771987393
 PrefabInstance:
   m_ObjectHideFlags: 0
