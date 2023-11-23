@@ -1,69 +1,89 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 [AddComponentMenu("Breakable Windows/Breakable Window")]
 [RequireComponent(typeof(AudioSource))]
 public class BreakableWindow : MonoBehaviour
 {
-    [Tooltip("Layer should be TransparentFX or your own layer for breakable windows.")]
     public LayerMask layer;
-
-    public bool useCollision = false;
     public AudioClip breakingSound;
+    public Material[] windowMaterials;
 
-    [HideInInspector]
-    public bool isBroken = false;
+    private Renderer renderer;
+    private int currentMaterialIndex = 0;
 
-    void OnCollisionEnter(Collision col)
+    public bool IsBroken { get; private set; } = false;
+
+    private void Start()
     {
-        if (useCollision && !isBroken)
+        ShowWindow();
+    }
+
+    private void ShowWindow()
+    {
+        renderer = GetComponent<Renderer>();
+        if (renderer != null && windowMaterials != null && windowMaterials.Length > 0)
         {
-            string collidedObjectName = col.gameObject.name;
-            string collidedObjectTag = col.gameObject.tag;
-
-            UnityEngine.Debug.Log("Collided object name: " + collidedObjectName);
-            UnityEngine.Debug.Log("Collided object tag: " + collidedObjectTag);
-
-            // Check if the collided object has the name "PryBar" and tag "PryBar"
-            if (collidedObjectName == "PryBar" && collidedObjectTag == "PryBar")
-            {
-                UnityEngine.Debug.Log("PryBar collided with the window.");
-                breakWindow();
-            }
+            Material initialMaterial = new Material(windowMaterials[0]);
+            renderer.material = initialMaterial;
         }
     }
 
-
-
-    public void breakWindow()
+    public void HandleCollision()
     {
-        if (!isBroken)
+        if (!IsBroken)
         {
-            // Play the breaking sound
-            if (breakingSound != null)
-            {
-                GetComponent<AudioSource>().clip = breakingSound;
-                GetComponent<AudioSource>().Play();
-            }
-
-            // Remove the collider to make it breakable
-            Collider col = GetComponent<Collider>();
-            if (col != null)
-            {
-                Destroy(col);
-            }
-
-            // Destroy the renderer to make it invisible
-            Renderer renderer = GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                Destroy(renderer);
-            }
-
-            // Set the isBroken flag to true
-            isBroken = true;
+            StartCoroutine(HandleCollisionCoroutine());
         }
+    }
+
+    private IEnumerator HandleCollisionCoroutine()
+    {
+        if (breakingSound != null)
+        {
+            GetComponent<AudioSource>().clip = breakingSound;
+            GetComponent<AudioSource>().Play();
+        }
+
+        ChangeWindowAppearance();
+
+        yield return new WaitForSeconds(0.2f); // Adjust this value as needed
+
+        if (++currentMaterialIndex >= windowMaterials.Length)
+        {
+            StartCoroutine(DestroyWindowAfterDelay());
+        }
+    }
+
+    private void ChangeWindowAppearance()
+    {
+        Debug.Log("Changing window appearance");
+        if (renderer != null && windowMaterials != null && windowMaterials.Length > 0)
+        {
+            Material newMaterial = new Material(windowMaterials[currentMaterialIndex]);
+            renderer.material = newMaterial;
+        }
+    }
+
+    private IEnumerator DestroyWindowAfterDelay()
+    {
+        yield return new WaitForSeconds(2f); // Add a delay after the last collision
+        DestroyWindow();
+    }
+
+    public void DestroyWindow()
+    {
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+        {
+            Destroy(col);
+        }
+
+        if (renderer != null)
+        {
+            renderer.enabled = false;
+        }
+
+        IsBroken = true;
     }
 }

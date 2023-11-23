@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PryBar : MonoBehaviour
 {
-    public OVRGrabber leftGrabber; // Assign the left OVRGrabber component in the Unity Editor
-    public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
-    public TaskManager taskManager; // Reference to the TaskManager script
+    public OVRGrabber leftGrabber;
+    public OVRGrabber rightGrabber;
+    public TaskManager taskManager;
 
-    void Update()
+    public void Update()
     {
         // Check if the user is holding the PryBar using either the left or right OVRGrabber
         if ((leftGrabber != null && leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
@@ -21,16 +21,13 @@ public class PryBar : MonoBehaviour
                 if (collider.CompareTag("BreakableWindow"))
                 {
                     // Ensure the PryBar is the only object that can break the window
-                    if (gameObject.name == "PryBar")
+                    BreakableWindow window = collider.GetComponent<BreakableWindow>();
+                    if (window != null && !window.IsBroken)
                     {
-                        BreakableWindow window = collider.GetComponent<BreakableWindow>();
-                        if (window != null && !window.isBroken)
-                        {
-                            window.breakWindow();
+                        window.HandleCollision();
 
-                            // Mark the "Break a Window" task as done
-                            taskManager.MarkTaskAsDone("Break a Window");
-                        }
+                        // Mark the "Break a Window" task as done
+                        taskManager.MarkTaskAsDone("Break a Window");
                     }
                 }
             }
@@ -39,5 +36,4 @@ public class PryBar : MonoBehaviour
             taskManager.MarkTaskAsDone("Retrieve a Survival Tool");
         }
     }
-
 }
