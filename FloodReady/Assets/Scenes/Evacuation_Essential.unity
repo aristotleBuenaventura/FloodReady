@@ -2914,6 +2914,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &127345100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7289636880439750844, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+  m_PrefabInstance: {fileID: 3441825172621135893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &127345102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4914537094157142491, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+  m_PrefabInstance: {fileID: 3441825172621135893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127345100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &127345104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127345100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe17acb67dfa141ba603de6fd4d58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 127345102}
+  remainingTime: 600
+  InitialTime: 600
 --- !u!1 &133306058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3741,6 +3772,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 340100464}
+    - targetCorrespondingSourceObject: {fileID: 477154, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1226014951}
     - targetCorrespondingSourceObject: {fileID: 481164, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1831253553}
@@ -6753,6 +6787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b75e5c4c2f42d4bb856ee4aaa70c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTVOn: 0
   videoPlayer: {fileID: 264943368}
 --- !u!1 &268650715
 GameObject:
@@ -34584,6 +34619,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1515144191993293674, guid: bc98a4180e096b5468823f51022a614b, type: 3}
+--- !u!4 &1226014951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+  m_PrefabInstance: {fileID: 3441825172621135893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1230527364
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63840,7 +63880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbe5177077c2af41ad5e49026ceee2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tvController: {fileID: 0}
+  tvController: {fileID: 264943369}
   buttonCooldown: 2
   messageCanvas: {fileID: 1786757870}
 --- !u!54 &2090066320
@@ -67388,35 +67428,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1091767523}
     m_Modifications:
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.019238634
+      objectReference: {fileID: 0}
+    - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.019238632
+      objectReference: {fileID: 0}
+    - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.019238628
+      objectReference: {fileID: 0}
+    - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5165
+      value: -0.050697368
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9848
+      value: -0.015200019
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.6691
+      value: -0.103599414
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.10497298
+      value: -0.05698566
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.071552806
+      value: 0.7523994
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.024256619
+      value: 0.09143492
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.991601
+      value: -0.6498366
       objectReference: {fileID: 0}
     - target: {fileID: 553797749018551019, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -67434,10 +67486,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WristWatch
       objectReference: {fileID: 0}
+    - target: {fileID: 4914537094157142491, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_text
+      value: 00:00
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914537094157142491, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_fontSize
+      value: 0.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914537094157142491, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.042
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7289636880439750844, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 127345104}
   m_SourcePrefab: {fileID: 100100000, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
 --- !u!33 &3454001854858586449
 MeshFilter:
@@ -68769,4 +68836,3 @@ SceneRoots:
   - {fileID: 1912621662}
   - {fileID: 287406085}
   - {fileID: 1903293918}
-  - {fileID: 3441825172621135893}
