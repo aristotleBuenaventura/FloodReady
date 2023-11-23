@@ -6753,7 +6753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b75e5c4c2f42d4bb856ee4aaa70c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTVOn: 0
   videoPlayer: {fileID: 264943368}
 --- !u!1 &268650715
 GameObject:
@@ -63841,7 +63840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbe5177077c2af41ad5e49026ceee2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tvController: {fileID: 264943369}
+  tvController: {fileID: 0}
   buttonCooldown: 2
   messageCanvas: {fileID: 1786757870}
 --- !u!54 &2090066320
@@ -66269,17 +66268,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2143076872}
     m_Modifications:
+    - target: {fileID: 3475481964772704076, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
+      propertyPath: m_text
+      value: ' '
+      objectReference: {fileID: 0}
     - target: {fileID: 3519339937382362827, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4796479
+      value: -1.798
       objectReference: {fileID: 0}
     - target: {fileID: 3519339937382362827, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7830063
+      value: 0.771
       objectReference: {fileID: 0}
     - target: {fileID: 3519339937382362827, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.976475
+      value: -6.963
       objectReference: {fileID: 0}
     - target: {fileID: 3519339937382362827, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
       propertyPath: m_LocalRotation.w
