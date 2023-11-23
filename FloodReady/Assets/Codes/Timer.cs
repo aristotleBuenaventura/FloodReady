@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -14,6 +16,9 @@ public class Timer : MonoBehaviour
         get { return remainingTime; }
     }
 
+    // Declare the loadingScreen object
+    [SerializeField] GameObject loadingScreen;
+
     void Update()
     {
         if (remainingTime > 0)
@@ -23,6 +28,8 @@ public class Timer : MonoBehaviour
             if (remainingTime < 0)
             {
                 remainingTime = 0;
+                Debug.Log("Time's up");
+                StartCoroutine(LoadScene("MainMenu"));
             }
 
             int minutes = Mathf.FloorToInt(remainingTime / 60);
@@ -35,5 +42,23 @@ public class Timer : MonoBehaviour
             // For example, stopping the game, showing a message, etc.
             timerText.color = Color.red;
         }
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        // Activate the loading screen
+        loadingScreen.SetActive(true);
+
+        // Load the scene asynchronously
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Deactivate the loading screen after the scene is loaded
+        loadingScreen.SetActive(false);
     }
 }

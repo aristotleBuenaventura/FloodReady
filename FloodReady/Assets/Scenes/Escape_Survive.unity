@@ -7529,9 +7529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96795d336d4d0c4382319ccacfe258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftGrabber: {fileID: 2056827689}
-  rightGrabber: {fileID: 1303692417}
+  leftGrabber: {fileID: 0}
+  rightGrabber: {fileID: 0}
   taskManager: {fileID: 1639538392}
+  interactionCooldown: 2
 --- !u!54 &302137811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12912,8 +12913,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 460275730}
-  remainingTime: 600
-  InitialTime: 600
+  remainingTime: 2
+  InitialTime: 2
+  loadingScreen: {fileID: 460275729}
 --- !u!1001 &464196780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13191,6 +13193,7 @@ MonoBehaviour:
   timerText: {fileID: 689036726}
   remainingTime: 160
   InitialTime: 160
+  loadingScreen: {fileID: 0}
 --- !u!64 &473263977
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34154,6 +34157,7 @@ MonoBehaviour:
   leftGrabber: {fileID: 2056827689}
   rightGrabber: {fileID: 1303692417}
   taskManager: {fileID: 1639538392}
+  interactionCooldown: 2
 --- !u!1 &1235591694
 GameObject:
   m_ObjectHideFlags: 0
@@ -48622,7 +48626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1639538387
 RectTransform:
   m_ObjectHideFlags: 0
