@@ -12915,6 +12915,9 @@ MonoBehaviour:
   timerText: {fileID: 460275730}
   remainingTime: 2
   InitialTime: 2
+  player: {fileID: 1028120300}
+  desiredPosition: {x: 4.5, y: 4.621, z: 8.29}
+  desiredRotation: {x: 0, y: -627.391, z: 0}
   loadingScreen: {fileID: 460275729}
 --- !u!1001 &464196780
 PrefabInstance:
@@ -13193,6 +13196,9 @@ MonoBehaviour:
   timerText: {fileID: 689036726}
   remainingTime: 160
   InitialTime: 160
+  player: {fileID: 0}
+  desiredPosition: {x: 1, y: 2, z: 3}
+  desiredRotation: {x: 45, y: 90, z: 0}
   loadingScreen: {fileID: 0}
 --- !u!64 &473263977
 MeshCollider:
@@ -28918,6 +28924,10 @@ PrefabInstance:
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Name
       value: OVRPlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalScale.y

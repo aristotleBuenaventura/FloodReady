@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
-    public float InitialTime; // Add this field to expose InitialTime in the Inspector
+    public float InitialTime;
+
+    // Expose player position and rotation in the Inspector
+    [Header("Player Settings")]
+    public GameObject player;
+    public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
+    public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
 
     public float RemainingTime
     {
         get { return remainingTime; }
     }
 
-    // Declare the loadingScreen object
     [SerializeField] GameObject loadingScreen;
 
     void Update()
@@ -29,7 +33,19 @@ public class Timer : MonoBehaviour
             {
                 remainingTime = 0;
                 Debug.Log("Time's up");
-                StartCoroutine(LoadScene("MainMenu"));
+
+                // Change player's position and rotation
+                if (player != null)
+                {
+                    // Set the desired position from the Inspector
+                    player.transform.position = desiredPosition;
+
+                    // Set the desired rotation from the Inspector
+                    player.transform.rotation = Quaternion.Euler(desiredRotation);
+                }
+
+                // Wait for 10 seconds before loading the MainMenu
+                StartCoroutine(WaitAndLoadScene("MainMenu", 10f));
             }
 
             int minutes = Mathf.FloorToInt(remainingTime / 60);
@@ -38,14 +54,15 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            // You may want to add some logic for what happens when the timer reaches 0.
-            // For example, stopping the game, showing a message, etc.
             timerText.color = Color.red;
+            // Handle logic when the timer reaches 0 (e.g., stopping the game, showing a message).
         }
     }
 
-    IEnumerator LoadScene(string sceneName)
+    IEnumerator WaitAndLoadScene(string sceneName, float waitTime)
     {
+        yield return new WaitForSeconds(waitTime);
+
         // Activate the loading screen
         loadingScreen.SetActive(true);
 
