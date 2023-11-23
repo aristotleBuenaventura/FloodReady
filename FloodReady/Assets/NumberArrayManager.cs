@@ -30,9 +30,6 @@ public class NumberArrayManager : MonoBehaviour
         System.Array.Resize(ref numberArray, numberArray.Length + 1);
         numberArray[numberArray.Length - 1] = number;
 
-        // Check for emergency call
-        CheckEmergencyCall();
-
         // Update the display
         UpdateDisplay();
     }
