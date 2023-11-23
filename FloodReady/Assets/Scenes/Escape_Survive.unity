@@ -23300,15 +23300,15 @@ PrefabInstance:
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 370b9428ef5038c4996fc4a4217df1a3, type: 2}
+      objectReference: {fileID: 2100000, guid: d09385a1e0cf1ce41b41a0f333996782, type: 2}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 669025377795b574da66d9bb2472fcab, type: 2}
+      objectReference: {fileID: 2100000, guid: 311cfbd90aed8c04aa3e2f9a0db5c464, type: 2}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: c4db2cf4dfcf77b4e9c9ae4dd68b035f, type: 2}
+      objectReference: {fileID: 2100000, guid: 50d7f8fb952abe847adc30ff239e3447, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28992,6 +28992,10 @@ PrefabInstance:
       propertyPath: RotateAroundGuardianCenter
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11414578, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Radius
       value: 0.3
@@ -30637,23 +30641,19 @@ PrefabInstance:
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4f0bb7c7f0bfb2943bdce5930449225e, type: 2}
+      objectReference: {fileID: 2100000, guid: d09385a1e0cf1ce41b41a0f333996782, type: 2}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 669025377795b574da66d9bb2472fcab, type: 2}
+      objectReference: {fileID: 2100000, guid: 311cfbd90aed8c04aa3e2f9a0db5c464, type: 2}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: c4db2cf4dfcf77b4e9c9ae4dd68b035f, type: 2}
-    m_RemovedComponents:
-    - {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      objectReference: {fileID: 2100000, guid: 50d7f8fb952abe847adc30ff239e3447, type: 2}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1969502595}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
 --- !u!4 &1076203570 stripped
 Transform:
@@ -48601,7 +48601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1639538387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58365,31 +58365,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7213155207947421469, guid: 02bdf42aac25342d88e59b946aed3b31, type: 3}
---- !u!1 &1969502583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-  m_PrefabInstance: {fileID: 1076203569}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1969502595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969502583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e485ffd1c36d8f3469c0cfc672808fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 0
-  breakingSound: {fileID: 0}
-  windowMaterials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &1972396728
 GameObject:
   m_ObjectHideFlags: 0
@@ -63382,3 +63357,4 @@ SceneRoots:
   - {fileID: 1819201926}
   - {fileID: 2003439325}
   - {fileID: 557260428}
+  - {fileID: 543450653398083131}
