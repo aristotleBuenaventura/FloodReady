@@ -3591,7 +3591,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c7db9883711df9c41911bec2614b4ac2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c7ecffa804da9f4db61549898219986, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7416,7 +7416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: -0.242}
+  m_AnchoredPosition: {x: 0, y: -0.231}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &296361802
@@ -7439,9 +7439,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The door leading to the roof is no longer an option due to water damage.
-    You must use the tool you found to break a window on the second floor, creating
-    a path to the rooftop. Climb up and stay safe from the rising waters.
+  m_text: You must use the tool you found to break a window on the second floor,
+    creating a path to the rooftop. Climb up and stay safe from the rising waters.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -8663,7 +8662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: -0.242}
+  m_AnchoredPosition: {x: -0.008, y: -0.225}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321851125
@@ -9425,7 +9424,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c8a481e1a9ae0be489dc28dc54a62cc3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9810fb57a275d534c88690838c5f1796, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11333,7 +11332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: -0.242}
+  m_AnchoredPosition: {x: -0.026, y: -0.239}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411075032
@@ -11356,10 +11355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Search through your Go-bag and find the emergency communication device.
-    This device will be crucial for contacting rescue services. Use the device to
-    dial the number of the rescuer. Send out a distress call and provide them with
-    your location. Stay patient and wait for your rescue team to arrive!
+  m_text: Search through your go-bag and locate your mobile phone. Use the device
+    to dial 161 and press call.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -11422,7 +11419,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.09631878, y: 0.073016524, z: 0.10050383, w: 0.22489655}
+  m_margin: {x: 0.15728194, y: 0.073016524, z: 0.10050383, w: 0.22489655}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13470,7 +13467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: -0.79, z: -0.28}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.017, y: -0.505}
+  m_AnchoredPosition: {x: 0.017, y: -0.571}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489803345
@@ -13493,7 +13490,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -15373,7 +15373,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eaa65117229a0ff469e776c7b4decc0a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6df9601c7de0c4c4fa0387cefbc59ecb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -20894,7 +20894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welldone
+  m_text: Dialed 161 for Rescue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
   m_sharedMaterial: {fileID: -3872272992010068413, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
@@ -22341,7 +22341,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 340e874377b3e3e489d4ace11d5abfda, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0c2daae01979469408ba61817346eab8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -26367,7 +26367,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -27008,7 +27011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: -0.79, z: -0.28}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.017, y: -0.505}
+  m_AnchoredPosition: {x: 0.017, y: -0.554}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &957645999
@@ -27031,7 +27034,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -31713,7 +31719,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -32051,7 +32060,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6fec8fdae0cf29b4d8886a398e2e7b17, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0cd596dceeb7cf44590ec69b6cb4b17a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -34333,7 +34342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: -0.242}
+  m_AnchoredPosition: {x: -0.015, y: -0.211}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1241987099
@@ -34356,10 +34365,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: With the floodwaters rising, leaving the electrical systems on could be
-    extremely dangerous. Navigate through your house, fighting against the rising
-    water levels, to find the main power supply. Switch it off to prevent potential
-    electrical accidents.
+  m_text: Navigate through your house, fighting against the rising water levels,
+    to find the main power supply. Switch it off to prevent potential electrical
+    accidents.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -34470,7 +34478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015, y: -0.242}
+  m_AnchoredPosition: {x: 0, y: -0.242}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243302041
@@ -34493,7 +34501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nakatawag kana sa 161, congrats
+  m_text: You called 161. Stay patient and wait for your rescue team to arrive!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -38318,7 +38326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn off the breaker
+  m_text: Turn off Main breaker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
   m_sharedMaterial: {fileID: -3872272992010068413, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
@@ -40098,7 +40106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Search the Go Bags
+  m_text: DIAL 161
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
   m_sharedMaterial: {fileID: -3872272992010068413, guid: d42f7889bb3edf34fb6799c85ef7a400, type: 2}
@@ -42680,7 +42688,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eaa65117229a0ff469e776c7b4decc0a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d2f8aaed10e175840b92a06301739d38, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -44937,7 +44945,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b930e975764d5a747a339778e155ec4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 28b6ba9b955554947bc862d54c20a29a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -45391,7 +45399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: 0.148, z: 0.015}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.005, y: -0.236}
+  m_AnchoredPosition: {x: -0.09, y: -0.201}
   m_SizeDelta: {x: 1.2783, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574833715
@@ -45479,7 +45487,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.09631878, y: 0.073016524, z: 0.10050383, w: 0.22489655}
+  m_margin: {x: 0.09631878, y: 0.073016524, z: -0.06903549, w: 0.22489655}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -56026,7 +56034,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2c2c88a4cae16e6458e9573cf1b7a063, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 95c320704d368f646aabfca776861d14, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -59168,7 +59176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2002154434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61247,7 +61255,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
@@ -61646,15 +61657,15 @@ RectTransform:
   m_GameObject: {fileID: 2081657510}
   m_LocalRotation: {x: -0.0004418522, y: 0.0042377515, z: -0.00012153146, w: 0.999991}
   m_LocalPosition: {x: 0, y: 0, z: 0.008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8409, y: 0.8409, z: 0.8409}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958071788}
   m_LocalEulerAnglesHint: {x: -0.051, y: 0.486, z: -0.014}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.002, y: 0.251}
-  m_SizeDelta: {x: 1.1886, y: 0.1527}
+  m_AnchoredPosition: {x: 0.005, y: 0.233}
+  m_SizeDelta: {x: 1.7726, y: 0.1527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081657512
 MonoBehaviour:
@@ -62631,7 +62642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.059, y: -0.79, z: -0.28}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.017, y: -0.505}
+  m_AnchoredPosition: {x: 0.017, y: -0.542}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123774726
@@ -62654,7 +62665,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">Button A</color> on the right hand to close the window
+  m_text: 'Press <color="blue">Button Y</color> on the left hand to open the checklist
+
+    Press
+    <color="red">Button A</color> on the right hand to close the window'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
   m_sharedMaterial: {fileID: -5839354330806206608, guid: b8f5aeb9c6de7614db2631011b869bc3, type: 2}
