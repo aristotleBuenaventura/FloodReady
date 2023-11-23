@@ -47,11 +47,11 @@ public class BreakableWindow : MonoBehaviour
 
         ChangeWindowAppearance();
 
-        yield return new WaitForSeconds(0.2f); // Adjust this value as needed
+        yield return new WaitForSeconds(2f); // Delay after each collision
 
         if (++currentMaterialIndex >= windowMaterials.Length)
         {
-            StartCoroutine(DestroyWindowAfterDelay());
+            DestroyWindow();
         }
     }
 
@@ -65,13 +65,7 @@ public class BreakableWindow : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyWindowAfterDelay()
-    {
-        yield return new WaitForSeconds(2f); // Add a delay after the last collision
-        DestroyWindow();
-    }
-
-    public void DestroyWindow()
+    private void DestroyWindow()
     {
         Collider col = GetComponent<Collider>();
         if (col != null)
