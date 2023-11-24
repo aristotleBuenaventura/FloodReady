@@ -10,7 +10,8 @@ public class BreakableWindow : MonoBehaviour
     public Material[] windowMaterials;
 
     private Renderer renderer;
-    private int currentMaterialIndex = 0;
+    private int currentMaterialIndex = 1; // Start counting from the second material
+    private bool canBreak = true;
 
     public bool IsBroken { get; private set; } = false;
 
@@ -31,7 +32,7 @@ public class BreakableWindow : MonoBehaviour
 
     public void HandleCollision()
     {
-        if (!IsBroken)
+        if (!IsBroken && canBreak)
         {
             StartCoroutine(HandleCollisionCoroutine());
         }
@@ -39,6 +40,8 @@ public class BreakableWindow : MonoBehaviour
 
     private IEnumerator HandleCollisionCoroutine()
     {
+        canBreak = false;
+
         if (breakingSound != null)
         {
             GetComponent<AudioSource>().clip = breakingSound;
@@ -47,7 +50,10 @@ public class BreakableWindow : MonoBehaviour
 
         ChangeWindowAppearance();
 
-        yield return new WaitForSeconds(2f); // Delay after each collision
+        // Add a cooldown period before the window can be broken again
+        yield return new WaitForSeconds(1f);
+
+        canBreak = true;
 
         if (++currentMaterialIndex >= windowMaterials.Length)
         {
