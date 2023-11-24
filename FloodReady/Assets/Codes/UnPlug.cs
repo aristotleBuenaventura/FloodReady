@@ -8,6 +8,7 @@ public class UnPlug : MonoBehaviour
     public ShowBreakerCanvas ShowCanvas;
     // Flag to track whether the plug is attached
     private bool isPlugAttached = false;
+    public TaskPercentage FanUnplugPercentage;
 
     private void OnTriggerEnter(Collider other)
     {

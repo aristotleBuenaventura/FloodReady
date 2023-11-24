@@ -6,10 +6,12 @@ public class UnPlugTV : MonoBehaviour
 {
     public TVController TV;
     public ShowBreakerCanvas ShowCanvas;
-    
+    public TaskPercentage TvUnplugPercentage;
 
     // Flag to track whether the plug is attached
     private bool isPlugAttached = false;
+    private bool hasIncrementedPercentage = false;
+    private bool isCoroutineRunning = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,13 +19,12 @@ public class UnPlugTV : MonoBehaviour
         {
             isPlugAttached = true;
             TV.TurnOn();
-            
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Plug"))
+        if (other.CompareTag("Plug") && !hasIncrementedPercentage && !isCoroutineRunning)
         {
             // Use a delay before considering it unplugged
             StartCoroutine(DelayedUnplugCheck());
@@ -32,6 +33,9 @@ public class UnPlugTV : MonoBehaviour
 
     private IEnumerator DelayedUnplugCheck()
     {
+        // Set the flag to indicate that the coroutine is running
+        isCoroutineRunning = true;
+
         yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
 
         // Check if the plug is still attached after the delay
@@ -39,8 +43,12 @@ public class UnPlugTV : MonoBehaviour
         {
             TV.TurnOff();
             ShowCanvas.SetBooleanTV(true);
-
+            TvUnplugPercentage.IncrementTaskPercentage(10);
+            hasIncrementedPercentage = true;
         }
+
+        // Reset the flag after the coroutine is complete
+        isCoroutineRunning = false;
     }
 
     private void OnTriggerExit(Collider other)
