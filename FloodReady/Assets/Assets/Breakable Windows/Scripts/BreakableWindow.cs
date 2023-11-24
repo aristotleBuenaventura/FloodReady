@@ -12,6 +12,7 @@ public class BreakableWindow : MonoBehaviour
     private Renderer renderer;
     private int currentMaterialIndex = 1; // Start counting from the second material
     private bool canBreak = true;
+    private bool isLastWindow = false;
 
     public bool IsBroken { get; private set; } = false;
 
@@ -28,6 +29,16 @@ public class BreakableWindow : MonoBehaviour
             Material initialMaterial = new Material(windowMaterials[0]);
             renderer.material = initialMaterial;
         }
+    }
+
+    public void SetIsLastWindow(bool value)
+    {
+        isLastWindow = value;
+    }
+
+    public bool IsLastWindow()
+    {
+        return isLastWindow;
     }
 
     public void HandleCollision()
@@ -55,9 +66,14 @@ public class BreakableWindow : MonoBehaviour
 
         canBreak = true;
 
-        if (++currentMaterialIndex >= windowMaterials.Length)
+        if (currentMaterialIndex >= windowMaterials.Length - 1) // Check if the current material is the last one
         {
-            DestroyWindow();
+            // Set it as the last window
+            SetIsLastWindow(true);
+        }
+        else
+        {
+            currentMaterialIndex++;
         }
     }
 
@@ -71,7 +87,7 @@ public class BreakableWindow : MonoBehaviour
         }
     }
 
-    private void DestroyWindow()
+    public void DestroyWindow()
     {
         Collider col = GetComponent<Collider>();
         if (col != null)

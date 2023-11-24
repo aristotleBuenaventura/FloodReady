@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PryBar : MonoBehaviour
@@ -32,6 +31,13 @@ public class PryBar : MonoBehaviour
                         if (window != null && !window.IsBroken)
                         {
                             window.HandleCollision();
+
+                            if (window.IsLastWindow()) // Check if it's the last window
+                            {
+                                window.DestroyWindow();
+                                // Optionally mark the task as done for breaking the last window
+                                taskManager.MarkTaskAsDone("Break the Last Window");
+                            }
 
                             // Mark the "Break a Window" task as done
                             taskManager.MarkTaskAsDone("Break a Window");
