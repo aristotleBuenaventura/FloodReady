@@ -19,50 +19,49 @@ public class InventoryManager : MonoBehaviour
     public GameObject First_aid_kit;
     public GameObject Flashlight;
     public Canvas Check_list;
+    public TaskPercentage bagPercentage;
+    private bool canModifyTaskPercentage = true;
+    public float taskPercentageCooldown = 1.0f;
 
 
     void OnTriggerEnter(Collider other)
     {
-        
         string collidedObjectName = other.gameObject.name;
-        
+
         if (canAddToBag)
         {
- 
             if (validItemNames.Contains(collidedObjectName))
             {
                 if (!IsItemInBag(collidedObjectName))
                 {
                     AddItemToBag(collidedObjectName);
                     Debug.Log("Item added to the bag: " + collidedObjectName);
-                    
                 }
                 else
                 {
                     StartCoroutine(RemoveAndAddBackItem(collidedObjectName, 1.0f)); // Adjust the delay time as needed
                     Debug.Log("Item removed from the bag: " + collidedObjectName);
                 }
-                
             }
         }
-
-        
-    }
-
-    private void Start()
-    {
-        GoBagClosed.SetActive(false);
     }
 
     private void AddItemToBag(string itemName)
     {
         bagInventory.Add(itemName);
         itemList.Remove(itemName); // Remove the item from the main list
+
+        if (canModifyTaskPercentage)
+        {
+            StartCoroutine(TaskPercentageCooldown());
+            bagPercentage.DecrementTaskPercentage(5);
+        }
     }
 
     private IEnumerator RemoveAndAddBackItem(string itemName, float delay)
     {
         yield return new WaitForSeconds(delay);
+
         RemoveItemFromBag(itemName);
         AddItemBackToList(itemName);
     }
@@ -70,11 +69,25 @@ public class InventoryManager : MonoBehaviour
     private void RemoveItemFromBag(string itemName)
     {
         bagInventory.Remove(itemName);
+
+        if (canModifyTaskPercentage)
+        {
+            StartCoroutine(TaskPercentageCooldown());
+            bagPercentage.IncrementTaskPercentage(5);
+        }
+
         if (bagInventory == null || bagInventory.Count == 0)
         {
             // Invoke the method with a delay of 1 second
             Invoke("ShowGoBagCompletedCanvasWithDelay", 1f);
         }
+    }
+
+    private IEnumerator TaskPercentageCooldown()
+    {
+        canModifyTaskPercentage = false;
+        yield return new WaitForSeconds(taskPercentageCooldown);
+        canModifyTaskPercentage = true;
     }
 
     // Method to be invoked after a 1-second delay

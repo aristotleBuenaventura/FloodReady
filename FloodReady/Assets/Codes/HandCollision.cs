@@ -9,6 +9,10 @@ public class HandCollision : MonoBehaviour
     public CanvasController messageCanvas;
     private bool isButtonDown = false;
     private bool canPressButton = true;
+    public TaskPercentage remoteTask;
+
+    // Flag to check if the task has already been completed
+    private bool taskCompleted = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +39,6 @@ public class HandCollision : MonoBehaviour
         }
     }
 
-
     private IEnumerator ButtonCooldown()
     {
         yield return new WaitForSeconds(buttonCooldown);
@@ -44,7 +47,15 @@ public class HandCollision : MonoBehaviour
 
     public void CallSwitchCanvasAfterDelayTV()
     {
-        StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
-        Debug.Log("Go bag working");
+        // Check if the task has already been completed
+        if (!taskCompleted)
+        {
+            StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
+            Debug.Log("Go bag working");
+            remoteTask.IncrementTaskPercentage(10);
+
+            // Set the flag to indicate that the task has been completed
+            taskCompleted = true;
+        }
     }
 }
