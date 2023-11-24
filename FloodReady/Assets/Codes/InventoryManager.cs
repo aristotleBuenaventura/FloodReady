@@ -23,6 +23,10 @@ public class InventoryManager : MonoBehaviour
     private bool canModifyTaskPercentage = true;
     public float taskPercentageCooldown = 1.0f;
 
+    private void Start()
+    {
+        GoBagClosed.SetActive(false);
+    }
 
     void OnTriggerEnter(Collider other)
     {
