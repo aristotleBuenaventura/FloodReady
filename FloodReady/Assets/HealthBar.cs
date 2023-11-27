@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public float maxLife = 100f;  // Maximum life value
+    public float maxLife = 10f;  // Maximum life value
     public float lifeDecreaseRate = 1f;  // Rate at which life decreases per second
     public float lifeIncreaseRate = 1f;  // Rate at which life increases per second
     private float currentLife;  // Current life value
@@ -66,6 +66,16 @@ public class HealthBar : MonoBehaviour
         if (healthbar != null)
         {
             healthbar.fillAmount = fillAmount;
+
+            // Check if life is full and disable the entire healthBarObject
+            if (currentLife >= maxLife)
+            {
+                healthBarObject.SetActive(false);
+            }
+            else
+            {
+                healthBarObject.SetActive(true);
+            }
         }
         else
         {
