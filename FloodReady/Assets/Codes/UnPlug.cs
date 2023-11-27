@@ -8,6 +8,7 @@ public class UnPlug : MonoBehaviour
     public ShowBreakerCanvas ShowCanvas;
     // Flag to track whether the plug is attached
     private bool isPlugAttached = false;
+    private bool hasBeenUnplugged = false; // Flag to ensure unplugging happens only once
     public TaskPercentage FanUnplugPercentage;
 
     private void OnTriggerEnter(Collider other)
@@ -32,11 +33,17 @@ public class UnPlug : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
 
-        // Check if the plug is still attached after the delay
+        // Check if the plug is still attached after the delay and hasn't been unplugged before
         if (!isPlugAttached)
         {
+            if (!hasBeenUnplugged)
+            {
+                FanUnplugPercentage.IncrementTaskPercentage(10);
+            }
+            hasBeenUnplugged = true; // Set the flag to true to ensure this block executes only once
             RotateVRObject.SetShouldRotate(false);
             ShowCanvas.SetBooleanFan(true);
+            
         }
     }
 

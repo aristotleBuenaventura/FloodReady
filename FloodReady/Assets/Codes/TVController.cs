@@ -9,6 +9,8 @@ public class TVController : MonoBehaviour
 
     public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
 
+    private bool isTurnedOn = true;
+
     void Start()
     {
         // Get the VideoPlayer component attached to the TV GameObject
@@ -32,5 +34,10 @@ public class TVController : MonoBehaviour
         videoPlayer.Stop(); // Stop the video
         isTVOn = false;
         Debug.Log("TV is off!");
+    }
+
+    public bool IsTurnedOn
+    {
+        get { return isTurnedOn; }
     }
 }

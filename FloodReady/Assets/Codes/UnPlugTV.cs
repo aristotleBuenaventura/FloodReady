@@ -13,12 +13,28 @@ public class UnPlugTV : MonoBehaviour
     private bool hasIncrementedPercentage = false;
     private bool isCoroutineRunning = false;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Turn off the TV at the start
+        TV.TurnOff();
+
+        // Initialize other states
+        isPlugAttached = false;
+        hasIncrementedPercentage = false;
+        isCoroutineRunning = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Plug"))
         {
             isPlugAttached = true;
-            TV.TurnOn();
+            // Turn on the TV only if it was turned off initially
+            if (!TV.IsTurnedOn)
+            {
+                TV.TurnOn();
+            }
         }
     }
 

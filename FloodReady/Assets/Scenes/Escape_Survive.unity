@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39975578, g: 0.25386697, b: 0.24444857, a: 1}
+  m_IndirectSpecularColor: {r: 0.39974627, g: 0.2538674, b: 0.24445091, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5705,6 +5705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TV: {fileID: 0}
   ShowCanvas: {fileID: 216591698}
+  TvUnplugPercentage: {fileID: 0}
 --- !u!114 &216591700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30125,6 +30126,15 @@ MonoBehaviour:
   First_aid_kit: {fileID: 0}
   Flashlight: {fileID: 0}
   Check_list: {fileID: 0}
+  bagPercentage: {fileID: 0}
+  taskPercentageCooldown: 1
+  cannedgood: {fileID: 0}
+  energybar: {fileID: 0}
+  money: {fileID: 0}
+  bottledwater: {fileID: 0}
+  clothes: {fileID: 0}
+  flashlight: {fileID: 0}
+  mobilephone: {fileID: 0}
 --- !u!65 &1029567871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58437,6 +58447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateVRObject: {fileID: 0}
   ShowCanvas: {fileID: 0}
+  FanUnplugPercentage: {fileID: 0}
 --- !u!114 &1949472528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64522,11 +64533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642768614685466538, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.6772256
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 1642768614685466538, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.447378
+      value: 17.7
       objectReference: {fileID: 0}
     - target: {fileID: 1642768614685466538, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
       propertyPath: m_LocalRotation.w

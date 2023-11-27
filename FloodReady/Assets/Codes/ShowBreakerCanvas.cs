@@ -14,21 +14,23 @@ public class ShowBreakerCanvas : MonoBehaviour
         TV = false;
     }
 
+    void UpdateBreakerCanvas()
+    {
+        if (Fan && TV)
+        {
+            BreakerCanvas.ShowTurnOffBreakerCanvas();
+        }
+    }
+
     public void SetBooleanFan(bool value)
     {
         Fan = value;
+        UpdateBreakerCanvas();
     }
 
     public void SetBooleanTV(bool value)
     {
         TV = value;
-    }
-
-    void Update()
-    {
-        if(Fan == true && TV == true)
-        {
-            BreakerCanvas.ShowTurnOffBreakerCanvas();
-        }
+        UpdateBreakerCanvas();
     }
 }
