@@ -38,15 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.39974627, g: 0.2538674, b: 0.24445091, a: 1}
-=======
-<<<<<<< HEAD
-  m_IndirectSpecularColor: {r: 0.39975584, g: 0.25386697, b: 0.24444857, a: 1}
-=======
-  m_IndirectSpecularColor: {r: 0.39974627, g: 0.2538674, b: 0.24445091, a: 1}
->>>>>>> 43a3cfd7e32360a7b760b25cb32c4faff5e99116
->>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5662,8 +5654,6 @@ GameObject:
   - component: {fileID: 216591702}
   - component: {fileID: 216591701}
   - component: {fileID: 216591700}
-  - component: {fileID: 216591699}
-  - component: {fileID: 216591698}
   m_Layer: 0
   m_Name: TVOutlet
   m_TagString: Socket
@@ -5686,36 +5676,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 336986733}
   m_LocalEulerAnglesHint: {x: 179.51, y: -271.538, z: -0.52697754}
---- !u!114 &216591698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216591696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f572c611415824eb4fa94f3dda67e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Fan: 0
-  TV: 0
-  BreakerCanvas: {fileID: 0}
---- !u!114 &216591699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216591696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aef7436935e60343bdebda14bbcf355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 0}
-  ShowCanvas: {fileID: 216591698}
-  TvUnplugPercentage: {fileID: 0}
 --- !u!114 &216591700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58549,7 +58509,6 @@ GameObject:
   - component: {fileID: 1949472530}
   - component: {fileID: 1949472529}
   - component: {fileID: 1949472528}
-  - component: {fileID: 1949472527}
   m_Layer: 0
   m_Name: Plane.007
   m_TagString: Socket
@@ -58572,21 +58531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1583262787}
   m_LocalEulerAnglesHint: {x: 178.041, y: -7.1539917, z: 0.23500061}
---- !u!114 &1949472527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949472525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98001eb1efe3ba4ab18ea269a02c982, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateVRObject: {fileID: 0}
-  ShowCanvas: {fileID: 0}
-  FanUnplugPercentage: {fileID: 0}
 --- !u!114 &1949472528
 MonoBehaviour:
   m_ObjectHideFlags: 0
