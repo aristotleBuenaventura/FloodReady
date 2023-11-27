@@ -23,6 +23,12 @@ public class InventoryManager : MonoBehaviour
     private bool canModifyTaskPercentage = true;
     public float taskPercentageCooldown = 1.0f;
     public iconforcannedgood cannedgood;
+    public iconforenergybar energybar;
+    public iconformoney money;
+    public iconforbottledwater bottledwater;
+    public iconforclothes clothes;
+    public iconforflashlight flashlight;
+    public iconformobilephone mobilephone;
 
     private void Start()
     {
@@ -63,6 +69,42 @@ public class InventoryManager : MonoBehaviour
             cannedgood.SetUncheckIconVisible(true);
         }
 
+        if (itemName == "Energy bar")
+        {
+            energybar.SetCheckIconVisible(false);
+            energybar.SetUncheckIconVisible(true);
+        }
+
+        if (itemName == "Money")
+        {
+            money.SetCheckIconVisible(false);
+            money.SetUncheckIconVisible(true);
+        }
+
+        if (itemName == "Bottled water")
+        {
+            bottledwater.SetCheckIconVisible(false);
+            bottledwater.SetUncheckIconVisible(true);
+        }
+
+        if (itemName == "Clothes")
+        {
+            clothes.SetCheckIconVisible(false);
+            clothes.SetUncheckIconVisible(true);
+        }
+
+        if (itemName == "Flashlight")
+        {
+            flashlight.SetCheckIconVisible(false);
+            flashlight.SetUncheckIconVisible(true);
+        }
+
+        if (itemName == "Mobile Phone")
+        {
+            mobilephone.SetCheckIconVisible(false);
+            mobilephone.SetUncheckIconVisible(true);
+        }
+
 
 
         bagInventory.Add(itemName);
@@ -91,6 +133,42 @@ public class InventoryManager : MonoBehaviour
         {
             cannedgood.SetCheckIconVisible(true);
             cannedgood.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Energy bar")
+        {
+            energybar.SetCheckIconVisible(true);
+            energybar.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Money")
+        {
+            money.SetCheckIconVisible(true);
+            money.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Bottled water")
+        {
+            bottledwater.SetCheckIconVisible(true);
+            bottledwater.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Clothes")
+        {
+            clothes.SetCheckIconVisible(true);
+            clothes.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Flashlight")
+        {
+            flashlight.SetCheckIconVisible(true);
+            flashlight.SetUncheckIconVisible(false);
+        }
+
+        if (itemName == "Mobile Phone")
+        {
+            mobilephone.SetCheckIconVisible(true);
+            mobilephone.SetUncheckIconVisible(false);
         }
 
         bagInventory.Remove(itemName);
