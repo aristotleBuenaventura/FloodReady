@@ -7,6 +7,7 @@ public class ShowBreakerCanvas : MonoBehaviour
     public bool Fan;
     public bool TV;
     public CanvasController BreakerCanvas;
+    public iconforunplug unplug;
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class ShowBreakerCanvas : MonoBehaviour
         if (Fan && TV)
         {
             BreakerCanvas.ShowTurnOffBreakerCanvas();
+            unplug.SetCheckIconVisible(true);
+            unplug.SetUncheckIconVisible(false);
+
         }
     }
 
