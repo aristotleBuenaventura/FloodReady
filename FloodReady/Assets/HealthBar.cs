@@ -12,8 +12,10 @@ public class HealthBar : MonoBehaviour
     private Image healthbar;  // Reference to the health bar image component
 
     public GameObject healthBarObject;  // Assign the health bar GameObject in the Unity Editor
+    public GameObject healthBarParent;  // Assign the health bar parent GameObject in the Unity Editor
     public GameObject player; // Assign the player GameObject (OVRPlayerController) in the Unity Editor
     public GameObject water; // Assign the water GameObject in the Unity Editor
+    public GameObject respawnPoint;  // Assign the respawn point GameObject in the Unity Editor
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,16 @@ public class HealthBar : MonoBehaviour
         else
         {
             Debug.LogError("Health bar GameObject not assigned!");
+        }
+
+        if (healthBarParent == null)
+        {
+            Debug.LogError("Health bar parent GameObject not assigned!");
+        }
+
+        if (respawnPoint == null)
+        {
+            Debug.LogError("Respawn point GameObject not assigned!");
         }
     }
 
@@ -53,8 +65,11 @@ public class HealthBar : MonoBehaviour
         // Update the health bar visual representation (fill amount)
         UpdateHealthBarUI();
 
-        // You can add additional logic here, such as triggering events when life reaches certain thresholds.
-        // Example: if (currentLife <= 0) { PlayerDied(); }
+        // Check if life is zero and trigger player death
+        if (currentLife <= 0)
+        {
+            PlayerDied();
+        }
     }
 
     void UpdateHealthBarUI()
@@ -67,14 +82,14 @@ public class HealthBar : MonoBehaviour
         {
             healthbar.fillAmount = fillAmount;
 
-            // Check if life is full and disable the entire healthBarObject
+            // Check if life is full and disable the entire healthBarParent
             if (currentLife >= maxLife)
             {
-                healthBarObject.SetActive(false);
+                DisableHealthBarParent();
             }
             else
             {
-                healthBarObject.SetActive(true);
+                EnableHealthBarParent();
             }
         }
         else
@@ -83,5 +98,34 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    // Add any additional methods or events you need
+    void PlayerDied()
+    {
+        // Reset player position to the respawn point
+        if (player != null && respawnPoint != null)
+        {
+            player.transform.position = respawnPoint.transform.position;
+        }
+
+        // Reset currentLife to maxLife
+        currentLife = maxLife;
+
+        // Disable the health bar parent when the player dies
+        DisableHealthBarParent();
+    }
+
+    void DisableHealthBarParent()
+    {
+        if (healthBarParent != null)
+        {
+            healthBarParent.SetActive(false);
+        }
+    }
+
+    void EnableHealthBarParent()
+    {
+        if (healthBarParent != null)
+        {
+            healthBarParent.SetActive(true);
+        }
+    }
 }
