@@ -8,6 +8,9 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     private bool isGrabbed = false;
     public CanvasController GoBagRetrieve;
+    public TaskPercentage CloseBag;
+    public iconforretrievegobag CloseBagCheck;
+
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
@@ -33,5 +36,8 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
         GoBagRetrieve.ShowUnplugCableCanvas();
+        CloseBag.IncrementTaskPercentage(20);
+        CloseBagCheck.SetCheckIconVisible(true);
+        CloseBagCheck.SetUncheckIconVisible(false);
     }
 }
