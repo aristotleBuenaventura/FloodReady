@@ -22,6 +22,7 @@ public class InventoryManager : MonoBehaviour
     public TaskPercentage bagPercentage;
     private bool canModifyTaskPercentage = true;
     public float taskPercentageCooldown = 1.0f;
+    public iconforcannedgood cannedgood;
 
     private void Start()
     {
@@ -40,11 +41,15 @@ public class InventoryManager : MonoBehaviour
                 {
                     AddItemToBag(collidedObjectName);
                     Debug.Log("Item added to the bag: " + collidedObjectName);
+
+                    // Call SetCheckIconVisible when Canned_good is added to the bag
+                    
                 }
                 else
                 {
                     StartCoroutine(RemoveAndAddBackItem(collidedObjectName, 1.0f)); // Adjust the delay time as needed
                     Debug.Log("Item removed from the bag: " + collidedObjectName);
+
                 }
             }
         }
@@ -52,6 +57,14 @@ public class InventoryManager : MonoBehaviour
 
     private void AddItemToBag(string itemName)
     {
+        if (itemName == "Canned good")
+        {
+            cannedgood.SetCheckIconVisible(false);
+            cannedgood.SetUncheckIconVisible(true);
+        }
+
+
+
         bagInventory.Add(itemName);
         itemList.Remove(itemName); // Remove the item from the main list
 
@@ -60,6 +73,8 @@ public class InventoryManager : MonoBehaviour
             StartCoroutine(TaskPercentageCooldown());
             bagPercentage.DecrementTaskPercentage(5);
         }
+
+        
     }
 
     private IEnumerator RemoveAndAddBackItem(string itemName, float delay)
@@ -72,6 +87,12 @@ public class InventoryManager : MonoBehaviour
 
     private void RemoveItemFromBag(string itemName)
     {
+        if (itemName == "Canned good")
+        {
+            cannedgood.SetCheckIconVisible(true);
+            cannedgood.SetUncheckIconVisible(false);
+        }
+
         bagInventory.Remove(itemName);
 
         if (canModifyTaskPercentage)
@@ -85,6 +106,7 @@ public class InventoryManager : MonoBehaviour
             // Invoke the method with a delay of 1 second
             Invoke("ShowGoBagCompletedCanvasWithDelay", 1f);
         }
+
     }
 
     private IEnumerator TaskPercentageCooldown()
