@@ -14,12 +14,16 @@ public class TurnOffLights1 : MonoBehaviour
     private bool taskIncremented; // Flag to track whether the task has been incremented
     public TaskPercentage turnofflightspercentage;
     public iconforturnoff turnofflightscheck;
+    public GameObject doorClosed;
+    public GameObject doorOpenned;
 
     private void Start()
     {
         sound = GetComponent<AudioSource>();
         isPressed = false;
         taskIncremented = false;
+        doorClosed.SetActive(true);
+        doorOpenned.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +47,8 @@ public class TurnOffLights1 : MonoBehaviour
                 taskIncremented = true; // Set the flag to true after incrementing the task
                 turnofflightscheck.SetCheckIconVisible(true);
                 turnofflightscheck.SetUncheckIconVisible(false);
+                doorClosed.SetActive(false);
+                doorOpenned.SetActive(true);
             }
 
             presser = other.gameObject;
