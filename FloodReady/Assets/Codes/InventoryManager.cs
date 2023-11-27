@@ -29,6 +29,7 @@ public class InventoryManager : MonoBehaviour
     public iconforclothes clothes;
     public iconforflashlight flashlight;
     public iconformobilephone mobilephone;
+    public iconforgatherdessentialgoods gatheredessentialgoods;
 
     private void Start()
     {
@@ -56,6 +57,13 @@ public class InventoryManager : MonoBehaviour
                     StartCoroutine(RemoveAndAddBackItem(collidedObjectName, 1.0f)); // Adjust the delay time as needed
                     Debug.Log("Item removed from the bag: " + collidedObjectName);
 
+                }
+
+                // Check if the bagInventory is empty
+                if (bagInventory.Count == 0)
+                {
+                    gatheredessentialgoods.SetCheckIconVisible(true);
+                    gatheredessentialgoods.SetUncheckIconVisible(false);
                 }
             }
         }

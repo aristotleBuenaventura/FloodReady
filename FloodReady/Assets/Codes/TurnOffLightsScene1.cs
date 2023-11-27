@@ -7,21 +7,25 @@ public class TurnOffLights1 : MonoBehaviour
 {
     public UnityEvent onPress;
     public UnityEvent onRelease;
-    public TaskManager taskManager; // Reference to the TaskManager script
-    GameObject presser;
-    AudioSource sound;
-    bool isPressed;
-  
+    public CanvasController exitthehouse;
+    private GameObject presser;
+    private AudioSource sound;
+    private bool isPressed;
+    private bool taskIncremented; // Flag to track whether the task has been incremented
+    public TaskPercentage turnofflightspercentage;
+    public iconforturnoff turnofflightscheck;
 
-    void Start()
+    private void Start()
     {
         sound = GetComponent<AudioSource>();
         isPressed = false;
+        taskIncremented = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed)
+        // Check if the collided object has the tag "TurnOnButton"
+        if (other.CompareTag("TurnOnButton") && !isPressed && !taskIncremented)
         {
             // Find all GameObjects with the name "pointlight" and turn them off
             GameObject[] pointLights = GameObject.FindGameObjectsWithTag("pointlight");
@@ -34,8 +38,11 @@ public class TurnOffLights1 : MonoBehaviour
             if (LightsAreTurnedOff())
             {
                 // Mark the task as done
-                taskManager.MarkTaskAsDone("Switch off the Main Power");
-               
+                exitthehouse.ShowExitHouseCanvas();
+                turnofflightspercentage.IncrementTaskPercentage(20);
+                taskIncremented = true; // Set the flag to true after incrementing the task
+                turnofflightscheck.SetCheckIconVisible(true);
+                turnofflightscheck.SetUncheckIconVisible(false);
             }
 
             presser = other.gameObject;
