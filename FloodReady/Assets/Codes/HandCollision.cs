@@ -10,6 +10,7 @@ public class HandCollision : MonoBehaviour
     private bool isButtonDown = false;
     private bool canPressButton = true;
     public TaskPercentage remoteTask;
+    public iconforturnontv check;
 
     // Flag to check if the task has already been completed
     private bool taskCompleted = false;
@@ -53,7 +54,8 @@ public class HandCollision : MonoBehaviour
             StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             Debug.Log("Go bag working");
             remoteTask.IncrementTaskPercentage(10);
-
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
             // Set the flag to indicate that the task has been completed
             taskCompleted = true;
         }
