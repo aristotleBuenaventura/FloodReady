@@ -18,6 +18,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject Clothes;
     public GameObject First_aid_kit;
     public GameObject Flashlight;
+    public GameObject MobilePhone;
+    public GameObject EnergyBar;
     public Canvas Check_list;
     public TaskPercentage bagPercentage;
     private bool canModifyTaskPercentage = true;
@@ -219,6 +221,8 @@ public class InventoryManager : MonoBehaviour
         Destroy(First_aid_kit);
         Destroy(Flashlight);
         Destroy(Check_list);
+        Destroy(MobilePhone);
+        Destroy(EnergyBar);
         GoBagClosed.SetActive(true);
 
         Debug.Log("go bag completed");
