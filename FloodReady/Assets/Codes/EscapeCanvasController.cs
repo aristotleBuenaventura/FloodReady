@@ -72,6 +72,8 @@ public class EscapeCanvasController : MonoBehaviour
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
+        SetRoomBarrierColliderActive2(false);
+
     }
 
     public void ShowdoorJamCanvas()
@@ -79,7 +81,7 @@ public class EscapeCanvasController : MonoBehaviour
         welcomeCanvas.SetActive(false);
         retrieveGoBagCanvas.SetActive(false);
         mainBreakerCanvas.SetActive(false);
-        doorJamCanvas.SetActive(true);
+        doorJamCanvas.SetActive(false);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
@@ -142,9 +144,25 @@ public class EscapeCanvasController : MonoBehaviour
 
 
 
-    private void SetRoomBarrierColliderActive(bool active)
+    private void SetRoomBarrierColliderActive1(bool active)
     {
         roomBarrierCollider1.enabled = active;
+    }
+
+    private void SetRoomBarrierColliderActive2(bool active)
+    {
+        roomBarrierCollider2.enabled = active;
+    }
+
+
+    private void SetRoomBarrierColliderActive3(bool active)
+    {
+        roomBarrierCollider3.enabled = active;
+    }
+
+    private void SetRoomBarrierColliderActive4(bool active)
+    {
+        roomBarrierCollider4.enabled = active;
     }
 
 
@@ -159,13 +177,13 @@ public class EscapeCanvasController : MonoBehaviour
 
             // Switch to the RetrieveGoBagCanvas
             ShowRetrieveGoBagCanvas();
-        SetRoomBarrierColliderActive(false);
+        SetRoomBarrierColliderActive1(false);
 
 
     }
 
     public void FinishCanvas()
     {
-        SetRoomBarrierColliderActive(false);
+        SetRoomBarrierColliderActive1(false);
     }
 }
