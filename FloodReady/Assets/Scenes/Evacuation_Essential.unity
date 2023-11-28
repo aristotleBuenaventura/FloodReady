@@ -3367,11 +3367,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 127345102}
   remainingTime: 600
-  InitialTime: 4
+  InitialTime: 600
   timesup: {fileID: 1786757870}
   player: {fileID: 459724388}
   desiredPosition: {x: 3.755, y: 5.062, z: 8.019}
   desiredRotation: {x: 0, y: 90.112, z: 0}
+  welldonetext: {fileID: 467562796}
   loadingScreen: {fileID: 0}
 --- !u!1 &133306058
 GameObject:
@@ -14728,6 +14729,7 @@ GameObject:
   - component: {fileID: 467562795}
   - component: {fileID: 467562797}
   - component: {fileID: 467562796}
+  - component: {fileID: 467562798}
   m_Layer: 5
   m_Name: TextHeader
   m_TagString: Untagged
@@ -14851,6 +14853,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467562794}
   m_CullTransparentMesh: 1
+--- !u!114 &467562798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467562794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587804472eb32c14fadfe69e12897910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 467562796}
 --- !u!1 &468723314
 GameObject:
   m_ObjectHideFlags: 0
