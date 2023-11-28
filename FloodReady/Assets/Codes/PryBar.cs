@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class PryBar : MonoBehaviour
 {
     public OVRGrabber leftGrabber;
     public OVRGrabber rightGrabber;
     public TaskManager taskManager;
+    public locateIcon survivalToolIcon; // Reference to the LocateIcon script
 
     // Cooldown time in seconds
     public float interactionCooldown = 2f;
@@ -44,6 +46,13 @@ public class PryBar : MonoBehaviour
 
                             // Update the last interaction time
                             lastInteractionTime = Time.time;
+
+                            // Assuming survivalToolIcon is not null, set the check and uncheck icons accordingly
+                            if (survivalToolIcon != null)
+                            {
+                                survivalToolIcon.SetCheckIconVisible(true);
+                                survivalToolIcon.SetUncheckIconVisible(false);
+                            }
                         }
                     }
                 }

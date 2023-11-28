@@ -8,6 +8,7 @@ public class BreakableWindow : MonoBehaviour
     public LayerMask layer;
     public AudioClip breakingSound;
     public Material[] windowMaterials;
+    public breakIcon windowBreakIcon; // Reference to the BreakIcon script
 
     private Renderer renderer;
     private int currentMaterialIndex = 1; // Start counting from the second material
@@ -46,6 +47,13 @@ public class BreakableWindow : MonoBehaviour
         if (!IsBroken && canBreak)
         {
             StartCoroutine(HandleCollisionCoroutine());
+
+            // Assuming windowBreakIcon is not null, set the check and uncheck icons accordingly
+            if (windowBreakIcon != null)
+            {
+                windowBreakIcon.SetCheckIconVisible(true);
+                windowBreakIcon.SetUncheckIconVisible(false);
+            }
         }
     }
 
