@@ -3364,11 +3364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 127345102}
-  remainingTime: 600
-  InitialTime: 600
-  player: {fileID: 0}
-  desiredPosition: {x: 1, y: 2, z: 3}
-  desiredRotation: {x: 45, y: 90, z: 0}
+  remainingTime: 4
+  InitialTime: 4
+  timesup: {fileID: 1786757870}
+  player: {fileID: 459724388}
+  desiredPosition: {x: 3.755, y: 5.062, z: 8.019}
+  desiredRotation: {x: 0, y: 90.112, z: 0}
   loadingScreen: {fileID: 0}
 --- !u!1 &133306058
 GameObject:
@@ -61811,6 +61812,8 @@ MonoBehaviour:
   InvisibleWallStair2: {fileID: 559348776}
   InvisibleWallKitchen: {fileID: 453706452}
   InvisibleWallBathroom: {fileID: 120282886}
+  SuccessCanvas: {fileID: 751841269}
+  FailedCanvas: {fileID: 136178956}
   TVRemote: {fileID: 1405464598}
   messageCanvas: {fileID: 1564609553}
   switchDelayWelcome: 15

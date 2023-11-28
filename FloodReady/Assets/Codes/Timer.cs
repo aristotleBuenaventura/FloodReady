@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
     public float InitialTime;
+    public CanvasController timesup;
 
     // Expose player position and rotation in the Inspector
     [Header("Player Settings")]
@@ -24,40 +25,47 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject loadingScreen;
 
     void Update()
+{
+    if (remainingTime > 0)
     {
-        if (remainingTime > 0)
+        remainingTime -= Time.deltaTime;
+
+        if (remainingTime < 0)
         {
-            remainingTime -= Time.deltaTime;
+            remainingTime = 0;
+            Debug.Log("Time's up");
 
-            if (remainingTime < 0)
+            // Change player's position and rotation
+            if (player != null)
             {
-                remainingTime = 0;
-                Debug.Log("Time's up");
-
-                // Change player's position and rotation
-                if (player != null)
-                {
-                    // Set the desired position from the Inspector
-                    player.transform.position = desiredPosition;
-
-                    // Set the desired rotation from the Inspector
-                    player.transform.rotation = Quaternion.Euler(desiredRotation);
-                }
-
-                // Wait for 10 seconds before loading the MainMenu
-                StartCoroutine(WaitAndLoadScene("MainMenu", 10f));
+                StartCoroutine(ShowTimesUpCoroutine());
+                // Set the desired position from the Inspector
+                timesup.ShowFailedCanvas();
+                
             }
 
-            int minutes = Mathf.FloorToInt(remainingTime / 60);
-            int seconds = Mathf.FloorToInt(remainingTime % 60);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            // Wait for 10 seconds before loading the MainMenu
+            StartCoroutine(WaitAndLoadScene("MainMenu", 10f));
         }
-        else
-        {
-            timerText.color = Color.red;
-            // Handle logic when the timer reaches 0 (e.g., stopping the game, showing a message).
-        }
+
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    else
+    {
+        timerText.color = Color.red;
+        // Handle logic when the timer reaches 0 (e.g., stopping the game, showing a message).
+    }
+}
+
+IEnumerator ShowTimesUpCoroutine()
+{
+    yield return new WaitForSeconds(10f); // Wait for 10 seconds
+    player.transform.position = desiredPosition;
+    player.transform.rotation = Quaternion.Euler(desiredRotation);
+    
+}
 
     IEnumerator WaitAndLoadScene(string sceneName, float waitTime)
     {
