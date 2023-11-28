@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NextButton : MonoBehaviour
+public class BackButton : MonoBehaviour
 {
     public GameObject playerResultCanvas;
     public GameObject playerAccomplishmentsCanvas;
@@ -34,13 +34,8 @@ public class NextButton : MonoBehaviour
 
     public void ToggleCanvases()
     {
-        // Toggle the state of canvases
-        Debug.Log("TOGGLE CANVAS");
+        // Toggle the state of canvases in the opposite way compared to NextButton
         playerResultCanvas.SetActive(!playerResultCanvas.activeSelf);
         playerAccomplishmentsCanvas.SetActive(!playerAccomplishmentsCanvas.activeSelf);
-
-        // Additional debugging statements
-        Debug.Log("Result Canvas Active: " + playerResultCanvas.activeSelf);
-        Debug.Log("Accomplishments Canvas Active: " + playerAccomplishmentsCanvas.activeSelf);
     }
 }
