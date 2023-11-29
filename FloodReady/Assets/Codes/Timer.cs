@@ -13,8 +13,8 @@ public class Timer : MonoBehaviour
     // Expose player position and rotation in the Inspector
     [Header("Player Settings")]
     public GameObject player;
-    public Vector3 desiredPosition = new Vector3(3.755f, 5.062f, 8.019f);
-    public Vector3 desiredRotation = new Vector3(0f, 90.112f, 0f);
+    public Vector3 desiredPosition;
+    public Vector3 desiredRotation;
 
     public TextMeshProUGUI welldonetext;
 
@@ -38,16 +38,17 @@ public class Timer : MonoBehaviour
                 // Change player's position and rotation
                 if (player != null)
                 {
-                    StartCoroutine(ShowTimesUpCoroutine());
                     // Set the desired position from the Inspector
                     timesup.ShowFailedCanvas();
                     timesupElapsetime.StopTime();
 
+                    TeleportPlayer();    
                     // Change the text directly
                     if (welldonetext != null)
                     {
                         welldonetext.text = "TIME RUN OUT!";
                     }
+                    // Set the desired position from the Inspector
                 }
             }
 
@@ -63,10 +64,20 @@ public class Timer : MonoBehaviour
         isTimerStopped = true;
     }
 
-    IEnumerator ShowTimesUpCoroutine()
+    private void TeleportPlayer()
     {
-        yield return new WaitForSeconds(10f); // Wait for 10 seconds
-        player.transform.position = desiredPosition;
-        player.transform.rotation = Quaternion.Euler(desiredRotation);
+        if (player != null)
+        {
+            
+            // Set the desired position from the Inspector
+            player.transform.position = desiredPosition;
+
+            // Set the desired rotation from the Inspector
+            player.transform.rotation = Quaternion.Euler(desiredRotation);
+            Debug.Log("Teleporting player to position: " + desiredPosition);
+            Debug.Log("Teleporting player to rotation: " + desiredRotation);
+
+            
+        }
     }
 }
