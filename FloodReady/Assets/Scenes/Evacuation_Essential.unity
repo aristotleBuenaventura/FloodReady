@@ -1380,6 +1380,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114392411909336904, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
+      propertyPath: maxLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114392411909336904, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: _laserBeamBehavior
       value: 2
       objectReference: {fileID: 0}
@@ -37882,6 +37886,8 @@ MonoBehaviour:
   desiredRotation: {x: 0, y: 90.112, z: 0}
   congratulationcanvas: {fileID: 1786757870}
   leavethehousecheck: {fileID: 1022543121}
+  welldomeStopTime: {fileID: 1376780313}
+  wristwatchStopTime: {fileID: 127345104}
 --- !u!1 &1123672208
 GameObject:
   m_ObjectHideFlags: 0
@@ -47020,8 +47026,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1376780311}
-  remainingTime: 600
-  InitialTime: 600
+  elapsedTime: 0
+  maxTime: 600
   player: {fileID: 0}
   desiredPosition: {x: 1, y: 2, z: 3}
   desiredRotation: {x: 45, y: 90, z: 0}

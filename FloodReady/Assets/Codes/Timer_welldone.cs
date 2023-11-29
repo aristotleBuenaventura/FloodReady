@@ -7,8 +7,8 @@ using TMPro;
 public class Timer_welldone : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
-    public float InitialTime;
+    [SerializeField] float elapsedTime; // Changed from remainingTime to elapsedTime
+    public float maxTime = 600f; // 10 minutes in seconds
 
     // Expose player position and rotation in the Inspector
     [Header("Player Settings")]
@@ -16,23 +16,32 @@ public class Timer_welldone : MonoBehaviour
     public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
 
-    public float RemainingTime
+    private bool isTimeStopped = false;
+
+    public float ElapsedTime
     {
-        get { return remainingTime; }
+        get { return elapsedTime; }
     }
 
     [SerializeField] GameObject loadingScreen;
 
     void Update()
     {
-        if (remainingTime > 0)
+        // Check if time is not stopped
+        if (!isTimeStopped)
         {
-            remainingTime -= Time.deltaTime;
-
-            if (remainingTime < 0)
+            if (elapsedTime < maxTime)
             {
-                remainingTime = 0;
-                Debug.Log("Time's up");
+                elapsedTime += Time.deltaTime;
+
+                int minutes = Mathf.FloorToInt(elapsedTime / 60);
+                int seconds = Mathf.FloorToInt(elapsedTime % 60);
+                timerText.text = string.Format("Elapsed Time: {0:00}:{1:00}", minutes, seconds);
+            }
+            else
+            {
+                timerText.color = Color.red;
+                Debug.Log("Max Time Reached");
 
                 // Change player's position and rotation
                 if (player != null)
@@ -47,16 +56,14 @@ public class Timer_welldone : MonoBehaviour
                 // Wait for 10 seconds before loading the MainMenu
                 StartCoroutine(WaitAndLoadScene("MainMenu", 10f));
             }
+        }
+    }
 
-            int minutes = Mathf.FloorToInt(remainingTime / 60);
-            int seconds = Mathf.FloorToInt(remainingTime % 60);
-            timerText.text = string.Format("Elapsed Time: {0:00}:{1:00}", minutes, seconds);
-        }
-        else
-        {
-            timerText.color = Color.red;
-            // Handle logic when the timer reaches 0 (e.g., stopping the game, showing a message).
-        }
+    // Function to stop the time
+    public void StopTime()
+    {
+        isTimeStopped = true;
+        // You can add any additional logic here when time is stopped
     }
 
     IEnumerator WaitAndLoadScene(string sceneName, float waitTime)

@@ -8,6 +8,8 @@ public class InvisibleWallDetector : MonoBehaviour
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
     public CanvasController congratulationcanvas;
     public iconforleavethehouse leavethehousecheck;
+    public Timer_welldone welldomeStopTime;
+    public Timer wristwatchStopTime;
     
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +20,8 @@ public class InvisibleWallDetector : MonoBehaviour
             congratulationcanvas.ShowSuccessCanvas();
             leavethehousecheck.SetCheckIconVisible(true);
             leavethehousecheck.SetUncheckIconVisible(false);
+            welldomeStopTime.StopTime();
+            //wristwatchStopTime.StopTimer();
 
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
