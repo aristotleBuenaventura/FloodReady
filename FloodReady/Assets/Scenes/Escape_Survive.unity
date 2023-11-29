@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.311387, g: 0.19774789, b: 0.1904141, a: 1}
+  m_IndirectSpecularColor: {r: 0.31137967, g: 0.1977488, b: 0.19041508, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18270,6 +18270,8 @@ MonoBehaviour:
   desiredPosition: {x: 4.5, y: 4.621, z: 8.29}
   desiredRotation: {x: 0, y: -627.391, z: 0}
   welldonetext: {fileID: 0}
+  timesupElapsetime: {fileID: 0}
+  tryagainButton: {fileID: 0}
   loadingScreen: {fileID: 460275729}
 --- !u!1001 &464196780
 PrefabInstance:
@@ -18628,6 +18630,8 @@ MonoBehaviour:
   desiredPosition: {x: 1, y: 2, z: 3}
   desiredRotation: {x: 45, y: 90, z: 0}
   welldonetext: {fileID: 0}
+  timesupElapsetime: {fileID: 0}
+  tryagainButton: {fileID: 0}
   loadingScreen: {fileID: 0}
 --- !u!64 &473263977
 MeshCollider:
@@ -42587,7 +42591,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 20430762}
   - {fileID: 1497621535}
   - {fileID: 1233890879}
   - {fileID: 1436382339}
@@ -65576,6 +65579,7 @@ MonoBehaviour:
   isGrabbed: 0
   delayBeforeDisappear: 0
   goBagIcon: {fileID: 163762939}
+  retrieveGoBagPercentage: {fileID: 41214191}
 --- !u!1 &1608458310
 GameObject:
   m_ObjectHideFlags: 0
@@ -68994,8 +68998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1674945345}
-  remainingTime: 600
-  InitialTime: 600
+  elapsedTime: 0
+  maxTime: 600
   player: {fileID: 0}
   desiredPosition: {x: 1, y: 2, z: 3}
   desiredRotation: {x: 45, y: 90, z: 0}
@@ -81885,17 +81889,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012872723}
-  m_LocalRotation: {x: 0.031382915, y: -0.7140739, z: -0.0016475819, w: -0.69936466}
-  m_LocalPosition: {x: 0, y: 0, z: 5.934214}
+  m_LocalRotation: {x: 0.04590388, y: -0.71388555, z: -0.016480526, w: -0.69856185}
+  m_LocalPosition: {x: 0, y: 0, z: 5.962}
   m_LocalScale: {x: 1.632006, y: 1.6320053, z: 1.6320053}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1133116176}
   m_Father: {fileID: 637140922}
-  m_LocalEulerAnglesHint: {x: -2.651, y: -268.751, z: -2.439}
+  m_LocalEulerAnglesHint: {x: -5.029, y: -268.649, z: -2.446}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.044293, y: 2.2289338}
+  m_AnchoredPosition: {x: 5.098, y: 2.219}
   m_SizeDelta: {x: 0.7891, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2013305754
@@ -83614,6 +83618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1946079679}
   delayTime: 2
+  jumpForce: 5
 --- !u!114 &2056827694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86481,6 +86486,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5122579980844310009, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
+    - {fileID: 1738113619325738698, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
+    - {fileID: 7185490164771814991, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1642768614685466538, guid: d1b38a4c111ba274e942caf2b784e180, type: 3}
       insertIndex: 0
