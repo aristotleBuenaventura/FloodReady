@@ -42,6 +42,7 @@ public class PryBar : MonoBehaviour
                                 window.DestroyWindow();
                                 // Optionally mark the task as done for breaking the last window
                                 taskManager.MarkTaskAsDone("Break the Last Window");
+                                
                             }
 
                             // Mark the "Break a Window" task as done
@@ -51,14 +52,10 @@ public class PryBar : MonoBehaviour
                             lastInteractionTime = Time.time;
 
                             // Assuming survivalToolIcon is not null, set the check and uncheck icons accordingly
-                            if (survivalToolIcon != null)
-                            {
-                                survivalToolIcon.SetCheckIconVisible(true);
-                                survivalToolIcon.SetUncheckIconVisible(false);
-                            }
+
 
                             // Set the flag to true to ensure this block is not executed again
-                            hasInteracted = true;
+                            
                         }
                     }
                 }

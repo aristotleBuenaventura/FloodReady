@@ -14,6 +14,7 @@ public class BreakableWindow : MonoBehaviour
     private int currentMaterialIndex = 1; // Start counting from the second material
     private bool canBreak = true;
     private bool isLastWindow = false;
+    public TaskPercentage breakwindowpercentage;
 
     public bool IsBroken { get; private set; } = false;
 
@@ -53,6 +54,7 @@ public class BreakableWindow : MonoBehaviour
             {
                 windowBreakIcon.SetCheckIconVisible(true);
                 windowBreakIcon.SetUncheckIconVisible(false);
+                breakwindowpercentage.IncrementTaskPercentage(20);
             }
         }
     }
