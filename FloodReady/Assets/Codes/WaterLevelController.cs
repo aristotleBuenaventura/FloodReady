@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class WaterLevelController : MonoBehaviour
 {
-    public float risingSpeed = 0.01f; // Adjust the speed as needed
+    public float risingSpeed = 0.01f;
     private float nextRiseTime;
-    public float targetWaterLevel; // New variable to store the desired water level
+    public float maxWaterLevel;
+
+    private bool canRiseWater = false;
 
     private void Start()
     {
-        nextRiseTime = Time.time + 1f; // Start rising after 1 second
-        targetWaterLevel = transform.position.y; // Set initial water level to current position
+        nextRiseTime = Time.time + 0.01f;
+    }
+
+    // You need to set this method to be called when the turnoffmainbreaker canvas has been finished
+    public void SetCanRiseWater()
+    {
+        canRiseWater = true;
     }
 
     public bool IsWaterRising()
     {
-        // Check if the target water level is higher than the initial water level
-
-        Debug.Log("WATER TRUE TRUE");
-        return targetWaterLevel > transform.position.y;
+        return canRiseWater && transform.position.y < maxWaterLevel;
     }
 
     void Update()
     {
-        Debug.Log("WaterLevelController Update");
-        if (Time.time >= nextRiseTime)
+        if (Time.time >= nextRiseTime && IsWaterRising())
         {
             RiseWater();
         }
@@ -33,14 +36,8 @@ public class WaterLevelController : MonoBehaviour
 
     void RiseWater()
     {
-        targetWaterLevel += risingSpeed; // Adjust the target water level
-
-        transform.position = new Vector3(transform.position.x, targetWaterLevel, transform.position.z);
-
-        // Ensure rotation remains zero for all axes
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        Debug.Log("WATER RISE");
-
-        nextRiseTime += 0.01f; // Set the next rise time
+        transform.Translate(Vector3.up * risingSpeed * Time.deltaTime, Space.World);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0, maxWaterLevel), transform.position.z);
+        nextRiseTime += 0.01f * maxWaterLevel / risingSpeed;
     }
 }

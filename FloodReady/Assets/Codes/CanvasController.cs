@@ -15,6 +15,8 @@ public class CanvasController : MonoBehaviour
     public GameObject InvisibleWallStair2;
     public GameObject InvisibleWallKitchen;
     public GameObject InvisibleWallBathroom;
+    public GameObject SuccessCanvas;
+    public GameObject FailedCanvas;
     public GameObject TVRemote;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
@@ -37,6 +39,8 @@ public class CanvasController : MonoBehaviour
         RetrieveGoBagCanvas.SetActive(false);
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
     }
 
@@ -50,6 +54,8 @@ public class CanvasController : MonoBehaviour
         TurnOffBreakerCanvas.SetActive(false);
         TVRemote.SetActive(true);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -66,6 +72,8 @@ public class CanvasController : MonoBehaviour
         InvisibleWallKitchen.SetActive(false);
         InvisibleWallBathroom.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -79,6 +87,8 @@ public class CanvasController : MonoBehaviour
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -91,6 +101,8 @@ public class CanvasController : MonoBehaviour
         UnplugCableCanvas.SetActive(true);
         TurnOffBreakerCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -103,6 +115,8 @@ public class CanvasController : MonoBehaviour
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(true);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -115,11 +129,12 @@ public class CanvasController : MonoBehaviour
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(true);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
-
-    public void ShowSuccessfulCanvas()
+    public void ShowSuccessCanvas()
     {
         welcomeCanvas.SetActive(false);
         tvCanvas.SetActive(false);
@@ -128,8 +143,27 @@ public class CanvasController : MonoBehaviour
         UnplugCableCanvas.SetActive(false);
         TurnOffBreakerCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(true);
+        FailedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
+
+    public void ShowFailedCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        tvCanvas.SetActive(false);
+        GoBagCanvas.SetActive(false);
+        RetrieveGoBagCanvas.SetActive(false);
+        UnplugCableCanvas.SetActive(false);
+        TurnOffBreakerCanvas.SetActive(false);
+        ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(true);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+
+    
 
     
 

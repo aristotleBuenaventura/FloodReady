@@ -36,7 +36,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
         GoBagRetrieve.ShowUnplugCableCanvas();
-        CloseBag.IncrementTaskPercentage(20);
+        CloseBag.IncrementTaskPercentage(10);
         CloseBagCheck.SetCheckIconVisible(true);
         CloseBagCheck.SetUncheckIconVisible(false);
     }
