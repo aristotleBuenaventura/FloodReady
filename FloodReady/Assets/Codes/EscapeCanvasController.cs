@@ -8,6 +8,7 @@ public class EscapeCanvasController : MonoBehaviour
     public GameObject welcomeCanvas;
     public GameObject retrieveGoBagCanvas;
     public GameObject mainBreakerCanvas;
+    public GameObject goOutCanvas;
     public GameObject doorJamCanvas;
     public GameObject pryBarCanvas;
     public GameObject breakWindowCanvas;
@@ -24,12 +25,17 @@ public class EscapeCanvasController : MonoBehaviour
     public BoxCollider roomBarrierCollider3;
     public BoxCollider roomBarrierCollider4;
 
+    public GameObject soundAlarm; // Reference to the GameObject with AudioSource for the sound alarm
+    private AudioSource alarmAudioSource; // Reference to the AudioSource component
+    public float fadeOutDuration = 2f;
+    private bool doorJamCanvasShown = false;
+
 
     private void Start()
     {
         // Ensure the welcome canvas starts in the desired state
         ShowWelcomeCanvas();
-
+        alarmAudioSource = soundAlarm.GetComponent<AudioSource>();
         // Start the coroutine to switch canvases after a delay
         StartCoroutine(SwitchCanvasAfterDelay());
     }
@@ -39,12 +45,20 @@ public class EscapeCanvasController : MonoBehaviour
     {
         welcomeCanvas.SetActive(true);
         retrieveGoBagCanvas.SetActive(false);
+        goOutCanvas.SetActive(false);
         mainBreakerCanvas.SetActive(false);
         doorJamCanvas.SetActive(false);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+
+        if (alarmAudioSource != null)
+        {
+            alarmAudioSource.Play();
+            StartCoroutine(FadeOutSoundAndSwitchCanvas());
+        }
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -53,6 +67,7 @@ public class EscapeCanvasController : MonoBehaviour
         welcomeCanvas.SetActive(false);
         retrieveGoBagCanvas.SetActive(true);
         mainBreakerCanvas.SetActive(false);
+        goOutCanvas.SetActive(false);
         doorJamCanvas.SetActive(false);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
@@ -66,6 +81,7 @@ public class EscapeCanvasController : MonoBehaviour
         welcomeCanvas.SetActive(false);
         retrieveGoBagCanvas.SetActive(false);
         mainBreakerCanvas.SetActive(true);
+        goOutCanvas.SetActive(false);
         doorJamCanvas.SetActive(false);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
@@ -76,18 +92,40 @@ public class EscapeCanvasController : MonoBehaviour
 
     }
 
-    public void ShowdoorJamCanvas()
+    public void ShowGoOutCanvas()
     {
         welcomeCanvas.SetActive(false);
         retrieveGoBagCanvas.SetActive(false);
         mainBreakerCanvas.SetActive(false);
+        goOutCanvas.SetActive(true);
         doorJamCanvas.SetActive(false);
         pryBarCanvas.SetActive(false);
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
+        SetRoomBarrierColliderActive2(false);
+
     }
+
+    public void ShowDoorJamCanvas()
+    {
+        if (!doorJamCanvasShown)
+        {
+            Debug.Log("ShowDoorJamCanvas method called");
+            welcomeCanvas.SetActive(false);
+            retrieveGoBagCanvas.SetActive(false);
+            mainBreakerCanvas.SetActive(false);
+            doorJamCanvas.SetActive(true);
+            pryBarCanvas.SetActive(false);
+            breakWindowCanvas.SetActive(false);
+            searchGoBagCanvas.SetActive(false);
+            welldoneCanvas.SetActive(false);
+            messageCanvas.OpenCanvasAgain();
+            doorJamCanvasShown = true; 
+        }
+    }
+
 
     public void ShowPryBarCanvas()
     {
@@ -169,21 +207,59 @@ public class EscapeCanvasController : MonoBehaviour
     // Add any new canvas switch functions here
     public IEnumerator SwitchCanvasAfterDelay()
     {
-     
-         
+        // Wait for the specified time before switching to the RetrieveGoBagCanvas
+        yield return new WaitForSeconds(switchDelayRetrieveGoBag);
 
-            // Wait for the specified time before switching to the RetrieveGoBagCanvas
-            yield return new WaitForSeconds(switchDelayRetrieveGoBag);
-
-            // Switch to the RetrieveGoBagCanvas
-            ShowRetrieveGoBagCanvas();
-        SetRoomBarrierColliderActive1(false);
-
-
+        // Start the fading coroutine
+        StartCoroutine(FadeOutSoundAndSwitchCanvas());
     }
+
+    private IEnumerator FadeOutSoundAndSwitchCanvas()
+    {
+        float startVolume = alarmAudioSource.volume;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeOutDuration)
+        {
+            alarmAudioSource.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / fadeOutDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the volume is set to 0 after fading
+        alarmAudioSource.volume = 0f;
+
+        // Stop sound playback
+        alarmAudioSource.Stop();
+
+        // Switch to the RetrieveGoBagCanvas after fading completes
+        ShowRetrieveGoBagCanvas();
+        SetRoomBarrierColliderActive1(false);
+    }
+
 
     public void FinishCanvas()
     {
         SetRoomBarrierColliderActive1(false);
+    }
+
+
+    private IEnumerator FadeOutSound()
+    {
+        float startVolume = alarmAudioSource.volume;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeOutDuration)
+        {
+            alarmAudioSource.volume = Mathf.Lerp(startVolume, 0f, elapsedTime / fadeOutDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the volume is set to 0 after fading
+        alarmAudioSource.volume = 0f;
+
+        // Stop sound playback
+        alarmAudioSource.Stop();
     }
 }
