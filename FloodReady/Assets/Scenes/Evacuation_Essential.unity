@@ -1568,6 +1568,7 @@ GameObject:
   - component: {fileID: 83212929}
   - component: {fileID: 83212928}
   - component: {fileID: 83212927}
+  - component: {fileID: 83212931}
   m_Layer: 5
   m_Name: Transition
   m_TagString: Untagged
@@ -1677,6 +1678,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &83212931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83212925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cb62560591ea94282fb119643ac41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 83212925}
 --- !u!1 &90320356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,14 +3378,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 127345102}
-  remainingTime: 5
-  InitialTime: 5
+  remainingTime: 600
+  InitialTime: 600
   timesup: {fileID: 1786757870}
   player: {fileID: 459724388}
   desiredPosition: {x: 4.591, y: 4.295, z: 8.09319}
   desiredRotation: {x: 0, y: 90.112, z: 0}
   welldonetext: {fileID: 467562796}
   timesupElapsetime: {fileID: 1376780313}
+  tryagainButton: {fileID: 957328192}
   loadingScreen: {fileID: 0}
 --- !u!1 &133306058
 GameObject:
@@ -28407,9 +28422,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 880723347}
-        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
-        m_MethodName: ToggleCanvases
+      - m_Target: {fileID: 83212931}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: MoveToMain_Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29892,7 +29907,7 @@ GameObject:
   - component: {fileID: 957328190}
   - component: {fileID: 957328189}
   - component: {fileID: 957328188}
-  - component: {fileID: 957328187}
+  - component: {fileID: 957328192}
   m_Layer: 5
   m_Name: ProceedNextSceneBtn
   m_TagString: Untagged
@@ -29919,20 +29934,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.32494, y: -0.1462}
   m_SizeDelta: {x: 78.1412, y: 35.0696}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &957328187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957328185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85710de58264a343b81e278519c2842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerResultCanvas: {fileID: 1848372421}
-  playerAccomplishmentsCanvas: {fileID: 0}
 --- !u!65 &957328188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29998,9 +29999,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 957328187}
-        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
-        m_MethodName: ToggleCanvases
+      - m_Target: {fileID: 83212931}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: MoveToEscape_Survive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30048,6 +30049,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957328185}
   m_CullTransparentMesh: 1
+--- !u!114 &957328192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957328185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d326b81907dab4fb62f8d941e45ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proceedButton: {fileID: 957328185}
+  tryagainButton: {fileID: 1956360604}
 --- !u!1001 &959114907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68220,9 +68235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1956360606}
-        m_TargetAssemblyTypeName: BackButton, Assembly-CSharp
-        m_MethodName: ToggleCanvases
+      - m_Target: {fileID: 83212931}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: MoveToEvacuation_Essential
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

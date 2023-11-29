@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI welldonetext;
 
     public Timer_welldone timesupElapsetime;
+    public proceedToggleOff tryagainButton;
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
 
@@ -41,6 +42,7 @@ public class Timer : MonoBehaviour
                     // Set the desired position from the Inspector
                     timesup.ShowFailedCanvas();
                     timesupElapsetime.StopTime();
+                    tryagainButton.lose();
 
                     TeleportPlayer();    
                     // Change the text directly

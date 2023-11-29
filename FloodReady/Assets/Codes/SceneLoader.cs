@@ -25,7 +25,7 @@ public class SceneChanger : MonoBehaviour
 
     public void MoveToMain_Menu()
     {
-        StartCoroutine(LoadScene("MainScene"));
+        StartCoroutine(LoadScene("MainMenu"));
     }
 
     public void MoveToHow_to_Play()
