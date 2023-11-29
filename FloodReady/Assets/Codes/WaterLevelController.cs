@@ -6,17 +6,24 @@ public class WaterLevelController : MonoBehaviour
 {
     public float risingSpeed = 0.01f;
     private float nextRiseTime;
-
     public float maxWaterLevel;
+
+    private bool canRiseWater = false;
 
     private void Start()
     {
-        nextRiseTime = Time.time + 1f;
+        nextRiseTime = Time.time + 0.01f;
+    }
+
+    // You need to set this method to be called when the turnoffmainbreaker canvas has been finished
+    public void SetCanRiseWater()
+    {
+        canRiseWater = true;
     }
 
     public bool IsWaterRising()
     {
-        return transform.position.y < maxWaterLevel;
+        return canRiseWater && transform.position.y < maxWaterLevel;
     }
 
     void Update()
@@ -29,7 +36,8 @@ public class WaterLevelController : MonoBehaviour
 
     void RiseWater()
     {
-        transform.Translate(Vector3.up * risingSpeed, Space.World);
-        nextRiseTime += 0.01f;
+        transform.Translate(Vector3.up * risingSpeed * Time.deltaTime, Space.World);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0, maxWaterLevel), transform.position.z);
+        nextRiseTime += 0.01f * maxWaterLevel / risingSpeed;
     }
 }

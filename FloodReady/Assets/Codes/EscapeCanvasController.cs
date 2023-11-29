@@ -107,7 +107,10 @@ public class EscapeCanvasController : MonoBehaviour
         welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
         SetRoomBarrierColliderActive2(false);
-        TriggerWaterRising();
+        if (waterLevelController != null)
+        {
+            waterLevelController.SetCanRiseWater(); // Assuming you have a method like SetCanRiseWater in WaterLevelController
+        }
 
     }
 
@@ -267,20 +270,7 @@ public class EscapeCanvasController : MonoBehaviour
     }
 
 
-    private IEnumerator WaterRisingAfterMainBreaker()
-    {
-        // Wait for a delay after finishing MainBreakerCanvas or showing GoOutCanvas
-        yield return new WaitForSeconds(2f);
+   
 
-        // Call a method or set a flag in WaterLevelController to start rising the water
-        if (waterLevelController != null)
-        {
-            waterLevelController.IsWaterRising();
-        }
-    }
-
-    private void TriggerWaterRising()
-    {
-        StartCoroutine(WaterRisingAfterMainBreaker());
-    }
+  
 }
