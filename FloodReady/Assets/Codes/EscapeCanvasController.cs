@@ -31,6 +31,8 @@ public class EscapeCanvasController : MonoBehaviour
     private bool doorJamCanvasShown = false;
 
 
+    public WaterLevelController waterLevelController;
+
     private void Start()
     {
         // Ensure the welcome canvas starts in the desired state
@@ -105,6 +107,7 @@ public class EscapeCanvasController : MonoBehaviour
         welldoneCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
         SetRoomBarrierColliderActive2(false);
+        TriggerWaterRising();
 
     }
 
@@ -261,5 +264,23 @@ public class EscapeCanvasController : MonoBehaviour
 
         // Stop sound playback
         alarmAudioSource.Stop();
+    }
+
+
+    private IEnumerator WaterRisingAfterMainBreaker()
+    {
+        // Wait for a delay after finishing MainBreakerCanvas or showing GoOutCanvas
+        yield return new WaitForSeconds(2f);
+
+        // Call a method or set a flag in WaterLevelController to start rising the water
+        if (waterLevelController != null)
+        {
+            waterLevelController.IsWaterRising();
+        }
+    }
+
+    private void TriggerWaterRising()
+    {
+        StartCoroutine(WaterRisingAfterMainBreaker());
     }
 }
