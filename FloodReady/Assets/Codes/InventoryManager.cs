@@ -62,7 +62,7 @@ public class InventoryManager : MonoBehaviour
                 }
 
                 // Check if the bagInventory is empty
-                if (bagInventory.Count == 0)
+                if (itemList.Count == 0)
                 {
                     gatheredessentialgoods.SetCheckIconVisible(true);
                     gatheredessentialgoods.SetUncheckIconVisible(false);
