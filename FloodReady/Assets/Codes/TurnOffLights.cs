@@ -10,9 +10,11 @@ public class TurnOffLights : MonoBehaviour
     public TaskManager taskManager;
     public EscapeCanvasController ShowGoOutCanvas;
     public turnoffIcon lightsIcon; // Reference to the TurnOffIcon script
+    public TaskPercentage MainBreakerPercentage;
     GameObject presser;
     AudioSource sound;
     bool isPressed;
+    private bool mainBreakerPercentageIncremented = false;
 
     void Start()
     {
@@ -34,9 +36,17 @@ public class TurnOffLights : MonoBehaviour
             // Check if the lights are turned off
             if (LightsAreTurnedOff())
             {
-                // Mark the task as done
-                taskManager.MarkTaskAsDone("Switch off the Main Power");
-                ShowGoOutCanvas.ShowGoOutCanvas();
+                // Check if the task percentage has already been incremented
+                if (!mainBreakerPercentageIncremented)
+                {
+                    // Mark the task as done
+                    taskManager.MarkTaskAsDone("Switch off the Main Power");
+                    ShowGoOutCanvas.ShowGoOutCanvas();
+                    MainBreakerPercentage.IncrementTaskPercentage(20);
+
+                    // Set the flag to true to ensure this block is not executed again
+                    mainBreakerPercentageIncremented = true;
+                }
 
                 // Assuming lightsIcon is not null, set the check and uncheck icons accordingly
                 if (lightsIcon != null)

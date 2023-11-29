@@ -13,6 +13,9 @@ public class PryBar : MonoBehaviour
     public float interactionCooldown = 2f;
 
     private float lastInteractionTime;
+    private bool hasInteracted = false;
+    private bool hasIncrementedPercentage = false; // New flag to track if percentage has been incremented
+    public TaskPercentage PryBarPercentage;
 
     public void Update()
     {
@@ -21,7 +24,7 @@ public class PryBar : MonoBehaviour
             (rightGrabber != null && rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
         {
             // Check for interactions with BreakableWindow objects
-            if (Time.time - lastInteractionTime >= interactionCooldown)
+            if (Time.time - lastInteractionTime >= interactionCooldown && !hasInteracted)
             {
                 Collider[] colliders = Physics.OverlapBox(transform.position, transform.lossyScale / 2f, transform.rotation);
                 foreach (Collider collider in colliders)
@@ -53,12 +56,24 @@ public class PryBar : MonoBehaviour
                                 survivalToolIcon.SetCheckIconVisible(true);
                                 survivalToolIcon.SetUncheckIconVisible(false);
                             }
+
+                            // Set the flag to true to ensure this block is not executed again
+                            hasInteracted = true;
                         }
                     }
                 }
 
                 // Mark the "Retrieve a Survival Tool" task as done
                 taskManager.MarkTaskAsDone("Retrieve a Survival Tool");
+                survivalToolIcon.SetCheckIconVisible(true);
+                survivalToolIcon.SetUncheckIconVisible(false);
+
+                // Check if the percentage has already been incremented
+                if (!hasIncrementedPercentage)
+                {
+                    PryBarPercentage.IncrementTaskPercentage(10);
+                    hasIncrementedPercentage = true;
+                }
             }
         }
     }
