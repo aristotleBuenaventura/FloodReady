@@ -8,7 +8,7 @@ public class TurnOffLights : MonoBehaviour
     public UnityEvent onPress;
     public UnityEvent onRelease;
     public TaskManager taskManager;
-    public EscapeCanvasController ShowdoorJamCanvas;
+    public EscapeCanvasController ShowGoOutCanvas;
     public turnoffIcon lightsIcon; // Reference to the TurnOffIcon script
     GameObject presser;
     AudioSource sound;
@@ -36,7 +36,7 @@ public class TurnOffLights : MonoBehaviour
             {
                 // Mark the task as done
                 taskManager.MarkTaskAsDone("Switch off the Main Power");
-                ShowdoorJamCanvas.ShowdoorJamCanvas();
+                ShowGoOutCanvas.ShowGoOutCanvas();
 
                 // Assuming lightsIcon is not null, set the check and uncheck icons accordingly
                 if (lightsIcon != null)
