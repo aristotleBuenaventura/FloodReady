@@ -8,6 +8,10 @@ public class NumberArrayManager : MonoBehaviour
     public TextMeshProUGUI textElement; // Expose the TextMeshProUGUI component
     public EscapeCanvasController welldone;
 
+    public iconfordial161 icon161;
+    public TaskPercentage dial161increment;
+    private bool isTaskPercentageIncremented = false;
+
     private void Start()
     {
         // Ensure the TextMeshProUGUI component is present
@@ -61,28 +65,30 @@ public class NumberArrayManager : MonoBehaviour
     // Check for emergency call when the array is "161"
     public void CheckEmergencyCall()
     {
-        // Concatenate the array elements without a comma
         string currentNumber = string.Concat(numberArray);
 
-        // Check if the currentNumber is equal to "161"
-        if (currentNumber == "161")
+        if (currentNumber == "161" && !isTaskPercentageIncremented)
         {
             welldone.WelldoneCanvas();
+            icon161.SetCheckIconVisible(true);
+            icon161.SetUncheckIconVisible(false);
             
-            // Start the coroutine to delay the execution of SuccessCanvas
+            // Increment the task percentage only if it hasn't been done before
+            dial161increment.IncrementTaskPercentage(20);
+            isTaskPercentageIncremented = true;
+
             StartCoroutine(DelayedSuccessCanvas(10f));
             
-            // Display a debug message for an emergency call
             Debug.Log("Call Emergency");
         }
     }
 
-    // Coroutine to delay the execution of SuccessCanvas
     private IEnumerator DelayedSuccessCanvas(float delay)
     {
         yield return new WaitForSeconds(delay);
         welldone.SuccessCanvas();
     }
+
 
     // Update the display on the TextMeshProUGUI
     private void UpdateDisplay()
