@@ -15817,7 +15817,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7289636880439750844, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 460275731}
+      addedObject: {fileID: 460275734}
   m_SourcePrefab: {fileID: 100100000, guid: 5861b45c0aacfea4ba3d951187223360, type: 3}
 --- !u!4 &460275728 stripped
 Transform:
@@ -15840,7 +15840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &460275731
+--- !u!114 &460275734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15849,20 +15849,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 460275729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3fe17acb67dfa141ba603de6fd4d58b, type: 3}
+  m_Script: {fileID: 11500000, guid: af7e1e1d5d53523408d8a64c278e6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 460275730}
-  remainingTime: 600
-  InitialTime: 600
-  timesup: {fileID: 0}
+  remainingTime: 5
+  InitialTime: 5
+  timesup: {fileID: 1946079680}
   player: {fileID: 1028120300}
-  desiredPosition: {x: 4.5, y: 4.621, z: 8.29}
-  desiredRotation: {x: 0, y: -627.391, z: 0}
-  welldonetext: {fileID: 0}
-  timesupElapsetime: {fileID: 0}
+  desiredPosition: {x: 0, y: 0, z: 0}
+  desiredRotation: {x: 0, y: 0, z: 0}
+  welldonetext: {fileID: 252077330}
+  timesupElapsetime: {fileID: 1674945344}
   tryagainButton: {fileID: 0}
-  loadingScreen: {fileID: 460275729}
+  loadingScreen: {fileID: 0}
 --- !u!1001 &464196780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61348,7 +61348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637698988}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5173adf7bb297847adb6917a515cc8a, type: 3}
   m_Name: 
@@ -71437,6 +71437,8 @@ MonoBehaviour:
   searchGoBagCanvas: {fileID: 1493707307}
   welldoneCanvas: {fileID: 540956615}
   locatemobilephoneCanvas: {fileID: 1193203074}
+  successCanvas: {fileID: 1476126069}
+  failedCanvas: {fileID: 968068383}
   messageCanvas: {fileID: 2056827691}
   switchDelayWelcome: 15
   switchDelayRetrieveGoBag: 15
@@ -71446,7 +71448,7 @@ MonoBehaviour:
   roomBarrierCollider4: {fileID: 0}
   soundAlarm: {fileID: 817218141}
   fadeOutDuration: 1
-  goOutAudioSourceGameObject: {fileID: 817218141}
+  goOutAudioSource: {fileID: 0}
   goOutSoundDuration: 5
   waterLevelController: {fileID: 557260429}
 --- !u!1 &1949472525

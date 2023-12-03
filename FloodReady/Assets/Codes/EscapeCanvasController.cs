@@ -240,6 +240,40 @@ public class EscapeCanvasController : MonoBehaviour
         messageCanvas.OpenCanvasAgain();
     }
 
+    public void SuccessCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        retrieveGoBagCanvas.SetActive(false);
+        mainBreakerCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
+        pryBarCanvas.SetActive(false);
+        breakWindowCanvas.SetActive(false);
+        searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(true);
+        failedCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    public void FailedCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        retrieveGoBagCanvas.SetActive(false);
+        mainBreakerCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
+        pryBarCanvas.SetActive(false);
+        breakWindowCanvas.SetActive(false);
+        searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(true);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    
+
 
 
 

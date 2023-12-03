@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class NumberArrayManager : MonoBehaviour
 {
@@ -67,9 +68,20 @@ public class NumberArrayManager : MonoBehaviour
         if (currentNumber == "161")
         {
             welldone.WelldoneCanvas();
-            // Display a debug message for emergency call
+            
+            // Start the coroutine to delay the execution of SuccessCanvas
+            StartCoroutine(DelayedSuccessCanvas(10f));
+            
+            // Display a debug message for an emergency call
             Debug.Log("Call Emergency");
         }
+    }
+
+    // Coroutine to delay the execution of SuccessCanvas
+    private IEnumerator DelayedSuccessCanvas(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        welldone.SuccessCanvas();
     }
 
     // Update the display on the TextMeshProUGUI
