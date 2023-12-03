@@ -67,24 +67,19 @@ public class Timer : MonoBehaviour
     }
 
     private void TeleportPlayer()
-{
-    // Find the player GameObject by tag
-    GameObject players = GameObject.FindGameObjectWithTag("Player");
-
-    if (players != null)
     {
-        // Set the desired position from the Inspector
-        players.transform.position = desiredPosition;
+        if (player != null)
+        {
+            
+            // Set the desired position from the Inspector
+            player.transform.position = desiredPosition;
 
-        // Set the desired rotation from the Inspector
-        players.transform.rotation = Quaternion.Euler(desiredRotation);
+            // Set the desired rotation from the Inspector
+            player.transform.rotation = Quaternion.Euler(desiredRotation);
+            Debug.Log("Teleporting player to position: " + desiredPosition);
+            Debug.Log("Teleporting player to rotation: " + desiredRotation);
 
-        Debug.Log("Teleporting player to position: " + desiredPosition);
-        Debug.Log("Teleporting player to rotation: " + desiredRotation);
+            
+        }
     }
-    else
-    {
-        Debug.LogWarning("Player not found. Make sure the player has the 'Player' tag.");
-    }
-}
 }
