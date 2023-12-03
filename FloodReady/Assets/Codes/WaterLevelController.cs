@@ -6,7 +6,10 @@ public class WaterLevelController : MonoBehaviour
 {
     public float risingSpeed = 0.01f;
     private float nextRiseTime;
-    public float maxWaterLevel;
+    public float maxWaterLevelBreaker; // Maximum water level when the breaker is turned off
+    public float maxWaterLevelPlayer;  // Maximum water level when the player is detected
+
+    public LevelThreeWater levelThreeWater; // Reference to the LevelThreeWater script
 
     private bool canRiseWater = false;
 
@@ -23,7 +26,19 @@ public class WaterLevelController : MonoBehaviour
 
     public bool IsWaterRising()
     {
-        return canRiseWater && transform.position.y < maxWaterLevel;
+        return canRiseWater && transform.position.y < GetMaxWaterLevel();
+    }
+
+    private float GetMaxWaterLevel()
+    {
+        if (levelThreeWater != null && levelThreeWater.PlayerDetected())
+        {
+            return maxWaterLevelPlayer;
+        }
+        else
+        {
+            return maxWaterLevelBreaker;
+        }
     }
 
     void Update()
@@ -37,7 +52,8 @@ public class WaterLevelController : MonoBehaviour
     void RiseWater()
     {
         transform.Translate(Vector3.up * risingSpeed * Time.deltaTime, Space.World);
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0, maxWaterLevel), transform.position.z);
-        nextRiseTime += 0.01f * maxWaterLevel / risingSpeed;
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 0, GetMaxWaterLevel()), transform.position.z);
+
+        nextRiseTime += 0.01f;
     }
 }
