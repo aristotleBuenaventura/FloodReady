@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.09189714, g: 0.05836137, b: 0.05619683, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.09189956, g: 0.058361292, b: 0.056196183, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4965,8 +4969,12 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5c2f5ca33485fbd42a9e7af0cf292651, type: 3}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: layer.m_Bits
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: breakingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 95c320704d368f646aabfca776861d14, type: 3}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterial
       value: 
@@ -4975,6 +4983,10 @@ PrefabInstance:
       propertyPath: windowBreakIcon
       value: 
       objectReference: {fileID: 225226978}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: breakwindowpercentage
+      value: 
+      objectReference: {fileID: 41214191}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.size
       value: 3
@@ -19900,8 +19912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d88ec656c8c2a34cbf522d15614f0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  risingSpeed: 0.01
-  maxWaterLevel: 1.713
+  risingSpeed: 1
+  maxWaterLevel: 1.4
 --- !u!65 &557260431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51771,6 +51783,59 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1278118055774169329, guid: 63a684205bd934635bea35ff3f82fbbc, type: 3}
+--- !u!1 &1441704248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441704250}
+  - component: {fileID: 1441704249}
+  m_Layer: 0
+  m_Name: RoomCollider3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1441704249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441704248}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.216385, y: 12.786241, z: 9.285257}
+  m_Center: {x: 3.4550912, y: 0.6954646, z: -4.142655}
+--- !u!4 &1441704250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441704248}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7256376, z: -0, w: 0.6880771}
+  m_LocalPosition: {x: 4.314, y: 1.199, z: -4.785}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.044, z: 0}
 --- !u!1 &1444053031
 GameObject:
   m_ObjectHideFlags: 0
@@ -67934,7 +67999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845175201}
   - component: {fileID: 1845175200}
-  - component: {fileID: 1845175199}
+  - component: {fileID: 1845175202}
   m_Layer: 0
   m_Name: InvisibleWallDoorJam
   m_TagString: Untagged
@@ -67942,19 +68007,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1845175199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845175198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608440abb58d66247b8d24286cefc1a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escapeCanvasController: {fileID: 1946079680}
 --- !u!65 &1845175200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67985,12 +68037,25 @@ Transform:
   m_GameObject: {fileID: 1845175198}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.443, y: 1.199, z: -5.643}
+  m_LocalPosition: {x: 6.443, y: 1.199, z: -6.802}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1845175202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845175198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608440abb58d66247b8d24286cefc1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapeCanvasController: {fileID: 1946079680}
 --- !u!1 &1847146755
 GameObject:
   m_ObjectHideFlags: 0
@@ -71163,6 +71228,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 5c2f5ca33485fbd42a9e7af0cf292651, type: 3}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: layer.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: breakingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 95c320704d368f646aabfca776861d14, type: 3}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: windowBreakIcon
+      value: 
+      objectReference: {fileID: 225226978}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: breakwindowpercentage
+      value: 
+      objectReference: {fileID: 41214191}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: windowMaterials.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -71365,10 +71446,12 @@ MonoBehaviour:
   switchDelayRetrieveGoBag: 15
   roomBarrierCollider1: {fileID: 2003439324}
   roomBarrierCollider2: {fileID: 348614040}
-  roomBarrierCollider3: {fileID: 0}
+  roomBarrierCollider3: {fileID: 1441704249}
   roomBarrierCollider4: {fileID: 0}
   soundAlarm: {fileID: 817218141}
   fadeOutDuration: 1
+  goOutAudioSourceGameObject: {fileID: 817218141}
+  goOutSoundDuration: 5
   waterLevelController: {fileID: 557260429}
 --- !u!1 &1949472525
 GameObject:
@@ -79701,6 +79784,7 @@ SceneRoots:
   - {fileID: 375585797}
   - {fileID: 557260428}
   - {fileID: 1845175201}
+  - {fileID: 1441704250}
   - {fileID: 1028120299}
   - {fileID: 1819201926}
   - {fileID: 543450653398083131}
