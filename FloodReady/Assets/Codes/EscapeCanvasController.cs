@@ -31,7 +31,9 @@ public class EscapeCanvasController : MonoBehaviour
     public GameObject soundAlarm; // Reference to the GameObject with AudioSource for the sound alarm
     private AudioSource alarmAudioSource; // Reference to the AudioSource component
     public float fadeOutDuration = 2f;
-    private bool doorJamCanvasShown = false;
+    public AudioSource goOutAudioSource;
+    public float goOutSoundDuration = 10f;
+   
 
 
     public WaterLevelController waterLevelController;
@@ -43,6 +45,7 @@ public class EscapeCanvasController : MonoBehaviour
         alarmAudioSource = soundAlarm.GetComponent<AudioSource>();
         // Start the coroutine to switch canvases after a delay
         StartCoroutine(SwitchCanvasAfterDelay());
+        goOutAudioSource = goOutCanvas.GetComponent<AudioSource>();
     }
 
     // Add any new canvas show functions here
@@ -121,7 +124,7 @@ public class EscapeCanvasController : MonoBehaviour
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
-        SetRoomBarrierColliderActive2(false);
+        SetRoomBarrierColliderActive3(false);
         if (waterLevelController != null)
         {
             waterLevelController.SetCanRiseWater(); // Assuming you have a method like SetCanRiseWater in WaterLevelController
@@ -129,15 +132,17 @@ public class EscapeCanvasController : MonoBehaviour
 
     }
 
-    public void ShowDoorJamCanvas()
+    public void ShowDoorJamCanvas(bool show)
     {
-        if (!doorJamCanvasShown)
+        Debug.Log("ShowDoorJamCanvas method called");
+
+        if (show)
         {
-            Debug.Log("ShowDoorJamCanvas method called");
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
             doorJamCanvas.SetActive(true);
+            goOutCanvas.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
@@ -146,7 +151,10 @@ public class EscapeCanvasController : MonoBehaviour
             failedCanvas.SetActive(false);
             locatemobilephoneCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
-            doorJamCanvasShown = true; 
+        }
+        else
+        {
+            doorJamCanvas.SetActive(false);  // Corrected this line
         }
     }
 

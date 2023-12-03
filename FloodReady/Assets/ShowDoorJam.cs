@@ -7,8 +7,7 @@ public class ShowDoorJam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Assuming EscapeCanvasController is attached to the same GameObject
-        escapeCanvasController = GetComponent<EscapeCanvasController>();
+       
     }
 
     // Update is called once per frame
@@ -24,10 +23,10 @@ public class ShowDoorJam : MonoBehaviour
         {
             Debug.Log("PLAYER WALKS");
 
-            // Call the ShowDoorJamCanvas method in EscapeCanvasController
-            escapeCanvasController.ShowDoorJamCanvas();
+            // Call the ShowDoorJamCanvas method in EscapeCanvasController with the parameter true
+            escapeCanvasController.ShowDoorJamCanvas(true);
 
-            // Optionally, you can disable the collider to prevent repeated triggers
+            // Optionally, disable the collider to prevent repeated triggers
             // GetComponent<Collider>().enabled = false;
         }
     }
