@@ -4111,6 +4111,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Radius
       value: 0.3
       objectReference: {fileID: 0}
@@ -6049,8 +6053,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5405325, y: 0.4374581, z: 1}
-  m_Center: {x: -0.01671536, y: 0.06858132, z: -0.054546963}
+  m_Size: {x: 0.923172, y: 0.927418, z: 0.9999897}
+  m_Center: {x: 0.003912889, y: -0.028265145, z: 0.107115515}
 --- !u!1 &147051606
 GameObject:
   m_ObjectHideFlags: 0
@@ -27345,6 +27349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textElement: {fileID: 666607015}
   welldone: {fileID: 679318069}
+  icon161: {fileID: 0}
+  dial161increment: {fileID: 0}
+  portal: {fileID: 0}
+  iconMobilePhone: {fileID: 0}
 --- !u!114 &666607015 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3475481964772704076, guid: d7dea664b8f36c44f915ac2700977b6c, type: 3}
@@ -29421,8 +29429,8 @@ Transform:
   m_GameObject: {fileID: 714845124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1511, y: 1.7759, z: -1.1494}
-  m_LocalScale: {x: 0.020235345, y: 1.3319222, z: 1.8303185}
+  m_LocalPosition: {x: 0.1511, y: 1.303, z: -1.1494}
+  m_LocalScale: {x: 0.020235345, y: 0.31656513, z: 1.8303185}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 402350086}
@@ -30941,7 +30949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8009297
+      value: 3.0316532
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalScale.z
@@ -30949,15 +30957,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0585566
+      value: -1.936
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.63787556
+      value: -0.512
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.8464725
+      value: 2.839
       objectReference: {fileID: 0}
     - target: {fileID: 6264308953639587638, guid: 873163ae1e0e16c4ebd986894df286e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41412,7 +41420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_TagString
@@ -81213,23 +81221,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d09385a1e0cf1ce41b41a0f333996782, type: 2}
     - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_Size.x
-      value: 0.5405325
+      value: 0.923172
       objectReference: {fileID: 0}
     - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_Size.y
-      value: 0.4374581
+      value: 0.927418
+      objectReference: {fileID: 0}
+    - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: m_Size.z
+      value: 0.9999897
       objectReference: {fileID: 0}
     - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_Center.x
-      value: -0.01671536
+      value: 0.003912889
       objectReference: {fileID: 0}
     - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_Center.y
-      value: 0.06858132
+      value: -0.028265145
       objectReference: {fileID: 0}
     - target: {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_Center.z
-      value: -0.054546963
+      value: 0.107115515
       objectReference: {fileID: 0}
     - target: {fileID: 82815429267135604, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_audioClip
@@ -81472,6 +81484,7 @@ MonoBehaviour:
   breakWindowCanvas: {fileID: 1321871054}
   searchGoBagCanvas: {fileID: 1493707307}
   welldoneCanvas: {fileID: 540956615}
+  circlePointCanvas: {fileID: 0}
   locatemobilephoneCanvas: {fileID: 0}
   successCanvas: {fileID: 1476126069}
   failedCanvas: {fileID: 968068383}
