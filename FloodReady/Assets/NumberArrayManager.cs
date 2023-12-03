@@ -25,6 +25,9 @@ public class NumberArrayManager : MonoBehaviour
 
     // Add a number to the array
     public void AddNumber(string number)
+{
+    // Check if the array has reached its maximum length (10)
+    if (numberArray.Length < 10)
     {
         // Resize the array and add the new number
         System.Array.Resize(ref numberArray, numberArray.Length + 1);
@@ -33,6 +36,12 @@ public class NumberArrayManager : MonoBehaviour
         // Update the display
         UpdateDisplay();
     }
+    // Optionally, you can display an error message if the limit is reached
+    else
+    {
+        Debug.LogWarning("Maximum number limit reached (10). Cannot add more numbers.");
+    }
+}
 
     // Remove the last number from the array
     public void RemoveNumber()
