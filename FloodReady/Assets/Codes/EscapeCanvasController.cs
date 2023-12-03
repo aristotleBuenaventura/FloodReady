@@ -14,6 +14,9 @@ public class EscapeCanvasController : MonoBehaviour
     public GameObject breakWindowCanvas;
     public GameObject searchGoBagCanvas;
     public GameObject welldoneCanvas;
+    public GameObject locatemobilephoneCanvas;
+    public GameObject successCanvas;
+    public GameObject failedCanvas;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 15f;
     
@@ -54,6 +57,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
 
         if (alarmAudioSource != null)
         {
@@ -75,6 +81,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -89,6 +98,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
         SetRoomBarrierColliderActive2(false);
 
@@ -105,6 +117,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
         SetRoomBarrierColliderActive2(false);
         if (waterLevelController != null)
@@ -127,6 +142,9 @@ public class EscapeCanvasController : MonoBehaviour
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            successCanvas.SetActive(false);
+            failedCanvas.SetActive(false);
+            locatemobilephoneCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
             doorJamCanvasShown = true; 
         }
@@ -143,6 +161,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -156,6 +177,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(true);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -170,6 +194,9 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(true);
         welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -183,8 +210,28 @@ public class EscapeCanvasController : MonoBehaviour
         breakWindowCanvas.SetActive(false);
         searchGoBagCanvas.SetActive(false);
         welldoneCanvas.SetActive(true);
+        locatemobilephoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
+
+    public void LocateMobilePhoneCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        retrieveGoBagCanvas.SetActive(false);
+        mainBreakerCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
+        pryBarCanvas.SetActive(false);
+        breakWindowCanvas.SetActive(false);
+        searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
+        locatemobilephoneCanvas.SetActive(true);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
 
 
 
