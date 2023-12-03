@@ -11,9 +11,12 @@ public class NumberArrayManager : MonoBehaviour
     public iconfordial161 icon161;
     public TaskPercentage dial161increment;
     private bool isTaskPercentageIncremented = false;
+    public GameObject portal;
+    public iconforlocate iconMobilePhone;
 
     private void Start()
     {
+        portal.SetActive(false);
         // Ensure the TextMeshProUGUI component is present
         if (textElement == null)
         {
@@ -72,22 +75,23 @@ public class NumberArrayManager : MonoBehaviour
             welldone.WelldoneCanvas();
             icon161.SetCheckIconVisible(true);
             icon161.SetUncheckIconVisible(false);
-            
+            portal.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
             dial161increment.IncrementTaskPercentage(20);
             isTaskPercentageIncremented = true;
-
-            StartCoroutine(DelayedSuccessCanvas(10f));
+            iconMobilePhone.SetCheckIconVisible(true);
+            iconMobilePhone.SetUncheckIconVisible(false);
+            // StartCoroutine(DelayedSuccessCanvas(10f));
             
             Debug.Log("Call Emergency");
         }
     }
 
-    private IEnumerator DelayedSuccessCanvas(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        welldone.SuccessCanvas();
-    }
+    // private IEnumerator DelayedSuccessCanvas(float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
+    //     welldone.SuccessCanvas();
+    // }
 
 
     // Update the display on the TextMeshProUGUI

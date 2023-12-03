@@ -54,7 +54,7 @@ public class BreakableWindow : MonoBehaviour
             {
                 windowBreakIcon.SetCheckIconVisible(true);
                 windowBreakIcon.SetUncheckIconVisible(false);
-                breakwindowpercentage.IncrementTaskPercentage(20);
+                
             }
         }
     }
@@ -80,6 +80,7 @@ public class BreakableWindow : MonoBehaviour
         {
             // Set it as the last window
             SetIsLastWindow(true);
+            breakwindowpercentage.IncrementTaskPercentage(15);
         }
         else
         {
