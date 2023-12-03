@@ -14,6 +14,7 @@
         public GameObject pryBarCanvas;
         public GameObject breakWindowCanvas;
         public GameObject searchGoBagCanvas;
+        public GameObject circlePointCanvas;
         public GameObject welldoneCanvas;
         public GameObject successCanvas;
         public GameObject failedCanvas;
@@ -62,6 +63,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
 
@@ -86,6 +88,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -103,6 +106,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -122,6 +126,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -149,6 +154,7 @@
                 breakWindowCanvas.SetActive(false);
                 searchGoBagCanvas.SetActive(false);
                 welldoneCanvas.SetActive(false);
+                circlePointCanvas.SetActive(false);
                 successCanvas.SetActive(false);
                 failedCanvas.SetActive(false);
                 messageCanvas.OpenCanvasAgain();
@@ -173,6 +179,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -189,6 +196,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -205,6 +213,7 @@
             breakWindowCanvas.SetActive(true);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -222,6 +231,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(true);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -238,12 +248,13 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(true);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
         }
 
-        public void LocateMobilePhoneCanvas()
+        public void CirclePointCanvas()
         {
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
@@ -254,6 +265,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -270,6 +282,7 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(true);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
@@ -286,13 +299,11 @@
             breakWindowCanvas.SetActive(false);
             searchGoBagCanvas.SetActive(false);
             welldoneCanvas.SetActive(false);
+            circlePointCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(true);
             messageCanvas.OpenCanvasAgain();
         }
-
-
-
 
 
     private IEnumerator DisableDoorJamCanvasAfterDelayAndShowRoofTop()
