@@ -47,7 +47,7 @@
             // Start the coroutine to switch canvases after a delay
             StartCoroutine(SwitchCanvasAfterDelay());
             goOutAudioSource = goOutCanvas.GetComponent<AudioSource>();
-        StartCoroutine(DisableDoorJamCanvasAfterDelay());
+        StartCoroutine(DisableDoorJamCanvasAfterDelayAndShowRoofTop());
     }
 
         // Add any new canvas show functions here
@@ -158,7 +158,7 @@
                 failedCanvas.SetActive(false);
                 locatemobilephoneCanvas.SetActive(false);
                 messageCanvas.OpenCanvasAgain();
-            StartCoroutine(DisableDoorJamCanvasAfterDelay());
+            StartCoroutine(DisableDoorJamCanvasAfterDelayAndShowRoofTop());
         }
             else
             {
@@ -305,13 +305,16 @@
         }
 
 
-    private IEnumerator DisableDoorJamCanvasAfterDelay()
+
+
+
+    private IEnumerator DisableDoorJamCanvasAfterDelayAndShowRoofTop()
     {
         yield return new WaitForSeconds(5f); // Adjust the delay as needed
 
         doorJamCanvas.SetActive(false);
+        ShowGoRoofTop();
     }
-
 
 
     private void SetRoomBarrierColliderActive1(bool active)
