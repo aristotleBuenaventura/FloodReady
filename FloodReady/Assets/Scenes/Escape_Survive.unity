@@ -28817,6 +28817,73 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615589285}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &618795847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618795850}
+  - component: {fileID: 618795849}
+  - component: {fileID: 618795848}
+  m_Layer: 0
+  m_Name: InvisiblePrybar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &618795848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618795847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6dc6d1825ea444fbaa84f79fbe5364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapeCanvasController: {fileID: 679318069}
+--- !u!65 &618795849
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618795847}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &618795850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618795847}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6924769, z: -0, w: 0.72144}
+  m_LocalPosition: {x: 4.8478127, y: 5.121486, z: 1.6037483}
+  m_LocalScale: {x: 4.613405, y: 3.7427835, z: -0.06417053}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 87.653, z: 0}
 --- !u!1 &619058042
 GameObject:
   m_ObjectHideFlags: 0
@@ -54098,6 +54165,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210084221}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1212115878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6716489021883586731, guid: aa4b63879476b8044882abe4465e2322, type: 3}
+  m_PrefabInstance: {fileID: 1504633690482243600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1222711159
 GameObject:
   m_ObjectHideFlags: 0
@@ -54938,6 +55010,7 @@ MonoBehaviour:
   survivalToolIcon: {fileID: 1732913511}
   interactionCooldown: 2
   PryBarPercentage: {fileID: 41214191}
+  escapeCanvasController: {fileID: 679318069}
 --- !u!1 &1235591694
 GameObject:
   m_ObjectHideFlags: 0
@@ -57699,7 +57772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1313464480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75018,7 +75091,7 @@ MonoBehaviour:
   taskManager: {fileID: 1639538392}
   ShowMainBreakerCanvas: {fileID: 679318069}
   isGrabbed: 0
-  delayBeforeDisappear: 0
+  delayBeforeDisappear: 1
   goBagIcon: {fileID: 163762939}
   retrieveGoBagPercentage: {fileID: 41214191}
 --- !u!1 &1608458310
@@ -96820,8 +96893,8 @@ Transform:
   m_GameObject: {fileID: 2096501990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0025127772, z: -0, w: 0.9999969}
-  m_LocalPosition: {x: -0.24, y: 4.88, z: -1.45}
-  m_LocalScale: {x: 0.16469772, y: 0.2, z: 3.4810445}
+  m_LocalPosition: {x: -0.23, y: 4.88, z: -3.9}
+  m_LocalScale: {x: 0.16469772, y: 0.2, z: 0.091060646}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99441,6 +99514,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2056827691}
     - target: {fileID: 481608200938703394, guid: aa4b63879476b8044882abe4465e2322, type: 3}
+      propertyPath: welldoneCanvas
+      value: 
+      objectReference: {fileID: 1313464479}
+    - target: {fileID: 481608200938703394, guid: aa4b63879476b8044882abe4465e2322, type: 3}
+      propertyPath: breakWindowCanvas
+      value: 
+      objectReference: {fileID: 1212115878}
+    - target: {fileID: 481608200938703394, guid: aa4b63879476b8044882abe4465e2322, type: 3}
       propertyPath: circlePointCanvas
       value: 
       objectReference: {fileID: 1313464479}
@@ -99477,6 +99558,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c0b2fb870fe78b343a31893f49fc5229, type: 3}
     - target: {fileID: 1279505117657674968, guid: aa4b63879476b8044882abe4465e2322, type: 3}
+      propertyPath: m_Name
+      value: FindPryBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279505117657674968, guid: aa4b63879476b8044882abe4465e2322, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -99510,7 +99595,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 58efc4bb9d08ec84393940ea5ea7068c, type: 3}
     - target: {fileID: 3268188294460712049, guid: aa4b63879476b8044882abe4465e2322, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3435983097723012692, guid: aa4b63879476b8044882abe4465e2322, type: 3}
       propertyPath: m_audioClip
@@ -99624,6 +99709,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a026b7dc3dfd927439b6985eae7e283d, type: 3}
+    - target: {fileID: 6716489021883586731, guid: aa4b63879476b8044882abe4465e2322, type: 3}
+      propertyPath: m_Name
+      value: PryBarBreaking
+      objectReference: {fileID: 0}
     - target: {fileID: 6716489021883586731, guid: aa4b63879476b8044882abe4465e2322, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -99800,6 +99889,7 @@ SceneRoots:
   - {fileID: 1461250631}
   - {fileID: 375585797}
   - {fileID: 557260428}
+  - {fileID: 618795850}
   - {fileID: 1845175201}
   - {fileID: 2096501993}
   - {fileID: 1441704250}

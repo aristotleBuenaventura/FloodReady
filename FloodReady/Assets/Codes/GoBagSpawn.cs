@@ -17,7 +17,7 @@ public class GoBagSpawn : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             bagPrefab.SetActive(true);
-            dial161Canvas.LocateMobilePhoneCanvas();
+            dial161Canvas.ShowSearchGoBagCanvas(true);
         }
     }
 

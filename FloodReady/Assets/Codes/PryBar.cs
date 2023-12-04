@@ -16,6 +16,7 @@ public class PryBar : MonoBehaviour
     private bool hasInteracted = false;
     private bool hasIncrementedPercentage = false; // New flag to track if percentage has been incremented
     public TaskPercentage PryBarPercentage;
+    public EscapeCanvasController escapeCanvasController;
 
     public void Update()
     {
@@ -26,6 +27,7 @@ public class PryBar : MonoBehaviour
             // Check for interactions with BreakableWindow objects
             if (Time.time - lastInteractionTime >= interactionCooldown && !hasInteracted)
             {
+                escapeCanvasController.ShowBreakWindowCanvas(true);
                 Collider[] colliders = Physics.OverlapBox(transform.position, transform.lossyScale / 2f, transform.rotation);
                 foreach (Collider collider in colliders)
                 {

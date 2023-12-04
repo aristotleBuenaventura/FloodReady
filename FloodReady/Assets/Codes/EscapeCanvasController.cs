@@ -155,8 +155,9 @@
                 successCanvas.SetActive(false);
                 failedCanvas.SetActive(false);
                 messageCanvas.OpenCanvasAgain();
-                
-            StartCoroutine(DisableDoorJamCanvasAfterDelayAndShowRoofTop());
+            SetRoomBarrierColliderActive4(false);
+
+
         }
             else
             {
@@ -165,7 +166,9 @@
         }
 
 
-        public void ShowGoRoofTop()
+        public void ShowGoRoofTop(bool show)
+    {
+        if (show)
         {
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
@@ -179,7 +182,13 @@
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
-        SetRoomBarrierColliderActive4(false);
+     
+
+        }
+        else
+        {
+            roofTop.SetActive(false);  // Corrected this line
+        }
     }
         public void ShowPryBarCanvas()
         {
@@ -197,8 +206,11 @@
             messageCanvas.OpenCanvasAgain();
         }
 
-        public void ShowBreakWindowCanvas()
+        public void ShowBreakWindowCanvas(bool show)
         {
+        if (show)
+        {
+
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
@@ -212,9 +224,17 @@
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
         }
+        else
+        {
+            breakWindowCanvas.SetActive(false);  // Corrected this line
+        }
+
+    }
 
  
-        public void ShowSearchGoBagCanvas()
+        public void ShowSearchGoBagCanvas(bool show)
+    {
+        if (show)
         {
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
@@ -229,6 +249,11 @@
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
         }
+        else
+        {
+            searchGoBagCanvas.SetActive(false);  // Corrected this line
+        }
+    }
 
         public void WelldoneCanvas()
         {
@@ -298,13 +323,7 @@
 
 
 
-    private IEnumerator DisableDoorJamCanvasAfterDelayAndShowRoofTop()
-    {
-        yield return new WaitForSeconds(5f); // Adjust the delay as needed
-
-        doorJamCanvas.SetActive(false);
-        ShowGoRoofTop();
-    }
+    
 
 
     private void SetRoomBarrierColliderActive1(bool active)
