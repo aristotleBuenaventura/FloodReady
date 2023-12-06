@@ -206,10 +206,9 @@
             messageCanvas.OpenCanvasAgain();
         }
 
-        public void ShowBreakWindowCanvas(bool show)
+        public void ShowBreakWindowCanvas()
         {
-        if (show)
-        {
+
 
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
@@ -224,12 +223,8 @@
             failedCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
         }
-        else
-        {
-            breakWindowCanvas.SetActive(false);  // Corrected this line
-        }
 
-    }
+    
 
  
         public void ShowSearchGoBagCanvas(bool show)

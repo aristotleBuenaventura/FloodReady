@@ -6,7 +6,6 @@ public class DisappearOnGrab : MonoBehaviour
 {
     public OVRGrabber leftGrabber;
     public OVRGrabber rightGrabber;
-    public TaskManager taskManager;
     public EscapeCanvasController ShowMainBreakerCanvas;
     public bool isGrabbed = false;
     public float delayBeforeDisappear = 1.0f;
@@ -15,7 +14,7 @@ public class DisappearOnGrab : MonoBehaviour
 
     void Update()
     {
-        if (leftGrabber == null || rightGrabber == null || taskManager == null)
+        if (leftGrabber == null || rightGrabber == null)
         {
             Debug.LogError("References not properly set!");
             return;
@@ -24,7 +23,7 @@ public class DisappearOnGrab : MonoBehaviour
         if ((leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
             (rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
         {
-            taskManager.MarkTaskAsDone("Retrieve the go-bag");
+            
 
             if (!isGrabbed)
             {

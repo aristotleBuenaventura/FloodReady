@@ -6,7 +6,6 @@ public class PryBar : MonoBehaviour
 {
     public OVRGrabber leftGrabber;
     public OVRGrabber rightGrabber;
-    public TaskManager taskManager;
     public locateIcon survivalToolIcon; // Reference to the LocateIcon script
 
     // Cooldown time in seconds
@@ -27,7 +26,7 @@ public class PryBar : MonoBehaviour
             // Check for interactions with BreakableWindow objects
             if (Time.time - lastInteractionTime >= interactionCooldown && !hasInteracted)
             {
-                escapeCanvasController.ShowBreakWindowCanvas(true);
+                
                 Collider[] colliders = Physics.OverlapBox(transform.position, transform.lossyScale / 2f, transform.rotation);
                 foreach (Collider collider in colliders)
                 {
@@ -43,12 +42,12 @@ public class PryBar : MonoBehaviour
                             {
                                 window.DestroyWindow();
                                 // Optionally mark the task as done for breaking the last window
-                                taskManager.MarkTaskAsDone("Break the Last Window");
+                    
                                 
                             }
 
                             // Mark the "Break a Window" task as done
-                            taskManager.MarkTaskAsDone("Break a Window");
+                            
 
                             // Update the last interaction time
                             lastInteractionTime = Time.time;
@@ -63,13 +62,13 @@ public class PryBar : MonoBehaviour
                 }
 
                 // Mark the "Retrieve a Survival Tool" task as done
-                taskManager.MarkTaskAsDone("Retrieve a Survival Tool");
                 survivalToolIcon.SetCheckIconVisible(true);
                 survivalToolIcon.SetUncheckIconVisible(false);
 
                 // Check if the percentage has already been incremented
                 if (!hasIncrementedPercentage)
                 {
+                    escapeCanvasController.ShowBreakWindowCanvas();
                     PryBarPercentage.IncrementTaskPercentage(10);
                     hasIncrementedPercentage = true;
                 }

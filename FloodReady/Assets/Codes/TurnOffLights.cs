@@ -7,7 +7,6 @@ public class TurnOffLights : MonoBehaviour
 {
     public UnityEvent onPress;
     public UnityEvent onRelease;
-    public TaskManager taskManager;
     public EscapeCanvasController ShowGoOutCanvas;
     public turnoffIcon lightsIcon; // Reference to the TurnOffIcon script
     public TaskPercentage MainBreakerPercentage;
@@ -40,7 +39,7 @@ public class TurnOffLights : MonoBehaviour
                 if (!mainBreakerPercentageIncremented)
                 {
                     // Mark the task as done
-                    taskManager.MarkTaskAsDone("Switch off the Main Power");
+                    
                     ShowGoOutCanvas.ShowGoOutCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);
 
