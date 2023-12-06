@@ -6,7 +6,6 @@ using UnityEngine;
 public class BreakableWindow : MonoBehaviour
 {
     public LayerMask layer;
-    public AudioClip breakingSound;
     public Material[] windowMaterials;
     public breakIcon windowBreakIcon; // Reference to the BreakIcon script
 
@@ -15,12 +14,14 @@ public class BreakableWindow : MonoBehaviour
     private bool canBreak = true;
     private bool isLastWindow = false;
     public TaskPercentage breakwindowpercentage;
+    public GameObject breaksound;
 
     public bool IsBroken { get; private set; } = false;
 
     private void Start()
     {
         ShowWindow();
+        breaksound.SetActive(false);
     }
 
     private void ShowWindow()
@@ -63,11 +64,6 @@ public class BreakableWindow : MonoBehaviour
     {
         canBreak = false;
 
-        if (breakingSound != null)
-        {
-            GetComponent<AudioSource>().clip = breakingSound;
-            GetComponent<AudioSource>().Play();
-        }
 
         ChangeWindowAppearance();
 
@@ -104,6 +100,7 @@ public class BreakableWindow : MonoBehaviour
         if (col != null)
         {
             Destroy(col);
+            breaksound.SetActive(true);
         }
 
         if (renderer != null)
