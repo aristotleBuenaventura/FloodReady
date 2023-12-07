@@ -33,6 +33,7 @@ public class InventoryManager : MonoBehaviour
     public iconformobilephone mobilephone;
     public iconforgatherdessentialgoods gatheredessentialgoods;
 
+    public iconforfirstaidkit firstaidkit;
     private void Start()
     {
         GoBagClosed.SetActive(false);
@@ -114,6 +115,13 @@ public class InventoryManager : MonoBehaviour
             mobilephone.SetCheckIconVisible(false);
             mobilephone.SetUncheckIconVisible(true);
         }
+        
+
+        if (itemName == "First aid kit")
+        {
+            firstaidkit.SetCheckIconVisible(false);
+            firstaidkit.SetUncheckIconVisible(true);
+        }
 
 
 
@@ -175,11 +183,18 @@ public class InventoryManager : MonoBehaviour
             flashlight.SetUncheckIconVisible(false);
         }
 
+        if (itemName == "First aid kit")
+        {
+            firstaidkit.SetCheckIconVisible(true);
+            firstaidkit.SetUncheckIconVisible(false);
+        }
+
         if (itemName == "Mobile Phone")
         {
             mobilephone.SetCheckIconVisible(true);
             mobilephone.SetUncheckIconVisible(false);
         }
+        
 
         bagInventory.Remove(itemName);
 
