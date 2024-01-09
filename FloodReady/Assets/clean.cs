@@ -50,6 +50,11 @@ public class Clean : MonoBehaviour
         }
     }
 
+    public int CleanAmount
+    {
+        get { return CalculateCleanPercentage(); }
+    }
+
     private void CreateTexture()
     {
         _templateDirtMask = new Texture2D(_dirtMaskBase.width, _dirtMaskBase.height);
@@ -77,17 +82,21 @@ public class Clean : MonoBehaviour
     }
 
     private int CalculateCleanPercentage()
+{
+    float cleanAmount = 0f;
+
+    for (int x = 0; x < _templateDirtMask.width; x++)
     {
-        float cleanAmount = 0f;
-
-        for (int x = 0; x < _templateDirtMask.width; x++)
+        for (int y = 0; y < _templateDirtMask.height; y++)
         {
-            for (int y = 0; y < _templateDirtMask.height; y++)
-            {
-                cleanAmount += _templateDirtMask.GetPixel(x, y).g;
-            }
+            cleanAmount += _templateDirtMask.GetPixel(x, y).g;
         }
-
-        return Mathf.RoundToInt((1f - cleanAmount / dirtAmountTotal) * 100f);
     }
+
+    float percentage = 1f - cleanAmount / dirtAmountTotal;
+    int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
+
+    return roundedPercentage;
+}
+
 }

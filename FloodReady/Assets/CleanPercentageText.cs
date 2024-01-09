@@ -1,0 +1,31 @@
+using TMPro;
+using UnityEngine;
+
+public class CleanPercentageText : MonoBehaviour
+{
+    // Reference to the Clean script
+    public Clean cleanScript;
+    
+    // Reference to the TextMeshPro component
+    private TextMeshProUGUI textMeshPro;
+
+    private void Start()
+    {
+        // Get the TextMeshPro component attached to this GameObject
+        textMeshPro = GetComponent<TextMeshProUGUI>();
+        
+        if (textMeshPro == null)
+        {
+            Debug.LogError("TextMeshPro component not found!");
+        }
+    }
+
+    private void Update()
+    {
+        // Access cleanAmount from the Clean script
+        int cleanAmount = cleanScript.CleanAmount;
+
+        // Display cleanAmount in the TextMeshPro component
+        textMeshPro.text = "Clean Amount: " + cleanAmount + "%";
+    }
+}
