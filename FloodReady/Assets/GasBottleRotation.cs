@@ -85,8 +85,4 @@ public class GasBottleRotation : MonoBehaviour
             isTriggerColliding = false;
         }
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
