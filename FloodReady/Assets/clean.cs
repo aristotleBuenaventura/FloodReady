@@ -1,13 +1,10 @@
-using System;
 using UnityEngine;
 
 public class Clean : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
-
+    [SerializeField] private GameObject waterGun; // Reference to the water gun GameObject
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
-
     [SerializeField] private Material _material;
 
     private Texture2D _templateDirtMask;
@@ -19,9 +16,12 @@ public class Clean : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
-            if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+            RaycastHit hit;
+            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+
+            if (Physics.Raycast(ray, out hit))
             {
                 Vector2 textureCoord = hit.textureCoord;
 
@@ -35,9 +35,8 @@ public class Clean : MonoBehaviour
                         Color pixelDirt = _brush.GetPixel(x, y);
                         Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
 
-                        _templateDirtMask.SetPixel(pixelX + x,
-                            pixelY + y,
-                            new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
+                        // Use lerping for smooth transitions
+                        _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
                     }
                 }
 
