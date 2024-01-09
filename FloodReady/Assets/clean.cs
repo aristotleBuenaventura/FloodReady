@@ -8,6 +8,7 @@ public class Clean : MonoBehaviour
     [SerializeField] private Material _material;
 
     private Texture2D _templateDirtMask;
+    private float dirtAmountTotal;
 
     private void Start()
     {
@@ -41,6 +42,10 @@ public class Clean : MonoBehaviour
                 }
 
                 _templateDirtMask.Apply();
+
+                // Calculate and log the percentage of clean area
+                int cleanAmount = CalculateCleanPercentage();
+                Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
             }
         }
     }
@@ -52,5 +57,37 @@ public class Clean : MonoBehaviour
         _templateDirtMask.Apply();
 
         _material.SetTexture("_DirtMask", _templateDirtMask);
+
+        dirtAmountTotal = CalculateInitialDirtAmount();
+    }
+
+    private float CalculateInitialDirtAmount()
+    {
+        float totalDirt = 0f;
+
+        for (int x = 0; x < _dirtMaskBase.width; x++)
+        {
+            for (int y = 0; y < _dirtMaskBase.height; y++)
+            {
+                totalDirt += _dirtMaskBase.GetPixel(x, y).g;
+            }
+        }
+
+        return totalDirt;
+    }
+
+    private int CalculateCleanPercentage()
+    {
+        float cleanAmount = 0f;
+
+        for (int x = 0; x < _templateDirtMask.width; x++)
+        {
+            for (int y = 0; y < _templateDirtMask.height; y++)
+            {
+                cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+            }
+        }
+
+        return Mathf.RoundToInt((1f - cleanAmount / dirtAmountTotal) * 100f);
     }
 }
