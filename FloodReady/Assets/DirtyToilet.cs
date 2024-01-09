@@ -6,9 +6,16 @@ public class MoveScaleAndDestroy : MonoBehaviour
     public float scaleSpeed = 0.1f; // Adjust the scaling speed as needed
     public float destroyTime = 2f; // Time in seconds before the GameObject is destroyed
     public GameObject objectToMoveScaleAndDestroy; // Drag your GameObject into this field in the Unity Editor
+    public bool goSignal = false; // Set this to true to enable the movement, scaling, and destruction
 
     void Update()
     {
+        // Check if the goSignal is true
+        if (!goSignal)
+        {
+            return; // Exit the method if goSignal is false
+        }
+
         // Check if the object is null to avoid errors
         if (objectToMoveScaleAndDestroy == null)
         {

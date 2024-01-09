@@ -6,6 +6,7 @@ public class MoveAndScaleUpwardAfterDelay : MonoBehaviour
     public float scaleSpeed = 0.1f; // Adjust the scaling speed as needed
     public float delayBeforeMoving = 1f; // Adjust the delay before the upward movement starts
     public float upwardMovementDuration = 3f; // Duration of the upward movement
+    public bool goSignal = true; // Set this to true to enable the movement, scaling, and destruction
 
     private bool hasDelayElapsed = false;
     private float upwardMovementTimer = 0f;
@@ -19,6 +20,12 @@ public class MoveAndScaleUpwardAfterDelay : MonoBehaviour
 
     void Update()
     {
+        // Check if the goSignal is true
+        if (!goSignal)
+        {
+            return; // Exit the method if goSignal is false
+        }
+
         // Check if the delay has elapsed
         if (!hasDelayElapsed)
         {
@@ -42,9 +49,10 @@ public class MoveAndScaleUpwardAfterDelay : MonoBehaviour
                 newPosition.z = initialPosition.z;
                 transform.position = newPosition;
 
-                // Scale the object uniformly in all axes
+                // Scale the object in 2D (x and y axes)
                 Vector3 currentScale = transform.localScale;
-                currentScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime;
+                currentScale.x += scaleSpeed * Time.deltaTime;
+                currentScale.y += scaleSpeed * Time.deltaTime;
 
                 // Assign the new scale to the object
                 transform.localScale = currentScale;
