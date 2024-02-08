@@ -27,7 +27,7 @@ public class RecoveryCanvasController : MonoBehaviour
     public float switchDelayWelcome = 10f;
 
    // collider
-    public BoxCollider roomBarrierCollider1;
+    public GameObject roomBarrierCollider1;
     public BoxCollider roomBarrierCollider2;
     public BoxCollider roomBarrierCollider3;
     public BoxCollider roomBarrierCollider4;
@@ -92,7 +92,7 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
-
+        SetRoomBarrierColliderActive1(false);
 
 
 
@@ -489,8 +489,9 @@ public class RecoveryCanvasController : MonoBehaviour
 
     private void SetRoomBarrierColliderActive1(bool active)
     {
-        roomBarrierCollider1.enabled = active;
+        roomBarrierCollider1.SetActive(active);
     }
+
 
     private void SetRoomBarrierColliderActive2(bool active)
     {
