@@ -26,6 +26,6 @@ public class CleanPercentageText : MonoBehaviour
         int cleanAmount = cleanScript.CleanAmount;
 
         // Display cleanAmount in the TextMeshPro component
-        textMeshPro.text = "Clean Amount: " + cleanAmount + "%";
+        textMeshPro.text = cleanAmount + "%";
     }
 }
