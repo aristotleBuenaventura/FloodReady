@@ -16,13 +16,15 @@ public class Clean : MonoBehaviour
     }
 
     private void Update()
+{
+    if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
     {
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
-        {
-            RaycastHit hit;
-            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+        RaycastHit hit;
+        Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
 
-            if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Plug")) // Check if the object hit has the tag "Plug"
             {
                 Vector2 textureCoord = hit.textureCoord;
 
@@ -49,6 +51,8 @@ public class Clean : MonoBehaviour
             }
         }
     }
+}
+
 
     public int CleanAmount
     {
@@ -82,21 +86,20 @@ public class Clean : MonoBehaviour
     }
 
     private int CalculateCleanPercentage()
-{
-    float cleanAmount = 0f;
-
-    for (int x = 0; x < _templateDirtMask.width; x++)
     {
-        for (int y = 0; y < _templateDirtMask.height; y++)
+        float cleanAmount = 0f;
+
+        for (int x = 0; x < _templateDirtMask.width; x++)
         {
-            cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+            for (int y = 0; y < _templateDirtMask.height; y++)
+            {
+                cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+            }
         }
+
+        float percentage = 1f - cleanAmount / dirtAmountTotal;
+        int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
+
+        return roundedPercentage;
     }
-
-    float percentage = 1f - cleanAmount / dirtAmountTotal;
-    int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
-
-    return roundedPercentage;
-}
-
 }

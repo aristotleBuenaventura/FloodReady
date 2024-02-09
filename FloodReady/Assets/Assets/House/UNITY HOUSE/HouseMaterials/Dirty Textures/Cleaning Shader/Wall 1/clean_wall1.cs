@@ -16,13 +16,15 @@ public class Clean_Wall1 : MonoBehaviour
     }
 
     private void Update()
+{
+    if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
     {
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
-        {
-            RaycastHit hit;
-            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+        RaycastHit hit;
+        Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
 
-            if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Floor")) // Check if the object hit has the tag "Plug"
             {
                 Vector2 textureCoord = hit.textureCoord;
 
@@ -49,6 +51,8 @@ public class Clean_Wall1 : MonoBehaviour
             }
         }
     }
+}
+
 
     public int CleanAmount
     {
