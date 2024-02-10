@@ -4,7 +4,7 @@ using UnityEngine;
 public class CleanPercentageText : MonoBehaviour
 {
     // Reference to the Clean script
-    public Clean cleanScript;
+    public Bathroom_Wall1_Script cleanScript;
     
     // Reference to the TextMeshPro component
     private TextMeshProUGUI textMeshPro;
