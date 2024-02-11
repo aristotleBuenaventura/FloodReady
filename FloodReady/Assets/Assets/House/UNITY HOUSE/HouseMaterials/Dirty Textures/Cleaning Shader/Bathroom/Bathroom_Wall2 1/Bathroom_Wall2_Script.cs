@@ -52,6 +52,7 @@ public class Bathroom_Wall2_Script : MonoBehaviour
 
                     // Update clean amount value in CleanAmountManager
                     CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    MaterialManager.UpdateMaterialValue("Wall 2");
                 }
             }
         }
