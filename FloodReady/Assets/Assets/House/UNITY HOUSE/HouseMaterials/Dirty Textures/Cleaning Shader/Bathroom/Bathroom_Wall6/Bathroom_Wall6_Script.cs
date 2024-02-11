@@ -1,3 +1,4 @@
+// Add this line at the beginning of your script
 using UnityEngine;
 
 public class Bathroom_Wall6_Script : MonoBehaviour
@@ -15,46 +16,45 @@ public class Bathroom_Wall6_Script : MonoBehaviour
         CreateTexture();
     }
 
-private void Update()
-{
-    if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+    private void Update()
     {
-        RaycastHit hit;
-        Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
-
-        if (Physics.Raycast(ray, out hit))
+        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
-            if (hit.collider.CompareTag("Bathroom_Wall6")) // Check if the object hit has the tag "Plug"
+            RaycastHit hit;
+            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+
+            if (Physics.Raycast(ray, out hit))
             {
-                Vector2 textureCoord = hit.textureCoord;
-
-                int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
-                int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
-
-                for (int x = 0; x < _brush.width; x++)
+                if (hit.collider.CompareTag("Bathroom_Wall6")) // Check if the object hit has the tag "Plug"
                 {
-                    for (int y = 0; y < _brush.height; y++)
+                    Vector2 textureCoord = hit.textureCoord;
+
+                    int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
+                    int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
+
+                    for (int x = 0; x < _brush.width; x++)
                     {
-                        Color pixelDirt = _brush.GetPixel(x, y);
-                        Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                        for (int y = 0; y < _brush.height; y++)
+                        {
+                            Color pixelDirt = _brush.GetPixel(x, y);
+                            Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
 
-                        // Use lerping for smooth transitions
-                        _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                            // Use lerping for smooth transitions
+                            _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                        }
                     }
+
+                    _templateDirtMask.Apply();
+
+                    // Calculate and log the percentage of clean area
+                    int cleanAmount = CalculateCleanPercentage();
+                    Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
+
+                    // Update clean amount value in CleanAmountManager
+                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
                 }
-
-                _templateDirtMask.Apply();
-
-                // Calculate and log the percentage of clean area
-                int cleanAmount = CalculateCleanPercentage();
-                Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
             }
         }
-    }
-}
-    public int CleanAmount
-    {
-        get { return CalculateCleanPercentage(); }
     }
 
     private void CreateTexture()
@@ -84,21 +84,20 @@ private void Update()
     }
 
     private int CalculateCleanPercentage()
-{
-    float cleanAmount = 0f;
-
-    for (int x = 0; x < _templateDirtMask.width; x++)
     {
-        for (int y = 0; y < _templateDirtMask.height; y++)
+        float cleanAmount = 0f;
+
+        for (int x = 0; x < _templateDirtMask.width; x++)
         {
-            cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+            for (int y = 0; y < _templateDirtMask.height; y++)
+            {
+                cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+            }
         }
+
+        float percentage = 1f - cleanAmount / dirtAmountTotal;
+        int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
+
+        return roundedPercentage;
     }
-
-    float percentage = 1f - cleanAmount / dirtAmountTotal;
-    int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
-
-    return roundedPercentage;
-}
-
 }
