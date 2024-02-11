@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class CleanPercentageText : MonoBehaviour
 {
-    // Reference to the Clean script
-    public Bathroom_Wall1_Script cleanScript;
+
     
     // Reference to the TextMeshPro component
     private TextMeshProUGUI textMeshPro;
@@ -23,7 +22,7 @@ public class CleanPercentageText : MonoBehaviour
     private void Update()
     {
         // Access cleanAmount from the Clean script
-        int cleanAmount = cleanScript.CleanAmount;
+        int cleanAmount = CleanAmountManager.CleanAmountValue;
 
         // Display cleanAmount in the TextMeshPro component
         textMeshPro.text = cleanAmount + "%";
