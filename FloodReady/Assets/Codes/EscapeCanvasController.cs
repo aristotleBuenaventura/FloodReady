@@ -29,7 +29,7 @@
         public BoxCollider roomBarrierCollider3;
         public BoxCollider roomBarrierCollider4;
 
-        public GameObject soundAlarm; // Reference to the GameObject with AudioSource for the sound alarm
+        public AudioSource soundAlarm; // Reference to the GameObject with AudioSource for the sound alarm
         private AudioSource alarmAudioSource; // Reference to the AudioSource component
         public float fadeOutDuration = 2f;
         public AudioSource goOutAudioSource;
