@@ -3,91 +3,30 @@ using UnityEngine;
 
 public class GasBottleRotation : MonoBehaviour
 {
-    // Rotation speed when not colliding
-    public float rotationSpeed = 100.0f;
-
-    // Rotation speed when colliding
-    public float collisionRotationSpeed = 20.0f;
-
-    // Reference to the Rigidbody component
-    private Rigidbody rb;
-
-    // Flag to control coroutine execution
-    private bool isRotating = false;
-
-    // Rotation duration in seconds
-    private float remainingRotationDuration = 5.0f;
-
-    // GameObject used as a trigger to start rotation
-    public GameObject triggerObject;
-    public GameObject triggerObject1;
-
-    // Flag to check if the trigger object is currently colliding
-    private bool isTriggerColliding = false;
-
-    // Flag to check if the rotation has occurred
-    private bool hasRotated = false;
-
-    // Maximum rotation angle (in degrees)
-    private float maxRotationAngle = 180.0f;
+    public string handTag = "Hand"; // Tag for the hand objects
+    public RecoveryCanvasController ShowchecwholehouseCanvas;
+    private Collider gasBottleCollider; // Reference to the GasBottle collider
+    private bool hasShownCanvas = false; // Flag to track if canvas has been shown
 
     void Start()
     {
-        // Get the Rigidbody component
-        rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        // Rotate the GasBottle around its local forward axis (X-axis) only when the trigger object is colliding
-        if (isTriggerColliding && remainingRotationDuration > 0.0f && !hasRotated)
-        {
-            RotateGasBottle(collisionRotationSpeed);
-        }
-    }
-
-    void RotateGasBottle(float speed)
-    {
-        // Get the current rotation angle around the X-axis
-        float currentRotationAngle = transform.rotation.eulerAngles.x;
-
-        // Rotate the GasBottle around its local forward axis (X-axis)
-        transform.Rotate(Vector3.right, speed * Time.deltaTime);
-
-        // Decrease the remaining rotation duration
-        remainingRotationDuration -= Time.deltaTime;
-
-        // Check if the rotation duration has elapsed or if the max rotation angle has been reached
-        if (remainingRotationDuration <= 0.0f || currentRotationAngle >= maxRotationAngle)
-        {
-            // Set the flag back to false to allow rotation again
-            isRotating = false;
-
-            // Set the rotation flag to true to indicate rotation has occurred
-            hasRotated = true;
-        }
+        // Get the collider component of the GasBottle
+        gasBottleCollider = GetComponent<Collider>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the trigger is the assigned triggerObject and rotation hasn't occurred yet
-        if ((other.gameObject == triggerObject || other.gameObject == triggerObject1) && !hasRotated)
+        // Check if the colliding object has the specified tag and the canvas hasn't been shown yet
+        if (other.CompareTag(handTag) && !hasShownCanvas)
         {
-            // Set the flag to true indicating the trigger object is colliding
-            isTriggerColliding = true;
+            // Show the canvas
+            ShowchecwholehouseCanvas.ShowchecwholehouseCanvas();
 
-            // Set the remaining rotation duration
-            remainingRotationDuration = 3.0f; // Set your desired rotation duration here
-        }
-    }
+            // Disable the collider to prevent further collisions
+            gasBottleCollider.enabled = false;
 
-    void OnTriggerExit(Collider other)
-    {
-        // Check if the trigger is the assigned triggerObject
-        if (other.gameObject == triggerObject || other.gameObject == triggerObject1)
-        {
-            // Set the flag to false indicating the trigger object is not colliding anymore
-            isTriggerColliding = false;
+            // Set the flag to true to indicate that the canvas has been shown
+            hasShownCanvas = true;
         }
     }
 }
