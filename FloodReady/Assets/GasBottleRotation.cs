@@ -20,7 +20,6 @@ public class GasBottleRotation : MonoBehaviour
 
     // GameObject used as a trigger to start rotation
     public GameObject triggerObject;
-
     public GameObject triggerObject1;
 
     // Flag to check if the trigger object is currently colliding
@@ -28,6 +27,9 @@ public class GasBottleRotation : MonoBehaviour
 
     // Flag to check if the rotation has occurred
     private bool hasRotated = false;
+
+    // Maximum rotation angle (in degrees)
+    private float maxRotationAngle = 180.0f;
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class GasBottleRotation : MonoBehaviour
 
     void Update()
     {
-        // Rotate the GasBottle around its local forward axis (Z-axis) only when the trigger object is colliding
+        // Rotate the GasBottle around its local forward axis (X-axis) only when the trigger object is colliding
         if (isTriggerColliding && remainingRotationDuration > 0.0f && !hasRotated)
         {
             RotateGasBottle(collisionRotationSpeed);
@@ -46,14 +48,17 @@ public class GasBottleRotation : MonoBehaviour
 
     void RotateGasBottle(float speed)
     {
-        // Rotate the GasBottle around its local forward axis (Z-axis)
-        transform.Rotate(Vector3.forward, speed * Time.deltaTime);
+        // Get the current rotation angle around the X-axis
+        float currentRotationAngle = transform.rotation.eulerAngles.x;
+
+        // Rotate the GasBottle around its local forward axis (X-axis)
+        transform.Rotate(Vector3.right, speed * Time.deltaTime);
 
         // Decrease the remaining rotation duration
         remainingRotationDuration -= Time.deltaTime;
 
-        // Check if the rotation duration has elapsed
-        if (remainingRotationDuration <= 0.0f)
+        // Check if the rotation duration has elapsed or if the max rotation angle has been reached
+        if (remainingRotationDuration <= 0.0f || currentRotationAngle >= maxRotationAngle)
         {
             // Set the flag back to false to allow rotation again
             isRotating = false;
