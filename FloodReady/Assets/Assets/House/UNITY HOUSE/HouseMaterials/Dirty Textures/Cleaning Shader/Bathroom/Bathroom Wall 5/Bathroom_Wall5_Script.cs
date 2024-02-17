@@ -36,11 +36,18 @@ public class Bathroom_Wall5_Script : MonoBehaviour
                     {
                         for (int y = 0; y < _brush.height; y++)
                         {
-                            Color pixelDirt = _brush.GetPixel(x, y);
-                            Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                            // Calculate distance from the center
+                            float distance = Vector2.Distance(new Vector2(x, y), new Vector2(_brush.width / 2, _brush.height / 2));
+                            
+                            // Check if the pixel is within the circle
+                            if (distance <= _brush.width / 2)
+                            {
+                                Color pixelDirt = _brush.GetPixel(x, y);
+                                Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
 
-                            // Use lerping for smooth transitions
-                            _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                                // Use lerping for smooth transitions
+                                _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                            }
                         }
                     }
 
