@@ -28,7 +28,7 @@ public class RecoveryCanvasController : MonoBehaviour
 
    // collider
     public GameObject roomBarrierCollider1;
-    public BoxCollider roomBarrierCollider2;
+    public Collider roomBarrierCollider2;
     public BoxCollider roomBarrierCollider3;
     public BoxCollider roomBarrierCollider4;
 
@@ -151,7 +151,7 @@ public class RecoveryCanvasController : MonoBehaviour
 
 
         messageCanvas.OpenCanvasAgain();
-        SetRoomBarrierColliderActive3(false);
+        SetRoomBarrierColliderActive2(false);
        
 
     }
