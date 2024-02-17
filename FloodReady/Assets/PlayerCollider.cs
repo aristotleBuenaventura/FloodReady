@@ -23,22 +23,22 @@ public class PlayerCollider : MonoBehaviour
             // Disable the collider to prevent further collisions
             gasFindHintCollider.enabled = false;
 
-            // Disable the object and increment the counter
-            foreach (GameObject obj in objectsToDisable)
+            // Disable the next object if available
+            if (objectsDisabledCount < objectsToDisable.Length)
             {
-                if (obj.activeSelf)
+                GameObject objToDisable = objectsToDisable[objectsDisabledCount];
+                if (objToDisable.activeSelf)
                 {
-                    obj.SetActive(false);
+                    objToDisable.SetActive(false);
                     objectsDisabledCount++;
-
-                    // Check if the required number of objects have been disabled
-                    if (objectsDisabledCount >= 5)
-                    {
-                        // Show the canvas
-                        ShowclosegasleakCanvas.ShowclosegasleakCanvas();
-                        break; // No need to continue disabling objects
-                    }
                 }
+            }
+
+            // Check if all objects have been disabled
+            if (objectsDisabledCount >= objectsToDisable.Length)
+            {
+                // Show the canvas
+                ShowclosegasleakCanvas.ShowfindnozzleCanvas();
             }
         }
     }
