@@ -156,7 +156,7 @@ public class RecoveryCanvasController : MonoBehaviour
 
     }
 
-    public void ShowfindnozzleCanvas(bool show)
+    public void ShowfindnozzleCanvas()
     {
 
 
