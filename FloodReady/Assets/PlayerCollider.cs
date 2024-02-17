@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
     public GameObject playerTag; // Assign the player GameObject to this variable in the Inspector
-    public GameObject objectToDisable; // Assign the GameObject you want to disable to this variable in the Inspector
+    public GameObject[] objectsToDisable; // Assign the GameObjects you want to disable to this array variable in the Inspector
     public RecoveryCanvasController ShowclosegasleakCanvas;
     private Collider gasFindHintCollider; // Reference to the GasFindHint collider
-    private bool hasShownCanvas = false; // Flag to track if canvas has been shown
+    private int objectsDisabledCount = 0; // Counter for the number of objects disabled by the player
 
     void Start()
     {
@@ -18,17 +18,28 @@ public class PlayerCollider : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == playerTag && !hasShownCanvas)
+        if (other.gameObject == playerTag)
         {
-            // Show the canvas
-            ShowclosegasleakCanvas.ShowclosegasleakCanvas();
-            objectToDisable.SetActive(false);
-
             // Disable the collider to prevent further collisions
             gasFindHintCollider.enabled = false;
 
-            // Set the flag to true to indicate that the canvas has been shown
-            hasShownCanvas = true;
+            // Disable the object and increment the counter
+            foreach (GameObject obj in objectsToDisable)
+            {
+                if (obj.activeSelf)
+                {
+                    obj.SetActive(false);
+                    objectsDisabledCount++;
+
+                    // Check if the required number of objects have been disabled
+                    if (objectsDisabledCount >= 5)
+                    {
+                        // Show the canvas
+                        ShowclosegasleakCanvas.ShowclosegasleakCanvas();
+                        break; // No need to continue disabling objects
+                    }
+                }
+            }
         }
     }
 }
