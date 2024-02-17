@@ -32,8 +32,8 @@ public class RecoveryCanvasController : MonoBehaviour
     public BoxCollider roomBarrierCollider3;
     public BoxCollider roomBarrierCollider4;
 
-  
 
+    public CheckHouse checkHouse; // Reference to the CheckHouse script
 
 
 
@@ -148,8 +148,8 @@ public class RecoveryCanvasController : MonoBehaviour
         failedCanvas.SetActive(false);
 
 
-
-
+        if (checkHouse != null)
+            checkHouse.TurnOnObjects();
         messageCanvas.OpenCanvasAgain();
         SetRoomBarrierColliderActive2(false);
        
