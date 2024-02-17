@@ -3,6 +3,7 @@ using UnityEngine;
 public class WaterController : MonoBehaviour
 {
     public ParticleSystem waterParticles;
+    public AudioSource waterSound;
     private bool isButtonPressed = false;
     private bool isHandColliding = false;
 
@@ -11,12 +12,8 @@ public class WaterController : MonoBehaviour
         // Ensure the water particle system starts off
         if (waterParticles != null)
         {
-            // Option 1: Disable emission (if using the Shuriken Particle System)
             var emissionModule = waterParticles.emission;
             emissionModule.enabled = false;
-
-            // Option 2: Stop the entire particle system
-            // waterParticles.Stop();
         }
     }
 
@@ -36,15 +33,18 @@ public class WaterController : MonoBehaviour
         {
             isHandColliding = false;
 
-            // Turn off the water particle system when the hand exits
+            // Turn off the water particle system and sound when the hand exits
             if (waterParticles != null)
             {
                 var emissionModule = waterParticles.emission;
                 emissionModule.enabled = false;
             }
+            if (waterSound != null)
+            {
+                waterSound.Stop();
+            }
         }
     }
-    
 
     void Update()
     {
@@ -53,11 +53,15 @@ public class WaterController : MonoBehaviour
         {
             isButtonPressed = true;
 
-            // Turn on the water particle system when the hand is colliding and the trigger is pressed
+            // Turn on the water particle system and play the water sound when the hand is colliding and the trigger is pressed
             if (waterParticles != null)
             {
                 var emissionModule = waterParticles.emission;
                 emissionModule.enabled = true;
+            }
+            if (waterSound != null)
+            {
+                waterSound.Play();
             }
         }
 
@@ -66,11 +70,15 @@ public class WaterController : MonoBehaviour
         {
             isButtonPressed = false;
 
-            // Turn off the water particle system when the trigger is released
+            // Turn off the water particle system and stop the water sound when the trigger is released
             if (waterParticles != null)
             {
                 var emissionModule = waterParticles.emission;
                 emissionModule.enabled = false;
+            }
+            if (waterSound != null)
+            {
+                waterSound.Stop();
             }
         }
     }
