@@ -20,7 +20,7 @@ public class HintGasFind : MonoBehaviour
         {
             // Show the canvas
             ShowclosegasleakCanvas.ShowclosegasleakCanvas();
-
+            objectToDisable.SetActive(false);
             // Disable the collider to prevent further collisions
             gasFindHintCollider.enabled = false;
 
