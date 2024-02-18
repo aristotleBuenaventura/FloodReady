@@ -14,11 +14,13 @@ public class GasBottleRotation : MonoBehaviour
 
     public string handTag = "Hand"; // Tag for the hand objects
     public RecoveryCanvasController ShowchecwholehouseCanvas; // Reference to the canvas controller
+    private AudioSource audioSource;
 
     void Start()
     {
         // Get the collider component of the GasBottle
         gasBottleCollider = GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,7 +32,7 @@ public class GasBottleRotation : MonoBehaviour
 
             // Rotate the gas bottle
             isRotating = true;
-
+            DisableSound();
             // Show the canvas
             ShowchecwholehouseCanvas.ShowchecwholehouseCanvas();
 
@@ -58,5 +60,9 @@ public class GasBottleRotation : MonoBehaviour
                 isRotating = false; // Stop rotating
             }
         }
+    }
+    void DisableSound()
+    {
+        audioSource.enabled = false;
     }
 }
