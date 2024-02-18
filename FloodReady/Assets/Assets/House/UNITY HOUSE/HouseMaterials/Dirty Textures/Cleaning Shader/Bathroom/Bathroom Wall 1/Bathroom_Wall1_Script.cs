@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bathroom_Wall1_Script : MonoBehaviour
 {
+    [SerializeField] private WaterController waterController; // Reference to the WaterController script
     [SerializeField] private GameObject waterGun; // Reference to the water gun GameObject
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
@@ -16,8 +17,15 @@ public class Bathroom_Wall1_Script : MonoBehaviour
     }
 
     private void Update()
-{
-    if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+    {
+        // Check if the water controller's button is pressed
+        if (waterController != null && waterController.isButtonPressed)
+        {
+            CleanWall();
+        }
+    }
+
+    private void CleanWall()
     {
         RaycastHit hit;
         Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
@@ -67,8 +75,6 @@ public class Bathroom_Wall1_Script : MonoBehaviour
             }
         }
     }
-}
-
 
     private void CreateTexture()
     {

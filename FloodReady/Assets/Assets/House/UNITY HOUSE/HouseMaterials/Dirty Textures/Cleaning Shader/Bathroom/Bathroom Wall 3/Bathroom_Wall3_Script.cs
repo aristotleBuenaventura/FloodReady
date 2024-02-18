@@ -1,8 +1,8 @@
-// Add this line at the beginning of your script
 using UnityEngine;
 
 public class Bathroom_Wall3_Script : MonoBehaviour
 {
+    [SerializeField] private WaterController waterController; // Reference to the WaterController script
     [SerializeField] private GameObject waterGun; // Reference to the water gun GameObject
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
@@ -18,53 +18,59 @@ public class Bathroom_Wall3_Script : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+        // Check if the water controller's button is pressed
+        if (waterController != null && waterController.isButtonPressed)
         {
-            RaycastHit hit;
-            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+            CleanWall();
+        }
+    }
 
-            if (Physics.Raycast(ray, out hit))
+    private void CleanWall()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Bathroom_Wall3"))
             {
-                if (hit.collider.CompareTag("Bathroom_Wall3")) // Check if the object hit has the tag "Plug"
+                Renderer renderer = hit.collider.GetComponent<Renderer>();
+                Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
+
+                if (dirtMaskTexture != null)
                 {
-                    Renderer renderer = hit.collider.GetComponent<Renderer>();
-                    Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
+                    Vector2 textureCoord = hit.textureCoord;
+                    Vector2 pixelUV = new Vector2(textureCoord.x * dirtMaskTexture.width, textureCoord.y * dirtMaskTexture.height);
 
-                    if (dirtMaskTexture != null)
+                    int pixelX = Mathf.RoundToInt(pixelUV.x);
+                    int pixelY = Mathf.RoundToInt(pixelUV.y);
+
+                    for (int x = pixelX - _brush.width / 2; x < pixelX + _brush.width / 2; x++)
                     {
-                        Vector2 textureCoord = hit.textureCoord;
-                        Vector2 pixelUV = new Vector2(textureCoord.x * dirtMaskTexture.width, textureCoord.y * dirtMaskTexture.height);
-
-                        int pixelX = Mathf.RoundToInt(pixelUV.x);
-                        int pixelY = Mathf.RoundToInt(pixelUV.y);
-
-                        for (int x = pixelX - _brush.width / 2; x < pixelX + _brush.width / 2; x++)
+                        for (int y = pixelY - _brush.height / 2; y < pixelY + _brush.height / 2; y++)
                         {
-                            for (int y = pixelY - _brush.height / 2; y < pixelY + _brush.height / 2; y++)
+                            if (x >= 0 && x < dirtMaskTexture.width && y >= 0 && y < dirtMaskTexture.height)
                             {
-                                if (x >= 0 && x < dirtMaskTexture.width && y >= 0 && y < dirtMaskTexture.height)
+                                float distance = Vector2.Distance(new Vector2(x, y), pixelUV);
+
+                                if (distance <= _brush.width / 2)
                                 {
-                                    float distance = Vector2.Distance(new Vector2(x, y), pixelUV);
+                                    Color pixelDirt = _brush.GetPixel(x - (pixelX - _brush.width / 2), y - (pixelY - _brush.height / 2));
+                                    Color pixelDirtMask = dirtMaskTexture.GetPixel(x, y);
 
-                                    if (distance <= _brush.width / 2)
-                                    {
-                                        Color pixelDirt = _brush.GetPixel(x - (pixelX - _brush.width / 2), y - (pixelY - _brush.height / 2));
-                                        Color pixelDirtMask = dirtMaskTexture.GetPixel(x, y);
-
-                                        dirtMaskTexture.SetPixel(x, y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
-                                    }
+                                    dirtMaskTexture.SetPixel(x, y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
                                 }
                             }
                         }
-
-                        dirtMaskTexture.Apply();
-
-                        int cleanAmount = CalculateCleanPercentage();
-                        Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
-
-                        CleanAmountManager.UpdateCleanAmount(cleanAmount);
-                        MaterialManager.UpdateMaterialValue("Wall 3");
                     }
+
+                    dirtMaskTexture.Apply();
+
+                    int cleanAmount = CalculateCleanPercentage();
+                    Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
+
+                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    MaterialManager.UpdateMaterialValue("Wall 3");
                 }
             }
         }

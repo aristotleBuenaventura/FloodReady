@@ -4,8 +4,13 @@ public class WaterController : MonoBehaviour
 {
     public ParticleSystem waterParticles;
     public AudioSource waterSound;
-    private bool isButtonPressed = false;
+    public bool isButtonPressed = false;
     private bool isHandColliding = false;
+
+    public bool IsButtonPressed // Add a public property to access isButtonPressed
+    {
+        get { return isButtonPressed; }
+    }
 
     void Start()
     {
@@ -43,6 +48,9 @@ public class WaterController : MonoBehaviour
             {
                 waterSound.Stop();
             }
+
+            // Update isButtonPressed when hand exits
+            isButtonPressed = false;
         }
     }
 
