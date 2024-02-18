@@ -27,39 +27,44 @@ public class Bathroom_Wall2_Script : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Bathroom_Wall2")) // Check if the object hit has the tag "Plug"
                 {
-                    Vector2 textureCoord = hit.textureCoord;
+                    Renderer renderer = hit.collider.GetComponent<Renderer>();
+                    Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
 
-                    int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
-                    int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
-
-                    for (int x = 0; x < _brush.width; x++)
+                    if (dirtMaskTexture != null)
                     {
-                        for (int y = 0; y < _brush.height; y++)
-                        {
-                            // Calculate distance from the center
-                            float distance = Vector2.Distance(new Vector2(x, y), new Vector2(_brush.width / 2, _brush.height / 2));
-                            
-                            // Check if the pixel is within the circle
-                            if (distance <= _brush.width / 2)
-                            {
-                                Color pixelDirt = _brush.GetPixel(x, y);
-                                Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                        Vector2 textureCoord = hit.textureCoord;
+                        Vector2 pixelUV = new Vector2(textureCoord.x * dirtMaskTexture.width, textureCoord.y * dirtMaskTexture.height);
 
-                                // Use lerping for smooth transitions
-                                _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                        int pixelX = Mathf.RoundToInt(pixelUV.x);
+                        int pixelY = Mathf.RoundToInt(pixelUV.y);
+
+                        for (int x = pixelX - _brush.width / 2; x < pixelX + _brush.width / 2; x++)
+                        {
+                            for (int y = pixelY - _brush.height / 2; y < pixelY + _brush.height / 2; y++)
+                            {
+                                if (x >= 0 && x < dirtMaskTexture.width && y >= 0 && y < dirtMaskTexture.height)
+                                {
+                                    float distance = Vector2.Distance(new Vector2(x, y), pixelUV);
+
+                                    if (distance <= _brush.width / 2)
+                                    {
+                                        Color pixelDirt = _brush.GetPixel(x - (pixelX - _brush.width / 2), y - (pixelY - _brush.height / 2));
+                                        Color pixelDirtMask = dirtMaskTexture.GetPixel(x, y);
+
+                                        dirtMaskTexture.SetPixel(x, y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                                    }
+                                }
                             }
                         }
+
+                        dirtMaskTexture.Apply();
+
+                        int cleanAmount = CalculateCleanPercentage();
+                        Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
+
+                        CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                        MaterialManager.UpdateMaterialValue("Wall 2");
                     }
-
-                    _templateDirtMask.Apply();
-
-                    // Calculate and log the percentage of clean area
-                    int cleanAmount = CalculateCleanPercentage();
-                    Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
-
-                    // Update clean amount value in CleanAmountManager
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
-                    MaterialManager.UpdateMaterialValue("Wall 2");
                 }
             }
         }
