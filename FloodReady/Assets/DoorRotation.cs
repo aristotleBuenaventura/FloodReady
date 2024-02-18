@@ -21,7 +21,7 @@ public class DoorRotation : MonoBehaviour
     private bool hasRotated = false;
 
     // Collider to disable after rotation
-    public BoxCollider triggerCollider;
+    public Collider triggerCollider;
 
     void Update()
     {
