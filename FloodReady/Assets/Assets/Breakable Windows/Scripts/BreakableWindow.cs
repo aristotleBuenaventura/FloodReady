@@ -14,14 +14,14 @@ public class BreakableWindow : MonoBehaviour
     private bool canBreak = true;
     private bool isLastWindow = false;
     public TaskPercentage breakwindowpercentage;
-    public GameObject breaksound;
+    public AudioSource breakSound; // Reference to the AudioSource for break sound
 
     public bool IsBroken { get; private set; } = false;
 
     private void Start()
     {
         ShowWindow();
-        breaksound.SetActive(false);
+        breakSound.Stop(); // Ensure break sound is initially stopped
     }
 
     private void ShowWindow()
@@ -100,7 +100,7 @@ public class BreakableWindow : MonoBehaviour
         if (col != null)
         {
             Destroy(col);
-            breaksound.SetActive(true);
+            breakSound.Play(); // Play break sound when window is destroyed
         }
 
         if (renderer != null)
