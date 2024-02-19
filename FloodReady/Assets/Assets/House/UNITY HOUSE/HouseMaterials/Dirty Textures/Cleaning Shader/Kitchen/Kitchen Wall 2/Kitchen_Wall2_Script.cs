@@ -1,8 +1,8 @@
-// Add this line at the beginning of your script
 using UnityEngine;
 
 public class Kitchen_Wall2_Script : MonoBehaviour
 {
+    [SerializeField] private WaterController waterController; // Reference to the WaterController script
     [SerializeField] private GameObject waterGun; // Reference to the water gun GameObject
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
@@ -18,46 +18,57 @@ public class Kitchen_Wall2_Script : MonoBehaviour
 
     private void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+        // Check if the water controller's button is pressed
+        if (waterController != null && waterController.isButtonPressed)
         {
-            RaycastHit hit;
-            Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+            CleanWall();
+        }
+    }
 
-            if (Physics.Raycast(ray, out hit))
+    private void CleanWall()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(waterGun.transform.position, waterGun.transform.forward);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.CompareTag("Kitchen_Wall2"))
             {
-                if (hit.collider.CompareTag("Kitchen_Wall2")) // Check if the object hit has the tag "Plug"
+                Renderer renderer = hit.collider.GetComponent<Renderer>();
+                Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
+
+                if (dirtMaskTexture != null)
                 {
                     Vector2 textureCoord = hit.textureCoord;
+                    Vector2 pixelUV = new Vector2(textureCoord.x * dirtMaskTexture.width, textureCoord.y * dirtMaskTexture.height);
 
-                    int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
-                    int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
+                    int pixelX = Mathf.RoundToInt(pixelUV.x);
+                    int pixelY = Mathf.RoundToInt(pixelUV.y);
 
-                    for (int x = 0; x < _brush.width; x++)
+                    for (int x = pixelX - _brush.width / 2; x < pixelX + _brush.width / 2; x++)
                     {
-                        for (int y = 0; y < _brush.height; y++)
+                        for (int y = pixelY - _brush.height / 2; y < pixelY + _brush.height / 2; y++)
                         {
-                            // Calculate distance from the center
-                            float distance = Vector2.Distance(new Vector2(x, y), new Vector2(_brush.width / 2, _brush.height / 2));
-                            
-                            // Check if the pixel is within the circle
-                            if (distance <= _brush.width / 2)
+                            if (x >= 0 && x < dirtMaskTexture.width && y >= 0 && y < dirtMaskTexture.height)
                             {
-                                Color pixelDirt = _brush.GetPixel(x, y);
-                                Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                                float distance = Vector2.Distance(new Vector2(x, y), pixelUV);
 
-                                // Use lerping for smooth transitions
-                                _templateDirtMask.SetPixel(pixelX + x, pixelY + y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                                if (distance <= _brush.width / 2)
+                                {
+                                    Color pixelDirt = _brush.GetPixel(x - (pixelX - _brush.width / 2), y - (pixelY - _brush.height / 2));
+                                    Color pixelDirtMask = dirtMaskTexture.GetPixel(x, y);
+
+                                    dirtMaskTexture.SetPixel(x, y, Color.Lerp(pixelDirtMask, Color.clear, pixelDirt.g));
+                                }
                             }
                         }
                     }
 
-                    _templateDirtMask.Apply();
+                    dirtMaskTexture.Apply();
 
-                    // Calculate and log the percentage of clean area
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    // Update clean amount value in CleanAmountManager
                     CleanAmountManager.UpdateCleanAmount(cleanAmount);
                     MaterialManager.UpdateMaterialValue("Wall 2");
                 }
