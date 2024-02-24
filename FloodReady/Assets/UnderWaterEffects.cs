@@ -2,30 +2,31 @@ using UnityEngine;
 
 public class UnderWaterEffects : MonoBehaviour
 {
-    [SerializeField] GameObject postObject;
-    [SerializeField] GameObject waterFx;
+    [SerializeField] GameObject water;
+    [SerializeField] GameObject cameraRig; // Reference to the camera rig
     private bool isFogActive = false;
 
     void Update()
     {
-        if (postObject != null)
+        if (water != null && cameraRig != null) // Check if both objects are assigned
         {
-            float postHeight = postObject.transform.position.y;
-            float objectHeight = transform.position.y;
-            if (postHeight < objectHeight)
+            float waterHeight = water.transform.position.y;
+            float cameraHeight = cameraRig.transform.position.y; // Get camera rig's height
+
+            if (cameraHeight < waterHeight) // Activate fog if camera height is below water height
             {
-                isFogActive = false;
+                isFogActive = true;
                 RenderSettings.fog = isFogActive;
             }
             else
             {
-                isFogActive = true;
+                isFogActive = false;
                 RenderSettings.fog = isFogActive;
             }
         }
         else
         {
-            Debug.LogWarning("Post object is not assigned!");
+            Debug.LogWarning("Water or camera rig is not assigned!");
         }
     }
 }
