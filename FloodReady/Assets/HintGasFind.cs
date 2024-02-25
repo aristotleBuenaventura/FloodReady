@@ -9,6 +9,7 @@ public class HintGasFind : MonoBehaviour
     private bool hasShownCanvas = false; // Flag to track if canvas has been shown
 
     public gasleakIcon check;
+    public TaskPercentage task;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class HintGasFind : MonoBehaviour
             hasShownCanvas = true;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            task.IncrementTaskPercentage(10);
         }
     }
 }

@@ -17,6 +17,7 @@ public class GasBottleRotation : MonoBehaviour
     private AudioSource audioSource;
 
     public closevalveIcon check;
+    public TaskPercentage task;
 
     
 
@@ -41,7 +42,7 @@ public class GasBottleRotation : MonoBehaviour
             ShowchecwholehouseCanvas.ShowchecwholehouseCanvas();
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
-
+            task.IncrementTaskPercentage(10);
             // Disable the collider to prevent further collisions
             gasBottleCollider.enabled = false;
 

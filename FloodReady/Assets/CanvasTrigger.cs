@@ -11,6 +11,8 @@ public class CanvasTrigger : MonoBehaviour
 
     public assesstheaftermathIcon check;
 
+    public TaskPercentage task;
+
     void Update()
     {
         // Check if showchecwholehouse canvas is active and enabled
@@ -44,6 +46,7 @@ public class CanvasTrigger : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            task.IncrementTaskPercentage(10);
             canvasController.ShowfindnozzleCanvas();
             canvasShown = true; // Set canvasShown to true to indicate that the canvas has been shown
             // Disable this script to prevent further updates
