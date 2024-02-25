@@ -9,6 +9,8 @@ public class WaterSprayDisappear : MonoBehaviour
     private bool isGrabbed = false;
     public WaterSpraySpawn waterspray;
 
+    public RecoveryCanvasController canvasController;
+
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
 
@@ -36,6 +38,7 @@ public class WaterSprayDisappear : MonoBehaviour
         waterspray.isAllowed = true;
         check.SetCheckIconVisible(true);
         check.SetUncheckIconVisible(false);
+        canvasController.ShowcleanlivingCanvas();
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
         
