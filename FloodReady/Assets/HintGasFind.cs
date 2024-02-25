@@ -8,6 +8,8 @@ public class HintGasFind : MonoBehaviour
     private Collider gasFindHintCollider; // Reference to the GasFindHint collider
     private bool hasShownCanvas = false; // Flag to track if canvas has been shown
 
+    public gasleakIcon check;
+
     void Start()
     {
         // Get the collider component of the GasFindHint
@@ -26,6 +28,8 @@ public class HintGasFind : MonoBehaviour
 
             // Set the flag to true to indicate that the canvas has been shown
             hasShownCanvas = true;
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
         }
     }
 }

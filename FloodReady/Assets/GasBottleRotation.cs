@@ -16,6 +16,10 @@ public class GasBottleRotation : MonoBehaviour
     public RecoveryCanvasController ShowchecwholehouseCanvas; // Reference to the canvas controller
     private AudioSource audioSource;
 
+    public closevalveIcon check;
+
+    
+
     void Start()
     {
         // Get the collider component of the GasBottle
@@ -35,6 +39,8 @@ public class GasBottleRotation : MonoBehaviour
             DisableSound();
             // Show the canvas
             ShowchecwholehouseCanvas.ShowchecwholehouseCanvas();
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
 
             // Disable the collider to prevent further collisions
             gasBottleCollider.enabled = false;

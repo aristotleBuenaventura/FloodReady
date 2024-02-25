@@ -12,6 +12,8 @@ public class WaterSprayDisappear : MonoBehaviour
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
 
+    public findthewaternozzleIcon check;
+
     void Update()
     {
         // Check if the user is holding the object using either the left or right OVRGrabber
@@ -32,6 +34,8 @@ public class WaterSprayDisappear : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeDisappear);
         waterspray.Show_WaterSpray();
         waterspray.isAllowed = true;
+        check.SetCheckIconVisible(true);
+        check.SetUncheckIconVisible(false);
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
         

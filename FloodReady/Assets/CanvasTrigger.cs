@@ -9,6 +9,8 @@ public class CanvasTrigger : MonoBehaviour
 
     private bool canvasShown = false;
 
+    public assesstheaftermathIcon check;
+
     void Update()
     {
         // Check if showchecwholehouse canvas is active and enabled
@@ -40,10 +42,13 @@ public class CanvasTrigger : MonoBehaviour
         // If all GameObjects are disabled and canvas has not been shown yet, show the canvas
         if (allDisabled && !canvasShown)
         {
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
             canvasController.ShowfindnozzleCanvas();
             canvasShown = true; // Set canvasShown to true to indicate that the canvas has been shown
             // Disable this script to prevent further updates
             enabled = false;
+            
         }
     }
 }
