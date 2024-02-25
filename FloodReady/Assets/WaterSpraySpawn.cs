@@ -7,7 +7,7 @@ public class WaterSpraySpawn : MonoBehaviour
     public GameObject WaterSpray; // Reference to the GameObject to toggle
 
     private bool isVisible = false;
-    public bool isAllowed = true;
+    public bool isAllowed = false;
 
     // Update is called once per frame
     void Start()
@@ -16,13 +16,17 @@ public class WaterSpraySpawn : MonoBehaviour
     }
 
     void Update()
-{
-    // Check for button press to toggle visibility
-    if (OVRInput.GetDown(OVRInput.Button.Two) && isAllowed == true) // Change the button as per your requirement
     {
-        isVisible = !isVisible;
-        WaterSpray.SetActive(isVisible); // Set the active state of the flashlight
+        // Check for button press to toggle visibility
+        if (OVRInput.GetDown(OVRInput.Button.Two) && isAllowed == true) // Change the button as per your requirement
+        {
+            isVisible = !isVisible;
+            WaterSpray.SetActive(isVisible); // Set the active state of the flashlight
+        }
     }
-}
+
+    public void Show_WaterSpray(){
+        WaterSpray.SetActive(true);
+    }
 
 }
