@@ -5,6 +5,7 @@ public class WaterController : MonoBehaviour
     public ParticleSystem waterParticles;
     public AudioSource waterSound;
     public bool isButtonPressed = false;
+    public bool isGripPressed = false;
     private bool isHandColliding = false;
 
     public bool IsButtonPressed // Add a public property to access isButtonPressed
@@ -22,42 +23,17 @@ public class WaterController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        // Check if the collided object has the "Hand" tag
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-        {
-            isHandColliding = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        // Check if the previously collided object has the "Hand" tag
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-        {
-            isHandColliding = false;
-
-            // Turn off the water particle system and sound when the hand exits
-            if (waterParticles != null)
-            {
-                var emissionModule = waterParticles.emission;
-                emissionModule.enabled = false;
-            }
-            if (waterSound != null)
-            {
-                waterSound.Stop();
-            }
-
-            // Update isButtonPressed when hand exits
-            isButtonPressed = false;
-        }
-    }
 
     void Update()
     {
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)){
+            isGripPressed = true;
+        }
+        if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger)){
+            isGripPressed = false;  
+        }
         // Check for Oculus Touch controller trigger press to turn on (adjust as needed)
-        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+        if (isGripPressed && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             isButtonPressed = true;
 
