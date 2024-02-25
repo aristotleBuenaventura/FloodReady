@@ -18,7 +18,7 @@ public class WaterSpraySpawn : MonoBehaviour
     void Update()
     {
         // Check for button press to toggle visibility
-        if (OVRInput.GetDown(OVRInput.Button.Two) && isAllowed == true) // Change the button as per your requirement
+        if (OVRInput.GetDown(OVRInput.Button.Two) && isAllowed) // Change the button as per your requirement
         {
             isVisible = !isVisible;
             WaterSpray.SetActive(isVisible); // Set the active state of the flashlight

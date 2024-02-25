@@ -31,6 +31,7 @@ public class WaterSprayDisappear : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeDisappear);
         waterspray.Show_WaterSpray();
+        waterspray.isAllowed = true;
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
         
