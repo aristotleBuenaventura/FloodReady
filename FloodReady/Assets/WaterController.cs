@@ -25,7 +25,7 @@ public class WaterController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object has the "Hand" tag
-        if (other.CompareTag("Hand"))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             isHandColliding = true;
         }
@@ -34,7 +34,7 @@ public class WaterController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // Check if the previously collided object has the "Hand" tag
-        if (other.CompareTag("Hand"))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
             isHandColliding = false;
 
@@ -57,7 +57,7 @@ public class WaterController : MonoBehaviour
     void Update()
     {
         // Check for Oculus Touch controller trigger press to turn on (adjust as needed)
-        if (isHandColliding && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
             isButtonPressed = true;
 
