@@ -13,6 +13,9 @@ public class CanvasTrigger : MonoBehaviour
 
     public TaskPercentage task;
 
+    public GameObject waterSpray;
+
+
     void Update()
     {
         // Check if showchecwholehouse canvas is active and enabled
@@ -44,6 +47,7 @@ public class CanvasTrigger : MonoBehaviour
         // If all GameObjects are disabled and canvas has not been shown yet, show the canvas
         if (allDisabled && !canvasShown)
         {
+            waterSpray.SetActive(true);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);

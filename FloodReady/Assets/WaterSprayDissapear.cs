@@ -17,6 +17,7 @@ public class WaterSprayDisappear : MonoBehaviour
 
     public findthewaternozzleIcon check;
 
+
     void Update()
     {
         // Check if the user is holding the object using either the left or right OVRGrabber

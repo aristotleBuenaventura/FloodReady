@@ -34,6 +34,7 @@ public class RecoveryCanvasController : MonoBehaviour
 
 
     public CheckHouse checkHouse; // Reference to the CheckHouse script
+    public GameObject waterSpray;
 
 
 
@@ -43,6 +44,7 @@ public class RecoveryCanvasController : MonoBehaviour
         // Ensure the welcome canvas starts in the desired state
         ShowWelcomeCanvas();
         StartCoroutine(SwitchCanvasAfterDelay());
+        waterSpray.SetActive(false);
 
     }
 
