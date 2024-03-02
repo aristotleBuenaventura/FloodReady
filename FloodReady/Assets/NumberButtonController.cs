@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class NumberButtonController : MonoBehaviour
 {
     public string number; // Set this in the Inspector for each button
-    public NumberArrayManager arrayManager;
+    public NumberArrayManagerScene3 arrayManager;
 
     private bool canPress = true; // Flag to track if the button can be pressed
     public float cooldownTime = 1f; // Cooldown period in seconds
@@ -12,7 +12,7 @@ public class NumberButtonController : MonoBehaviour
     private void Start()
     {
         // Find the NumberArrayManager script in the scene
-        arrayManager = FindObjectOfType<NumberArrayManager>();
+        arrayManager = FindObjectOfType<NumberArrayManagerScene3>();
     }
 
     // Called when the collider enters the trigger zone
