@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Flush : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Flush : MonoBehaviour
     public AudioSource flushSound; // Reference to the AudioSource component
     public plungethetoiletIcon check;
     public TaskPercentage task;
+    public RecoveryCanvasController canvasController;
 
     private bool hasExecuted = false; // Track if the code has already been executed
 
@@ -23,6 +25,7 @@ public class Flush : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
+
             // Check if flushSound is assigned
             if (flushSound != null)
             {
@@ -36,6 +39,18 @@ public class Flush : MonoBehaviour
 
             // Set the flag to true to indicate that the code has been executed
             hasExecuted = true;
+
+            // Start a coroutine to wait for 4 seconds before executing the next line
+            StartCoroutine(ExecuteAfterDelay(4f));
         }
+    }
+
+    private IEnumerator ExecuteAfterDelay(float delay)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(delay);
+
+        // Execute the line after the delay
+        canvasController.ShowgatherDirtyclothesCanvas();
     }
 }
