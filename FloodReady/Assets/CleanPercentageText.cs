@@ -22,7 +22,7 @@ public class CleanPercentageText : MonoBehaviour
     private void Update()
     {
         // Access cleanAmount from the Clean script
-        int cleanAmount = CleanAmountManager.CleanAmountValue;
+        double cleanAmount = CleanAmountManager.CleanAmountValue;
 
         // Display cleanAmount in the TextMeshPro component
         textMeshPro.text = cleanAmount + "%";

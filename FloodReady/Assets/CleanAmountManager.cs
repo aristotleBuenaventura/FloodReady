@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CleanAmountManager : MonoBehaviour
 {
-    public static int CleanAmountValue { get; private set; }
+    public static double CleanAmountValue { get; private set; }
 
-    public static void UpdateCleanAmount(int amount)
+    public static void UpdateCleanAmount(double amount)
     {
         CleanAmountValue = amount;
     }

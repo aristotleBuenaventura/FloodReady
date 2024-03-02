@@ -10,6 +10,7 @@ public class Bathroom_Wall4_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
+    public Bathroom_Wall_456 Wall;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class Bathroom_Wall4_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    Wall.wall4(cleanAmount * .60);
                     MaterialManager.UpdateMaterialValue("Wall 4");
                 }
             }
@@ -105,15 +106,17 @@ public class Bathroom_Wall4_Script : MonoBehaviour
     private int CalculateCleanPercentage()
     {
         float cleanAmount = 0f;
+        float tempAmount = 0f;
 
         for (int x = 0; x < _templateDirtMask.width; x++)
         {
             for (int y = 0; y < _templateDirtMask.height; y++)
             {
                 cleanAmount += _templateDirtMask.GetPixel(x, y).g;
+                tempAmount = cleanAmount;
             }
         }
-
+        
         float percentage = 1f - cleanAmount / dirtAmountTotal;
         int roundedPercentage = Mathf.RoundToInt(percentage * 100f);
 
