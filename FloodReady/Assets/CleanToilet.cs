@@ -4,19 +4,13 @@ public class MoveAndScaleUpwardAfterDelay : MonoBehaviour
 {
     public float speed = 5f; // Adjust the speed as needed
     public float scaleSpeed = 0.1f; // Adjust the scaling speed as needed
-    public float delayBeforeMoving = 1f; // Adjust the delay before the upward movement starts
-    public float upwardMovementDuration = 3f; // Duration of the upward movement
-    public bool goSignal = true; // Set this to true to enable the movement, scaling, and destruction
+    public float delayBeforeMoving = 3f; // Delay before the upward movement starts
+    public float duration = 3f; // Duration of the movement
+    public GameObject objectToMoveScaleAndDestroy; // Drag your GameObject into this field in the Unity Editor
+    public bool goSignal = false; // Set this to true to enable the movement, scaling, and destruction
 
-    private bool hasDelayElapsed = false;
-    private float upwardMovementTimer = 0f;
-    private Vector3 initialPosition;
-
-    void Start()
-    {
-        // Store the initial position for reference
-        initialPosition = transform.position;
-    }
+    private float elapsedTime = 0f;
+    private bool hasStartedMoving = false;
 
     void Update()
     {
@@ -26,40 +20,47 @@ public class MoveAndScaleUpwardAfterDelay : MonoBehaviour
             return; // Exit the method if goSignal is false
         }
 
-        // Check if the delay has elapsed
-        if (!hasDelayElapsed)
+        // Check if the object is null to avoid errors
+        if (objectToMoveScaleAndDestroy == null)
+        {
+            Debug.LogError("Object to move, scale, and destroy is not assigned!");
+            return;
+        }
+
+        // Check if the delay before moving has elapsed
+        if (!hasStartedMoving)
         {
             delayBeforeMoving -= Time.deltaTime;
             if (delayBeforeMoving <= 0f)
             {
-                hasDelayElapsed = true;
+                hasStartedMoving = true;
             }
+            return;
         }
-        else
+
+        // Check if the movement duration has elapsed
+        if (elapsedTime >= duration)
         {
-            // Check if the upward movement duration has not elapsed
-            if (upwardMovementTimer < upwardMovementDuration)
-            {
-                // Move the object upward along the y-axis
-                transform.Translate(Vector3.up * speed * Time.deltaTime);
-
-                // Reset the x and z components to their initial values
-                Vector3 newPosition = transform.position;
-                newPosition.x = initialPosition.x;
-                newPosition.z = initialPosition.z;
-                transform.position = newPosition;
-
-                // Scale the object in 2D (x and y axes)
-                Vector3 currentScale = transform.localScale;
-                currentScale.x += scaleSpeed * Time.deltaTime;
-                currentScale.y += scaleSpeed * Time.deltaTime;
-
-                // Assign the new scale to the object
-                transform.localScale = currentScale;
-
-                // Update the upward movement timer
-                upwardMovementTimer += Time.deltaTime;
-            }
+            return;
         }
+
+        // Get the current position of the object
+        Vector3 currentPosition = objectToMoveScaleAndDestroy.transform.position;
+
+        // Move the object upward along the y-axis
+        currentPosition.y += speed * Time.deltaTime;
+
+        // Assign the new position to the object
+        objectToMoveScaleAndDestroy.transform.position = currentPosition;
+
+        // Scale the object up
+        Vector3 currentScale = objectToMoveScaleAndDestroy.transform.localScale;
+        currentScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed) * Time.deltaTime;
+
+        // Assign the new scale to the object
+        objectToMoveScaleAndDestroy.transform.localScale = currentScale;
+
+        // Update the elapsed time
+        elapsedTime += Time.deltaTime;
     }
 }

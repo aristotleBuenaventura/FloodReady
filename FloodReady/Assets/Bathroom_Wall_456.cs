@@ -34,6 +34,8 @@ public class Bathroom_Wall_456 : MonoBehaviour
 
     public void clean_as_a_whole(double totalAmount)
     {
-        CleanAmountManager.UpdateCleanAmount(totalAmount);
+        int totalAmountInt = (int)totalAmount;
+        CleanAmountManager.UpdateCleanAmount(totalAmountInt);
     }
+
 }
