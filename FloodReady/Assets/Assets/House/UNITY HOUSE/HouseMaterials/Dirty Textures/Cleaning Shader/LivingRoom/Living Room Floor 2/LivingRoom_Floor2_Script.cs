@@ -10,6 +10,7 @@ public class LivingRoom_Floor2_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
+    public Living_Flooring123 Floor;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class LivingRoom_Floor2_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    Floor.floor2(cleanAmount * .4);
                     MaterialManager.UpdateMaterialValue("Floor 2");
                 }
             }
