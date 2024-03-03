@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CanvasToggle : MonoBehaviour
 {
-    public Canvas canvas;
+    public GameObject canvas;
+    private bool isActive = false;
 
     private void Start()
     {
-        canvas.enabled = false; // Start with the canvas disabled.
+        canvas.SetActive(false); // Start with the canvas disabled.
     }
 
     // Update is called once per frame
@@ -16,12 +17,8 @@ public class CanvasToggle : MonoBehaviour
     {
         if (OVRInput.GetDown(OVRInput.Button.Four)) // You can replace this with the Oculus button you want to use.
         {
-            canvas.enabled = !canvas.enabled; // Toggle the canvas.
+            isActive = !isActive; // Toggle the isActive flag
+            canvas.SetActive(isActive);
         }
     }
 }
-
-
-
-
-
