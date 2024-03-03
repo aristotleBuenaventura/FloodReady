@@ -12,6 +12,7 @@ public class WaterSprayDisappear : MonoBehaviour
     public RecoveryCanvasController canvasController;
     public TaskPercentage task;
     public CleaningCollider colliderWall;
+    public CleaningChecklistCanvas canvas;
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
@@ -44,6 +45,7 @@ public class WaterSprayDisappear : MonoBehaviour
         canvasController.ShowcleanlivingCanvas();
         task.IncrementTaskPercentage(10);
         colliderWall.LivingRoomColliders();
+        canvas.ShowLivingRoomCanvas();
 
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);
