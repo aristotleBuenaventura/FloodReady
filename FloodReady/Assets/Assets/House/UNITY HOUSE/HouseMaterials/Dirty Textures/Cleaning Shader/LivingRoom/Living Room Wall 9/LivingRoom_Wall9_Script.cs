@@ -70,7 +70,7 @@ public class LivingRoom_Wall9_Script : MonoBehaviour
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
                     CleanAmountManager.UpdateCleanAmount(cleanAmount);
-                    MaterialManager.UpdateMaterialValue("Wall 9");
+                    MaterialManager.UpdateMaterialValue("Wall 5");
                 }
             }
         }
