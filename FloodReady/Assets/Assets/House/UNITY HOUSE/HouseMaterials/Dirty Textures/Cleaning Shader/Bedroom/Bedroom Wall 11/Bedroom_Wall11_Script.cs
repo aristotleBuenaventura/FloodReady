@@ -10,7 +10,8 @@ public class Bedroom_Wall11_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
-
+    public Bed_Room11112 Wall;
+    
     private void Start()
     {
         CreateTexture();
@@ -69,8 +70,8 @@ public class Bedroom_Wall11_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
-                    MaterialManager.UpdateMaterialValue("Wall 11");
+                    Wall.wall11(cleanAmount * .1);
+                    MaterialManager.UpdateMaterialValue("Wall 1");
                 }
             }
         }
