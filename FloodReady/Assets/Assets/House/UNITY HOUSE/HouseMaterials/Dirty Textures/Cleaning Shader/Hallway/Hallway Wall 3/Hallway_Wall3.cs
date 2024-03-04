@@ -12,7 +12,7 @@ public class Hallway_Wall3 : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
-    public Living_Room4 Wall;
+    public Hallway123 Wall;
 
     private void Start()
     {
@@ -72,7 +72,7 @@ public class Hallway_Wall3 : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    Wall.wall4(cleanAmount);
+                    Wall.wall3(cleanAmount * .1);
                     MaterialManager.UpdateMaterialValue("Wall 1");
                 }
             }

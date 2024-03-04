@@ -12,7 +12,7 @@ public class Hallway_Wall4 : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
-    public Living_Room4 Wall;
+    public Hallway4 Wall;
 
     private void Start()
     {
