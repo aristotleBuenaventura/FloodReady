@@ -19,7 +19,8 @@ public class RecoveryCanvasController : MonoBehaviour
     public GameObject findPlungerCanvas;
     public GameObject plungedtoiletCanvas;
     public GameObject gatherDirtyclothesCanvas;
-    public GameObject checkoutsidehouseCanvas;
+    public GameObject checkOutSideCanvas;
+    public GameObject usePhoneCanvas;
     public GameObject dial1161Canvas;
     public GameObject successCanvas;
     public GameObject failedCanvas;
@@ -64,7 +65,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -90,7 +92,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -116,7 +119,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -144,7 +148,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -176,7 +181,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -208,7 +214,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -236,7 +243,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -263,7 +271,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -289,7 +298,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -313,7 +323,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -338,7 +349,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(true);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -358,9 +370,10 @@ public class RecoveryCanvasController : MonoBehaviour
         cleanBedroomwallCanvas.SetActive(false);
         cleanbathroomCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(true);
-        checkoutsidehouseCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
@@ -380,16 +393,18 @@ public class RecoveryCanvasController : MonoBehaviour
         cleanBedroomwallCanvas.SetActive(false);
         cleanbathroomCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(true);
+        checkOutSideCanvas.SetActive(false);
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
-    public void ShowgcheckoutsidehouseCanvasCanvas()
+
+    public void goCheckOutSideCanvas()
     {
         welcomeCanvas.SetActive(false);
         gasleakCanvas.SetActive(false);
@@ -404,7 +419,32 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(true);
+        checkOutSideCanvas.SetActive(true);
+        usePhoneCanvas.SetActive(false);
+        dial1161Canvas.SetActive(false);
+        successCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    public void UsePhoneCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        gasleakCanvas.SetActive(false);
+        closegasleakCanvas.SetActive(false);
+        checwholehouseCanvas.SetActive(false);
+        findnozzleCanvas.SetActive(false);
+        cleanlivingCanvas.SetActive(false);
+        cleankitchenCanvas.SetActive(false);
+        cleansecondhallwayCanvas.SetActive(false);
+        cleanBedroomwallCanvas.SetActive(false);
+        cleanbathroomCanvas.SetActive(false);
+        findPlungerCanvas.SetActive(false);
+        plungedtoiletCanvas.SetActive(false);
+        gatherDirtyclothesCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(true);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         successCanvas.SetActive(false);
@@ -428,7 +468,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(true);
         successCanvas.SetActive(false);
         successCanvas.SetActive(false);
@@ -452,7 +493,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         successCanvas.SetActive(true);
@@ -475,7 +517,8 @@ public class RecoveryCanvasController : MonoBehaviour
         findPlungerCanvas.SetActive(false);
         plungedtoiletCanvas.SetActive(false);
         gatherDirtyclothesCanvas.SetActive(false);
-        checkoutsidehouseCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         successCanvas.SetActive(false);
