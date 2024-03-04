@@ -10,7 +10,7 @@ public class Bathroom_Wall4_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
-    public Bathroom_Wall_456 Wall;
+    public Bathroom_Wall456 Wall;
 
     private void Start()
     {

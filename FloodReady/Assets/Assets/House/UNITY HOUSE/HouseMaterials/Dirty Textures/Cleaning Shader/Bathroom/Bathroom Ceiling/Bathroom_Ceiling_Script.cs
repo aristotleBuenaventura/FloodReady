@@ -10,6 +10,7 @@ public class Bathroom_Ceiling_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
+    public Bathroom_Ceiling Ceiling;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class Bathroom_Ceiling_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    Ceiling.ceiling(cleanAmount);
                     MaterialManager.UpdateMaterialValue("Ceiling");
                 }
             }
