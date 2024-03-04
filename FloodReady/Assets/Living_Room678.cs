@@ -7,6 +7,8 @@ public class Living_Room678 : MonoBehaviour
     private double wall6amount;
     private double wall7amount;
     private double wall8amount;
+    public IconforLRW6 check;
+    private bool isSet = false;
 
     public void wall6(double cleanAmount)
     {
@@ -35,6 +37,19 @@ public class Living_Room678 : MonoBehaviour
     public void clean_as_a_whole(double totalAmount)
     {
         int totalAmountInt = (int)totalAmount;
-        CleanAmountManager.UpdateCleanAmount(totalAmountInt);
+
+        if (totalAmountInt >= 95)
+        {
+            totalAmountInt = 100; // Update totalAmountInt directly to 100
+        }
+
+        CleanAmountManager.UpdateCleanAmount(totalAmountInt); // Update CleanAmountManager after modifying totalAmountInt
+
+        if (totalAmountInt == 100 && !isSet)
+        {
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
+            isSet = true;
+        }
     }
 }

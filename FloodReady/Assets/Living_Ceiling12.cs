@@ -6,6 +6,8 @@ public class Living_Ceiling12 : MonoBehaviour
 {
     private double ceil1amount;
     private double ceil2amount;
+    public IconforLRC check;
+    private bool isSet = false;
 
     public void ceil1(double cleanAmount)
     {
@@ -28,6 +30,19 @@ public class Living_Ceiling12 : MonoBehaviour
     public void clean_as_a_whole(double totalAmount)
     {
         int totalAmountInt = (int)totalAmount;
-        CleanAmountManager.UpdateCleanAmount(totalAmountInt);
+
+        if (totalAmountInt >= 95)
+        {
+            totalAmountInt = 100; // Update totalAmountInt directly to 100
+        }
+
+        CleanAmountManager.UpdateCleanAmount(totalAmountInt); // Update CleanAmountManager after modifying totalAmountInt
+
+        if (totalAmountInt == 100 && !isSet)
+        {
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
+            isSet = true;
+        }
     }
 }
