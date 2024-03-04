@@ -73,7 +73,7 @@ public class Hallway_Wall12 : MonoBehaviour
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
                     Wall.wall4(cleanAmount);
-                    MaterialManager.UpdateMaterialValue("Wall 5");
+                    MaterialManager.UpdateMaterialValue("Wall 6");
                 }
             }
         }
