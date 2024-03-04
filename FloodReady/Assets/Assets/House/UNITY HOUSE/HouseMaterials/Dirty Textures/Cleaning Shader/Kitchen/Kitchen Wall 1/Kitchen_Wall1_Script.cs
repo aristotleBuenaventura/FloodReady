@@ -10,6 +10,7 @@ public class Kitchen_Wall1_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
+    public Kitchen_Room189 Wall;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class Kitchen_Wall1_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    Wall.wall1(cleanAmount * .8);
                     MaterialManager.UpdateMaterialValue("Wall 1");
                 }
             }
