@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Meta.WitAi;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -32,8 +33,20 @@ public class InventoryManager : MonoBehaviour
     public iconforflashlight flashlight;
     public iconformobilephone mobilephone;
     public iconforgatherdessentialgoods gatheredessentialgoods;
-
     public iconforfirstaidkit firstaidkit;
+
+
+    // for wrist canvas
+
+    public iconforcannedgood wristcannedgood;
+    public iconforenergybar wristenergybar;
+    public iconformoney wristmoney;
+    public iconforbottledwater wristbottledwater;
+    public iconforclothes wristclothes;
+    public iconforflashlight wristflashlight;
+    public iconformobilephone wristmobilephone;
+    public iconforfirstaidkit wristfirstaidkit;
+
     private void Start()
     {
         GoBagClosed.SetActive(false);
@@ -78,42 +91,56 @@ public class InventoryManager : MonoBehaviour
         {
             cannedgood.SetCheckIconVisible(false);
             cannedgood.SetUncheckIconVisible(true);
+            wristcannedgood.SetCheckIconVisible(false);
+            wristcannedgood.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Energy bar")
         {
             energybar.SetCheckIconVisible(false);
             energybar.SetUncheckIconVisible(true);
+            wristenergybar.SetCheckIconVisible(false);
+            wristenergybar.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Money")
         {
             money.SetCheckIconVisible(false);
             money.SetUncheckIconVisible(true);
+            wristmoney.SetCheckIconVisible(false);
+            wristmoney.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Bottled water")
         {
             bottledwater.SetCheckIconVisible(false);
             bottledwater.SetUncheckIconVisible(true);
+            wristbottledwater.SetCheckIconVisible(false);
+            wristbottledwater.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Clothes")
         {
             clothes.SetCheckIconVisible(false);
             clothes.SetUncheckIconVisible(true);
+            wristclothes.SetCheckIconVisible(false);
+            wristclothes.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Flashlight")
         {
             flashlight.SetCheckIconVisible(false);
             flashlight.SetUncheckIconVisible(true);
+            wristflashlight.SetCheckIconVisible(false);
+            wristflashlight.SetUncheckIconVisible(true);
         }
 
         if (itemName == "Mobile Phone")
         {
             mobilephone.SetCheckIconVisible(false);
             mobilephone.SetUncheckIconVisible(true);
+            wristmobilephone.SetCheckIconVisible(false);
+            wristmobilephone.SetUncheckIconVisible(true);
         }
         
 
@@ -121,6 +148,8 @@ public class InventoryManager : MonoBehaviour
         {
             firstaidkit.SetCheckIconVisible(false);
             firstaidkit.SetUncheckIconVisible(true);
+            wristfirstaidkit.SetCheckIconVisible(false);
+            wristfirstaidkit.SetUncheckIconVisible(true);
         }
 
 
@@ -151,48 +180,64 @@ public class InventoryManager : MonoBehaviour
         {
             cannedgood.SetCheckIconVisible(true);
             cannedgood.SetUncheckIconVisible(false);
+            wristcannedgood.SetCheckIconVisible(true);
+            wristcannedgood.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Energy bar")
         {
             energybar.SetCheckIconVisible(true);
             energybar.SetUncheckIconVisible(false);
+            wristenergybar.SetCheckIconVisible(true);
+            wristenergybar.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Money")
         {
             money.SetCheckIconVisible(true);
             money.SetUncheckIconVisible(false);
+            wristmoney.SetCheckIconVisible(true);
+            wristmoney.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Bottled water")
         {
             bottledwater.SetCheckIconVisible(true);
             bottledwater.SetUncheckIconVisible(false);
+            wristbottledwater.SetCheckIconVisible(true);
+            wristbottledwater.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Clothes")
         {
             clothes.SetCheckIconVisible(true);
             clothes.SetUncheckIconVisible(false);
+            wristclothes.SetCheckIconVisible(true);
+            wristclothes.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Flashlight")
         {
             flashlight.SetCheckIconVisible(true);
             flashlight.SetUncheckIconVisible(false);
+            wristflashlight.SetCheckIconVisible(true);
+            wristflashlight.SetUncheckIconVisible(false);
         }
 
         if (itemName == "First aid kit")
         {
             firstaidkit.SetCheckIconVisible(true);
             firstaidkit.SetUncheckIconVisible(false);
+            wristfirstaidkit.SetCheckIconVisible(true);
+            wristfirstaidkit.SetUncheckIconVisible(false);
         }
 
         if (itemName == "Mobile Phone")
         {
             mobilephone.SetCheckIconVisible(true);
             mobilephone.SetUncheckIconVisible(false);
+            wristmobilephone.SetCheckIconVisible(true);
+            wristmobilephone.SetUncheckIconVisible(false);
         }
         
 
