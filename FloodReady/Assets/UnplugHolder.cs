@@ -29,21 +29,21 @@ public class UnplugHolder : MonoBehaviour
         if (!UnplugCableCanvas.gameObject.activeSelf)
         {
             // Disable the colliders
-            collider1.enabled = false;
-            collider2.enabled = false;
-            collider3.enabled = false;
-            collider4.enabled = false;
-            collider5.enabled = false;
-        
-        }
-        else
-        {
-            // Enable the colliders
             collider1.enabled = true;
             collider2.enabled = true;
             collider3.enabled = true;
             collider4.enabled = true;
             collider5.enabled = true;
+        
+        }
+        else
+        {
+            // Enable the colliders
+            collider1.enabled = false;
+            collider2.enabled = false;
+            collider3.enabled = false;
+            collider4.enabled = false;
+            collider5.enabled = false;
        
         }
     }
