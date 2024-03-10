@@ -52846,7 +52846,7 @@ Transform:
   m_GameObject: {fileID: 880771612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.3691032, z: -0, w: -0.9293884}
-  m_LocalPosition: {x: 0, y: 0.378, z: 0}
+  m_LocalPosition: {x: 0, y: 0.464, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64581,7 +64581,7 @@ GameObject:
   - component: {fileID: 1083694030}
   - component: {fileID: 1083694033}
   - component: {fileID: 1083694032}
-  - component: {fileID: 1083694031}
+  - component: {fileID: 1083694034}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -64610,26 +64610,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.012999939}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1083694031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083694029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfad81a1741d9f47b5f46a17d4e040e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLife: 10
-  lifeDecreaseRate: 1
-  lifeIncreaseRate: 1
-  healthBarObject: {fileID: 1767777112}
-  healthBarParent: {fileID: 1383368211}
-  player: {fileID: 1347110268}
-  water: {fileID: 557260424}
-  respawnPoint: {fileID: 880771612}
 --- !u!114 &1083694032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64668,6 +64648,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083694029}
   m_CullTransparentMesh: 1
+--- !u!114 &1083694034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083694029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfad81a1741d9f47b5f46a17d4e040e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 10
+  lifeDecreaseRate: 1
+  lifeIncreaseRate: 1
+  healthBarObject: {fileID: 1767777112}
+  healthBarParent: {fileID: 1383368211}
+  player: {fileID: 1347110268}
+  water: {fileID: 557260424}
+  respawnPoint: {fileID: 880771612}
 --- !u!64 &1087576772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -83391,7 +83391,7 @@ GameObject:
   - component: {fileID: 1383368216}
   - component: {fileID: 1383368215}
   - component: {fileID: 1383368214}
-  - component: {fileID: 1383368213}
+  - component: {fileID: 1383368217}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: HealthBar
@@ -83419,21 +83419,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.164, y: -0.023}
   m_SizeDelta: {x: 1.5305, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1383368213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383368211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c7ec72873b5c943a37fccb7095abee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBarObject: {fileID: 1083694029}
-  player: {fileID: 1347110268}
-  waterLevelObject: {fileID: 557260424}
 --- !u!114 &1383368214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83497,6 +83482,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1383368217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383368211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7ec72873b5c943a37fccb7095abee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarObject: {fileID: 1083694029}
+  player: {fileID: 1347110268}
+  waterLevelObject: {fileID: 557260424}
 --- !u!1 &1383683738
 GameObject:
   m_ObjectHideFlags: 0
@@ -128446,7 +128446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2134883255
 Transform:
   m_ObjectHideFlags: 0
