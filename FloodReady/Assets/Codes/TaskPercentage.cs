@@ -16,6 +16,10 @@ public class TaskPercentage : MonoBehaviour
     public void IncrementTaskPercentage(int incrementValue)
     {
         taskPercentage += incrementValue;
+        if (taskPercentage >= 100)
+        {
+            taskPercentage = 100; // Set taskPercentage to 100 if it exceeds 100
+        }
     }
 
     public void DecrementTaskPercentage(int decrementValue)
