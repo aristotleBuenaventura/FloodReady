@@ -7,6 +7,7 @@ public class Living_Room5 : MonoBehaviour
     private double wall5amount;
     public IconforLRW5 check;
     private bool isSet = false;
+    public LivingRoom_Checklist checklist;
 
     public void wall4(double cleanAmount)
     {
@@ -25,7 +26,7 @@ public class Living_Room5 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -36,6 +37,7 @@ public class Living_Room5 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[8] = true;
             isSet = true;
         }
     }

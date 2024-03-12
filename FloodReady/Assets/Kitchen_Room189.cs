@@ -9,6 +9,7 @@ public class Kitchen_Room189 : MonoBehaviour
     private double wall9amount;
     public IconforKW1 check;
     private bool isSet = false;
+    public Kitchen_Checklist checklist;
 
     public void wall1(double cleanAmount)
     {
@@ -38,7 +39,7 @@ public class Kitchen_Room189 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -49,6 +50,7 @@ public class Kitchen_Room189 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[0] = true;
             isSet = true;
         }
     }

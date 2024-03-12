@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class retrieveIcon : MonoBehaviour
-
-
 {
     public GameObject checkIcon;
     public GameObject uncheckIcon;

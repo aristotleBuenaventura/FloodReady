@@ -7,6 +7,7 @@ public class Kitchen_Ceiling : MonoBehaviour
     private double ceilingamount;
     public IconforKC check;
     private bool isSet = false;
+    public Kitchen_Checklist checklist;
 
     public void ceiling(double cleanAmount)
     {
@@ -25,7 +26,7 @@ public class Kitchen_Ceiling : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -36,6 +37,7 @@ public class Kitchen_Ceiling : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[4] = true;
             isSet = true;
         }
     }

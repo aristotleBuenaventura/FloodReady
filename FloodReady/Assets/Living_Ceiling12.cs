@@ -8,6 +8,7 @@ public class Living_Ceiling12 : MonoBehaviour
     private double ceil2amount;
     public IconforLRC check;
     private bool isSet = false;
+    public LivingRoom_Checklist checklist;
 
     public void ceil1(double cleanAmount)
     {
@@ -31,7 +32,7 @@ public class Living_Ceiling12 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -42,6 +43,7 @@ public class Living_Ceiling12 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[5] = true;
             isSet = true;
         }
     }
