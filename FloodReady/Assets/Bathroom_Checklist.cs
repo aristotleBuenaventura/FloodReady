@@ -3,33 +3,43 @@ using UnityEngine;
 public class Bathroom_Checklist : MonoBehaviour
 {
     public bool[] checklist = { false, false, false, false, false, false };
+    public Bathroom_Clean task;
+    public CleaningChecklistCanvas cleaningCanvas;
+    public RecoveryCanvasController mainCanvas;
+    public CleaningCollider wall;
+    public TaskPercentage score;
+    public GameObject plunger;
 
-    // Call this method to check if all checklist items are true
-    public void CheckIfAllItemsDone()
+    void Start()
     {
-        bool allDone = true;
-        foreach (bool item in checklist)
+        plunger.SetActive(false);
+    }
+
+    void Update()
+    {
+        // Check if all elements in the checklist are true
+        bool allTrue = true;
+        for (int i = 0; i < checklist.Length; i++)
         {
-            if (!item)
+            if (!checklist[i])
             {
-                allDone = false;
+                allTrue = false;
                 break;
             }
         }
 
-        if (allDone)
+        // If all elements are true, display debug.log("Finish")
+        if (allTrue)
         {
-            Debug.Log("Done");
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
+            cleaningCanvas.deactivate();
+            mainCanvas.ShowfindPlungerCanvas();
+            wall.BathroomColliders();
+            score.IncrementTaskPercentage(10);
+            plunger.SetActive(true);
+            // Disable the script
+            enabled = false;
         }
-        else
-        {
-            Debug.Log("Not all items are done yet");
-        }
-    }
-
-    // Example of how to call this method
-    void Start()
-    {
-        CheckIfAllItemsDone();
     }
 }

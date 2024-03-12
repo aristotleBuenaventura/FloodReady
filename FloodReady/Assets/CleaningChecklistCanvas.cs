@@ -68,4 +68,9 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
     }
+
+    public void deactivate()
+    {
+        enabled = false;
+    }
 }

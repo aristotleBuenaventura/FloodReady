@@ -7,6 +7,7 @@ public class Bathroom_Ceiling : MonoBehaviour
     private double ceilingamount;
     public IconforBRC check;
     private bool isSet = false;
+    public Bathroom_Checklist checklist;
 
     public void ceiling(double cleanAmount)
     {
@@ -25,7 +26,7 @@ public class Bathroom_Ceiling : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -36,6 +37,7 @@ public class Bathroom_Ceiling : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[5] = true;
             isSet = true;
         }
     }

@@ -7,7 +7,7 @@ public class Bathroom_Wall1 : MonoBehaviour
     private double wall1amount;
     public IconforBRW1 check;
     private bool isSet = false;
-    public Bathroom_Checklist bathroomChecklist;
+    public Bathroom_Checklist checklist;
 
     public void wall1(double cleanAmount)
     {
@@ -26,7 +26,7 @@ public class Bathroom_Wall1 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -37,8 +37,7 @@ public class Bathroom_Wall1 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
-            bathroomChecklist.checklist[1] = true;
-            Debug.Log("Wall 1 done");
+            checklist.checklist[1] = true;
             isSet = true;
         }
     }
