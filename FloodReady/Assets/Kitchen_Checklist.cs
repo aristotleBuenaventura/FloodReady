@@ -8,6 +8,7 @@ public class Kitchen_Checklist : MonoBehaviour
     public Kitchen_Clean task;
     public CleaningChecklistCanvas cleaningCanvas;
     public RecoveryCanvasController mainCanvas;
+    public CleaningCollider wall;
 
     void Update()
     {
@@ -29,6 +30,9 @@ public class Kitchen_Checklist : MonoBehaviour
             task.SetUncheckIconVisible(false);
             cleaningCanvas.ShowHallwayCanvas();
             mainCanvas.ShowcleansecondhallwayCanvas();
+            wall.SecondFloorColliders();
+            // Disable the script
+            enabled = false;
         }
     }
 }

@@ -5,7 +5,7 @@ public class LivingRoom_Checklist : MonoBehaviour
     public bool[] checklist = { false, false, false, false, false, false, false, false, false };
     public LivingRoom_Clean task;
     public CleaningChecklistCanvas cleaningCanvas;
-    public RecoveryCanvasController mainCanvas;
+    public RecoveryCanvasController canvas;
     public CleaningCollider wall;
 
     void Update()
@@ -24,11 +24,13 @@ public class LivingRoom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            canvas.ShowcleankitchenCanvas();
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             cleaningCanvas.ShowKitchenCanvas();
-            mainCanvas.ShowcleankitchenCanvas();
             wall.KitchenColliders();
+            // Disable the script
+            enabled = false;
         }
     }
 }
