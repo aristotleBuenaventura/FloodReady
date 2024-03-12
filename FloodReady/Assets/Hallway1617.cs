@@ -8,6 +8,7 @@ public class Hallway1617 : MonoBehaviour
     private double wall17amount;
     public IconforHW7 check;
     private bool isSet = false;
+    public Hallway_Checklist checklist;
 
     public void wall16(double cleanAmount)
     {
@@ -32,7 +33,7 @@ public class Hallway1617 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -43,6 +44,7 @@ public class Hallway1617 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[6] = true;
             isSet = true;
         }
     }

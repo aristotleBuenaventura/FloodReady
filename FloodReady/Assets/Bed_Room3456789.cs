@@ -13,6 +13,7 @@ public class Bed_Room3456789 : MonoBehaviour
     private double wall9amount;
     public iconforBDW3 check;
     private bool isSet = false;
+    public Bedroom_Checklist checklist;
 
     public void wall3(double cleanAmount)
     {
@@ -67,7 +68,7 @@ public class Bed_Room3456789 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 95)
+        if (totalAmountInt >= 1)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -78,6 +79,7 @@ public class Bed_Room3456789 : MonoBehaviour
         {
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.checklist[2] = true;
             isSet = true;
         }
     }
