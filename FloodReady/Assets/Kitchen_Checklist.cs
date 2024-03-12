@@ -9,6 +9,7 @@ public class Kitchen_Checklist : MonoBehaviour
     public CleaningChecklistCanvas cleaningCanvas;
     public RecoveryCanvasController mainCanvas;
     public CleaningCollider wall;
+    public TaskPercentage score;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class Kitchen_Checklist : MonoBehaviour
             cleaningCanvas.ShowHallwayCanvas();
             mainCanvas.ShowcleansecondhallwayCanvas();
             wall.SecondFloorColliders();
+            score.IncrementTaskPercentage(10);
             // Disable the script
             enabled = false;
         }
