@@ -10,6 +10,8 @@ public class Bed_Room11112 : MonoBehaviour
     public iconforBDW1 check;
     private bool isSet = false;
     public Bedroom_Checklist checklist;
+    public AudioSource Wall1_Audio;
+    private bool isPlay = false;
 
     public void wall1(double cleanAmount)
     {
@@ -51,6 +53,13 @@ public class Bed_Room11112 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[0] = true;
+            if (Wall1_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Wall1_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

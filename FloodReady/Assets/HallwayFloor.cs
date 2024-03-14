@@ -11,6 +11,8 @@ public class HallwayFloor : MonoBehaviour
     public IconforHF check;
     private bool isSet = false;
     public Hallway_Checklist checklist;
+    public AudioSource Floor_Audio;
+    private bool isPlay = false;
 
     public void floor1(double cleanAmount)
     {
@@ -58,6 +60,13 @@ public class HallwayFloor : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[8] = true;
+            if (Floor_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Floor_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

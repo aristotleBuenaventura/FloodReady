@@ -8,6 +8,8 @@ public class Bathroom_Ceiling : MonoBehaviour
     public IconforBRC check;
     private bool isSet = false;
     public Bathroom_Checklist checklist;
+    public AudioSource Ceiling_Audio;
+    private bool isPlay = false;
 
     public void ceiling(double cleanAmount)
     {
@@ -38,6 +40,13 @@ public class Bathroom_Ceiling : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[5] = true;
+            if (Ceiling_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Ceiling_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

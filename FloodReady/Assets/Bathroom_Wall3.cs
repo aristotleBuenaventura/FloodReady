@@ -8,6 +8,8 @@ public class Bathroom_Wall3 : MonoBehaviour
     public IconforBRW3 check;
     private bool isSet = false;
     public Bathroom_Checklist checklist;
+    public AudioSource Wall3_Audio;
+    private bool isPlay = false;
 
     public void wall3(double cleanAmount)
     {
@@ -38,6 +40,13 @@ public class Bathroom_Wall3 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[3] = true;
+            if (Wall3_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Wall3_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

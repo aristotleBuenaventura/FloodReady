@@ -9,6 +9,8 @@ public class Living_Ceiling12 : MonoBehaviour
     public IconforLRC check;
     private bool isSet = false;
     public LivingRoom_Checklist checklist;
+    public AudioSource Ceiling_Audio;
+    private bool isPlay = false;
 
     public void ceil1(double cleanAmount)
     {
@@ -44,6 +46,13 @@ public class Living_Ceiling12 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[5] = true;
+            if (Ceiling_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Ceiling_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

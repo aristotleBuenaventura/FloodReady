@@ -10,6 +10,8 @@ public class Living_Flooring123 : MonoBehaviour
     public IconforLRF check;
     private bool isSet = false;
     public LivingRoom_Checklist checklist;
+    public AudioSource Floor_Audio;
+    private bool isPlay = false;
 
     public void floor1(double cleanAmount)
     {
@@ -51,6 +53,13 @@ public class Living_Flooring123 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[6] = true;
+            if (Floor_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Floor_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

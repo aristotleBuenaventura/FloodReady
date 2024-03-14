@@ -8,6 +8,8 @@ public class Bathroom_Floor : MonoBehaviour
     public IconforBRF check;
     private bool isSet = false;
     public Bathroom_Checklist checklist;
+    public AudioSource Floor_Audio;
+    private bool isPlay = false;
 
     public void floor(double cleanAmount)
     {
@@ -38,6 +40,13 @@ public class Bathroom_Floor : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[4] = true;
+            if (Floor_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Floor_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

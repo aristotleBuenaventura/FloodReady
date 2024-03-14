@@ -11,6 +11,8 @@ public class Kitchen_Room3456 : MonoBehaviour
     public IconforKW3 check;
     private bool isSet = false;
     public Kitchen_Checklist checklist;
+    public AudioSource Wall3_Audio;
+    private bool isPlay = false;
 
     public void wall3(double cleanAmount)
     {
@@ -59,6 +61,13 @@ public class Kitchen_Room3456 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[2] = true;
+            if (Wall3_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Wall3_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

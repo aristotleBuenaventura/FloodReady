@@ -9,6 +9,8 @@ public class Hallway1617 : MonoBehaviour
     public IconforHW7 check;
     private bool isSet = false;
     public Hallway_Checklist checklist;
+    public AudioSource Wall7_Audio;
+    private bool isPlay = false;
 
     public void wall16(double cleanAmount)
     {
@@ -45,6 +47,13 @@ public class Hallway1617 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[6] = true;
+            if (Wall7_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Wall7_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }

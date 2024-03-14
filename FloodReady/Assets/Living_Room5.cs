@@ -8,6 +8,8 @@ public class Living_Room5 : MonoBehaviour
     public IconforLRW5 check;
     private bool isSet = false;
     public LivingRoom_Checklist checklist;
+    public AudioSource Wall5_Audio;
+    private bool isPlay = false;
 
     public void wall4(double cleanAmount)
     {
@@ -38,6 +40,13 @@ public class Living_Room5 : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[8] = true;
+            if (Wall5_Audio != null && !isPlay)
+            {
+                // Play the flush sound
+                Wall5_Audio.Play();
+
+                isPlay = true;
+            }
             isSet = true;
         }
     }
