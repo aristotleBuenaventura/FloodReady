@@ -1,22 +1,30 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour
 {
     public GameObject playerTag;
     public GameObject objectsToDisable;
+    public AudioClip disableSound; // Sound to play when object is disabled
 
 
-    void Start()
-    {
     
-    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == playerTag)
         {
-            objectsToDisable.SetActive(false);
+            // Check if the object to disable is active before disabling it
+            if (objectsToDisable.activeSelf)
+            {
+                // Disable the object
+                objectsToDisable.SetActive(false);
+
+                // Play the disable sound
+                if (disableSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(disableSound, objectsToDisable.transform.position);
+                }
+            }
         }
     }
 }
