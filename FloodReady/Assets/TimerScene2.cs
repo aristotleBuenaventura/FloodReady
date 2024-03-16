@@ -13,17 +13,18 @@ public class TimerScene2 : MonoBehaviour
     // Expose player position and rotation in the Inspector
     [Header("Player Settings")]
     public GameObject player;
-    public Vector3 desiredPosition;
-    public Vector3 desiredRotation;
 
     public TextMeshProUGUI welldonetext;
-
+    public GameObject cubeTeleport;
     public Timer_welldone timesupElapsetime;
     public proceedToggleOff tryagainButton;
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
 
-    [SerializeField] GameObject loadingScreen;
+    void Start()
+    {
+        cubeTeleport.SetActive(false);
+    }
 
     void Update()
     {
@@ -43,13 +44,12 @@ public class TimerScene2 : MonoBehaviour
                     timesup.FailedCanvas();
                     timesupElapsetime.StopTime();
                     tryagainButton.lose();
-
-                    TeleportPlayer();    
                     // Change the text directly
                     if (welldonetext != null)
                     {
                         welldonetext.text = "TIME RUN OUT!";
                     }
+                    cubeTeleport.SetActive(true);
                     // Set the desired position from the Inspector
                 }
             }
@@ -66,20 +66,4 @@ public class TimerScene2 : MonoBehaviour
         isTimerStopped = true;
     }
 
-    private void TeleportPlayer()
-    {
-        if (player != null)
-        {
-            
-            // Set the desired position from the Inspector
-            player.transform.position = desiredPosition;
-
-            // Set the desired rotation from the Inspector
-            player.transform.rotation = Quaternion.Euler(desiredRotation);
-            Debug.Log("Teleporting player to position: " + desiredPosition);
-            Debug.Log("Teleporting player to rotation: " + desiredRotation);
-
-            
-        }
-    }
 }
