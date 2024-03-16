@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +19,11 @@ public class HealthBar : MonoBehaviour
     public GameObject water; // Assign the water GameObject in the Unity Editor
     public GameObject respawnPoint;  // Assign the respawn point GameObject in the Unity Editor
     public GameObject cubeTeleport;
+    public EscapeCanvasController DeathCanvas;
+    public TextMeshProUGUI welldonetext;
+    public Timer_welldone timesupElapsetime;
+    public proceedToggleOff tryagainButton;
+
 
     // Start is called before the first frame update
     void Start()
@@ -70,9 +77,17 @@ public class HealthBar : MonoBehaviour
         // Check if life is zero and trigger player death
         if (currentLife <= 0)
         {
+
+            timesupElapsetime.StopTime();
+            tryagainButton.lose();
+            if (welldonetext != null)
+            {
+                welldonetext.text = "YOU'RE DEAD!";
+            }
+            DeathCanvas.deathCanvas();
             PlayerDied();
             cubeTeleport.SetActive(true);
-        
+
         }
     }
 
@@ -139,4 +154,5 @@ public class HealthBar : MonoBehaviour
         currentLife = newLife;
         UpdateHealthBarUI();
     }
+
 }

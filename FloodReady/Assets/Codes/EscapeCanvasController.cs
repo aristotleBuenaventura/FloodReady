@@ -18,6 +18,7 @@
         public GameObject circlePointCanvas;
         public GameObject successCanvas;
         public GameObject failedCanvas;
+        public GameObject DeathCanvas;
         public MessageCanvas messageCanvas;
         public float switchDelayWelcome = 15f;
     
@@ -65,9 +66,9 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-        
+        DeathCanvas.SetActive(false);
 
-            if (alarmAudioSource != null)
+        if (alarmAudioSource != null)
             {
                 alarmAudioSource.Play();
                 StartCoroutine(FadeOutSoundAndSwitchCanvas());
@@ -91,7 +92,8 @@
        
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
         public void ShowMainBreakerCanvas()
@@ -108,7 +110,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
             SetRoomBarrierColliderActive2(false);
 
         }
@@ -127,7 +130,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
             SetRoomBarrierColliderActive3(false);
             if (waterLevelController != null)
             {
@@ -154,7 +158,8 @@
                 welldoneCanvas.SetActive(false);
                 successCanvas.SetActive(false);
                 failedCanvas.SetActive(false);
-                messageCanvas.OpenCanvasAgain();
+            DeathCanvas.SetActive(false);
+            messageCanvas.OpenCanvasAgain();
             SetRoomBarrierColliderActive4(false);
 
 
@@ -181,6 +186,7 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
+            DeathCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
      
 
@@ -203,7 +209,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
         public void ShowBreakWindowCanvas()
@@ -221,7 +228,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
     
@@ -242,6 +250,7 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
+            DeathCanvas.SetActive(false);
             messageCanvas.OpenCanvasAgain();
         }
         else
@@ -263,7 +272,8 @@
             welldoneCanvas.SetActive(true);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
         public void LocateMobilePhoneCanvas()
@@ -279,7 +289,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
         public void SuccessCanvas()
@@ -295,7 +306,8 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(true);
             failedCanvas.SetActive(false);
-            messageCanvas.OpenCanvasAgain();
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
         }
 
         public void FailedCanvas()
@@ -311,6 +323,24 @@
             welldoneCanvas.SetActive(false);
             successCanvas.SetActive(false);
             failedCanvas.SetActive(true);
+          DeathCanvas.SetActive(false);
+            messageCanvas.OpenCanvasAgain();
+        }
+
+        public void deathCanvas()
+        {
+            welcomeCanvas.SetActive(false);
+            retrieveGoBagCanvas.SetActive(false);
+            mainBreakerCanvas.SetActive(false);
+            doorJamCanvas.SetActive(false);
+            roofTop.SetActive(false);
+            pryBarCanvas.SetActive(false);
+            breakWindowCanvas.SetActive(false);
+            searchGoBagCanvas.SetActive(false);
+            welldoneCanvas.SetActive(false);
+            successCanvas.SetActive(false);
+            failedCanvas.SetActive(false);
+            DeathCanvas.SetActive(true);
             messageCanvas.OpenCanvasAgain();
         }
 
@@ -318,7 +348,8 @@
 
 
 
-    
+
+
 
 
     private void SetRoomBarrierColliderActive1(bool active)
