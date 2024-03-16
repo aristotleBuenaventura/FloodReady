@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
     public Timer_welldone timesupElapsetime;
     public proceedToggleOff tryagainButton;
     public GameObject cubeTeleport;
+    public NumberOfAttemptsScene1 retry;
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
 
@@ -54,6 +55,7 @@ public class Timer : MonoBehaviour
                     {
                         welldonetext.text = "TIME RUN OUT!";
                     }
+                    retry.SetNumberOfAttempts();
                     // Set the desired position from the Inspector
                 }
             }
