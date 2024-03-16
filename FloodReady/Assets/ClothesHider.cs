@@ -10,6 +10,10 @@ public class BasketHider : MonoBehaviour
     private bool objectsEnabled = false; // Track if objects are already enabled
 
     // Update is called once per frame
+    private void Start()
+    {
+        objectToEnable1.SetActive(false);       
+    }
     void Update()
     {
         // Check if the canvas becomes active during runtime and objects are not already enabled
