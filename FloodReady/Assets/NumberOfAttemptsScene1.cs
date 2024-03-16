@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Import the TextMeshPro namespace
+using TMPro;
+using UnityEditor;
 
 public class NumberOfAttemptsScene1 : MonoBehaviour
 {
     public TextMeshProUGUI attempts;
-    private RetryScene1 retry;
-    public int attemptsToPass;
+    private int attemptsToPass;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +21,24 @@ public class NumberOfAttemptsScene1 : MonoBehaviour
 
         // Set the text of the TextMeshProUGUI component
         attempts.text = attemptsToPass.ToString();
+
+        // Register the OnPlayModeStateChanged method to be called when the play mode state changes
+        EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+    }
+
+    // Callback method to handle play mode state changes
+    void OnPlayModeStateChanged(PlayModeStateChange state)
+    {
+        // If exiting play mode
+        if (state == PlayModeStateChange.ExitingPlayMode)
+        {
+            // Reset the attempts to zero
+            attemptsToPass = 0;
+
+            // Update the PlayerPrefs to reflect the reset
+            PlayerPrefs.SetInt("attempts", attemptsToPass);
+            PlayerPrefs.Save(); // Make sure to save changes immediately
+        }
     }
 
     public void SetNumberOfAttempts()
@@ -37,5 +53,11 @@ public class NumberOfAttemptsScene1 : MonoBehaviour
     public int GetAttemptsToPass()
     {
         return attemptsToPass;
+    }
+
+    // Unregister the event when the script is destroyed
+    private void OnDestroy()
+    {
+        EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
     }
 }
