@@ -16,5 +16,12 @@ public class ChangeText : MonoBehaviour
     {
         // Change the text
         textMeshPro.text = "TIME RUN OUT!";
+
+    } 
+
+    public void ChangeToPlayerDead()
+    {
+        // Change the text
+        textMeshPro.text = "YOU'RE DEAD";
     }
 }
