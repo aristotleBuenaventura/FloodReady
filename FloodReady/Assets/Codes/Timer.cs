@@ -20,10 +20,14 @@ public class Timer : MonoBehaviour
 
     public Timer_welldone timesupElapsetime;
     public proceedToggleOff tryagainButton;
+    public GameObject cubeTeleport;
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
 
-    [SerializeField] GameObject loadingScreen;
+    void Start()
+    {
+        cubeTeleport.SetActive(false);
+    }
 
     void Update()
     {
@@ -44,7 +48,7 @@ public class Timer : MonoBehaviour
                     timesupElapsetime.StopTime();
                     tryagainButton.lose();
 
-                    TeleportPlayer();    
+                    cubeTeleport.SetActive(true);
                     // Change the text directly
                     if (welldonetext != null)
                     {
@@ -66,20 +70,4 @@ public class Timer : MonoBehaviour
         isTimerStopped = true;
     }
 
-    private void TeleportPlayer()
-    {
-        if (player != null)
-        {
-            
-            // Set the desired position from the Inspector
-            player.transform.position = desiredPosition;
-
-            // Set the desired rotation from the Inspector
-            player.transform.rotation = Quaternion.Euler(desiredRotation);
-            Debug.Log("Teleporting player to position: " + desiredPosition);
-            Debug.Log("Teleporting player to rotation: " + desiredRotation);
-
-            
-        }
-    }
 }
