@@ -8,10 +8,10 @@ public class NumberArrayManagerScene3 : MonoBehaviour
     public TextMeshProUGUI textElement; // Expose the TextMeshProUGUI component
     public RecoveryCanvasController success;
 
-    public reportIcon reportIcon;
+    public reportfallenIcon reportIcon;
     public TaskPercentage task;
     private bool isTaskPercentageIncremented = false;
-    //public GameObject portal;
+    public GameObject portal;
 
     private void Start()
     {
@@ -72,10 +72,10 @@ public class NumberArrayManagerScene3 : MonoBehaviour
         if (currentNumber == "161" && !isTaskPercentageIncremented)
         {
             success.SuccessCanvas();
-            task.IncrementTaskPercentage(10);
+            task.IncrementTaskPercentage(5);
             reportIcon.SetCheckIconVisible(true);
             reportIcon.SetUncheckIconVisible(false);
-            //portal.SetActive(true);
+            portal.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
             
             isTaskPercentageIncremented = true;

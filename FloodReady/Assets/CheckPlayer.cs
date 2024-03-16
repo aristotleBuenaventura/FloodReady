@@ -6,6 +6,7 @@ public class CheckPlayer : MonoBehaviour
     public GameObject objectsToDisable;
 
     public RecoveryCanvasController UsePhoneCanvas;
+    public GameObject goBag;
 
 
 
@@ -19,6 +20,7 @@ public class CheckPlayer : MonoBehaviour
                 // Disable the object
                 objectsToDisable.SetActive(false);
                 UsePhoneCanvas.UsePhoneCanvas();
+                goBag.SetActive(true);
 
             }
         }
