@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     public float maxLife = 10f;  // Maximum life value
     public float lifeDecreaseRate = 1f;  // Rate at which life decreases per second
     public float lifeIncreaseRate = 1f;  // Rate at which life increases per second
-    private float currentLife;  // Current life value
+    public float currentLife;  // Current life value
     private Image healthbar;  // Reference to the health bar image component
 
     public GameObject healthBarObject;  // Assign the health bar GameObject in the Unity Editor
@@ -16,10 +16,12 @@ public class HealthBar : MonoBehaviour
     public GameObject player; // Assign the player GameObject (OVRPlayerController) in the Unity Editor
     public GameObject water; // Assign the water GameObject in the Unity Editor
     public GameObject respawnPoint;  // Assign the respawn point GameObject in the Unity Editor
+    public GameObject cubeTeleport;
 
     // Start is called before the first frame update
     void Start()
     {
+        cubeTeleport.SetActive(false);
         currentLife = maxLife;  // Initialize current life to maxLife
 
         if (healthBarObject != null)
@@ -69,10 +71,12 @@ public class HealthBar : MonoBehaviour
         if (currentLife <= 0)
         {
             PlayerDied();
+            cubeTeleport.SetActive(true);
+        
         }
     }
 
-    void UpdateHealthBarUI()
+    public void UpdateHealthBarUI()
     {
         // Calculate fill amount based on current life and maximum life
         float fillAmount = currentLife / maxLife;
@@ -100,11 +104,12 @@ public class HealthBar : MonoBehaviour
 
     void PlayerDied()
     {
-        // Reset player position to the respawn point
+        /* Reset player position to the respawn point
         if (player != null && respawnPoint != null)
         {
             player.transform.position = respawnPoint.transform.position;
         }
+        */
 
         // Reset currentLife to maxLife
         currentLife = maxLife;
@@ -127,5 +132,11 @@ public class HealthBar : MonoBehaviour
         {
             healthBarParent.SetActive(true);
         }
+    }
+
+    public void UpdateLife(float newLife)
+    {
+        currentLife = newLife;
+        UpdateHealthBarUI();
     }
 }

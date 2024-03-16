@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09189714, g: 0.05836137, b: 0.05619683, a: 1}
+  m_IndirectSpecularColor: {r: 0.09189956, g: 0.058361292, b: 0.056196183, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7445,8 +7445,9 @@ MonoBehaviour:
   desiredRotation: {x: 0, y: 0, z: 0}
   welldonetext: {fileID: 0}
   timesupElapsetime: {fileID: 0}
-  tryagainButton: {fileID: 0}
   cubeTeleport: {fileID: 0}
+  retry: {fileID: 0}
+  finalAttempts: {fileID: 0}
 --- !u!114 &136426172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34925,6 +34926,7 @@ GameObject:
   - component: {fileID: 557260429}
   - component: {fileID: 557260431}
   - component: {fileID: 557260432}
+  - component: {fileID: 557260433}
   m_Layer: 3
   m_Name: Water
   m_TagString: Post
@@ -35047,6 +35049,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aeae1b274a360e4c962e94007655948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &557260433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557260424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7ec72873b5c943a37fccb7095abee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarObject: {fileID: 1083694029}
+  player: {fileID: 1347110268}
+  waterLevelObject: {fileID: 557260424}
 --- !u!1 &557700962
 GameObject:
   m_ObjectHideFlags: 0
@@ -37058,11 +37075,13 @@ MonoBehaviour:
   maxLife: 10
   lifeDecreaseRate: 1
   lifeIncreaseRate: 1
+  currentLife: 0
   healthBarObject: {fileID: 2136011360}
   healthBarParent: {fileID: 1753307176}
   player: {fileID: 1347110268}
   water: {fileID: 557260424}
   respawnPoint: {fileID: 880771612}
+  cubeTeleport: {fileID: 0}
 --- !u!114 &592854352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64397,6 +64416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  canvas2: {fileID: 0}
 --- !u!114 &1069136431 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
@@ -64916,7 +64936,6 @@ GameObject:
   - component: {fileID: 1083694030}
   - component: {fileID: 1083694033}
   - component: {fileID: 1083694032}
-  - component: {fileID: 1083694034}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -64983,26 +65002,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083694029}
   m_CullTransparentMesh: 1
---- !u!114 &1083694034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083694029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dfad81a1741d9f47b5f46a17d4e040e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLife: 10
-  lifeDecreaseRate: 1
-  lifeIncreaseRate: 1
-  healthBarObject: {fileID: 1767777112}
-  healthBarParent: {fileID: 1383368211}
-  player: {fileID: 1347110268}
-  water: {fileID: 557260424}
-  respawnPoint: {fileID: 880771612}
 --- !u!64 &1087576772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -73838,8 +73837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1204879978}
-  remainingTime: 10
-  InitialTime: 10
+  remainingTime: 600
+  InitialTime: 600
   timesup: {fileID: 679318069}
   player: {fileID: 1347110268}
   welldonetext: {fileID: 252077330}
@@ -83783,12 +83782,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383368211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c7ec72873b5c943a37fccb7095abee, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dfad81a1741d9f47b5f46a17d4e040e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarObject: {fileID: 1083694029}
+  maxLife: 10
+  lifeDecreaseRate: 1
+  lifeIncreaseRate: 1
+  currentLife: 0
+  healthBarObject: {fileID: 1767777112}
+  healthBarParent: {fileID: 1767777112}
   player: {fileID: 1347110268}
-  waterLevelObject: {fileID: 557260424}
+  water: {fileID: 557260424}
+  respawnPoint: {fileID: 880771612}
+  cubeTeleport: {fileID: 255544821}
 --- !u!1 &1383683738
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBarHide : MonoBehaviour
@@ -12,6 +10,7 @@ public class HealthBarHide : MonoBehaviour
 
     void Start()
     {
+        // Check if any necessary objects are not assigned
         if (healthBarObject == null || player == null || waterLevelObject == null)
         {
             Debug.LogError("Please assign healthBarObject, player, and waterLevelObject in the Unity Editor!");
@@ -20,34 +19,38 @@ public class HealthBarHide : MonoBehaviour
 
     void Update()
     {
-        // Debug logs to check values
-        Debug.Log("Player Y: " + player.transform.position.y);
-        Debug.Log("Water Level: " + waterLevelObject.transform.position.y);
-
-        // Check if the player is below the water
-        bool isBelowWater = waterLevelObject != null && player != null && player.transform.position.y < waterLevelObject.transform.position.y;
-
-        // Show the health bar if the player was not below water and is now below water
-        if (wasBelowWater && isBelowWater)
+        // Check if all necessary objects are not null
+        if (healthBarObject != null && player != null && waterLevelObject != null)
         {
-            healthBarObject.SetActive(true);
-            Debug.Log("Show Health Bar");
+            // Check the player's Y position
+            float playerY = player.transform.position.y;
+            float waterLevelY = waterLevelObject.transform.position.y;
+
+            // Debug logs to check values
+            Debug.Log("Player Y: " + playerY);
+            Debug.Log("Water Level: " + waterLevelY);
+
+            // Check if the player is below the water
+            bool isBelowWater = playerY < waterLevelY;
+
+            // Show or hide the health bar based on the player's position relative to the water level
+            if (isBelowWater)
+            {
+                healthBarObject.SetActive(true);
+                Debug.Log("Show Health Bar");
+            }
+            else
+            {
+                healthBarObject.SetActive(false);
+                Debug.Log("Hide Health Bar");
+            }
+
+            // Update the state for the next frame
+            wasBelowWater = isBelowWater;
         }
-        // Hide the health bar if the player was below water and is not below water anymore
-        else if (!wasBelowWater && !isBelowWater)
+        else
         {
-            healthBarObject.SetActive(false);
-            Debug.Log("Hide Health Bar");
-        }
-
-        // Update the state for the next frame
-        wasBelowWater = isBelowWater;
-
-        // Check if the water is rising
-        WaterLevelController waterLevelController = waterLevelObject.GetComponent<WaterLevelController>();
-        if (waterLevelController != null && waterLevelController.IsWaterRising())
-        {
-            Debug.Log("Water is rising!");
+            Debug.LogError("One or more necessary objects are not assigned!");
         }
     }
 }
