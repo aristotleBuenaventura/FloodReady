@@ -19,14 +19,13 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI welldonetext;
 
     public Timer_welldone timesupElapsetime;
-    public proceedToggleOff tryagainButton;
     public GameObject cubeTeleport;
     public NumberOfAttemptsScene1 retry;
     public attemptsLeft finalAttempts;
 
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
-
+    
     void Start()
     {
         cubeTeleport.SetActive(false);
@@ -49,7 +48,6 @@ public class Timer : MonoBehaviour
                     // Set the desired position from the Inspector
                     timesup.ShowFailedCanvas();
                     timesupElapsetime.StopTime();
-                    tryagainButton.lose();
 
                     cubeTeleport.SetActive(true);
                     // Change the text directly
