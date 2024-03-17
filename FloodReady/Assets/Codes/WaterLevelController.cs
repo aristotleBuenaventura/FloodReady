@@ -11,7 +11,7 @@ public class WaterLevelController : MonoBehaviour
     public float maxWaterLevelRooftop;  // Maximum water level when the player is detected
 
     public LevelThreeWater levelThreeWater; // Reference to the LevelThreeWater script
-    public GoBagSpawn LevelRooftop; // Reference to the Gobag script
+    public LevelFourWater LevelRooftop; // Reference to the Gobag script
 
     private bool canRiseWater = false;
 
@@ -33,21 +33,17 @@ public class WaterLevelController : MonoBehaviour
 
     private float GetMaxWaterLevel()
     {
+        if (LevelRooftop != null && LevelRooftop.PlayerDetected1())
+        {
+            return maxWaterLevelRooftop;
+        }
+
         if (levelThreeWater != null && levelThreeWater.PlayerDetected())
         {
             return maxWaterLevelPlayer;
         }
 
-        else if (LevelRooftop != null && LevelRooftop.PlayerDetected())
-        {
-            Debug.Log("WATER NOT RISING"); // Move the log statement above the return statement
-            return maxWaterLevelRooftop;
-        }
-        else
-        {
-            return maxWaterLevelBreaker;
-        }
-
+        return maxWaterLevelBreaker;
     }
 
     void Update()
