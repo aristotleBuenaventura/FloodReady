@@ -13,6 +13,7 @@ public class NumberArrayManager : MonoBehaviour
     private bool isTaskPercentageIncremented = false;
     public GameObject portal;
     public iconforlocate iconMobilePhone;
+    public GameObject boat;
 
     private void Start()
     {
@@ -76,6 +77,7 @@ public class NumberArrayManager : MonoBehaviour
             icon161.SetCheckIconVisible(true);
             icon161.SetUncheckIconVisible(false);
             portal.SetActive(true);
+            boat.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
             dial161increment.IncrementTaskPercentage(20);
             isTaskPercentageIncremented = true;
