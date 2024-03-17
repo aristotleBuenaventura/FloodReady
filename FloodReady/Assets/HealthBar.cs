@@ -77,16 +77,17 @@ public class HealthBar : MonoBehaviour
         // Check if life is zero and trigger player death
         if (currentLife <= 0)
         {
-
+            cubeTeleport.SetActive(true);
             timesupElapsetime.StopTime();
             tryagainButton.lose();
             if (welldonetext != null)
             {
                 welldonetext.text = "YOU'RE DEAD!";
             }
+           
             DeathCanvas.deathCanvas();
             PlayerDied();
-            cubeTeleport.SetActive(true);
+            
 
         }
     }
