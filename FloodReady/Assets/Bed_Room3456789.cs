@@ -70,7 +70,7 @@ public class Bed_Room3456789 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 1)
+        if (totalAmountInt >= 50)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
