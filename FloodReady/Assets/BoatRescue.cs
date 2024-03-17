@@ -9,6 +9,7 @@ public class BoatRescue : MonoBehaviour
     public float moveDuration = 4f; // Duration for which the boat should move
 
     private float elapsedTime = 0f; // Variable to track elapsed time
+    public AudioSource boatSounds;
 
     void Update()
     {
@@ -20,6 +21,7 @@ public class BoatRescue : MonoBehaviour
             boat.transform.Translate(movement);
             // Update the elapsed time
             elapsedTime += Time.deltaTime;
+            boatSounds.enabled = true;
         }
         else
         {
