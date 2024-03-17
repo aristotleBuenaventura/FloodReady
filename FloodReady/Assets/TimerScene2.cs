@@ -17,7 +17,8 @@ public class TimerScene2 : MonoBehaviour
     public TextMeshProUGUI welldonetext;
     public GameObject cubeTeleport;
     public Timer_welldone timesupElapsetime;
-    public proceedToggleOff tryagainButton;
+    public NumberOfAttemptsScene2 retry;
+    public attemptsLeftScene2 finalAttempts;
 
     private bool isTimerStopped = false; // Variable to control whether the timer is stopped
 
@@ -43,13 +44,15 @@ public class TimerScene2 : MonoBehaviour
                     // Set the desired position from the Inspector
                     timesup.FailedCanvas();
                     timesupElapsetime.StopTime();
-                    tryagainButton.lose();
+                  
                     // Change the text directly
                     if (welldonetext != null)
                     {
                         welldonetext.text = "TIME RUN OUT!";
                     }
                     cubeTeleport.SetActive(true);
+                    retry.SetNumberOfAttempts();
+                    finalAttempts.updateAttempts();
                     // Set the desired position from the Inspector
                 }
             }
