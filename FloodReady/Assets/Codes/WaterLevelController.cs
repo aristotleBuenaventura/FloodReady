@@ -38,11 +38,7 @@ public class WaterLevelController : MonoBehaviour
             return maxWaterLevelPlayer;
         }
 
-        else if (LevelRooftop != null && LevelRooftop.PlayerDetected())
-        {
-            Debug.Log("WATER NOT RISING"); // Move the log statement above the return statement
-            return maxWaterLevelRooftop;
-        }
+       
         else
         {
             return maxWaterLevelBreaker;
