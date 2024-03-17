@@ -38,6 +38,16 @@ public class FootstepController : MonoBehaviour
         {
             footstepSound.Play();
         }
+
+        //Pitch-based Running
+        if (isRunning)
+        {
+            footstepSound.pitch = 2f; 
+        }
+        else
+        {
+            footstepSound.pitch = 1f; 
+        }
     }
 
     void StopFootsteps()
