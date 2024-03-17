@@ -4,6 +4,7 @@ public class GoBagSpawn : MonoBehaviour
 {
     public GameObject bagPrefab;  // Drag your bag asset prefab into this field in the Inspector
     public EscapeCanvasController dial161Canvas;
+    public WaterLevelController waterLevelController; // Reference to the WaterLevelController
 
     private bool hasInteracted = false;
 
@@ -22,9 +23,19 @@ public class GoBagSpawn : MonoBehaviour
 
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
-            
+
             // Optionally, disable the collider to prevent repeated triggers
             // GetComponent<Collider>().enabled = false;
         }
+    }
+
+    public bool PlayerDetected()
+    {
+        Debug.Log("WATER NOT RISING");
+        if (waterLevelController != null)
+        {
+            waterLevelController.SetCanRiseWater(); // Assuming you have a method like SetCanRiseWater in WaterLevelController
+        }
+        return hasInteracted;
     }
 }
