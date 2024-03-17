@@ -33,7 +33,7 @@ public class LivingRoom_Wall13_1_Script : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag("LivingRoom_Wall13_1"))
+            if (hit.collider.CompareTag("LivingRoom_Wall13-1"))
             {
                 Renderer renderer = hit.collider.GetComponent<Renderer>();
                 Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
@@ -70,7 +70,7 @@ public class LivingRoom_Wall13_1_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    Wall.wall13(cleanAmount * .25);
+                    Wall.wall13_1(cleanAmount * .125);
                     MaterialManager.UpdateMaterialValue("Wall 2");
                 }
             }

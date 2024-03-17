@@ -7,9 +7,11 @@ public class Living_Room111213151617 : MonoBehaviour
     private double wall11amount;
     private double wall12amount;
     private double wall13amount;
+    private double wall13_1amount;
     private double wall15amount;
     private double wall16amount;
     private double wall17amount;
+
     public IconforLRW2 check;
     private bool isSet = false;
     public LivingRoom_Checklist checklist;
@@ -35,6 +37,12 @@ public class Living_Room111213151617 : MonoBehaviour
         CalculateTotalCleanAmount();
     }
 
+    public void wall13_1(double cleanAmount)
+    {
+        wall13_1amount = cleanAmount;
+        CalculateTotalCleanAmount();
+    }
+
 
     public void wall15(double cleanAmount)
     {
@@ -56,7 +64,7 @@ public class Living_Room111213151617 : MonoBehaviour
 
     private void CalculateTotalCleanAmount()
     {
-        double totalAmount = wall11amount + wall12amount + wall13amount + wall15amount + wall16amount + wall17amount;
+        double totalAmount = wall11amount + wall12amount + wall13amount + wall13_1amount  + wall15amount + wall16amount + wall17amount;
         clean_as_a_whole(totalAmount);
     }
 
@@ -64,7 +72,7 @@ public class Living_Room111213151617 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 1)
+        if (totalAmountInt >= 50)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }

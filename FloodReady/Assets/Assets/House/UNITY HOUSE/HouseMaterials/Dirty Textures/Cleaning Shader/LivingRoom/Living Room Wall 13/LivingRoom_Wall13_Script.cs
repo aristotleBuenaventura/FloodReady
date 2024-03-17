@@ -70,7 +70,7 @@ public class LivingRoom_Wall13_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    Wall.wall13(cleanAmount * .25);
+                    Wall.wall13(cleanAmount * .125);
                     MaterialManager.UpdateMaterialValue("Wall 2");
                 }
             }

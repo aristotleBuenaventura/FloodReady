@@ -8,6 +8,7 @@ public class NumberButtonController : MonoBehaviour
 
     private bool canPress = true; // Flag to track if the button can be pressed
     public float cooldownTime = 1f; // Cooldown period in seconds
+    public AudioSource keySound;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class NumberButtonController : MonoBehaviour
             // Call the OnButtonPress function
             OnButtonPress();
 
+            keySound.Play();
             // Start the cooldown
             StartCoroutine(Cooldown());
         }
