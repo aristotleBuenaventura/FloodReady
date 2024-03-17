@@ -16,6 +16,7 @@ public class PryBar : MonoBehaviour
     private bool hasIncrementedPercentage = false; // New flag to track if percentage has been incremented
     public TaskPercentage PryBarPercentage;
     public EscapeCanvasController escapeCanvasController;
+    public LocateTheSurvivalToolScene2Icon task;
 
     public void Update()
     {
@@ -70,6 +71,8 @@ public class PryBar : MonoBehaviour
                 {
                     escapeCanvasController.ShowBreakWindowCanvas();
                     PryBarPercentage.IncrementTaskPercentage(10);
+                    task.SetCheckIconVisible(true);
+                    task.SetUncheckIconVisible(false);
                     hasIncrementedPercentage = true;
                 }
             }

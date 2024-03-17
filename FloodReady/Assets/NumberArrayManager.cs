@@ -12,7 +12,8 @@ public class NumberArrayManager : MonoBehaviour
     public TaskPercentage dial161increment;
     private bool isTaskPercentageIncremented = false;
     public GameObject portal;
-    public iconforlocate iconMobilePhone;
+    public Dial161Scene2Icon task;
+
     public GameObject boat;
 
     private void Start()
@@ -76,13 +77,14 @@ public class NumberArrayManager : MonoBehaviour
             welldone.WelldoneCanvas();
             icon161.SetCheckIconVisible(true);
             icon161.SetUncheckIconVisible(false);
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
             portal.SetActive(true);
             boat.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
-            dial161increment.IncrementTaskPercentage(20);
+            dial161increment.IncrementTaskPercentage(10);
             isTaskPercentageIncremented = true;
-            iconMobilePhone.SetCheckIconVisible(true);
-            iconMobilePhone.SetUncheckIconVisible(false);
+
             // StartCoroutine(DelayedSuccessCanvas(10f));
             
             Debug.Log("Call Emergency");

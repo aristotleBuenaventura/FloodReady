@@ -14,6 +14,7 @@ public class TurnOffLights : MonoBehaviour
     AudioSource sound;
     bool isPressed;
     private bool mainBreakerPercentageIncremented = false;
+    public TurnOffMainBreakerScene2Icon task;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class TurnOffLights : MonoBehaviour
                     
                     ShowGoOutCanvas.ShowGoOutCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);
+                    task.SetCheckIconVisible(true);
+                    task.SetUncheckIconVisible(false);
 
                     // Set the flag to true to ensure this block is not executed again
                     mainBreakerPercentageIncremented = true;

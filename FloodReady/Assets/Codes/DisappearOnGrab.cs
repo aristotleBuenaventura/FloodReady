@@ -12,6 +12,7 @@ public class DisappearOnGrab : MonoBehaviour
     public retrieveIcon goBagIcon; // Reference to the retrieveIcon script
     public TaskPercentage retrieveGoBagPercentage;
     public Flashlight_Hand flashlight;
+    public RetrieveGoBagScene2Icon task;
 
     void Start(){
         flashlight = flashlight.GetComponent<Flashlight_Hand>();
@@ -43,8 +44,10 @@ public class DisappearOnGrab : MonoBehaviour
                 {
                     goBagIcon.SetCheckIconVisible(true);
                     goBagIcon.SetUncheckIconVisible(false);
+                    task.SetCheckIconVisible(true);
+                    task.SetUncheckIconVisible(false);
                     retrieveGoBagPercentage.IncrementTaskPercentage(20);
-                }
+                                 }
             }
         }
     }

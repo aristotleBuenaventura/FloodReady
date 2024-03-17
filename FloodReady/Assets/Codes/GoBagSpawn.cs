@@ -4,8 +4,10 @@ public class GoBagSpawn : MonoBehaviour
 {
     public GameObject bagPrefab;  // Drag your bag asset prefab into this field in the Inspector
     public EscapeCanvasController dial161Canvas;
-
+    public iconforlocate iconMobilePhone;
     private bool hasInteracted = false;
+    public LocateTheEmergencyDeviceScene2Icon task;
+    public TaskPercentage locateCPincrement;
 
     void Start()
     {
@@ -19,7 +21,11 @@ public class GoBagSpawn : MonoBehaviour
         {
             bagPrefab.SetActive(true);
             dial161Canvas.ShowSearchGoBagCanvas(true);
-
+            iconMobilePhone.SetCheckIconVisible(true);
+            iconMobilePhone.SetUncheckIconVisible(false);
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
+            locateCPincrement.IncrementTaskPercentage(10);
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
 
