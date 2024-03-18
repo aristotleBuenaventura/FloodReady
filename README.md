@@ -12,4 +12,5 @@
 ![s3](https://github.com/aristotleBuenaventura/FloodReady/assets/79913411/af4fd8da-37f7-4c5d-993a-e07151cc83e0)
 
 **Tutorial Room**
-![s4](https://github.com/aristotleBuenaventura/FloodReady/assets/79913411/a3a51f77-514a-45a2-af6c-714e122107f4)
+![s4](https://github.com/aristotleBuenaventura/FloodReady/assets/79913411/c99163ff-bdd2-41d8-9724-520a0caec2cd)
+
