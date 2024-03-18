@@ -5,6 +5,7 @@ public class DeleteNumberPhone : MonoBehaviour
     private NumberArrayManager arrayManager;
     private bool canPress = true; // Flag to track if the button can be pressed
     public float cooldownTime = 1f; // Cooldown period in seconds
+    public AudioSource keySound;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class DeleteNumberPhone : MonoBehaviour
 
         // Call the RemoveNumber function in NumberArrayManager
         arrayManager.RemoveNumber();
-
+        keySound.Play();
         // Wait for the specified cooldown time
         yield return new WaitForSeconds(cooldownTime);
 

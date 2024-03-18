@@ -5,6 +5,7 @@ public class Phone_Home : MonoBehaviour
     public GameObject WallPaper;
     public GameObject HomePage;
     public GameObject CallUI;
+    public AudioSource unlock;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Phone_Home : MonoBehaviour
             WallPaper.SetActive(false);
             HomePage.SetActive(true);
             CallUI.SetActive(false);
+            unlock.Play();
         }
     }
 }

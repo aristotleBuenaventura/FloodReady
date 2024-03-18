@@ -5,6 +5,7 @@ public class KeyPadCall : MonoBehaviour
     private NumberArrayManager arrayManager;
     private bool canPress = true; // Flag to track if the button can be pressed
     private float cooldownTime = 1f; // Cooldown period in seconds
+    public AudioSource keySound;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class KeyPadCall : MonoBehaviour
 
         // Call the CheckEmergencyCall function in NumberArrayManager
         arrayManager.CheckEmergencyCall();
-
+        keySound.Play();
         // Wait for the specified cooldown time
         yield return new WaitForSeconds(cooldownTime);
 
