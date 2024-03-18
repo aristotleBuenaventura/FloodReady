@@ -7,6 +7,7 @@ public class LivingRoom_Wall2_Script : MonoBehaviour
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
     [SerializeField] private Material _material;
+    [SerializeField] private Material _materialChange;
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
@@ -70,12 +71,21 @@ public class LivingRoom_Wall2_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
+                    if (cleanAmount >= 50)
+                    {
+                        // Remove the dirt mask texture
+                        renderer.material.SetTexture("_DirtMask", null);
+                        renderer.material.SetTexture("_DirtTexture", null);
+                        renderer.material = _materialChange;
+                    }
+
                     Wall.wall2(cleanAmount * .5);
                     MaterialManager.UpdateMaterialValue("Wall 1");
                 }
             }
         }
     }
+
 
     private void CreateTexture()
     {
