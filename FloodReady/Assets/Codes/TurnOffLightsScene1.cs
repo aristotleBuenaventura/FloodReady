@@ -16,6 +16,9 @@ public class TurnOffLights1 : MonoBehaviour
     public iconforturnoff turnofflightscheck;
     public GameObject doorClosed;
     public GameObject doorOpenned;
+    public AudioClip buttonPressSound; // Sound to play when button is pressed
+
+    private bool soundPlayed = false; // Flag to check if sound has been played
 
     private void Start()
     {
@@ -53,7 +56,11 @@ public class TurnOffLights1 : MonoBehaviour
 
             presser = other.gameObject;
             onPress.Invoke();
-            sound.Play();
+            if (buttonPressSound != null && sound != null && !soundPlayed)
+            {
+                sound.PlayOneShot(buttonPressSound);
+                soundPlayed = true; // Set flag to indicate sound has been played
+            }
             isPressed = true;
         }
     }

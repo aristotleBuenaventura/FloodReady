@@ -11,9 +11,17 @@ public class HandCollision : MonoBehaviour
     private bool canPressButton = true;
     public TaskPercentage remoteTask;
     public iconforturnontv check;
+    public AudioClip buttonPressSound; // Sound to play when button is pressed
+
+    private AudioSource audioSource; // Reference to the AudioSource component
 
     // Flag to check if the task has already been completed
     private bool taskCompleted = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,6 +45,12 @@ public class HandCollision : MonoBehaviour
             isButtonDown = !isButtonDown;
             canPressButton = false;
             StartCoroutine(ButtonCooldown());
+
+            // Play the button press sound if available
+            if (buttonPressSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(buttonPressSound);
+            }
         }
     }
 
