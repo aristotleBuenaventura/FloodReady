@@ -5,6 +5,7 @@ public class UnderWaterEffects : MonoBehaviour
     [SerializeField] GameObject water;
     [SerializeField] GameObject cameraRig; // Reference to the camera rig
     private bool isFogActive = false;
+    public bool isUnderwater { get; private set; }
 
     void Update()
     {
@@ -17,16 +18,20 @@ public class UnderWaterEffects : MonoBehaviour
             {
                 isFogActive = true;
                 RenderSettings.fog = isFogActive;
+                isUnderwater = true;
             }
             else
             {
                 isFogActive = false;
                 RenderSettings.fog = isFogActive;
+                isUnderwater = false;
             }
         }
         else
         {
             Debug.LogWarning("Water or camera rig is not assigned!");
         }
+
+
     }
 }
