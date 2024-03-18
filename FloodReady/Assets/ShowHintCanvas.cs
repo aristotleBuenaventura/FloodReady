@@ -182,6 +182,6 @@ public class ShowHintCanvas : MonoBehaviour
         phoneHint.SetActive(true);
     }
 
-  
+
 
 }
