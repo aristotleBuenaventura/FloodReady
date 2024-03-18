@@ -11,7 +11,7 @@ public class CleaningChecklistCanvas : MonoBehaviour
     public GameObject Hallway;
     public GameObject ChecklistCanvas;
     public GameObject WaterNozzle;
-
+    public GameObject clothes;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +71,16 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Hallway.SetActive(false);
     }
 
+    public void ShowGatherClothesCanvas()
+    {
+        LivingRoom.SetActive(false);
+        Bathroom.SetActive(false);
+        Kitchen.SetActive(false);
+        Bedroom.SetActive(false);
+        Hallway.SetActive(false);
+        clothes.SetActive(true);
+    }
+
     public void deactivate()
     {
         LivingRoom.SetActive(false);
@@ -78,6 +88,7 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
+        clothes.SetActive(false);
         Destroy(ChecklistCanvas);
         Destroy(WaterNozzle);
 

@@ -9,6 +9,8 @@ public class Flush : MonoBehaviour
     public plungethetoiletIcon check;
     public TaskPercentage task;
     public RecoveryCanvasController canvasController;
+    public CleaningChecklistCanvas cleaningCanvas;
+
 
     private bool hasExecuted = false; // Track if the code has already been executed
 
@@ -52,5 +54,6 @@ public class Flush : MonoBehaviour
 
         // Execute the line after the delay
         canvasController.ShowgatherDirtyclothesCanvas();
+        cleaningCanvas.ShowGatherClothesCanvas();
     }
 }

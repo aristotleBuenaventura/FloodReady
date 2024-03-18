@@ -10,6 +10,7 @@ public class ClothesDetector : MonoBehaviour
     private bool allClothesDetected = false;
     private bool canvasShown = false; // Flag to track if canvas has been shown
     public RecoveryCanvasController goCheckOutSideCanvas;
+    public CleaningChecklistCanvas cleaningCanvas;
 
     public GameObject redObject;
     public GameObject blueObject;
@@ -22,6 +23,7 @@ public class ClothesDetector : MonoBehaviour
     public iconforpinkdirty pink;
     public iconforyellowdirty yellow;
     public iconforreddirty red;
+
 
     void Start()
     {
@@ -68,6 +70,7 @@ public class ClothesDetector : MonoBehaviour
                 canvasShown = true; // Set canvasShown to true to prevent showing the canvas multiple times
                 Debug.Log("All clothes have been detected!");
                 goCheckOutSideCanvas.goCheckOutSideCanvas();
+                cleaningCanvas.deactivate();
                 // You can perform any action you want here when all clothes are detected
             }
         }
