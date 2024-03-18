@@ -15,6 +15,9 @@ public class TurnOffLights : MonoBehaviour
     bool isPressed;
     private bool mainBreakerPercentageIncremented = false;
     public TurnOffMainBreakerScene2Icon task;
+    public AudioClip buttonPressSound; // Sound to play when button is pressed
+
+    private bool soundPlayed = false; // Flag to check if sound has been played
 
     void Start()
     {
@@ -40,7 +43,6 @@ public class TurnOffLights : MonoBehaviour
                 if (!mainBreakerPercentageIncremented)
                 {
                     // Mark the task as done
-                    
                     ShowGoOutCanvas.ShowGoOutCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);
                     task.SetCheckIconVisible(true);
@@ -60,7 +62,11 @@ public class TurnOffLights : MonoBehaviour
 
             presser = other.gameObject;
             onPress.Invoke();
-            sound.Play();
+            if (buttonPressSound != null && sound != null && !soundPlayed)
+            {
+                sound.PlayOneShot(buttonPressSound);
+                soundPlayed = true; // Set flag to indicate sound has been played
+            }
             isPressed = true;
         }
     }
