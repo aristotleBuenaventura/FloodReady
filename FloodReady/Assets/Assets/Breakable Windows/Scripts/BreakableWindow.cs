@@ -52,14 +52,7 @@ public class BreakableWindow : MonoBehaviour
             StartCoroutine(HandleCollisionCoroutine());
 
             // Assuming windowBreakIcon is not null, set the check and uncheck icons accordingly
-            if (windowBreakIcon != null)
-            {
-                windowBreakIcon.SetCheckIconVisible(true);
-                windowBreakIcon.SetUncheckIconVisible(false);
-                task.SetCheckIconVisible(true);
-                task.SetUncheckIconVisible(false);
-
-            }
+            
         }
     }
 
@@ -79,6 +72,10 @@ public class BreakableWindow : MonoBehaviour
         {
             // Set it as the last window
             SetIsLastWindow(true);
+            windowBreakIcon.SetCheckIconVisible(true);
+            windowBreakIcon.SetUncheckIconVisible(false);
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
             breakwindowpercentage.IncrementTaskPercentage(15);
         }
         else
