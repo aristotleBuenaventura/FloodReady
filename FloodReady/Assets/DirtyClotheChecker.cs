@@ -84,32 +84,31 @@ public class ClothesDetector : MonoBehaviour
             GameObject itemObject = itemObjects[itemName];
             if (itemObject != null)
             {
-                itemObject.SetActive(true); // Set the GameObject's visibility to true
+             
                 Debug.Log("Item " + itemName + " detected and activated.");
 
                 // Call the functions to set icon visibility
                 switch (itemName)
                 {
                     case "ClothesRed":
-                        Debug.Log("tang ina");
-                        red.SetCheckIconVisible(false);
-                        red.SetUncheckIconVisible(true);
+                       
+                        red.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'red' object
                         break;
                     case "ClothesBlue":
-                        blue.GetComponent<iconforbluedirty>().SetCheckIconVisible(false);
-                        blue.GetComponent<iconforbluedirty>().SetUncheckIconVisible(true);
+                       
+                        blue.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'blue' object
                         break;
                     case "ClothesPink":
-                        pink.GetComponent<iconforpinkdirty>().SetCheckIconVisible(false);
-                        pink.GetComponent<iconforpinkdirty>().SetUncheckIconVisible(true);
+                     
+                        pink.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'pink' object
                         break;
                     case "ClothesDirtyWhite":
-                        white.GetComponent<iconforwhitedirty>().SetCheckIconVisible(false);
-                        white.GetComponent<iconforwhitedirty>().SetUncheckIconVisible(true);
+                     
+                        white.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'white' object
                         break;
                     case "ClothesYellow":
-                        yellow.GetComponent<iconforyellowdirty>().SetCheckIconVisible(false);
-                        yellow.GetComponent<iconforyellowdirty>().SetUncheckIconVisible(true);
+                      
+                        yellow.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'yellow' object
                         break;
                     default:
                         Debug.LogWarning("Invalid item name: " + itemName);
