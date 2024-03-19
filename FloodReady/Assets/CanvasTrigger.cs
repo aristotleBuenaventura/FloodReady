@@ -14,6 +14,7 @@ public class CanvasTrigger : MonoBehaviour
     public TaskPercentage task;
 
     public GameObject waterSpray;
+    public TotalPoints points;
 
 
     void Update()
@@ -51,6 +52,7 @@ public class CanvasTrigger : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             canvasController.ShowfindnozzleCanvas();
             canvasShown = true; // Set canvasShown to true to indicate that the canvas has been shown
             // Disable this script to prevent further updates
