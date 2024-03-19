@@ -8,6 +8,7 @@ public class GoBagSpawn : MonoBehaviour
     private bool hasInteracted = false;
     public LocateTheEmergencyDeviceScene2Icon task;
     public TaskPercentage locateCPincrement;
+    public TotalPoints points;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class GoBagSpawn : MonoBehaviour
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             locateCPincrement.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);   
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
 

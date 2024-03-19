@@ -17,6 +17,7 @@ public class PryBar : MonoBehaviour
     public TaskPercentage PryBarPercentage;
     public EscapeCanvasController escapeCanvasController;
     public LocateTheSurvivalToolScene2Icon task;
+    public TotalPoints points;
 
     public void Update()
     {
@@ -71,6 +72,7 @@ public class PryBar : MonoBehaviour
                 {
                     escapeCanvasController.ShowBreakWindowCanvas();
                     PryBarPercentage.IncrementTaskPercentage(10);
+                    points.IncrementPoints(1000);
                     task.SetCheckIconVisible(true);
                     task.SetUncheckIconVisible(false);
                     hasIncrementedPercentage = true;

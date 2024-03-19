@@ -16,6 +16,7 @@ public class BreakableWindow : MonoBehaviour
     public TaskPercentage breakwindowpercentage;
     public AudioSource breakSound; // Reference to the AudioSource for break sound
     public BreakAWindowScene2Icon task;
+    public TotalPoints points;
 
     public bool IsBroken { get; private set; } = false;
 
@@ -77,6 +78,7 @@ public class BreakableWindow : MonoBehaviour
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             breakwindowpercentage.IncrementTaskPercentage(15);
+            points.IncrementPoints(1500);
         }
         else
         {

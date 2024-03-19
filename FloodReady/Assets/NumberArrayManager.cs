@@ -15,6 +15,7 @@ public class NumberArrayManager : MonoBehaviour
     public Dial161Scene2Icon task;
 
     public GameObject boat;
+    public TotalPoints points;
 
     private void Start()
     {
@@ -83,6 +84,7 @@ public class NumberArrayManager : MonoBehaviour
             boat.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
             dial161increment.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             isTaskPercentageIncremented = true;
 
             // StartCoroutine(DelayedSuccessCanvas(10f));

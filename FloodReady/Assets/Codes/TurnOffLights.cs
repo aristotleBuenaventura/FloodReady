@@ -18,6 +18,7 @@ public class TurnOffLights : MonoBehaviour
     public AudioClip buttonPressSound; // Sound to play when button is pressed
 
     private bool soundPlayed = false; // Flag to check if sound has been played
+    public TotalPoints points;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class TurnOffLights : MonoBehaviour
                     // Mark the task as done
                     ShowGoOutCanvas.ShowGoOutCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);
+                    points.IncrementPoints(2000);
                     task.SetCheckIconVisible(true);
                     task.SetUncheckIconVisible(false);
 

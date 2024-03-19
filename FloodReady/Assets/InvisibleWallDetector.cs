@@ -10,7 +10,6 @@ public class InvisibleWallDetector : MonoBehaviour
     public iconforleavethehouse leavethehousecheck;
     public Timer_welldone welldomeStopTime;
     public Timer wristwatchStopTime;
-    public TotalPoints points;
 
 
 
@@ -23,7 +22,6 @@ public class InvisibleWallDetector : MonoBehaviour
             leavethehousecheck.SetCheckIconVisible(true);
             leavethehousecheck.SetUncheckIconVisible(false);
             welldomeStopTime.StopTime();
-            points.IncrementPoints(1000);
             //wristwatchStopTime.StopTimer();
 
             // Teleport the player to the desired position and rotation
