@@ -4,6 +4,8 @@ public class CallUI : MonoBehaviour
 {
     public GameObject HomePage;
     public GameObject CallUIs;
+    public GameObject Dial;
+    public GameObject Calling;
     public AudioSource key;
 
     void Start()
@@ -21,6 +23,8 @@ public class CallUI : MonoBehaviour
             key.Play();
             HomePage.SetActive(false);
             CallUIs.SetActive(true);
+            Dial.SetActive(false);
+            Calling.SetActive(false);
         }
     }
 }
