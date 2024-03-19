@@ -11,10 +11,16 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public TaskPercentage CloseBag;
     public iconforretrievegobag CloseBagCheck;
     public TotalPoints points;
+    public Flashlight_Hand flashlight;
 
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
+
+    void Start()
+    {
+        flashlight = flashlight.GetComponent<Flashlight_Hand>();
+    }
 
     void Update()
     {
@@ -27,6 +33,10 @@ public class Go_bag_closed_retrieve : MonoBehaviour
             {
                 StartCoroutine(DisappearWithDelay());
                 isGrabbed = true;
+                if (flashlight != null)
+                {
+                    flashlight.isAllowed = true;
+                }
             }
         }
     }
