@@ -7,7 +7,7 @@ public class HintGasFind : MonoBehaviour
     public RecoveryCanvasController ShowclosegasleakCanvas;
     private Collider gasFindHintCollider; // Reference to the GasFindHint collider
     private bool hasShownCanvas = false; // Flag to track if canvas has been shown
-
+    public TotalPoints points;
     public gasleakIcon check;
     public TaskPercentage task;
 
@@ -32,6 +32,7 @@ public class HintGasFind : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
         }
     }
 }
