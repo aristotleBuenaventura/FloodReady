@@ -12,6 +12,7 @@ public class UnPlugTV : MonoBehaviour
     private bool isPlugAttached = false;
     private bool hasIncrementedPercentage = false;
     private bool isCoroutineRunning = false;
+    public TotalPoints points;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,7 @@ public class UnPlugTV : MonoBehaviour
             TV.TurnOff();
             ShowCanvas.SetBooleanTV(true);
             TvUnplugPercentage.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             hasIncrementedPercentage = true;
         }
 

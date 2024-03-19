@@ -34,6 +34,7 @@ public class InventoryManager : MonoBehaviour
     public iconformobilephone mobilephone;
     public iconforgatherdessentialgoods gatheredessentialgoods;
     public iconforfirstaidkit firstaidkit;
+    public TotalPoints points;
 
 
     // for wrist canvas
@@ -161,6 +162,7 @@ public class InventoryManager : MonoBehaviour
         {
             StartCoroutine(TaskPercentageCooldown());
             bagPercentage.DecrementTaskPercentage(5);
+            points.DecrementPoints(500);
         }
 
         
@@ -247,6 +249,7 @@ public class InventoryManager : MonoBehaviour
         {
             StartCoroutine(TaskPercentageCooldown());
             bagPercentage.IncrementTaskPercentage(5);
+            points.IncrementPoints(500);
         }
 
         if (bagInventory == null || bagInventory.Count == 0)

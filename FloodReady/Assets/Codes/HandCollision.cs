@@ -12,6 +12,7 @@ public class HandCollision : MonoBehaviour
     public TaskPercentage remoteTask;
     public iconforturnontv check;
     public AudioClip buttonPressSound; // Sound to play when button is pressed
+    public TotalPoints points;
 
     private AudioSource audioSource; // Reference to the AudioSource component
 
@@ -68,6 +69,7 @@ public class HandCollision : MonoBehaviour
             StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             Debug.Log("Go bag working");
             remoteTask.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             // Set the flag to indicate that the task has been completed

@@ -8,6 +8,8 @@ public class OpenHintBottled : MonoBehaviour
     public Collider[] otherHintColliders; // Array of colliders from other hint functions
     public float initialColliderDuration = 2f; // Initial duration for which other colliders are disabled when this canvas is activated
     private bool canActivate = true; // Flag to track if canvas activation is allowed
+    public TotalPoints points;
+    private bool canDeduct = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +25,16 @@ public class OpenHintBottled : MonoBehaviour
             DisableOtherHintColliders();
 
             hintCanvas.ShoWaterCanvas();
+            if (!canDeduct)
+            {
+                points.DecrementPoints(100);
+                canDeduct = true;
+            }
 
-           
 
             // Check if HintCanvasManager exists
-         
-                StartCoroutine(StartColliderDuration());
+
+            StartCoroutine(StartColliderDuration());
            
         }
     }

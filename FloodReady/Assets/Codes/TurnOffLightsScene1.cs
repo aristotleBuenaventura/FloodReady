@@ -17,6 +17,7 @@ public class TurnOffLights1 : MonoBehaviour
     public GameObject doorClosed;
     public GameObject doorOpenned;
     public AudioClip buttonPressSound; // Sound to play when button is pressed
+    public TotalPoints points;
 
     private bool soundPlayed = false; // Flag to check if sound has been played
 
@@ -47,6 +48,7 @@ public class TurnOffLights1 : MonoBehaviour
                 // Mark the task as done
                 exitthehouse.ShowExitHouseCanvas();
                 turnofflightspercentage.IncrementTaskPercentage(20);
+                points.IncrementPoints(2000);
                 taskIncremented = true; // Set the flag to true after incrementing the task
                 turnofflightscheck.SetCheckIconVisible(true);
                 turnofflightscheck.SetUncheckIconVisible(false);

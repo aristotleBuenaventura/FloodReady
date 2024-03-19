@@ -10,6 +10,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public CanvasController GoBagRetrieve;
     public TaskPercentage CloseBag;
     public iconforretrievegobag CloseBagCheck;
+    public TotalPoints points;
 
 
     // You can adjust this variable to control the delay before the object disappears
@@ -37,6 +38,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         gameObject.SetActive(false);
         GoBagRetrieve.ShowUnplugCableCanvas();
         CloseBag.IncrementTaskPercentage(10);
+        points.IncrementPoints(1000);
         CloseBagCheck.SetCheckIconVisible(true);
         CloseBagCheck.SetUncheckIconVisible(false);
     }
