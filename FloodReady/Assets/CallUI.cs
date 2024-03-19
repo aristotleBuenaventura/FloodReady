@@ -4,6 +4,7 @@ public class CallUI : MonoBehaviour
 {
     public GameObject HomePage;
     public GameObject CallUIs;
+    public AudioSource key;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class CallUI : MonoBehaviour
         if (other.CompareTag("TurnOnButton"))
         {
             // Disable the homepage GameObject
+            key.Play();
             HomePage.SetActive(false);
             CallUIs.SetActive(true);
         }
