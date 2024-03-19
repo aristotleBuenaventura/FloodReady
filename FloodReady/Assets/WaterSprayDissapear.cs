@@ -18,6 +18,7 @@ public class WaterSprayDisappear : MonoBehaviour
     public float delayBeforeDisappear = 0.5f;
 
     public findthewaternozzleIcon check;
+    public TotalPoints points;
 
 
     void Update()
@@ -44,6 +45,7 @@ public class WaterSprayDisappear : MonoBehaviour
         check.SetUncheckIconVisible(false);
         canvasController.ShowcleanlivingCanvas();
         task.IncrementTaskPercentage(10);
+        points.IncrementPoints(1000);
         colliderWall.LivingRoomColliders();
         canvas.ShowLivingRoomCanvas();
 

@@ -18,6 +18,7 @@ public class GasBottleRotation : MonoBehaviour
 
     public closevalveIcon check;
     public TaskPercentage task;
+    public TotalPoints points;
 
     
 
@@ -43,6 +44,7 @@ public class GasBottleRotation : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             // Disable the collider to prevent further collisions
             gasBottleCollider.enabled = false;
 

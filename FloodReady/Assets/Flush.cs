@@ -10,6 +10,7 @@ public class Flush : MonoBehaviour
     public TaskPercentage task;
     public RecoveryCanvasController canvasController;
     public CleaningChecklistCanvas cleaningCanvas;
+    public TotalPoints points;
 
 
     private bool hasExecuted = false; // Track if the code has already been executed
@@ -27,6 +28,7 @@ public class Flush : MonoBehaviour
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
 
             // Check if flushSound is assigned
             if (flushSound != null)

@@ -8,6 +8,7 @@ public class LivingRoom_Checklist : MonoBehaviour
     public RecoveryCanvasController canvas;
     public CleaningCollider wall;
     public TaskPercentage score;
+    public TotalPoints points;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class LivingRoom_Checklist : MonoBehaviour
             cleaningCanvas.ShowKitchenCanvas();
             wall.KitchenColliders();
             score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             // Disable the script
             enabled = false;
         }

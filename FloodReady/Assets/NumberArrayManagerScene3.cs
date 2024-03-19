@@ -12,6 +12,7 @@ public class NumberArrayManagerScene3 : MonoBehaviour
     public TaskPercentage task;
     private bool isTaskPercentageIncremented = false;
     public GameObject portal;
+    public TotalPoints points;
 
     private void Start()
     {
@@ -73,6 +74,7 @@ public class NumberArrayManagerScene3 : MonoBehaviour
         {
             success.SuccessCanvas();
             task.IncrementTaskPercentage(5);
+            points.IncrementPoints(500);
             reportIcon.SetCheckIconVisible(true);
             reportIcon.SetUncheckIconVisible(false);
             portal.SetActive(true);

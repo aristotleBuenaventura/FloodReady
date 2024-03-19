@@ -9,6 +9,7 @@ public class Bathroom_Checklist : MonoBehaviour
     public CleaningCollider wall;
     public TaskPercentage score;
     public GameObject plunger;
+    public TotalPoints points;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class Bathroom_Checklist : MonoBehaviour
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();
             score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             plunger.SetActive(true);
             // Disable the script
             enabled = false;

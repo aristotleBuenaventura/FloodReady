@@ -23,6 +23,9 @@ public class ClothesDetector : MonoBehaviour
     public iconforpinkdirty pink;
     public iconforyellowdirty yellow;
     public iconforreddirty red;
+    public TaskPercentage score;
+    public TotalPoints points;
+
 
 
     void Start()
@@ -70,6 +73,8 @@ public class ClothesDetector : MonoBehaviour
                 canvasShown = true; // Set canvasShown to true to prevent showing the canvas multiple times
                 Debug.Log("All clothes have been detected!");
                 goCheckOutSideCanvas.goCheckOutSideCanvas();
+                score.IncrementTaskPercentage(5);
+                points.IncrementPoints(500);
                 cleaningCanvas.deactivate();
                 // You can perform any action you want here when all clothes are detected
             }
