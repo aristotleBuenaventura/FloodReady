@@ -15,4 +15,15 @@ public class RetryScene1 : MonoBehaviour
         SceneManager.LoadScene("Evacuation_Essential", LoadSceneMode.Single);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            int numAttempts = attempts.GetAttemptsToPass();
+            PlayerPrefs.SetInt("attempts", numAttempts);
+            SceneManager.LoadScene("Evacuation_Essential", LoadSceneMode.Single);
+        }
+
+    }
+
 }

@@ -15,4 +15,15 @@ public class RetryScene3 : MonoBehaviour
         SceneManager.LoadScene("Recovery_Resilience", LoadSceneMode.Single);
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            int numAttempts = attempts.GetAttemptsToPass();
+            PlayerPrefs.SetInt("attemptsScene3", numAttempts);
+            SceneManager.LoadScene("Recovery_Resilience", LoadSceneMode.Single);
+        }
+
+    }
 }

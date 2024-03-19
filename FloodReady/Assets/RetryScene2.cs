@@ -14,5 +14,15 @@ public class RetryScene2 : MonoBehaviour
         PlayerPrefs.SetInt("attemptsScene2", numAttempts);
         SceneManager.LoadScene("Escape_Survive", LoadSceneMode.Single);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            int numAttempts = attempts.GetAttemptsToPass();
+            PlayerPrefs.SetInt("attemptsScene2", numAttempts);
+            SceneManager.LoadScene("Escape_Survive", LoadSceneMode.Single);
+        }
+
+    }
 
 }
