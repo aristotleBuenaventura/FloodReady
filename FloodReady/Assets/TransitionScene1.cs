@@ -23,7 +23,7 @@ public class TransitionScene1 : MonoBehaviour
     {
         if (other.CompareTag("Hand"))
         {
-            StartCoroutine(LoadScene("Evacuation_Essential"));
+            StartCoroutine(LoadScene("Escape_Survive"));
 
         }
     }
