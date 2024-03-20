@@ -6,21 +6,20 @@ public class NumberArrayManager : MonoBehaviour
 {
     private string[] numberArray = new string[0]; // Initialize an empty array
     public TextMeshProUGUI textElement; // Expose the TextMeshProUGUI component
-    public EscapeCanvasController welldone;
-
-    public iconfordial161 icon161;
     public TaskPercentage dial161increment;
     private bool isTaskPercentageIncremented = false;
-    public GameObject portal;
     public Dial161Scene2Icon task;
-
-    public GameObject boat;
     public TotalPoints points;
+    public GameObject dial;
+    public GameObject call;
+    public GameObject portal;
 
     private void Start()
     {
         portal.SetActive(false);
         // Ensure the TextMeshProUGUI component is present
+        dial.SetActive(false);
+        call.SetActive(false);
         if (textElement == null)
         {
             // If not set in the Inspector, try to find the TextMeshProUGUI component on the same GameObject
@@ -75,13 +74,10 @@ public class NumberArrayManager : MonoBehaviour
 
         if (currentNumber == "161" && !isTaskPercentageIncremented)
         {
-            welldone.WelldoneCanvas();
-            icon161.SetCheckIconVisible(true);
-            icon161.SetUncheckIconVisible(false);
+            
+            dial.SetActive(true);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
-            portal.SetActive(true);
-            boat.SetActive(true);
             // Increment the task percentage only if it hasn't been done before
             dial161increment.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
