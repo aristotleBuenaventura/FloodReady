@@ -45,6 +45,7 @@ public class OpenHintBar : MonoBehaviour
         canActivate = true; // Enable canvas activation
         // Re-enable other hint colliders
         EnableOtherHintColliders();
+
     }
 
     // Disable other hint colliders
