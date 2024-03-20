@@ -7,11 +7,12 @@ public class LivingRoom_Wall1_Script : MonoBehaviour
     [SerializeField] private Texture2D _dirtMaskBase;
     [SerializeField] private Texture2D _brush;
     [SerializeField] private Material _material;
+    [SerializeField] private Material _materialChange;
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
     public Living_Room12 Wall;
-
+    private Renderer renderer;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class LivingRoom_Wall1_Script : MonoBehaviour
         {
             if (hit.collider.CompareTag("LivingRoom_Wall1"))
             {
-                Renderer renderer = hit.collider.GetComponent<Renderer>();
+                renderer = hit.collider.GetComponent<Renderer>();
                 Texture2D dirtMaskTexture = renderer.material.GetTexture("_DirtMask") as Texture2D;
 
                 if (dirtMaskTexture != null)
@@ -76,6 +77,13 @@ public class LivingRoom_Wall1_Script : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void CleanMaterial()
+    {
+        renderer.material.SetTexture("_DirtMask", null);
+        renderer.material.SetTexture("_DirtTexture", null);
+        renderer.material = _materialChange;
     }
 
     private void CreateTexture()

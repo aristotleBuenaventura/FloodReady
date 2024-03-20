@@ -11,6 +11,8 @@ public class Living_Room12 : MonoBehaviour
     public LivingRoom_Checklist checklist;
     public AudioSource Wall1_Audio;
     private bool isPlay = false;
+    public LivingRoom_Wall1_Script wall1Clean;
+    public LivingRoom_Wall2_Script wall2Clean;
 
 
     public void wall1(double cleanAmount)
@@ -35,7 +37,7 @@ public class Living_Room12 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 50)
+        if (totalAmountInt >= 25)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -44,6 +46,8 @@ public class Living_Room12 : MonoBehaviour
 
         if (totalAmountInt == 100 && !isSet)
         {
+            wall1Clean.CleanMaterial();
+            wall2Clean.CleanMaterial();
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[0] = true;
