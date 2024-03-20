@@ -175,6 +175,7 @@ MonoBehaviour:
   number: 4
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &7197286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -316,6 +317,7 @@ MonoBehaviour:
   reportIcon: {fileID: 0}
   task: {fileID: 0}
   portal: {fileID: 0}
+  points: {fileID: 0}
 --- !u!114 &26940844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +1011,7 @@ MonoBehaviour:
   PryBarPercentage: {fileID: 0}
   escapeCanvasController: {fileID: 0}
   task: {fileID: 0}
+  points: {fileID: 0}
 --- !u!54 &108778380
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1853,6 +1856,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HomePage: {fileID: 1267109546}
   CallUIs: {fileID: 1888894948}
+  Dial: {fileID: 0}
+  Calling: {fileID: 0}
+  key: {fileID: 0}
 --- !u!65 &288546703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2109,7 +2115,7 @@ GameObject:
   - component: {fileID: 411324484}
   m_Layer: 0
   m_Name: Tutorial Wall
-  m_TagString: LivingRoom_Wall10
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2231,13 +2237,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411324483}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.999986, z: -0, w: -0.0052941665}
-  m_LocalPosition: {x: -13.378, y: 0.419, z: 1.248}
-  m_LocalScale: {x: 0.0069308057, y: 0.27397993, z: 0.43769377}
+  m_LocalRotation: {x: -0.36565837, y: -0.9307341, z: -0.0019358833, w: -0.004927531}
+  m_LocalPosition: {x: -13.298, y: 2.279, z: 1.399}
+  m_LocalScale: {x: 0.0069308057, y: 1.0689601, z: 2.290933}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -180.607, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.607, z: 42.897}
 --- !u!1 &433762947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2831,7 @@ MonoBehaviour:
   number: 5
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &491291138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3426,6 +3433,7 @@ MonoBehaviour:
   number: 9
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &567901172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3499,6 +3507,7 @@ MonoBehaviour:
   number: 2
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &571589835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3572,6 +3581,7 @@ MonoBehaviour:
   number: 0
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &598214485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4387,6 +4397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c231a098620b4e4cb5155d56cdb6865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keySound: {fileID: 0}
 --- !u!65 &709413114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4960,6 +4971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &763477111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5033,6 +5045,7 @@ MonoBehaviour:
   number: 7
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &776670274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8013,6 +8026,7 @@ MonoBehaviour:
   number: 8
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &1304039504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10384,6 +10398,9 @@ MonoBehaviour:
   WallPaper: {fileID: 1789465046}
   HomePage: {fileID: 1267109546}
   CallUI: {fileID: 1888894948}
+  Dial: {fileID: 0}
+  Calling: {fileID: 0}
+  unlock: {fileID: 0}
 --- !u!65 &1789465048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11528,6 +11545,7 @@ MonoBehaviour:
   number: 3
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &1991318696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11601,6 +11619,7 @@ MonoBehaviour:
   number: 6
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &1998875164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11840,6 +11859,7 @@ MonoBehaviour:
   number: 1
   arrayManager: {fileID: 26940843}
   cooldownTime: 1
+  keySound: {fileID: 0}
 --- !u!65 &2073030159
 BoxCollider:
   m_ObjectHideFlags: 0
