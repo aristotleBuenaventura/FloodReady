@@ -17,6 +17,7 @@ public class Timer_welldone : MonoBehaviour
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
 
     private bool isTimeStopped = false;
+    public TotalPoints points;
 
     public float ElapsedTime
     {
@@ -63,6 +64,27 @@ public class Timer_welldone : MonoBehaviour
     public void StopTime()
     {
         isTimeStopped = true;
+
+        // Debug log if elapsedTime is less than or equal to 3 minutes
+        if (elapsedTime <= 180) // 3 minutes in seconds
+        {
+            points.IncrementPoints(3000);
+        }
+        // Debug log if elapsedTime is less than or equal to 5 minutes
+        else if (elapsedTime <= 300) // 5 minutes in seconds
+        {
+            points.IncrementPoints(1500);
+        }
+        else if (elapsedTime <= 480) // 5 minutes in seconds
+        {
+            points.IncrementPoints(750);
+        }
+        else
+        {
+            points.IncrementPoints(200);
+        }
+
+
         // You can add any additional logic here when time is stopped
     }
 
