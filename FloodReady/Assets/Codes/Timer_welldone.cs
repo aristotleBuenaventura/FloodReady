@@ -75,7 +75,7 @@ public class Timer_welldone : MonoBehaviour
         {
             points.IncrementPoints(1500);
         }
-        else if (elapsedTime <= 480) // 5 minutes in seconds
+        else if (elapsedTime <= 480) // 8 minutes in seconds
         {
             points.IncrementPoints(750);
         }
