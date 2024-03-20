@@ -54,7 +54,7 @@ public class OpenHintCanned : MonoBehaviour
     {
         foreach (var collider in otherHintColliders)
         {
-            collider.enabled = false;
+            collider.isTrigger = false;
         }
     }
 
@@ -63,7 +63,7 @@ public class OpenHintCanned : MonoBehaviour
     {
         foreach (var collider in otherHintColliders)
         {
-            collider.enabled = true;
+            collider.isTrigger = true;
         }
     }
 }

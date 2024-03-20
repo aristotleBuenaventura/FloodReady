@@ -53,7 +53,7 @@ public class OpenHintFlashLight : MonoBehaviour
     {
         foreach (var collider in otherHintColliders)
         {
-            collider.enabled = false;
+            collider.isTrigger = false;
         }
     }
 
@@ -62,7 +62,7 @@ public class OpenHintFlashLight : MonoBehaviour
     {
         foreach (var collider in otherHintColliders)
         {
-            collider.enabled = true;
+            collider.isTrigger = true;
         }
     }
 }
