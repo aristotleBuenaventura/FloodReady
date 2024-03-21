@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections; // Add this line to include the System.Collections namespace
 
 public class OpenHintCanvas : MonoBehaviour
 {
@@ -21,18 +20,25 @@ public class OpenHintCanvas : MonoBehaviour
         // Check if the collider that entered the trigger is the player or controller
         if (other.CompareTag("Hand") && canTrigger)
         {
-            // Show the next canvas
-            objectToMonitor1.SetActive(true);
-            objectToMonitor2.SetActive(true);
-            objectToMonitor3.SetActive(true);
-            objectToMonitor4.SetActive(true);
-            objectToMonitor5.SetActive(true);
-            objectToMonitor6.SetActive(true);
-            objectToMonitor7.SetActive(true);
-            objectToMonitor8.SetActive(true);
-            objectToMonitor9.SetActive(true);
-        
            
+            SetObjectActive(objectToMonitor1, true);
+            SetObjectActive(objectToMonitor2, true);
+            SetObjectActive(objectToMonitor3, true);
+            SetObjectActive(objectToMonitor4, true);
+            SetObjectActive(objectToMonitor5, true);
+            SetObjectActive(objectToMonitor6, true);
+            SetObjectActive(objectToMonitor7, true);
+            SetObjectActive(objectToMonitor8, true);
+            SetObjectActive(objectToMonitor9, true);
+        }
+    }
+
+    private void SetObjectActive(GameObject obj, bool active)
+    {
+        // Check if the object reference is not null
+        if (obj != null)
+        {
+            obj.SetActive(active);
         }
     }
 }
