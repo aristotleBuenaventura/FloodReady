@@ -13,7 +13,7 @@ public class ColliderReenabler : MonoBehaviour
                 // Check if the collider is null or has been destroyed
                 if (collider != null)
                 {
-                    collider.isTrigger = true; // Re-enable the collider as a trigger
+                    collider.enabled = true;// Re-enable the collider as a trigger
                 }
             }
         }
