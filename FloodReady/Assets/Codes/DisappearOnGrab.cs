@@ -14,6 +14,7 @@ public class DisappearOnGrab : MonoBehaviour
     public Flashlight_Hand flashlight;
     public RetrieveGoBagScene2Icon task;
     public TotalPoints points;
+    public GameObject hintRetrieve;
 
     void Start(){
         flashlight = flashlight.GetComponent<Flashlight_Hand>();
@@ -43,6 +44,7 @@ public class DisappearOnGrab : MonoBehaviour
                 // Assuming goBagIcon is not null, set the check and uncheck icons accordingly
                 if (goBagIcon != null)
                 {
+                    Destroy(hintRetrieve);
                     goBagIcon.SetCheckIconVisible(true);
                     goBagIcon.SetUncheckIconVisible(false);
                     task.SetCheckIconVisible(true);

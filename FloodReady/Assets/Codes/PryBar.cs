@@ -18,6 +18,7 @@ public class PryBar : MonoBehaviour
     public EscapeCanvasController escapeCanvasController;
     public LocateTheSurvivalToolScene2Icon task;
     public TotalPoints points;
+    public GameObject hintPrybar;
 
     public void Update()
     {
@@ -64,6 +65,7 @@ public class PryBar : MonoBehaviour
                 }
 
                 // Mark the "Retrieve a Survival Tool" task as done
+                Destroy(hintPrybar);
                 survivalToolIcon.SetCheckIconVisible(true);
                 survivalToolIcon.SetUncheckIconVisible(false);
 

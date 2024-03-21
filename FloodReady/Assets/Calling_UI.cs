@@ -9,7 +9,7 @@ public class Calling_UI : MonoBehaviour
     public iconfordial161 icon161;
     public GameObject portal;
     public GameObject boat;
-
+    public GameObject hintDial61;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class Calling_UI : MonoBehaviour
     IEnumerator DelayedAction()
     {
         yield return new WaitForSeconds(5f);
-
+        Destroy(hintDial61);
         welldone.WelldoneCanvas();
         icon161.SetCheckIconVisible(true);
         icon161.SetUncheckIconVisible(false);

@@ -19,6 +19,7 @@ public class TurnOffLights : MonoBehaviour
 
     private bool soundPlayed = false; // Flag to check if sound has been played
     public TotalPoints points;
+    public GameObject hintMainbreaker;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class TurnOffLights : MonoBehaviour
                 // Check if the task percentage has already been incremented
                 if (!mainBreakerPercentageIncremented)
                 {
+                    Destroy(hintMainbreaker);
                     // Mark the task as done
                     ShowGoOutCanvas.ShowGoOutCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);

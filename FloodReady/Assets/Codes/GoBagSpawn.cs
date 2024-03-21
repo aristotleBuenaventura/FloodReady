@@ -9,6 +9,7 @@ public class GoBagSpawn : MonoBehaviour
     public LocateTheEmergencyDeviceScene2Icon task;
     public TaskPercentage locateCPincrement;
     public TotalPoints points;
+    public GameObject hintGoBag;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class GoBagSpawn : MonoBehaviour
         // Check if the trigger collider is with an object tagged as "Player" and the interaction hasn't occurred yet
         if (!hasInteracted && other.CompareTag("Player"))
         {
+            Destroy(hintGoBag);
             bagPrefab.SetActive(true);
             dial161Canvas.ShowSearchGoBagCanvas(true);
             iconMobilePhone.SetCheckIconVisible(true);
