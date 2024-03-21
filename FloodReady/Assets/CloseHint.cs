@@ -4,6 +4,7 @@ public class CloseHint : MonoBehaviour
 {
     public GameObject objectToShow;
     public ShowHintCanvas showHintCanvas;
+    public GameObject[] hintIcons;
 
     private void Start()
     {
@@ -17,8 +18,13 @@ public class CloseHint : MonoBehaviour
             objectToShow.SetActive(false);
             showHintCanvas.HideAllCanvas();
 
-
+            foreach (GameObject obj in hintIcons)
+            {
+                if (obj != null) // Check if the GameObject reference is not null
+                {
+                    obj.SetActive(false);
+                }
+            }
         }
     }
-
 }
