@@ -98,6 +98,7 @@ public class InventoryManager : MonoBehaviour
 
     private void AddItemToBag(string itemName)
     {
+       
         if (itemName == "Canned good")
         {
             cannedgood.SetCheckIconVisible(false);
@@ -190,9 +191,39 @@ public class InventoryManager : MonoBehaviour
 
     private void RemoveItemFromBag(string itemName)
     {
+        switch (itemName)
+        {
+            case "Canned good":
+                Destroy(HintCanned_good);
+                break;
+            case "Energy bar":
+                Destroy(HintEnergy_bar);
+                break;
+            case "Money":
+                Destroy(HintMoney);
+                break;
+            case "Bottled water":
+                Destroy(HintBottled_water);
+                break;
+            case "Clothes":
+                Destroy(HintClothes);
+                break;
+            case "First aid kit":
+                Destroy(HintFirst_aid_kit);
+                break;
+            case "Flashlight":
+                Destroy(HintFlashlight);
+                break;
+            case "Mobile Phone":
+                Destroy(HintMobilePhone);
+                break;
+                // Add cases for other items as needed
+        }
+
+
         if (itemName == "Canned good")
         {
-            Destroy(HintCanned_good);
+    
             cannedgood.SetCheckIconVisible(true);
             cannedgood.SetUncheckIconVisible(false);
             wristcannedgood.SetCheckIconVisible(true);
@@ -201,7 +232,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "Energy bar")
         {
-            Destroy(HintEnergy_bar);
+
             energybar.SetCheckIconVisible(true);
             energybar.SetUncheckIconVisible(false);
             wristenergybar.SetCheckIconVisible(true);
@@ -210,7 +241,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "Money")
         {
-            Destroy(HintMoney);
+        
             money.SetCheckIconVisible(true);
             money.SetUncheckIconVisible(false);
             wristmoney.SetCheckIconVisible(true);
@@ -219,7 +250,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "Bottled water")
         {
-            Destroy(HintBottled_water);
+        
             bottledwater.SetCheckIconVisible(true);
             bottledwater.SetUncheckIconVisible(false);
             wristbottledwater.SetCheckIconVisible(true);
@@ -228,7 +259,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "Clothes")
         {
-            Destroy(HintClothes);
+     
             clothes.SetCheckIconVisible(true);
             clothes.SetUncheckIconVisible(false);
             wristclothes.SetCheckIconVisible(true);
@@ -237,7 +268,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "Flashlight")
         {
-            Destroy(HintFlashlight);
+       
         
             flashlight.SetCheckIconVisible(true);
             flashlight.SetUncheckIconVisible(false);
@@ -247,7 +278,7 @@ public class InventoryManager : MonoBehaviour
 
         if (itemName == "First aid kit")
         {
-            Destroy(HintFirst_aid_kit);
+         
             firstaidkit.SetCheckIconVisible(true);
             firstaidkit.SetUncheckIconVisible(false);
             wristfirstaidkit.SetCheckIconVisible(true);
@@ -260,7 +291,7 @@ public class InventoryManager : MonoBehaviour
             mobilephone.SetUncheckIconVisible(false);
             wristmobilephone.SetCheckIconVisible(true);
             wristmobilephone.SetUncheckIconVisible(false);
-            Destroy(HintMobilePhone);
+    
         }
         
 
