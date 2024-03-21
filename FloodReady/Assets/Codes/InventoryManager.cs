@@ -194,32 +194,55 @@ public class InventoryManager : MonoBehaviour
         switch (itemName)
         {
             case "Canned good":
-                Destroy(HintCanned_good);
+                if (HintCanned_good != null)
+                {
+                    Destroy(HintCanned_good);
+                }
                 break;
             case "Energy bar":
-                Destroy(HintEnergy_bar);
+                if (HintEnergy_bar != null)
+                {
+                    Destroy(HintEnergy_bar);
+                }
                 break;
             case "Money":
-                Destroy(HintMoney);
+                if (HintMoney != null)
+                {
+                    Destroy(HintMoney);
+                }
                 break;
             case "Bottled water":
-                Destroy(HintBottled_water);
+                if (HintBottled_water != null)
+                {
+                    Destroy(HintBottled_water);
+                }
                 break;
             case "Clothes":
-                Destroy(HintClothes);
+                if (HintClothes != null)
+                {
+                    Destroy(HintClothes);
+                }
                 break;
             case "First aid kit":
-                Destroy(HintFirst_aid_kit);
+                if (HintFirst_aid_kit != null)
+                {
+                    Destroy(HintFirst_aid_kit);
+                }
                 break;
             case "Flashlight":
-                Destroy(HintFlashlight);
+                if (HintFlashlight != null)
+                {
+                    Destroy(HintFlashlight);
+                }
                 break;
             case "Mobile Phone":
-                Destroy(HintMobilePhone);
+                if (HintMobilePhone != null)
+                {
+                    Destroy(HintMobilePhone);
+                }
                 break;
                 // Add cases for other items as needed
         }
-
 
         if (itemName == "Canned good")
         {
