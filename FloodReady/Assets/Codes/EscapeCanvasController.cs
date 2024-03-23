@@ -344,6 +344,23 @@
             messageCanvas.OpenCanvasAgain();
         }
 
+        public void HideAllCanvas()
+        {
+            welcomeCanvas.SetActive(false);
+            retrieveGoBagCanvas.SetActive(false);
+            mainBreakerCanvas.SetActive(false);
+            doorJamCanvas.SetActive(false);
+            roofTop.SetActive(false);
+            pryBarCanvas.SetActive(false);
+            breakWindowCanvas.SetActive(false);
+            searchGoBagCanvas.SetActive(false);
+            welldoneCanvas.SetActive(false);
+            successCanvas.SetActive(false);
+            failedCanvas.SetActive(false);
+            DeathCanvas.SetActive(false);
+        }
+
+
 
 
 

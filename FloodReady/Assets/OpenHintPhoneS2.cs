@@ -9,6 +9,7 @@ public class OpenHintPhoneS2 : MonoBehaviour
     private bool canActivate = true; // Flag to track if canvas activation is allowed
     public TotalPoints points;
     private bool canDeduct = false;
+    public EscapeCanvasController EscapeCanvasController;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class OpenHintPhoneS2 : MonoBehaviour
         {
 
             hintCanvas.ShowLocateEmergencyDeviceCanvas();
+            EscapeCanvasController.HideAllCanvas();
             if (!canDeduct)
             {
                 points.DecrementPoints(100);
