@@ -23,28 +23,31 @@ public class ButtonVR : MonoBehaviour
         sound = GetComponent<AudioSource>();
         isPlaying = false;
         buttonText.text = "START";
+
+        // Subscribe to the loopPointReached event
+        videoPlayer.loopPointReached += OnVideoEnd;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // Toggle video playback state when the button is pressed
+        ToggleVideoPlayback();
+    }
+
+    private void ToggleVideoPlayback()
+    {
         if (!isPlaying)
         {
-            button.transform.localPosition = new Vector3(0, 0.003f, 0);
             onPress.Invoke();
             sound.Play();
-            StartCanvasVideo(); // Start the video when the button is pressed
+            StartCanvasVideo(); // Start the video
             isPlaying = true;
             buttonText.text = "STOP";
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (isPlaying)
+        else
         {
-            button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
-            StopCanvasVideo(); // Stop the video when the button is released
+            StopCanvasVideo(); // Stop the video
             isPlaying = false;
             buttonText.text = "START";
         }
@@ -54,7 +57,6 @@ public class ButtonVR : MonoBehaviour
     {
         videoCanvas.gameObject.SetActive(true);
         videoPlayer.Play();
-        StartCoroutine(WaitForVideoToEnd());
     }
 
     public void StopCanvasVideo()
@@ -63,13 +65,18 @@ public class ButtonVR : MonoBehaviour
         videoCanvas.gameObject.SetActive(false);
     }
 
-    IEnumerator WaitForVideoToEnd()
+    // Method to handle the video end event
+    private void OnVideoEnd(VideoPlayer vp)
     {
-        while (videoPlayer.isPlaying)
-        {
-            yield return null;
-        }
-        // Video has finished playing, change button text back to "START"
+        // Video has finished playing, reset button text to "START"
+        videoPlayer.Stop();
+        videoCanvas.gameObject.SetActive(false);
         buttonText.text = "START";
+    }
+
+    // Unsubscribe from the loopPointReached event when the script is destroyed
+    private void OnDestroy()
+    {
+        videoPlayer.loopPointReached -= OnVideoEnd;
     }
 }
