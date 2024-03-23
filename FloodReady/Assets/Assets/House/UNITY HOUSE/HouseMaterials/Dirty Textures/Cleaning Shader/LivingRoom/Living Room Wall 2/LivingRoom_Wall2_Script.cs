@@ -74,20 +74,8 @@ public class LivingRoom_Wall2_Script : MonoBehaviour
 
                     Wall.wall2(cleanAmount * .5);
                     MaterialManager.UpdateMaterialValue("Wall 1");
-
-                    CleanMaterial(); // Call CleanMaterial function after cleaning the wall
                 }
             }
-        }
-    }
-
-    public void CleanMaterial()
-    {
-        if (renderer != null)
-        {
-            renderer.material.SetTexture("_DirtMask", null);
-            renderer.material.SetTexture("_DirtTexture", null);
-            renderer.material = _materialChange;
         }
     }
 

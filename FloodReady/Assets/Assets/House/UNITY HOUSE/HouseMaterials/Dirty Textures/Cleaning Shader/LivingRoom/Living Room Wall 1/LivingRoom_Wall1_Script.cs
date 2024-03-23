@@ -79,15 +79,7 @@ public class LivingRoom_Wall1_Script : MonoBehaviour
         }
     }
 
-    public void CleanMaterial()
-    {
-        if (renderer != null)
-        {
-            renderer.material.SetTexture("_DirtMask", null);
-            renderer.material.SetTexture("_DirtTexture", null);
-            renderer.material = _materialChange;
-        }
-    }
+
 
     private void CreateTexture()
     {
