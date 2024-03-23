@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-[AddComponentMenu("Breakable Windows/Breakable Window")]
 [RequireComponent(typeof(AudioSource))]
-public class ChangeAppreanceHTP : MonoBehaviour
+public class ChangeAppearanceHTP : MonoBehaviour
 {
     public LayerMask layer;
     public Material[] windowMaterials;
@@ -13,6 +12,7 @@ public class ChangeAppreanceHTP : MonoBehaviour
     private bool canBreak = true;
     private bool isLastWindow = false;
     public AudioSource breakSound; // Reference to the AudioSource for break sound
+
 
     public bool IsBroken { get; private set; } = false;
 
@@ -47,16 +47,12 @@ public class ChangeAppreanceHTP : MonoBehaviour
         if (!IsBroken && canBreak)
         {
             StartCoroutine(HandleCollisionCoroutine());
-
-            // Assuming windowBreakIcon is not null, set the check and uncheck icons accordingly
-
         }
     }
 
     private IEnumerator HandleCollisionCoroutine()
     {
         canBreak = false;
-
 
         ChangeWindowAppearance();
 
@@ -67,7 +63,6 @@ public class ChangeAppreanceHTP : MonoBehaviour
 
         if (currentMaterialIndex >= windowMaterials.Length - 1) // Check if the current material is the last one
         {
-        
             // Set it as the last window
             SetIsLastWindow(true);
         }
@@ -84,8 +79,24 @@ public class ChangeAppreanceHTP : MonoBehaviour
         {
             Material newMaterial = new Material(windowMaterials[currentMaterialIndex]);
             renderer.material = newMaterial;
-            breakSound.Play(); // Play break sound when window is destroyed
+
+            breakSound.Play(); // Play break sound when window appearance changes
         }
     }
 
+    public void DestroyWindow()
+    {
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+        {
+            Destroy(col);
+        }
+
+        if (renderer != null)
+        {
+            renderer.enabled = false;
+        }
+
+        IsBroken = true;
+    }
 }

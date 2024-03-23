@@ -27586,6 +27586,10 @@ PrefabInstance:
       value: Window
       objectReference: {fileID: 0}
     - target: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_TagString
       value: BreakableWindow
       objectReference: {fileID: 0}
@@ -27662,6 +27666,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: breakSound
       value: 
       objectReference: {fileID: 629146441}
@@ -27706,13 +27714,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 50d7f8fb952abe847adc30ff239e3447, type: 2}
     m_RemovedComponents:
-    - {fileID: 65186002966220962, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+    - {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 629146442}
+      insertIndex: 3
+      addedObject: {fileID: 629146450}
   m_SourcePrefab: {fileID: 100100000, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
 --- !u!4 &629146439 stripped
 Transform:
@@ -27729,27 +27737,26 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 82815429267135604, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
   m_PrefabInstance: {fileID: 629146438}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &629146442
-BoxCollider:
+--- !u!114 &629146450
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629146440}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5405325, y: 0.4374581, z: 1}
-  m_Center: {x: -0.01671536, y: 0.06858132, z: -0.054546963}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c158d51c9974124fb1e00e56a9f724a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 2
+  windowMaterials:
+  - {fileID: 2100000, guid: e03f6fe3e131afd4689338d945f9a73b, type: 2}
+  - {fileID: 2100000, guid: 311cfbd90aed8c04aa3e2f9a0db5c464, type: 2}
+  - {fileID: 2100000, guid: 50d7f8fb952abe847adc30ff239e3447, type: 2}
+  breakSound: {fileID: 629146441}
 --- !u!1 &630176935
 GameObject:
   m_ObjectHideFlags: 0
