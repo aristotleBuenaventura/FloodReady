@@ -70,7 +70,7 @@ public class LivingRoom_Ceiling2_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    Ceil.ceil2(cleanAmount * .5);
+                    Ceil.ceil2(cleanAmount * .25);
                     MaterialManager.UpdateMaterialValue("Ceiling");
                 }
             }

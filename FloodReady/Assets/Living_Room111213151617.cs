@@ -11,6 +11,14 @@ public class Living_Room111213151617 : MonoBehaviour
     private double wall15amount;
     private double wall16amount;
     private double wall17amount;
+    public GameObject Wall1;
+    public GameObject Wall2;
+    public GameObject Wall3;
+    public GameObject Wall4;
+    public GameObject Wall5;
+    public GameObject Wall6;
+    public GameObject Wall7;
+    public Material _material;
 
     public IconforLRW2 check;
     private bool isSet = false;
@@ -72,7 +80,7 @@ public class Living_Room111213151617 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 50)
+        if (totalAmountInt >= 10)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -81,7 +89,13 @@ public class Living_Room111213151617 : MonoBehaviour
 
         if (totalAmountInt == 100 && !isSet)
         {
-
+            Wall1.GetComponent<Renderer>().material = _material;
+            Wall2.GetComponent<Renderer>().material = _material;
+            Wall3.GetComponent<Renderer>().material = _material;
+            Wall4.GetComponent<Renderer>().material = _material;
+            Wall5.GetComponent<Renderer>().material = _material;
+            Wall6.GetComponent<Renderer>().material = _material;
+            Wall7.GetComponent<Renderer>().material = _material;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[3] = true;

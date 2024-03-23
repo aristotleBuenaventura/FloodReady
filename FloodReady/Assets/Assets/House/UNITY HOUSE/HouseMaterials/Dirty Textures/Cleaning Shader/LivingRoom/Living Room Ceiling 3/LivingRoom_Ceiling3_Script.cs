@@ -10,6 +10,7 @@ public class LivingRoom_Ceiling3_Script : MonoBehaviour
 
     private Texture2D _templateDirtMask;
     private float dirtAmountTotal;
+    public Living_Ceiling12 Ceil;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class LivingRoom_Ceiling3_Script : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    CleanAmountManager.UpdateCleanAmount(cleanAmount);
+                    Ceil.ceil3(cleanAmount * .25);
                     MaterialManager.UpdateMaterialValue("Ceiling 3");
                 }
             }
