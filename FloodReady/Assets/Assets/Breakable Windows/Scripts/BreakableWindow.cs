@@ -7,6 +7,7 @@ public class BreakableWindow : MonoBehaviour
 {
     public LayerMask layer;
     public Material[] windowMaterials;
+    public AudioClip[] breakSounds; // Array of break sounds, one for each window material
     public breakIcon windowBreakIcon; // Reference to the BreakIcon script
 
     private Renderer renderer;
@@ -54,7 +55,7 @@ public class BreakableWindow : MonoBehaviour
             StartCoroutine(HandleCollisionCoroutine());
 
             // Assuming windowBreakIcon is not null, set the check and uncheck icons accordingly
-            
+
         }
     }
 
@@ -94,6 +95,12 @@ public class BreakableWindow : MonoBehaviour
         {
             Material newMaterial = new Material(windowMaterials[currentMaterialIndex]);
             renderer.material = newMaterial;
+
+            // Play the corresponding break sound
+            if (breakSounds != null && breakSounds.Length > currentMaterialIndex && breakSounds[currentMaterialIndex] != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(breakSounds[currentMaterialIndex]);
+            }
         }
     }
 
