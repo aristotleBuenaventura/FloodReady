@@ -5,7 +5,7 @@ public class GoOutSideBreakerCollider : MonoBehaviour
     public GameObject ShowGoOutCanvas;
     public GameObject objectToEnable1;
     public GameObject objectToEnable2;
-
+    public GameObject objectToEnable3;
 
     private bool objectsEnabled = false; // Track if objects are already enabled
 
@@ -28,6 +28,8 @@ public class GoOutSideBreakerCollider : MonoBehaviour
 
         if (objectToEnable2 != null)
             objectToEnable2.SetActive(true);
+        if (objectToEnable3 != null)
+            objectToEnable3.SetActive(true);
 
 
         // Update the flag to indicate that objects are now enabled
