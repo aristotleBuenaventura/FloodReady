@@ -11,6 +11,9 @@ public class Living_Room1414_1 : MonoBehaviour
     public LivingRoom_Checklist checklist;
     public AudioSource Wall3_Audio;
     private bool isPlay = false;
+    public GameObject Wall1;
+    public GameObject Wall2;
+    public Material _material;
 
     public void wall14(double cleanAmount)
     {
@@ -43,6 +46,8 @@ public class Living_Room1414_1 : MonoBehaviour
 
         if (totalAmountInt == 100 && !isSet)
         {
+            Wall1.GetComponent<Renderer>().material = _material;
+            Wall2.GetComponent<Renderer>().material = _material;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[4] = true;
