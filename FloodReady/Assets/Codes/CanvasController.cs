@@ -161,11 +161,24 @@ public class CanvasController : MonoBehaviour
         FailedCanvas.SetActive(true);
         messageCanvas.OpenCanvasAgain();
     }
+    public void HideAllCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        tvCanvas.SetActive(false);
+        GoBagCanvas.SetActive(false);
+        RetrieveGoBagCanvas.SetActive(false);
+        UnplugCableCanvas.SetActive(false);
+        TurnOffBreakerCanvas.SetActive(false);
+        ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
+        
+    }
 
 
-    
 
-    
+
+
 
     private IEnumerator SwitchCanvasAfterDelay()
     {
