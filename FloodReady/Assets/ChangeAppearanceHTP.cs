@@ -6,20 +6,21 @@ public class ChangeAppearanceHTP : MonoBehaviour
 {
     public LayerMask layer;
     public Material[] windowMaterials;
+    public AudioClip[] breakSounds; // Array of break sounds, one for each window material
 
     private Renderer renderer;
     private int currentMaterialIndex = 1; // Start counting from the first material
     private bool canBreak = true;
     private bool isLastWindow = false;
-    public AudioSource breakSound; // Reference to the AudioSource for break sound
-
+    private AudioSource audioSource; // Reference to the AudioSource component
 
     public bool IsBroken { get; private set; } = false;
 
     private void Start()
     {
         ShowWindow();
-        breakSound.Stop(); // Ensure break sound is initially stopped
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+        audioSource.Stop(); // Ensure break sound is initially stopped
     }
 
     private void ShowWindow()
@@ -81,7 +82,11 @@ public class ChangeAppearanceHTP : MonoBehaviour
             Material newMaterial = new Material(windowMaterials[currentMaterialIndex]);
             renderer.material = newMaterial;
 
-            breakSound.Play(); // Play break sound when window appearance changes
+            // Play the corresponding break sound
+            if (breakSounds != null && breakSounds.Length > currentMaterialIndex && breakSounds[currentMaterialIndex] != null)
+            {
+                audioSource.PlayOneShot(breakSounds[currentMaterialIndex]);
+            }
         }
     }
 }
