@@ -11,6 +11,9 @@ public class Hallway1617 : MonoBehaviour
     public Hallway_Checklist checklist;
     public AudioSource Wall7_Audio;
     private bool isPlay = false;
+    public GameObject Wall1;
+    public GameObject Wall2;
+    public Material _material;
 
     public void wall16(double cleanAmount)
     {
@@ -35,7 +38,7 @@ public class Hallway1617 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 50)
+        if (totalAmountInt >= 10)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }
@@ -44,6 +47,8 @@ public class Hallway1617 : MonoBehaviour
 
         if (totalAmountInt == 100 && !isSet)
         {
+            Wall1.GetComponent<Renderer>().material = _material;
+            Wall2.GetComponent<Renderer>().material = _material;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.checklist[6] = true;
