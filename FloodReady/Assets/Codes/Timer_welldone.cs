@@ -37,7 +37,7 @@ public class Timer_welldone : MonoBehaviour
 
                 int minutes = Mathf.FloorToInt(elapsedTime / 60);
                 int seconds = Mathf.FloorToInt(elapsedTime % 60);
-                timerText.text = string.Format("Elapsed Time: {0:00}:{1:00}", minutes, seconds);
+                timerText.text = string.Format("Elapsed Time: {0:00} minutes and {1:00} seconds", minutes, seconds);
             }
             else
             {
