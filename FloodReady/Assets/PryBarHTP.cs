@@ -16,10 +16,10 @@ public class PryBarHTP : MonoBehaviour
 
     public void Update()
     {
-        // Check if the user is holding the PryBar using either the left or right OVRGrabber
+        /* Check if the user is holding the PryBar using either the left or right OVRGrabber
         if ((leftGrabber != null && leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
             (rightGrabber != null && rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
-        {
+        { */
             // Check for interactions with BreakableWindow objects
             if (Time.time - lastInteractionTime >= interactionCooldown && !hasInteracted)
             {
@@ -37,11 +37,11 @@ public class PryBarHTP : MonoBehaviour
 
                             if (window.IsLastWindow()) // Check if it's the last window
                             {
-                                window.DestroyWindow();
-                                // Optionally mark the task as done for breaking the last window
+                            window.HandleCollision();
+                            // Optionally mark the task as done for breaking the last window
 
 
-                            }
+                        }
 
                             // Mark the "Break a Window" task as done
 
@@ -59,7 +59,7 @@ public class PryBarHTP : MonoBehaviour
                 }
 
           
-            }
+           /* } */
         }
     }
 }
