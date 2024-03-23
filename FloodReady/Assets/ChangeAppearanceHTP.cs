@@ -8,7 +8,7 @@ public class ChangeAppearanceHTP : MonoBehaviour
     public Material[] windowMaterials;
 
     private Renderer renderer;
-    private int currentMaterialIndex = 1; // Start counting from the second material
+    private int currentMaterialIndex = 1; // Start counting from the first material
     private bool canBreak = true;
     private bool isLastWindow = false;
     public AudioSource breakSound; // Reference to the AudioSource for break sound
@@ -65,6 +65,7 @@ public class ChangeAppearanceHTP : MonoBehaviour
         {
             // Set it as the last window
             SetIsLastWindow(true);
+            currentMaterialIndex = 0; // Reset to the first material
         }
         else
         {
@@ -82,21 +83,5 @@ public class ChangeAppearanceHTP : MonoBehaviour
 
             breakSound.Play(); // Play break sound when window appearance changes
         }
-    }
-
-    public void DestroyWindow()
-    {
-        Collider col = GetComponent<Collider>();
-        if (col != null)
-        {
-            Destroy(col);
-        }
-
-        if (renderer != null)
-        {
-            renderer.enabled = false;
-        }
-
-        IsBroken = true;
     }
 }
