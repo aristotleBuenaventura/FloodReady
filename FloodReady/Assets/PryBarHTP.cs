@@ -16,10 +16,10 @@ public class PryBarHTP : MonoBehaviour
 
     public void Update()
     {
-        /* Check if the user is holding the PryBar using either the left or right OVRGrabber
+         //Check if the user is holding the PryBar using either the left or right OVRGrabber
         if ((leftGrabber != null && leftGrabber.grabbedObject == GetComponent<OVRGrabbable>()) ||
             (rightGrabber != null && rightGrabber.grabbedObject == GetComponent<OVRGrabbable>()))
-        { */
+        { 
             // Check for interactions with BreakableWindow objects
             if (Time.time - lastInteractionTime >= interactionCooldown && !hasInteracted)
             {
@@ -59,7 +59,7 @@ public class PryBarHTP : MonoBehaviour
                 }
 
           
-           /* } */
+            } 
         }
     }
 }
