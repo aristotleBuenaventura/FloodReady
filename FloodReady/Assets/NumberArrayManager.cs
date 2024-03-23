@@ -12,6 +12,7 @@ public class NumberArrayManager : MonoBehaviour
     public TotalPoints points;
     public GameObject dial;
     public GameObject call;
+    public GameObject Contact;
     public GameObject portal;
 
     private void Start()
@@ -82,9 +83,9 @@ public class NumberArrayManager : MonoBehaviour
             dial161increment.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
             isTaskPercentageIncremented = true;
-
+            Contact.SetActive(false);
             // StartCoroutine(DelayedSuccessCanvas(10f));
-            
+
             Debug.Log("Call Emergency");
         }
     }
