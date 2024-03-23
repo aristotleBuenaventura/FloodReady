@@ -79,8 +79,7 @@ public class BreakableWindow : MonoBehaviour
             windowBreakIcon.SetUncheckIconVisible(false);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
-            breakwindowpercentage.IncrementTaskPercentage(15);
-            points.IncrementPoints(1500);
+
         }
         else
         {
@@ -105,6 +104,8 @@ public class BreakableWindow : MonoBehaviour
         {
             Destroy(col);
             breakSound.Play(); // Play break sound when window is destroyed
+            breakwindowpercentage.IncrementTaskPercentage(20);
+            points.IncrementPoints(2000);
         }
 
         if (renderer != null)
