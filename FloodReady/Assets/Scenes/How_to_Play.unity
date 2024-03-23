@@ -2173,7 +2173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 89.606, z: -0.033}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.613, y: -0.046}
+  m_AnchoredPosition: {x: 4.548, y: -0.045}
   m_SizeDelta: {x: 1784.5286, y: 1055.1667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30687304
@@ -12702,6 +12702,130 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8059975025167073778, guid: bc98a4180e096b5468823f51022a614b, type: 3}
+--- !u!1 &262922125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262922129}
+  - component: {fileID: 262922127}
+  - component: {fileID: 262922128}
+  - component: {fileID: 262922126}
+  m_Layer: 0
+  m_Name: TvScreenPrybBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &262922126
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262922125}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: ff4c62085aa85584594bef81ea222bc7, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 3
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: https://www.youtube.com/watch?v=K2ssZnDNgLE
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!33 &262922127
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262922125}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &262922128
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262922125}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2bf121494be91184599cbc45f19a8dea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!224 &262922129
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262922125}
+  m_LocalRotation: {x: -0.70866513, y: -0.0031601386, z: -0.705531, w: -0.0031461637}
+  m_LocalPosition: {x: 0, y: 0, z: 6.0067067}
+  m_LocalScale: {x: 2.1059723, y: 1.178395, z: 0.0011727612}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1049161211}
+  m_LocalEulerAnglesHint: {x: 0, y: 91.223, z: -180.511}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.5154176, y: -0.099221565}
+  m_SizeDelta: {x: 1855.2668, y: 1084.293}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &268575825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26840,7 +26964,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601931993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -34}
   m_LocalScale: {x: 2.643799, y: 2.643799, z: 2.643799}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26848,7 +26972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -738, y: 383}
+  m_AnchoredPosition: {x: -738, y: 384}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601931995
@@ -27366,7 +27490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &615852504
 Transform:
   m_ObjectHideFlags: 0
@@ -30846,6 +30970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 197905205}
+  - {fileID: 2008004006}
   - {fileID: 30687303}
   - {fileID: 1794040503}
   m_Father: {fileID: 255303929}
@@ -31470,7 +31595,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697794013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -16}
   m_LocalScale: {x: 2.643799, y: 2.643799, z: 2.643799}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31478,7 +31603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -738, y: 383}
+  m_AnchoredPosition: {x: -738, y: 382}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697794015
@@ -33460,7 +33585,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttonText: {fileID: 976335425}
-  videoCanvas: {fileID: 256107315}
+  videoCanvas: {fileID: 2021854634}
   videoPlayer: {fileID: 2021854633}
 --- !u!82 &744691302
 AudioSource:
@@ -46090,6 +46215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 486198794}
+  - {fileID: 262922129}
   - {fileID: 39063709}
   - {fileID: 205845903}
   - {fileID: 678143198}
@@ -46617,7 +46743,7 @@ GameObject:
   - component: {fileID: 1057380361}
   - component: {fileID: 1057380360}
   m_Layer: 0
-  m_Name: TvScreen
+  m_Name: TvScreenGrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55851,7 +55977,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313600648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 2.643799, y: 2.643799, z: 2.643799}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70905,7 +71031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 91.223, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.512, y: -0.1085}
+  m_AnchoredPosition: {x: 4.501, y: -0.109}
   m_SizeDelta: {x: 1784.5286, y: 1055.1667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659451032
@@ -72275,13 +72401,10 @@ MonoBehaviour:
   button: {fileID: 562317998}
   onPress:
     m_PersistentCalls:
-      m_Calls: []
-  onRelease:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1698848209}
         m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: SpawnSphere
+        m_MethodName: StartCanvasVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72291,9 +72414,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  buttonText: {fileID: 0}
-  videoCanvas: {fileID: 0}
-  videoPlayer: {fileID: 0}
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  buttonText: {fileID: 498427395}
+  videoCanvas: {fileID: 2008004008}
+  videoPlayer: {fileID: 2008004007}
 --- !u!82 &1698848210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -85897,6 +86023,130 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2.0000002, z: 42.5}
   m_Center: {x: -154.75, y: -38.124996, z: 23.999985}
+--- !u!1 &2008004005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008004006}
+  - component: {fileID: 2008004009}
+  - component: {fileID: 2008004008}
+  - component: {fileID: 2008004007}
+  m_Layer: 0
+  m_Name: TvScreenNozzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2008004006
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008004005}
+  m_LocalRotation: {x: -4.6566123e-10, y: 0.70553774, z: 4.6566123e-10, w: -0.7086724}
+  m_LocalPosition: {x: 0, y: 0, z: 5.98}
+  m_LocalScale: {x: 2.10597, y: 1.2420048, z: 0.0011699996}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 675183740}
+  m_LocalEulerAnglesHint: {x: 0, y: 270.254, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.571, y: -0.044}
+  m_SizeDelta: {x: 1855.2668, y: 1084.293}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &2008004007
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008004005}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: ff4c62085aa85584594bef81ea222bc7, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 3
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: https://www.youtube.com/watch?v=K2ssZnDNgLE
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!23 &2008004008
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008004005}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2bf121494be91184599cbc45f19a8dea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2008004009
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008004005}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2009835958
 GameObject:
   m_ObjectHideFlags: 0
@@ -86978,7 +87228,7 @@ GameObject:
   - component: {fileID: 2021854634}
   - component: {fileID: 2021854633}
   m_Layer: 0
-  m_Name: TvScreen
+  m_Name: TvScreenPhone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86993,14 +87243,14 @@ RectTransform:
   m_GameObject: {fileID: 2021854630}
   m_LocalRotation: {x: -0.71460605, y: -0.0031866312, z: -0.699513, w: -0.0031193274}
   m_LocalPosition: {x: 0, y: 0, z: 5.973}
-  m_LocalScale: {x: 2.1059723, y: 0.8615258, z: 0.0011727613}
+  m_LocalScale: {x: 2.1059723, y: 1.1783949, z: 0.0011727613}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 615852504}
   m_LocalEulerAnglesHint: {x: 0, y: 91.223, z: -180.511}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.497, y: -0.271}
+  m_AnchoredPosition: {x: 4.506, y: -0.099}
   m_SizeDelta: {x: 1855.2668, y: 1084.293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &2021854633
@@ -89945,13 +90195,10 @@ MonoBehaviour:
   button: {fileID: 1462615236}
   onPress:
     m_PersistentCalls:
-      m_Calls: []
-  onRelease:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2100063623}
         m_TargetAssemblyTypeName: ButtonVR, Assembly-CSharp
-        m_MethodName: SpawnSphere
+        m_MethodName: StartCanvasVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -89961,9 +90208,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  buttonText: {fileID: 0}
-  videoCanvas: {fileID: 0}
-  videoPlayer: {fileID: 0}
+  onRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  buttonText: {fileID: 909489170}
+  videoCanvas: {fileID: 262922128}
+  videoPlayer: {fileID: 262922126}
 --- !u!82 &2100063624
 AudioSource:
   m_ObjectHideFlags: 0
