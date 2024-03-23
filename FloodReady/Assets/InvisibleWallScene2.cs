@@ -8,6 +8,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
     public EscapeCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
+    public Timer screenTimer;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class InvisibleWallScene2 : MonoBehaviour
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime();
+            screenTimer.StopTimer();
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
             

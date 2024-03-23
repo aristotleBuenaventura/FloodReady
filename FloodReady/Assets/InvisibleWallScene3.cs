@@ -8,13 +8,14 @@ public class InvisibleWallScene3 : MonoBehaviour
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
     public RecoveryCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
+    public Timer screenTimer;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player detected! Teleporting...");
-
+            screenTimer.StopTimer();
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime();

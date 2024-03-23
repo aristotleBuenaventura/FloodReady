@@ -8,14 +8,16 @@ public class teleportTimer : MonoBehaviour
     [Header("Teleport Settings")]
     public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
-
+    public Timer_welldone stoptime;
+    public Timer screenTimer;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-
+            stoptime.StopTime();
+            screenTimer.StopTimer();
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
         }
