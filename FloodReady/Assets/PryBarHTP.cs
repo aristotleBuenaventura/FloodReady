@@ -12,7 +12,6 @@ public class PryBarHTP : MonoBehaviour
 
     private float lastInteractionTime;
     private bool hasInteracted = false;
-    private bool hasIncrementedPercentage = false; // New flag to track if percentage has been incremented
 
 
     public void Update()
@@ -31,7 +30,7 @@ public class PryBarHTP : MonoBehaviour
                     if (collider.CompareTag("BreakableWindow"))
                     {
                         // Ensure the PryBar is the only object that can break the window
-                        BreakableWindow window = collider.GetComponent<BreakableWindow>();
+                        ChangeAppearanceHTP window = collider.GetComponent<ChangeAppearanceHTP>();
                         if (window != null && !window.IsBroken)
                         {
                             window.HandleCollision();
