@@ -7,7 +7,7 @@ public class TurnOffLights : MonoBehaviour
 {
     public UnityEvent onPress;
     public UnityEvent onRelease;
-    public EscapeCanvasController ShowGoOutCanvas;
+    public EscapeCanvasController EscapeCanvasController;
     public turnoffIcon lightsIcon; // Reference to the TurnOffIcon script
     public TaskPercentage MainBreakerPercentage;
     GameObject presser;
@@ -46,7 +46,7 @@ public class TurnOffLights : MonoBehaviour
                 {
                     Destroy(hintMainbreaker);
                     // Mark the task as done
-                    ShowGoOutCanvas.ShowGoOutCanvas();
+                    EscapeCanvasController.ShowFlashlightCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(20);
                     points.IncrementPoints(2000);
                     task.SetCheckIconVisible(true);

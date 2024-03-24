@@ -8,6 +8,7 @@
         public GameObject welcomeCanvas;
         public GameObject retrieveGoBagCanvas;
         public GameObject mainBreakerCanvas;
+        public GameObject flashlightCanvas;
         public GameObject goOutCanvas;
         public GameObject doorJamCanvas;
         public GameObject roofTop;
@@ -58,6 +59,7 @@
             retrieveGoBagCanvas.SetActive(false);
             goOutCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
+          flashlightCanvas.SetActive(false);
             doorJamCanvas.SetActive(false);
             pryBarCanvas.SetActive(false);
             roofTop.SetActive(false);
@@ -82,7 +84,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(true);
             mainBreakerCanvas.SetActive(false);
-            goOutCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        goOutCanvas.SetActive(false);
             doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
@@ -101,7 +104,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(true);
-            goOutCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        goOutCanvas.SetActive(false);
             doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
@@ -116,12 +120,33 @@
 
         }
 
-        public void ShowGoOutCanvas()
+    public void ShowFlashlightCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        retrieveGoBagCanvas.SetActive(false);
+        mainBreakerCanvas.SetActive(false);
+        flashlightCanvas.SetActive(true);
+        goOutCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
+        roofTop.SetActive(false);
+        pryBarCanvas.SetActive(false);
+        breakWindowCanvas.SetActive(false);
+        searchGoBagCanvas.SetActive(false);
+        welldoneCanvas.SetActive(false);
+        successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
+        DeathCanvas.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+
+    }
+
+    public void ShowGoOutCanvas()
         {
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            goOutCanvas.SetActive(true);
+        flashlightCanvas.SetActive(false);
+        goOutCanvas.SetActive(true);
             doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
@@ -149,7 +174,8 @@
                 welcomeCanvas.SetActive(false);
                 retrieveGoBagCanvas.SetActive(false);
                 mainBreakerCanvas.SetActive(false);
-                doorJamCanvas.SetActive(true);
+            flashlightCanvas.SetActive(false);
+            doorJamCanvas.SetActive(true);
                 goOutCanvas.SetActive(false);
                 roofTop.SetActive(false);
                 pryBarCanvas.SetActive(false);
@@ -178,6 +204,7 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
+            flashlightCanvas.SetActive(false);
             doorJamCanvas.SetActive(false);
             roofTop.SetActive(true);
             pryBarCanvas.SetActive(false);
@@ -201,7 +228,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(true);
             breakWindowCanvas.SetActive(false);
@@ -220,7 +248,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(true);
@@ -242,6 +271,7 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
+            flashlightCanvas.SetActive(false);
             doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
@@ -264,7 +294,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
@@ -281,7 +312,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
@@ -298,7 +330,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
@@ -315,7 +348,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
@@ -332,7 +366,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
@@ -349,7 +384,8 @@
             welcomeCanvas.SetActive(false);
             retrieveGoBagCanvas.SetActive(false);
             mainBreakerCanvas.SetActive(false);
-            doorJamCanvas.SetActive(false);
+        flashlightCanvas.SetActive(false);
+        doorJamCanvas.SetActive(false);
             roofTop.SetActive(false);
             pryBarCanvas.SetActive(false);
             breakWindowCanvas.SetActive(false);
