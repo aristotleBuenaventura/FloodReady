@@ -6,17 +6,19 @@ public class NumberArrayManagerScene3 : MonoBehaviour
 {
     private string[] numberArray = new string[0]; // Initialize an empty array
     public TextMeshProUGUI textElement; // Expose the TextMeshProUGUI component
-    public RecoveryCanvasController success;
-
-    public reportfallenIcon reportIcon;
     public TaskPercentage task;
     private bool isTaskPercentageIncremented = false;
-    public GameObject portal;
     public TotalPoints points;
+    public GameObject dial;
+    public GameObject call;
+    public GameObject Contact;
+
 
     private void Start()
     {
-        //portal.SetActive(false);
+        // Ensure the TextMeshProUGUI component is present
+        dial.SetActive(false);
+        call.SetActive(false);
         // Ensure the TextMeshProUGUI component is present
         if (textElement == null)
         {
@@ -72,12 +74,11 @@ public class NumberArrayManagerScene3 : MonoBehaviour
 
         if (currentNumber == "161" && !isTaskPercentageIncremented)
         {
-            success.SuccessCanvas();
+            
             task.IncrementTaskPercentage(5);
             points.IncrementPoints(500);
-            reportIcon.SetCheckIconVisible(true);
-            reportIcon.SetUncheckIconVisible(false);
-            portal.SetActive(true);
+            
+            
             // Increment the task percentage only if it hasn't been done before
             
             isTaskPercentageIncremented = true;
