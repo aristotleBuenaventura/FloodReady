@@ -29,6 +29,8 @@ public class Flush : MonoBehaviour
             check.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
+            canvasController.ShowgatherDirtyclothesCanvas();
+            cleaningCanvas.ShowGatherClothesCanvas();
 
             // Check if flushSound is assigned
             if (flushSound != null)
@@ -55,7 +57,6 @@ public class Flush : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Execute the line after the delay
-        canvasController.ShowgatherDirtyclothesCanvas();
-        cleaningCanvas.ShowGatherClothesCanvas();
+       
     }
 }
