@@ -1,44 +1,58 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.UI; // Make sure to add this for UI elements
 
 public class SceneChanger : MonoBehaviour
 {
-    public GameObject loadingScreen;
-    public AudioClip oneTimeAudioClip; // Reference to your one-time audio clip
-    private bool soundPlayed = false; // Flag to check if sound has been played
-    private AudioSource audioSource; // Reference to AudioSource component
+    public GameObject loadingScreen; // Reference to your loading screen UI element
 
-    void Start()
+    // This method is called when the button is clicked
+    public void MoveToEvacuation_Essential()
     {
-        // Get the AudioSource component attached to the same GameObject
-        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(LoadScene("Evacuation_Essential"));
     }
 
-    public void MoveToScene(string sceneName)
+    public void MoveToEscape_Survive()
     {
-        StartCoroutine(LoadScene(sceneName));
+        StartCoroutine(LoadScene("Escape_Survive"));
+    }
+
+    public void MoveToRecovery_Resilience()
+    {
+        StartCoroutine(LoadScene("Recovery_Resilience"));
+    }
+
+    public void MoveToMain_Menu()
+    {
+        StartCoroutine(LoadScene("MainMenu"));
+    }
+
+    public void MoveToHow_to_Play()
+    {
+        StartCoroutine(LoadScene("How_to_Play"));
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     IEnumerator LoadScene(string sceneName)
     {
+        // Activate the loading screen
         loadingScreen.SetActive(true);
 
-        // Play the one-time audio clip if available and not already played
-        if (oneTimeAudioClip != null && audioSource != null && !soundPlayed)
-        {
-            audioSource.PlayOneShot(oneTimeAudioClip);
-            soundPlayed = true; // Set flag to indicate sound has been played
-        }
-
+        // Load the scene synchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
+        // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
 
+        // Deactivate the loading screen after the scene is loaded
         loadingScreen.SetActive(false);
     }
 }
