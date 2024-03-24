@@ -12,6 +12,7 @@ public class CleaningChecklistCanvas : MonoBehaviour
     public GameObject ChecklistCanvas;
     public GameObject WaterNozzle;
     public GameObject clothes;
+    public GameObject OverallTasks;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,19 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
+    }
+
+    public void ShowOverall()
+    {
+        LivingRoom.SetActive(false);
+        Bathroom.SetActive(false);
+        Kitchen.SetActive(false);
+        Bedroom.SetActive(false);
+        Hallway.SetActive(false);
+        OverallTasks.SetActive(true);
+        clothes.SetActive(false);
     }
 
     public void ShowLivingRoomCanvas()
@@ -29,6 +43,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
     }
 
 
@@ -39,6 +55,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(true);
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
     }
 
     
@@ -50,6 +68,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(false);
         Hallway.SetActive(true);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
     }
 
     public void ShowBedRoomCanvas()
@@ -59,6 +79,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(true);
         Hallway.SetActive(false);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
     }
 
 
@@ -69,6 +91,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Kitchen.SetActive(false);
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
+        OverallTasks.SetActive(false);
+        clothes.SetActive(false);
     }
 
     public void ShowGatherClothesCanvas()
@@ -79,6 +103,7 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
         clothes.SetActive(true);
+        OverallTasks.SetActive(false);
     }
 
     public void deactivate()
@@ -89,6 +114,7 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
         clothes.SetActive(false);
+        OverallTasks.SetActive(false);
 
         //Destroy(ChecklistCanvas);
         Destroy(WaterNozzle);
