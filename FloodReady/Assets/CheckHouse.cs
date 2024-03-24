@@ -9,6 +9,8 @@ public class CheckHouse : MonoBehaviour
     public GameObject objectToEnable3;
     public GameObject objectToEnable4;
     public GameObject objectToEnable5;
+    public GameObject objectToEnable6;
+    public GameObject objectToEnable7;
 
     private bool objectsEnabled = false; // Track if objects are already enabled
 
@@ -40,6 +42,13 @@ public class CheckHouse : MonoBehaviour
 
         if (objectToEnable5 != null)
             objectToEnable5.SetActive(true);
+
+        if (objectToEnable6 != null)
+            objectToEnable6.SetActive(true);
+
+        if (objectToEnable7 != null)
+            objectToEnable7.SetActive(true);
+
 
         // Update the flag to indicate that objects are now enabled
         objectsEnabled = true;
