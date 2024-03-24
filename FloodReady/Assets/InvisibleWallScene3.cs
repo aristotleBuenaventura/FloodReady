@@ -14,13 +14,14 @@ public class InvisibleWallScene3 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            TeleportPlayer(other.gameObject);
             Debug.Log("Player detected! Teleporting...");
             screenTimer.StopTimer();
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime();
             // Teleport the player to the desired position and rotation
-            TeleportPlayer(other.gameObject);
+            
 
         }
     }

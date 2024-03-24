@@ -27,6 +27,12 @@ public class Hallway1617 : MonoBehaviour
         CalculateTotalCleanAmount();
     }
 
+    public void wall17_1(double cleanAmount)
+    {
+        wall17amount = cleanAmount;
+        CalculateTotalCleanAmount();
+    }
+
 
     private void CalculateTotalCleanAmount()
     {
@@ -38,7 +44,7 @@ public class Hallway1617 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 10)
+        if (totalAmountInt >= 80)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }

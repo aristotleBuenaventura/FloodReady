@@ -30,7 +30,7 @@ public class Bathroom_Wall1 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 10)
+        if (totalAmountInt >= 80)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }

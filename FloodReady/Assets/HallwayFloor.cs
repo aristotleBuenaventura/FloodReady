@@ -53,7 +53,7 @@ public class HallwayFloor : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 10)
+        if (totalAmountInt >= 60)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }

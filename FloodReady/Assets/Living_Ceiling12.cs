@@ -45,7 +45,7 @@ public class Living_Ceiling12 : MonoBehaviour
     {
         int totalAmountInt = (int)totalAmount;
 
-        if (totalAmountInt >= 10)
+        if (totalAmountInt >= 80)
         {
             totalAmountInt = 100; // Update totalAmountInt directly to 100
         }

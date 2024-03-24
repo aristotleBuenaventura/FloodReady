@@ -72,7 +72,7 @@ public class Hallway_Floor3 : MonoBehaviour
                     int cleanAmount = CalculateCleanPercentage();
                     Debug.Log("Percentage of Clean Area: " + cleanAmount + "%");
 
-                    Floor.floor1(cleanAmount * .25);
+                    Floor.floor3(cleanAmount * .25);
                     MaterialManager.UpdateMaterialValue("Floor");
                 }
             }
