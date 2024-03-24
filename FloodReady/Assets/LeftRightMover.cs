@@ -6,11 +6,13 @@ public class LeftRightMover : MonoBehaviour
     public int currentIndex = 0;
     public GameObject incrementButton;
     public GameObject decrementButton;
+    AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
     {
         MoveObjects(); // Move objects to initial state
+        sound = GetComponent<AudioSource>();
     }
 
     // Method to move objects according to the current index
@@ -31,6 +33,7 @@ public class LeftRightMover : MonoBehaviour
     {
         currentIndex = (currentIndex + 1) % objectsToMove.Length;
         MoveObjects();
+        sound.Play();
     }
 
     // Method to decrement the index and move objects to the left
@@ -38,6 +41,7 @@ public class LeftRightMover : MonoBehaviour
     {
         currentIndex = (currentIndex - 1 + objectsToMove.Length) % objectsToMove.Length;
         MoveObjects();
+        sound.Play();
     }
 
     
