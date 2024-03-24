@@ -33,6 +33,11 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(LoadScene("How_to_Play"));
     }
 
+    public void MoveToCleaning_Mini_Game_Quest()
+    {
+        StartCoroutine(LoadScene("Cleaning_Mini_Game_Quest"));
+    }
+
     public void QuitGame()
     {
         Application.Quit();
