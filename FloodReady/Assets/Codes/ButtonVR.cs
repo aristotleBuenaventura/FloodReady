@@ -16,6 +16,8 @@ public class ButtonVR : MonoBehaviour
     public VideoPlayer videoPlayer;
     AudioSource sound;
     bool isPlaying;
+    bool canPressButton = true;
+    public float delayDuration = 1f; // Adjust this value as needed
 
     void Start()
     {
@@ -31,7 +33,18 @@ public class ButtonVR : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Toggle video playback state when the button is pressed
-        ToggleVideoPlayback();
+        if (canPressButton)
+        {
+            ToggleVideoPlayback();
+            StartCoroutine(DelayButtonPress());
+        }
+    }
+
+    private IEnumerator DelayButtonPress()
+    {
+        canPressButton = false;
+        yield return new WaitForSeconds(delayDuration);
+        canPressButton = true;
     }
 
     private void ToggleVideoPlayback()
@@ -46,6 +59,7 @@ public class ButtonVR : MonoBehaviour
         }
         else
         {
+            sound.Play();
             onRelease.Invoke();
             StopCanvasVideo(); // Stop the video
             isPlaying = false;
