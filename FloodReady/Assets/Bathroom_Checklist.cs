@@ -34,7 +34,7 @@ public class Bathroom_Checklist : MonoBehaviour
         {
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
-            cleaningCanvas.deactivate();
+            //cleaningCanvas.deactivate();
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();
             score.IncrementTaskPercentage(10);

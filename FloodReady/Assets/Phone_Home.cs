@@ -4,7 +4,7 @@ public class Phone_Home : MonoBehaviour
 {
     public GameObject WallPaper;
     public GameObject HomePage;
-    public GameObject CallUI;
+    public GameObject Contact;
     public GameObject Dial;
     public GameObject Calling;
     public AudioSource unlock;
@@ -13,7 +13,7 @@ public class Phone_Home : MonoBehaviour
     {
         WallPaper.SetActive(true);
         HomePage.SetActive(false);
-        CallUI.SetActive(false);
+        Contact.SetActive(false);
         Dial.SetActive(false);
         Calling.SetActive(false);
     }
@@ -27,7 +27,7 @@ public class Phone_Home : MonoBehaviour
             // Disable the homepage GameObject
             WallPaper.SetActive(false);
             HomePage.SetActive(true);
-            CallUI.SetActive(false);
+            Contact.SetActive(false);
             Calling.SetActive(false);
             Dial.SetActive(false);
             unlock.Play();

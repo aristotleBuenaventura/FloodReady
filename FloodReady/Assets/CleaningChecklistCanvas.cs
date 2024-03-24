@@ -89,9 +89,8 @@ public class CleaningChecklistCanvas : MonoBehaviour
         Bedroom.SetActive(false);
         Hallway.SetActive(false);
         clothes.SetActive(false);
-        Destroy(ChecklistCanvas);
+
+        //Destroy(ChecklistCanvas);
         Destroy(WaterNozzle);
-
-
     }
 }

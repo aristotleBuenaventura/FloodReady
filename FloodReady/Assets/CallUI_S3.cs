@@ -22,11 +22,11 @@ public class CallUI_S3 : MonoBehaviour
         // Check if the collided object has the tag "TurnOnButton"
         if (other.CompareTag("TurnOnButton"))
         {
-            key.Play();
-            HomePage.SetActive(false);
             Contact.SetActive(true);
             Dial.SetActive(false);
             Calling.SetActive(false);
+            key.Play();
+            HomePage.SetActive(false);
             // Disable the homepage GameObject
         }
     }

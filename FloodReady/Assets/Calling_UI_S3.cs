@@ -22,7 +22,7 @@ public class Calling_UI_S3 : MonoBehaviour
         reportIcon.SetCheckIconVisible(true);
         reportIcon.SetUncheckIconVisible(false);
         portal.SetActive(true);
-        success.SuccessCanvas();
+        success.Showdial1161CanvasCanvas();
 
     }
 }

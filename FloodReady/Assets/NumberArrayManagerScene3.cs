@@ -77,10 +77,11 @@ public class NumberArrayManagerScene3 : MonoBehaviour
             
             task.IncrementTaskPercentage(5);
             points.IncrementPoints(500);
-            
-            
+
+            dial.SetActive(true);
+            Contact.SetActive(false);
             // Increment the task percentage only if it hasn't been done before
-            
+
             isTaskPercentageIncremented = true;
             // StartCoroutine(DelayedSuccessCanvas(10f));
 
