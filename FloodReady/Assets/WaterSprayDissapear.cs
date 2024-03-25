@@ -47,7 +47,7 @@ public class WaterSprayDisappear : MonoBehaviour
         task.IncrementTaskPercentage(10);
         points.IncrementPoints(1000);
         colliderWall.LivingRoomColliders();
-        canvas.ShowLivingRoomCanvas();
+        //canvas.ShowLivingRoomCanvas();
 
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);

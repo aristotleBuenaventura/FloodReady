@@ -8,7 +8,7 @@ public class findplunger : MonoBehaviour
     private bool checklistShown = false;
     public CleaningChecklistCanvas checklist;
 
-    void Update()
+    void Start()
     {
         if (!checklistShown)
         {

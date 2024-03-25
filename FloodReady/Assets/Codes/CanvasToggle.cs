@@ -6,7 +6,6 @@ public class CanvasToggle : MonoBehaviour
 {
     public GameObject canvas;
     private bool isActive = false;
-    public bool isOk = false;
 
     public void Start()
     {
@@ -25,7 +24,7 @@ public class CanvasToggle : MonoBehaviour
 
     public void showChecklist()
     {
-        canvas.SetActive(true); // Show the canvas every time showChecklist() is called
-        isOk = true;
+        isActive = true; // Set isActive to true
+        canvas.SetActive(true); // Show the canvas
     }
 }
