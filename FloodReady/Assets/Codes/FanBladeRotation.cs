@@ -25,7 +25,8 @@ public class RotateVRObject : MonoBehaviour
     {
         if (shouldRotate)
         {
-            transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
+            // Rotate around negative Vector3.right to reverse rotation
+            transform.Rotate(-Vector3.right, rotationSpeed * Time.deltaTime);
         }
     }
 
