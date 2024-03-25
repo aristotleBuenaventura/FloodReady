@@ -6,6 +6,8 @@ public class UnderWaterEffects : MonoBehaviour
     [SerializeField] GameObject cameraRig; // Reference to the camera rig
     private bool isFogActive = false;
     public bool isUnderwater { get; private set; }
+    public GameObject paglubog;
+    public GameObject nakalubog;
 
     void Update()
     {
@@ -18,12 +20,16 @@ public class UnderWaterEffects : MonoBehaviour
             {
                 isFogActive = true;
                 RenderSettings.fog = isFogActive;
+                nakalubog.SetActive(true);
+                paglubog.SetActive(true);
                 isUnderwater = true;
             }
             else
             {
                 isFogActive = false;
                 RenderSettings.fog = isFogActive;
+                nakalubog.SetActive(false);
+                paglubog.SetActive(false);
                 isUnderwater = false;
             }
         }
