@@ -17,11 +17,11 @@ public class OpenHintCanvasScene3 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the collider that entered the trigger is the player or controller
+        // Check if the collider that entered the trigger is the player or controller 
         if (other.CompareTag("Hand") && canTrigger)
         {
 
-            SetObjectActive(objectToMonitor1, true);
+            SetObjectActive(objectToMonitor1, true); // sinu-sure lang na i true lahat ng icons 
             SetObjectActive(objectToMonitor2, true);
             SetObjectActive(objectToMonitor3, true);
             SetObjectActive(objectToMonitor4, true);
@@ -37,7 +37,8 @@ public class OpenHintCanvasScene3 : MonoBehaviour
 
     private void SetObjectActive(GameObject obj, bool active)
     {
-        // Check if the object reference is not null
+        // Check if the object reference is not null // mahalaga tong setobjective kasi chinecheck if not null para maiwasan ang error pag na destory na ang icon // lagi dapat may null para maiwasan ang error sa destory ginawa ko to sa prepare go bag check mo yung
+        // inventory manager switch case 
         if (obj != null)
         {
             obj.SetActive(active);

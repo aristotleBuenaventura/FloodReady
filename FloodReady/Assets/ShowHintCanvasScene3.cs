@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShowHintCanvasScene3 : MonoBehaviour
 {
+    // to call the gameobjects that we will create functions 
     public GameObject GasHint;
     public GameObject GasValve;
     public GameObject AssessHouse;
@@ -23,6 +24,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
 
     }
 
+    // TO HIDE ALL CANVAS
     public void HideAllCanvas()
     {
         if (GasHint.activeSelf)
@@ -65,6 +67,8 @@ public class ShowHintCanvasScene3 : MonoBehaviour
             Dial161.SetActive(false);
     }
 
+
+    // To activate and deactivate the canvas
     public void ShowGasHintCanvas()
     {
         GasHint.SetActive(true);

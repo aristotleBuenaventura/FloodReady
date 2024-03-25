@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OpenHintGasLeak : MonoBehaviour
 {
-    public GameObject gasHint;
-    public ShowHintCanvasScene3 hintCanvas;
+    public GameObject gasHint; // to set disable the hint icon at start
+    public ShowHintCanvasScene3 hintCanvas; // calling the hint canvas
     private bool canActivate = true; // Flag to track if canvas activation is allowed
     public TotalPoints points;
     private bool canDeduct = false;
@@ -13,7 +14,7 @@ public class OpenHintGasLeak : MonoBehaviour
 
     void Start()
     {
-        gasHint.SetActive(false);
+        gasHint.SetActive(false); // to set disable the hint icon at start of the game
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,8 +22,8 @@ public class OpenHintGasLeak : MonoBehaviour
         if (other.CompareTag("Hand") && canActivate)
         {
 
-            hintCanvas.ShowGasHintCanvas();
-            RecoveryCanvasController.HideAllCanvas();
+            hintCanvas.ShowGasHintCanvas(); // calling the hint canvas to show the hint 
+            RecoveryCanvasController.HideAllCanvas(); // disabling the main canvas
             if (!canDeduct)
             {
                 points.DecrementPoints(50);
