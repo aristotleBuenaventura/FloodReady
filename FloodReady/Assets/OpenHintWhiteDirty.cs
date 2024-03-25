@@ -25,7 +25,7 @@ public class OpenHintWhiteDirty : MonoBehaviour
             RecoveryCanvasController.HideAllCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(200);
+                points.DecrementPoints(50);
                 canDeduct = true;
             }
 

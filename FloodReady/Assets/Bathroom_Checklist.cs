@@ -10,6 +10,7 @@ public class Bathroom_Checklist : MonoBehaviour
     public TaskPercentage score;
     public GameObject plunger;
     public TotalPoints points;
+    public CleanAllRoomsIcon checklistIcon;
 
     void Start()
     {
@@ -34,6 +35,8 @@ public class Bathroom_Checklist : MonoBehaviour
         {
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
+            checklistIcon.SetCheckIconVisible(true);
+            checklistIcon.SetUncheckIconVisible(false);
             //cleaningCanvas.deactivate();
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();

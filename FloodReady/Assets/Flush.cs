@@ -11,7 +11,7 @@ public class Flush : MonoBehaviour
     public RecoveryCanvasController canvasController;
     public CleaningChecklistCanvas cleaningCanvas;
     public TotalPoints points;
-
+    public PlungeToiletIcon checklist;
 
     private bool hasExecuted = false; // Track if the code has already been executed
 
@@ -27,6 +27,8 @@ public class Flush : MonoBehaviour
             cleanWater.goSignal = true;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
             canvasController.ShowgatherDirtyclothesCanvas();

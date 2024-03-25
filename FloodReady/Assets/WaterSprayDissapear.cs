@@ -8,17 +8,15 @@ public class WaterSprayDisappear : MonoBehaviour
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     private bool isGrabbed = false;
     public WaterSpraySpawn waterspray;
-
     public RecoveryCanvasController canvasController;
     public TaskPercentage task;
     public CleaningCollider colliderWall;
     public CleaningChecklistCanvas canvas;
-
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
-
     public findthewaternozzleIcon check;
     public TotalPoints points;
+    public FindWaterNozzleICon checklist;
 
 
     void Update()
@@ -43,6 +41,8 @@ public class WaterSprayDisappear : MonoBehaviour
         waterspray.isAllowed = true;
         check.SetCheckIconVisible(true);
         check.SetUncheckIconVisible(false);
+        checklist.SetCheckIconVisible(true);
+        checklist.SetUncheckIconVisible(false);
         canvasController.ShowcleanlivingCanvas();
         task.IncrementTaskPercentage(10);
         points.IncrementPoints(1000);

@@ -10,6 +10,7 @@ public class HintGasFind : MonoBehaviour
     public TotalPoints points;
     public gasleakIcon check;
     public TaskPercentage task;
+    public LookForGasLeakIcon checklist;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class HintGasFind : MonoBehaviour
             hasShownCanvas = true;
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
         }

@@ -6,15 +6,12 @@ public class CanvasTrigger : MonoBehaviour
     public RecoveryCanvasController canvasController;
     public GameObject showchecwholehouse; // Reference to the showchecwholehouse GameObject
     public CheckHouse checkHouseScript; // Reference to the CheckHouse script
-
     private bool canvasShown = false;
-
     public assesstheaftermathIcon check;
-
     public TaskPercentage task;
-
     public GameObject waterSpray;
     public TotalPoints points;
+    public AssessHouseIcon checklist;
 
 
     void Update()
@@ -51,6 +48,8 @@ public class CanvasTrigger : MonoBehaviour
             waterSpray.SetActive(true);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
             canvasController.ShowfindnozzleCanvas();
