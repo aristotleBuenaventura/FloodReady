@@ -280,32 +280,6 @@ public class RecoveryCanvasController : MonoBehaviour
     }
 
 
-
-
-    /*public void ShowcleanBedroomwallCanvas(bool show)
-    {
-
-        welcomeCanvas.SetActive(false);
-        gasleakCanvas.SetActive(false);
-        closegasleakCanvas.SetActive(false);
-        checwholehouseCanvas.SetActive(false);
-        findnozzleCanvas.SetActive(false);
-        cleanlivingCanvas.SetActive(false);
-        cleankitchenCanvas.SetActive(false);
-        cleansecondhallwayCanvas.SetActive(false);
-        cleanBedroomwallCanvas.SetActive(true);
-        cleanbathroomCanvas.SetActive(false);
-        findPlungerCanvas.SetActive(false);
-        plungedtoiletCanvas.SetActive(false);
-        gatherDirtyclothesCanvas.SetActive(false);
-        checkOutSideCanvas.SetActive(false);
-        usePhoneCanvas.SetActive(false);
-        dial1161Canvas.SetActive(false);
-        successCanvas.SetActive(false);
-        failedCanvas.SetActive(false);
-        messageCanvas.OpenCanvasAgain();
-
-    }*/
     public void ShowcleanBathRoomCanvas()
     {
 
