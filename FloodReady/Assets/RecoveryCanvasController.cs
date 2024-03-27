@@ -24,6 +24,7 @@ public class RecoveryCanvasController : MonoBehaviour
     public GameObject dial1161Canvas;
     public GameObject successCanvas;
     public GameObject failedCanvas;
+    public GameObject circlepointCanvas;
     public MessageCanvas messageCanvas;
     public float switchDelayWelcome = 10f;
 
@@ -70,9 +71,11 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
 
 
-    
+
+
 
         messageCanvas.OpenCanvasAgain();
     }
@@ -97,6 +100,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         SetRoomBarrierColliderActive1(false);
 
 
@@ -124,6 +129,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
 
 
 
@@ -153,6 +160,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
 
 
         if (checkHouse != null)
@@ -186,6 +195,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
 
 
 
@@ -219,6 +230,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
 
 
 
@@ -248,6 +261,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
 
 
 
@@ -276,6 +291,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -301,6 +318,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
 
     }
@@ -326,6 +345,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
 
     }
@@ -352,6 +373,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -375,6 +398,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -398,6 +423,8 @@ public class RecoveryCanvasController : MonoBehaviour
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -421,8 +448,9 @@ public class RecoveryCanvasController : MonoBehaviour
         usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
-        successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -445,8 +473,9 @@ public class RecoveryCanvasController : MonoBehaviour
         usePhoneCanvas.SetActive(true);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
-        successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -470,8 +499,34 @@ public class RecoveryCanvasController : MonoBehaviour
         usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(true);
         successCanvas.SetActive(false);
+        failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    public void ShowdialCirclePointCanvasCanvas()
+    {
+        welcomeCanvas.SetActive(false);
+        gasleakCanvas.SetActive(false);
+        closegasleakCanvas.SetActive(false);
+        checwholehouseCanvas.SetActive(false);
+        findnozzleCanvas.SetActive(false);
+        cleanlivingCanvas.SetActive(false);
+        cleankitchenCanvas.SetActive(false);
+        cleansecondhallwayCanvas.SetActive(false);
+        cleanBedroomwallCanvas.SetActive(false);
+        cleanbathroomCanvas.SetActive(false);
+        findPlungerCanvas.SetActive(false);
+        plungedtoiletCanvas.SetActive(false);
+        gatherDirtyclothesCanvas.SetActive(false);
+        checkOutSideCanvas.SetActive(false);
+        usePhoneCanvas.SetActive(false);
+        dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(true);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -494,9 +549,10 @@ public class RecoveryCanvasController : MonoBehaviour
         checkOutSideCanvas.SetActive(false);
         usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
-        successCanvas.SetActive(false);
         successCanvas.SetActive(true);
         failedCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -519,8 +575,9 @@ public class RecoveryCanvasController : MonoBehaviour
         usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
-        successCanvas.SetActive(false);
         failedCanvas.SetActive(true);
+        circlepointCanvas.SetActive(false);
+
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -545,9 +602,9 @@ public class RecoveryCanvasController : MonoBehaviour
         usePhoneCanvas.SetActive(false);
         dial1161Canvas.SetActive(false);
         successCanvas.SetActive(false);
-        successCanvas.SetActive(false);
+        circlepointCanvas.SetActive(false);
         failedCanvas.SetActive(false);
-     
+
     }
 
 

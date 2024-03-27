@@ -9,11 +9,14 @@ public class Calling_UI_S3 : MonoBehaviour
     public reportfallenIcon reportIcon;
     public RecoveryCanvasController success;
     public GameObject portal;
+    public DialScene3Icon checklist;
+
     void Start()
     {
         call.Play();
 
         StartCoroutine(DelayedAction());
+        
     }
 
     IEnumerator DelayedAction()
@@ -21,8 +24,18 @@ public class Calling_UI_S3 : MonoBehaviour
         yield return new WaitForSeconds(9f);
         reportIcon.SetCheckIconVisible(true);
         reportIcon.SetUncheckIconVisible(false);
-        portal.SetActive(true);
+        checklist.SetCheckIconVisible(true);
+        checklist.SetUncheckIconVisible(false);
         success.Showdial1161CanvasCanvas();
+        StartCoroutine(CirclePoint());
+
+    }
+
+    IEnumerator CirclePoint()
+    {
+        yield return new WaitForSeconds(6f);
+        success.ShowdialCirclePointCanvasCanvas();
+        portal.SetActive(true);
 
     }
 }

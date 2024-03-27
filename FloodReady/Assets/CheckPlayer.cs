@@ -4,7 +4,7 @@ public class CheckPlayer : MonoBehaviour
 {
     public GameObject playerTag;
     public GameObject objectsToDisable;
-
+    public CheckNeighborhoodIcon checklist;
     public RecoveryCanvasController UsePhoneCanvas;
     public GameObject goBag;
 
@@ -19,6 +19,8 @@ public class CheckPlayer : MonoBehaviour
             {
                 // Disable the object
                 objectsToDisable.SetActive(false);
+                checklist.SetCheckIconVisible(true);
+                checklist.SetUncheckIconVisible(false);
                 UsePhoneCanvas.UsePhoneCanvas();
                 goBag.SetActive(true);
 
