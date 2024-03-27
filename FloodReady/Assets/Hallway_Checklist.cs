@@ -28,6 +28,12 @@ public class Hallway_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            StartCoroutine(ShowBedroomCanvasAfterDelay(2f));
+        }
+
+        IEnumerator ShowBedroomCanvasAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
             canvas.ShowcleanBedroomwallCanvas();
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);

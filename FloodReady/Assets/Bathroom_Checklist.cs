@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bathroom_Checklist : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class Bathroom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            StartCoroutine(ShowPlungerCanvasAfterDelay(2f));
+        }
+
+        IEnumerator ShowPlungerCanvasAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             checklistIcon.SetCheckIconVisible(true);

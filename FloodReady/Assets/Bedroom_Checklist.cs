@@ -28,6 +28,12 @@ public class Bedroom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            StartCoroutine(ShowBathroomCanvasAfterDelay(2f));
+        }
+
+        IEnumerator ShowBathroomCanvasAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
             canvas.ShowcleanBathRoomCanvas();
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);

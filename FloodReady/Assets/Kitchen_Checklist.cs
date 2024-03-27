@@ -28,6 +28,12 @@ public class Kitchen_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            StartCoroutine(ShowHallwayCanvasAfterDelay(2f));
+        }
+
+        IEnumerator ShowHallwayCanvasAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             cleaningCanvas.ShowHallwayCanvas();

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LivingRoom_Checklist : MonoBehaviour
 {
@@ -26,15 +27,22 @@ public class LivingRoom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
-            canvas.ShowcleankitchenCanvas();
-            task.SetCheckIconVisible(true);
-            task.SetUncheckIconVisible(false);
-            cleaningCanvas.ShowKitchenCanvas();
-            wall.KitchenColliders();
-            score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            StartCoroutine(ShowKitchenCanvasAfterDelay(2f));
             // Disable the script
-            enabled = false;
+            
         }
+    }
+
+    IEnumerator ShowKitchenCanvasAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        task.SetCheckIconVisible(true);
+        task.SetUncheckIconVisible(false);
+        wall.KitchenColliders();
+        score.IncrementTaskPercentage(10);
+        points.IncrementPoints(1000);
+        canvas.ShowcleankitchenCanvas();
+        cleaningCanvas.ShowKitchenCanvas();
+        enabled = false;
     }
 }
