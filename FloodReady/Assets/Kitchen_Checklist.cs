@@ -28,7 +28,12 @@ public class Kitchen_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            
             StartCoroutine(ShowHallwayCanvasAfterDelay(2f));
+            score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
+            // Disable the script
+            enabled = false;
         }
 
         IEnumerator ShowHallwayCanvasAfterDelay(float delay)
@@ -39,10 +44,7 @@ public class Kitchen_Checklist : MonoBehaviour
             cleaningCanvas.ShowHallwayCanvas();
             mainCanvas.ShowcleansecondhallwayCanvas();
             wall.SecondFloorColliders();
-            score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
-            // Disable the script
-            enabled = false;
+            
         }
     }
 }

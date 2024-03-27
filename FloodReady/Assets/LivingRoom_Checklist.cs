@@ -27,9 +27,12 @@ public class LivingRoom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
-            StartCoroutine(ShowKitchenCanvasAfterDelay(2f));
-            // Disable the script
             
+            StartCoroutine(ShowKitchenCanvasAfterDelay(2f));
+            score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
+            enabled = false; // Disable the script
+
         }
     }
 
@@ -39,10 +42,9 @@ public class LivingRoom_Checklist : MonoBehaviour
         task.SetCheckIconVisible(true);
         task.SetUncheckIconVisible(false);
         wall.KitchenColliders();
-        score.IncrementTaskPercentage(10);
-        points.IncrementPoints(1000);
+
         canvas.ShowcleankitchenCanvas();
         cleaningCanvas.ShowKitchenCanvas();
-        enabled = false;
+        
     }
 }

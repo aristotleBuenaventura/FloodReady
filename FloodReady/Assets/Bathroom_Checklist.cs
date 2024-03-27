@@ -34,7 +34,11 @@ public class Bathroom_Checklist : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            
             StartCoroutine(ShowPlungerCanvasAfterDelay(2f));
+            score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
+            enabled = false;
         }
 
         IEnumerator ShowPlungerCanvasAfterDelay(float delay)
@@ -47,11 +51,10 @@ public class Bathroom_Checklist : MonoBehaviour
             //cleaningCanvas.deactivate();
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();
-            score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            
             plunger.SetActive(true);
             // Disable the script
-            enabled = false;
+            
         }
     }
 }

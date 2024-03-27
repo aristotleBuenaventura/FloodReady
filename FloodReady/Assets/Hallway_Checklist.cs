@@ -29,6 +29,10 @@ public class Hallway_Checklist : MonoBehaviour
         if (allTrue)
         {
             StartCoroutine(ShowBedroomCanvasAfterDelay(2f));
+            score.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
+            // Disable the script
+            enabled = false;
         }
 
         IEnumerator ShowBedroomCanvasAfterDelay(float delay)
@@ -39,10 +43,7 @@ public class Hallway_Checklist : MonoBehaviour
             task.SetUncheckIconVisible(false);
             cleaningCanvas.ShowBedRoomCanvas();
             wall.BedRoomColliders();
-            score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
-            // Disable the script
-            enabled = false;
+            
         }
     }
 }
