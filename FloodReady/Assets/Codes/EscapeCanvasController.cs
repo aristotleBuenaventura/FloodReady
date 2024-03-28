@@ -22,10 +22,13 @@
         public GameObject DeathCanvas;
         public MessageCanvas messageCanvas;
         public float switchDelayWelcome = 15f;
-    
+        public GameObject trash1;
+        public GameObject trash2;
 
-        // Add the switch delay for the RetrieveGoBagCanvas
-        public float switchDelayRetrieveGoBag = 10f;
+
+
+    // Add the switch delay for the RetrieveGoBagCanvas
+    public float switchDelayRetrieveGoBag = 10f;
         public BoxCollider roomBarrierCollider1;
         public BoxCollider roomBarrierCollider2;
         public BoxCollider roomBarrierCollider3;
@@ -185,6 +188,7 @@
                 successCanvas.SetActive(false);
                 failedCanvas.SetActive(false);
             DeathCanvas.SetActive(false);
+            trash1.SetActive(true);
             messageCanvas.OpenCanvasAgain();
             SetRoomBarrierColliderActive4(false);
 
@@ -281,6 +285,7 @@
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
             DeathCanvas.SetActive(false);
+            trash2.SetActive(true);
             messageCanvas.OpenCanvasAgain();
         }
         else
@@ -322,6 +327,7 @@
             successCanvas.SetActive(false);
             failedCanvas.SetActive(false);
         DeathCanvas.SetActive(false);
+        
         messageCanvas.OpenCanvasAgain();
         }
 

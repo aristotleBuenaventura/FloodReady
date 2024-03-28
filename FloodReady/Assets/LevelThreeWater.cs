@@ -13,6 +13,7 @@ public class LevelThreeWater : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("PLAYER WALKS");
+            
             playerDetected = true;
 
         }
@@ -26,6 +27,7 @@ public class LevelThreeWater : MonoBehaviour
         if (waterLevelController != null)
         {
             waterLevelController.SetCanRiseWater(); // Assuming you have a method like SetCanRiseWater in WaterLevelController
+
         }
         return playerDetected;
     }
