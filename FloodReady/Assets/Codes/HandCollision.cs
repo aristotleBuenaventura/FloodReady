@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HandCollision : MonoBehaviour
 {
-    public TVController tvController;
     public float buttonCooldown = 2.0f; // Adjust the cooldown time as needed
     public CanvasController messageCanvas;
     private bool isButtonDown = false;
@@ -14,6 +13,7 @@ public class HandCollision : MonoBehaviour
     public AudioClip buttonPressSound; // Sound to play when button is pressed
     public TotalPoints points;
     public TurnOnTVCheck checklist;
+    public GameObject TVScreen;
 
     private AudioSource audioSource; // Reference to the AudioSource component
 
@@ -33,13 +33,13 @@ public class HandCollision : MonoBehaviour
 
             if (isButtonDown)
             {
-                tvController.TurnOff();
+                TVScreen.SetActive(false);
                 Debug.Log("Button Pressed: TV Turned Off");
                 CallSwitchCanvasAfterDelayTV();
             }
             else
             {
-                tvController.TurnOn();
+                TVScreen.SetActive(true);
                 CallSwitchCanvasAfterDelayTV();
                 Debug.Log("Button Pressed: TV Turned On");
             }
