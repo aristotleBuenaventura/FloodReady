@@ -13,6 +13,9 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public TotalPoints points;
     public Flashlight_Hand flashlight;
     public retrievegobagcheck checklist;
+    public AllowGrabFan fanplug;
+    public AllowGrabTVPlugCube tvplugcube;
+    public AllowGrabTVPLug tvplug;
 
 
     // You can adjust this variable to control the delay before the object disappears
@@ -54,5 +57,8 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         CloseBagCheck.SetUncheckIconVisible(false);
         checklist.SetCheckIconVisible(true);
         checklist.SetUncheckIconVisible(false);
+        fanplug.EnableCollider();
+        tvplugcube.EnableCollider();
+        tvplug.EnableCollider();
     }
 }
