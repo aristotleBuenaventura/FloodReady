@@ -5890,6 +5890,7 @@ MonoBehaviour:
   check: {fileID: 0}
   buttonPressSound: {fileID: 8300000, guid: c1dc84d943b248f4dbe59a8d8e55f269, type: 3}
   points: {fileID: 0}
+  checklist: {fileID: 0}
 --- !u!65 &94892836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12751,6 +12752,7 @@ MonoBehaviour:
   gatheredessentialgoods: {fileID: 0}
   firstaidkit: {fileID: 0}
   points: {fileID: 0}
+  checklist: {fileID: 0}
   wristcannedgood: {fileID: 0}
   wristenergybar: {fileID: 0}
   wristmoney: {fileID: 0}
@@ -22751,6 +22753,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1718835372}
     - targetCorrespondingSourceObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884653867}
@@ -67237,6 +67242,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3370816170019864185, guid: bc98a4180e096b5468823f51022a614b, type: 3}
+--- !u!4 &1493918197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+  m_PrefabInstance: {fileID: 449577812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1495372903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78897,12 +78907,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718835370}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.010213293, w: 0.9999479}
-  m_LocalPosition: {x: 2.6831312, y: 2.601644, z: -5.8456783}
+  m_LocalRotation: {x: -0.006207483, y: 0.6077531, z: -0.008110394, w: 0.79406047}
+  m_LocalPosition: {x: -0.043, y: -0.003, z: 0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1493918197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.17}
 --- !u!1 &1719855455
 GameObject:
@@ -80127,6 +80137,7 @@ MonoBehaviour:
   doorOpenned: {fileID: 323536716}
   buttonPressSound: {fileID: 8300000, guid: 779942dad7277564f97f37a8643af774, type: 3}
   points: {fileID: 0}
+  checklist: {fileID: 0}
 --- !u!54 &1741520675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80964,6 +80975,7 @@ MonoBehaviour:
   CloseBagCheck: {fileID: 0}
   points: {fileID: 0}
   flashlight: {fileID: 0}
+  checklist: {fileID: 0}
   delayBeforeDisappear: 1
 --- !u!114 &1750296111
 MonoBehaviour:
@@ -89871,6 +89883,7 @@ MonoBehaviour:
   TV: 0
   BreakerCanvas: {fileID: 0}
   unplug: {fileID: 0}
+  checklist: {fileID: 0}
 --- !u!114 &1968264663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96965,7 +96978,6 @@ SceneRoots:
   - {fileID: 1039898743}
   - {fileID: 255303929}
   - {fileID: 449577812}
-  - {fileID: 1718835372}
   - {fileID: 1370508184}
   - {fileID: 239558772}
   - {fileID: 1134710400}
