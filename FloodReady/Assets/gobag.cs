@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class gobag : MonoBehaviour
 {
-    private bool checklistShown = false;
-    public GameObject canvas;
     public CanvasToggle toggle;
+    private bool checklistShown = false;
+    public EvacuationChecklist checklist;
 
     void Start()
     {
         if (!checklistShown)
         {
             toggle.showChecklist();
-            canvas.SetActive(true);
+            checklist.HowToPrepareGoBagCanvas();
             checklistShown = true;
         }
     }

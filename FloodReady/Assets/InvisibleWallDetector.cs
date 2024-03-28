@@ -11,6 +11,7 @@ public class InvisibleWallDetector : MonoBehaviour
     public Timer_welldone welldomeStopTime;
     public Timer wristwatchStopTime;
     public Timer screenTimer;
+    public leavethehousecheck checklist;
 
 
 

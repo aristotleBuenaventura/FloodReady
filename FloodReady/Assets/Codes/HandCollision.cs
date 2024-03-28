@@ -13,6 +13,7 @@ public class HandCollision : MonoBehaviour
     public iconforturnontv check;
     public AudioClip buttonPressSound; // Sound to play when button is pressed
     public TotalPoints points;
+    public TurnOnTVCheck checklist;
 
     private AudioSource audioSource; // Reference to the AudioSource component
 
@@ -72,6 +73,8 @@ public class HandCollision : MonoBehaviour
             points.IncrementPoints(1000);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
             // Set the flag to indicate that the task has been completed
             taskCompleted = true;
         }

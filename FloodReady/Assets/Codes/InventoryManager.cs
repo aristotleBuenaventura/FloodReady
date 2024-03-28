@@ -35,6 +35,7 @@ public class InventoryManager : MonoBehaviour
     public iconforgatherdessentialgoods gatheredessentialgoods;
     public iconforfirstaidkit firstaidkit;
     public TotalPoints points;
+    public GoBagItemsCheck checklist;
 
 
     // for wrist canvas
@@ -347,7 +348,8 @@ public class InventoryManager : MonoBehaviour
     {
         // Assuming GoBagCompleted is an instance of some class that has the ShowRetrieveGoBagCanvas method
         GoBagCompleted.ShowRetrieveGoBagCanvas();
-
+        checklist.SetCheckIconVisible(true);
+        checklist.SetUncheckIconVisible(false);
         // Assuming GoBag, Canned_good, Energy_bar, Money, Bottled_water, Clothes, First_aid_kit,
         // Flashlight, Check_list are GameObjects that you want to destroy
         Destroy(GoBag);

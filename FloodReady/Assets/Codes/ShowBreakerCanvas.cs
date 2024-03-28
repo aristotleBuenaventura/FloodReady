@@ -8,6 +8,7 @@ public class ShowBreakerCanvas : MonoBehaviour
     public bool TV;
     public CanvasController BreakerCanvas;
     public iconforunplug unplug;
+    public unplugcablescheck checklist;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class ShowBreakerCanvas : MonoBehaviour
             BreakerCanvas.ShowTurnOffBreakerCanvas();
             unplug.SetCheckIconVisible(true);
             unplug.SetUncheckIconVisible(false);
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
 
         }
     }

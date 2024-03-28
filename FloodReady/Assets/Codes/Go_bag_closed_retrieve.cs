@@ -12,6 +12,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public iconforretrievegobag CloseBagCheck;
     public TotalPoints points;
     public Flashlight_Hand flashlight;
+    public retrievegobagcheck checklist;
 
 
     // You can adjust this variable to control the delay before the object disappears
@@ -51,5 +52,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         points.IncrementPoints(1000);
         CloseBagCheck.SetCheckIconVisible(true);
         CloseBagCheck.SetUncheckIconVisible(false);
+        checklist.SetCheckIconVisible(true);
+        checklist.SetUncheckIconVisible(false);
     }
 }
