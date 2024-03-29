@@ -2,22 +2,33 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Make sure to add this for UI elements
+using UnityEditor;
 
 public class SceneLoaderMainMenu : MonoBehaviour
 {
     public GameObject loadingScreen; // Reference to your loading screen UI element
-    public int isReady = 0;
+    private int isReady;
     public GameObject Scene1;
     public GameObject Scene2;
     public GameObject Scene3;
+    public int isReadyValue;
 
     void Start()
     {
         isReady = PlayerPrefs.GetInt("HowToPlay");
+        Debug.Log("SceneLoaderMainMenu script - HowToPlay value: " + isReady);
         Scene1.SetActive(false);
         Scene2.SetActive(false);
         Scene3.SetActive(false);
     }
+    // Unregister the event when the script is destroyed
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("HowToPlay", 0);
+        PlayerPrefs.Save();
+    }
+
+
 
     // This method is called when the button is clicked
     public void MoveToEvacuation_Essential()

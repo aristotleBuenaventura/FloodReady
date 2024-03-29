@@ -30,6 +30,11 @@ public class CanvasController : MonoBehaviour
         TVRemote.SetActive(false);
 
     }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("HowToPlay", 0);
+        PlayerPrefs.Save();
+    }
 
     private void ShowWelcomeCanvas()
     {

@@ -39,7 +39,11 @@ public class RecoveryCanvasController : MonoBehaviour
     public GameObject waterSpray;
 
 
-
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("HowToPlay", 0);
+        PlayerPrefs.Save();
+    }
 
     private void Start()
     {
