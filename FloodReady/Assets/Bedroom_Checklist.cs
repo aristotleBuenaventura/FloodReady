@@ -38,11 +38,11 @@ public class Bedroom_Checklist : MonoBehaviour
         IEnumerator ShowBathroomCanvasAfterDelay(float delay)
         {
             yield return new WaitForSeconds(delay);
-            canvas.ShowcleanBathRoomCanvas();
+            canvas.ShowcleanlivingCanvas();
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
-            cleaningCanvas.ShowBathRoomCanvas();
-            wall.BathroomColliders();
+            cleaningCanvas.ShowLivingRoomCanvas();
+            wall.LivingRoomColliders();
             
         }
     }
