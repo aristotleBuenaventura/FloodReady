@@ -205,8 +205,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+      - m_Target: {fileID: 675053779}
+        m_TargetAssemblyTypeName: SceneLoaderMainMenu, Assembly-CSharp
         m_MethodName: MoveToEvacuation_Essential
         m_Mode: 1
         m_Arguments:
@@ -269,13 +269,13 @@ GameObject:
   - component: {fileID: 14136585}
   - component: {fileID: 14136584}
   - component: {fileID: 14136583}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SkipTutorialS2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &14136582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14136581}
   m_LocalRotation: {x: 0.0002708733, y: 0.0025773412, z: -0.019234287, w: 0.9998117}
-  m_LocalPosition: {x: 0, y: 0, z: 1.381}
+  m_LocalPosition: {x: 0, y: 0, z: 2.7380004}
   m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -7.595, y: -358.903, z: -2.244}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.035, y: 0.583}
+  m_AnchoredPosition: {x: -0.0349985, y: 0.394}
   m_SizeDelta: {x: 1.447, y: 1.0009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14136583
@@ -378,7 +378,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 378456468}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 159259273}
   - component: {fileID: 159259275}
   - component: {fileID: 159259274}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 168287644}
   - component: {fileID: 168287646}
   - component: {fileID: 168287645}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 188558418}
   - component: {fileID: 188558417}
   - component: {fileID: 188558416}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: go_to_tutorial_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,9 +1059,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToMain_Menu
+        m_MethodName: MoveToHow_to_Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 246262603}
   - component: {fileID: 246262602}
   - component: {fileID: 246262601}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: proceed_to_scene1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,9 +1565,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToEscape_Survive
+        m_MethodName: MoveToEvacuation_Essential
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1751,6 +1751,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267096813}
   m_CullTransparentMesh: 1
+--- !u!1 &283020872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100012, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+  m_PrefabInstance: {fileID: 1479457425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &300991315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,7 +1860,7 @@ GameObject:
   - component: {fileID: 329949089}
   - component: {fileID: 329949091}
   - component: {fileID: 329949090}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2372,7 +2377,7 @@ GameObject:
   - component: {fileID: 515400415}
   - component: {fileID: 515400417}
   - component: {fileID: 515400416}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2777,8 +2782,8 @@ GameObject:
   - component: {fileID: 675053773}
   - component: {fileID: 675053775}
   - component: {fileID: 675053772}
-  - component: {fileID: 675053777}
   - component: {fileID: 675053778}
+  - component: {fileID: 675053779}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -2878,19 +2883,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.30400085, y: -0.07499981}
   m_SizeDelta: {x: 1125.8169, y: 802.8892}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &675053777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675053771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1cb62560591ea94282fb119643ac41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 675053771}
 --- !u!114 &675053778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,6 +2902,23 @@ MonoBehaviour:
     m_Bits: 4294967295
   pointer: {fileID: 1557274940}
   sortOrder: 0
+--- !u!114 &675053779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675053771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8c3b1227e402b45bc9a7176c2ce682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 675053771}
+  isReady: 0
+  Scene1: {fileID: 1442905091}
+  Scene2: {fileID: 14136581}
+  Scene3: {fileID: 1293360134}
 --- !u!4 &700381839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422740, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
@@ -4000,8 +4009,7 @@ GameObject:
   - component: {fileID: 1072114564}
   - component: {fileID: 1072114563}
   - component: {fileID: 1072114562}
-  - component: {fileID: 1072114561}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: go_to_tutorial_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4027,20 +4035,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.333, y: -0.256}
   m_SizeDelta: {x: 78.1412, y: 14.474}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1072114561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072114559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85710de58264a343b81e278519c2842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerResultCanvas: {fileID: 0}
-  playerAccomplishmentsCanvas: {fileID: 0}
 --- !u!65 &1072114562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4106,9 +4100,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToMain_Menu
+        m_MethodName: MoveToHow_to_Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4839,8 +4833,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+      - m_Target: {fileID: 675053779}
+        m_TargetAssemblyTypeName: SceneLoaderMainMenu, Assembly-CSharp
         m_MethodName: MoveToEscape_Survive
         m_Mode: 1
         m_Arguments:
@@ -4903,13 +4897,13 @@ GameObject:
   - component: {fileID: 1293360138}
   - component: {fileID: 1293360137}
   - component: {fileID: 1293360136}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SkipTutorialS3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1293360135
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4918,7 +4912,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293360134}
   m_LocalRotation: {x: 0.0002708733, y: 0.0025773412, z: -0.019234287, w: 0.9998117}
-  m_LocalPosition: {x: 0, y: 0, z: 1.381}
+  m_LocalPosition: {x: 0, y: 0, z: 2.7380004}
   m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4927,7 +4921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -7.595, y: -358.903, z: -2.244}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.035, y: 0.583}
+  m_AnchoredPosition: {x: -0.0349985, y: 0.394}
   m_SizeDelta: {x: 1.447, y: 1.0009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293360136
@@ -5012,7 +5006,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 378456468}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5036,7 +5030,7 @@ GameObject:
   - component: {fileID: 1322885530}
   - component: {fileID: 1322885532}
   - component: {fileID: 1322885531}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5207,27 +5201,13 @@ GameObject:
   - component: {fileID: 1442905095}
   - component: {fileID: 1442905094}
   - component: {fileID: 1442905093}
-  - component: {fileID: 1442905092}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SkipTutorialS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1442905092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442905091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1cb62560591ea94282fb119643ac41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 1442905091}
+  m_IsActive: 1
 --- !u!114 &1442905093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5297,7 +5277,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 378456468}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5318,7 +5298,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442905091}
   m_LocalRotation: {x: 0.0002708733, y: 0.0025773412, z: -0.019234287, w: 0.9998117}
-  m_LocalPosition: {x: 0, y: 0, z: 1.381}
+  m_LocalPosition: {x: 0, y: 0, z: 2.738}
   m_LocalScale: {x: 1.1326, y: 1.1326, z: 1.1326}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5327,7 +5307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -7.595, y: -358.903, z: -2.244}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.035, y: 0.583}
+  m_AnchoredPosition: {x: -0.035, y: 0.394}
   m_SizeDelta: {x: 1.447, y: 1.0009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1460303441
@@ -5341,7 +5321,7 @@ GameObject:
   - component: {fileID: 1460303442}
   - component: {fileID: 1460303444}
   - component: {fileID: 1460303443}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5574,13 +5554,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 481164, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 700381839}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100012, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1479457429}
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
 --- !u!4 &1479457426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
   m_PrefabInstance: {fileID: 1479457425}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1479457429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283020872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1cb62560591ea94282fb119643ac41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 283020872}
 --- !u!1001 &1489034559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5838,7 +5834,7 @@ GameObject:
   - component: {fileID: 1553288146}
   - component: {fileID: 1553288148}
   - component: {fileID: 1553288147}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6049,8 +6045,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+      - m_Target: {fileID: 675053779}
+        m_TargetAssemblyTypeName: SceneLoaderMainMenu, Assembly-CSharp
         m_MethodName: MoveToRecovery_Resilience
         m_Mode: 1
         m_Arguments:
@@ -6110,7 +6106,7 @@ GameObject:
   - component: {fileID: 1590147153}
   - component: {fileID: 1590147155}
   - component: {fileID: 1590147154}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6653,7 +6649,7 @@ GameObject:
   - component: {fileID: 1722813443}
   - component: {fileID: 1722813442}
   - component: {fileID: 1722813441}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: proceed_to_scene2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6758,9 +6754,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToEscape_Survive
+        m_MethodName: MoveToRecovery_Resilience
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6991,7 +6987,7 @@ GameObject:
   - component: {fileID: 1744056235}
   - component: {fileID: 1744056234}
   - component: {fileID: 1744056233}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: proceed_to_scene2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7096,7 +7092,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: MoveToEscape_Survive
         m_Mode: 1
@@ -7157,7 +7153,7 @@ GameObject:
   - component: {fileID: 1749727303}
   - component: {fileID: 1749727305}
   - component: {fileID: 1749727304}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7446,7 +7442,7 @@ GameObject:
   - component: {fileID: 1793745666}
   - component: {fileID: 1793745668}
   - component: {fileID: 1793745667}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7689,7 +7685,7 @@ GameObject:
   - component: {fileID: 1823098802}
   - component: {fileID: 1823098801}
   - component: {fileID: 1823098800}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: go_to_tutorial_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7794,9 +7790,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442905092}
+      - m_Target: {fileID: 1479457429}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToMain_Menu
+        m_MethodName: MoveToHow_to_Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7939,7 +7935,7 @@ GameObject:
   - component: {fileID: 1851144293}
   - component: {fileID: 1851144295}
   - component: {fileID: 1851144294}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8073,7 +8069,7 @@ GameObject:
   - component: {fileID: 1861176409}
   - component: {fileID: 1861176411}
   - component: {fileID: 1861176410}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8357,8 +8353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+      - m_Target: {fileID: 675053779}
+        m_TargetAssemblyTypeName: SceneLoaderMainMenu, Assembly-CSharp
         m_MethodName: MoveToHow_to_Play
         m_Mode: 1
         m_Arguments:
@@ -8820,9 +8816,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 675053777}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 675053779}
+        m_TargetAssemblyTypeName: SceneLoaderMainMenu, Assembly-CSharp
+        m_MethodName: MoveToCleaning_Mini_Game_Quest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
