@@ -43,17 +43,22 @@
 
 
         public WaterLevelController waterLevelController;
+        private void OnApplicationQuit()
+        {
+            PlayerPrefs.SetInt("HowToPlay", 0);
+            PlayerPrefs.Save();
+        }
 
         private void Start()
-        {
-            // Ensure the welcome canvas starts in the desired state
-            ShowWelcomeCanvas();
-            alarmAudioSource = soundAlarm.GetComponent<AudioSource>();
-            // Start the coroutine to switch canvases after a delay
-            StartCoroutine(SwitchCanvasAfterDelay());
-            goOutAudioSource = goOutCanvas.GetComponent<AudioSource>();
+            {
+                // Ensure the welcome canvas starts in the desired state
+                ShowWelcomeCanvas();
+                alarmAudioSource = soundAlarm.GetComponent<AudioSource>();
+                // Start the coroutine to switch canvases after a delay
+                StartCoroutine(SwitchCanvasAfterDelay());
+                goOutAudioSource = goOutCanvas.GetComponent<AudioSource>();
         
-    }
+        }
 
         // Add any new canvas show functions here
         private void ShowWelcomeCanvas()
