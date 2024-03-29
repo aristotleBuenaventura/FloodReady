@@ -43,11 +43,11 @@ public class WaterSprayDisappear : MonoBehaviour
         check.SetUncheckIconVisible(false);
         checklist.SetCheckIconVisible(true);
         checklist.SetUncheckIconVisible(false);
-        canvasController.ShowcleanlivingCanvas();
+        canvasController.ShowcleansecondhallwayCanvas();
         task.IncrementTaskPercentage(10);
         points.IncrementPoints(1000);
-        colliderWall.LivingRoomColliders();
-        //canvas.ShowLivingRoomCanvas();
+        colliderWall.SecondFloorColliders();
+        canvas.ShowHallwayCanvas();
 
         // Deactivate the GameObject instead of destroying it
         gameObject.SetActive(false);

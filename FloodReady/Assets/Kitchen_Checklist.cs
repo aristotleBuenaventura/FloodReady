@@ -41,9 +41,9 @@ public class Kitchen_Checklist : MonoBehaviour
             yield return new WaitForSeconds(delay);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
-            cleaningCanvas.ShowHallwayCanvas();
-            mainCanvas.ShowcleansecondhallwayCanvas();
-            wall.SecondFloorColliders();
+            cleaningCanvas.ShowBathRoomCanvas();
+            mainCanvas.ShowcleanBathRoomCanvas(); 
+            wall.BathroomColliders();
             
         }
     }

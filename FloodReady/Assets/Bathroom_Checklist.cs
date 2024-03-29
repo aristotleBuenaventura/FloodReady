@@ -12,6 +12,7 @@ public class Bathroom_Checklist : MonoBehaviour
     public GameObject plunger;
     public TotalPoints points;
     public CleanAllRoomsIcon checklistIcon;
+    public GameObject nozzle;
 
     void Start()
     {
@@ -51,7 +52,7 @@ public class Bathroom_Checklist : MonoBehaviour
             //cleaningCanvas.deactivate();
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();
-            
+            nozzle.SetActive(false);
             plunger.SetActive(true);
             // Disable the script
             
