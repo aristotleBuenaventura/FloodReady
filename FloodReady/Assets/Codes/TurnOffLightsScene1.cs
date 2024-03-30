@@ -19,6 +19,7 @@ public class TurnOffLights1 : MonoBehaviour
     public AudioClip buttonPressSound; // Sound to play when button is pressed
     public TotalPoints points;
     public turnoffmainbreakercheck checklist;
+    public GameObject portal;
 
     public GameObject MainBreakerHint;
 
@@ -31,6 +32,7 @@ public class TurnOffLights1 : MonoBehaviour
         taskIncremented = false;
         doorClosed.SetActive(true);
         doorOpenned.SetActive(false);
+        portal.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,6 +62,7 @@ public class TurnOffLights1 : MonoBehaviour
                 checklist.SetUncheckIconVisible(false);
                 doorClosed.SetActive(false);
                 doorOpenned.SetActive(true);
+                portal.SetActive(true);
             }
 
             presser = other.gameObject;
