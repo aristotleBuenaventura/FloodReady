@@ -10,6 +10,7 @@ public class ShowBreakerCanvas : MonoBehaviour
     public iconforunplug unplug;
     public unplugcablescheck checklist;
     public AllowGrabTVPlugCube breaker;
+    public GameObject UnplugHint;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class ShowBreakerCanvas : MonoBehaviour
     {
         if (Fan && TV)
         {
+            Destroy(UnplugHint);
             BreakerCanvas.ShowTurnOffBreakerCanvas();
             unplug.SetCheckIconVisible(true);
             unplug.SetUncheckIconVisible(false);

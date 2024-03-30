@@ -20,6 +20,8 @@ public class TurnOffLights1 : MonoBehaviour
     public TotalPoints points;
     public turnoffmainbreakercheck checklist;
 
+    public GameObject MainBreakerHint;
+
     private bool soundPlayed = false; // Flag to check if sound has been played
 
     private void Start()
@@ -46,6 +48,7 @@ public class TurnOffLights1 : MonoBehaviour
             // Check if the lights are turned off
             if (LightsAreTurnedOff())
             {
+                Destroy(MainBreakerHint);
                 // Mark the task as done
                 exitthehouse.ShowExitHouseCanvas();
                 turnofflightspercentage.IncrementTaskPercentage(20);
