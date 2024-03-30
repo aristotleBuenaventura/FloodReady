@@ -43,7 +43,7 @@ public class TimerScene2 : MonoBehaviour
                 {
                     // Set the desired position from the Inspector
                     timesup.FailedCanvas();
-                    timesupElapsetime.StopTime();
+                    timesupElapsetime.StopTime(false);
                   
                     // Change the text directly
                     if (welldonetext != null)

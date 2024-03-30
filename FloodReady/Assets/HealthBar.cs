@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     public GameObject cubeTeleport;
     public EscapeCanvasController DeathCanvas;
     public TextMeshProUGUI welldonetext;
-    public Timer_welldone timesupElapsetime;
+    //public Timer_welldone timesupElapsetime;
  
 
     private UnderWaterEffects underwaterEffects;
@@ -82,7 +82,7 @@ public class HealthBar : MonoBehaviour
         if (currentLife <= 0)
         {
             cubeTeleport.SetActive(true);
-            timesupElapsetime.StopTime();
+            //timesupElapsetime.StopTime();
            
             if (welldonetext != null)
             {

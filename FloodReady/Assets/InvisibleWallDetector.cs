@@ -22,7 +22,7 @@ public class InvisibleWallDetector : MonoBehaviour
             congratulationcanvas.ShowSuccessCanvas();
             leavethehousecheck.SetCheckIconVisible(true);
             leavethehousecheck.SetUncheckIconVisible(false);
-            welldomeStopTime.StopTime();
+            welldomeStopTime.StopTime(false);
             screenTimer.StopTimer();
             //wristwatchStopTime.StopTimer();
 

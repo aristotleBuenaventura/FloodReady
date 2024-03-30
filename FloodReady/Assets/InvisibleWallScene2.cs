@@ -18,7 +18,7 @@ public class InvisibleWallScene2 : MonoBehaviour
         
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
-            stoptime.StopTime();
+            stoptime.StopTime(false);
             screenTimer.StopTimer();
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);

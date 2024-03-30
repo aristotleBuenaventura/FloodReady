@@ -16,7 +16,7 @@ public class teleportTimer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            stoptime.StopTime();
+            stoptime.StopTime(true);
             screenTimer.StopTimer();
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);

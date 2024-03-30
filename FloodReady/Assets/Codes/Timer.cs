@@ -47,7 +47,7 @@ public class Timer : MonoBehaviour
                 {
                     // Set the desired position from the Inspector
                     timesup.ShowFailedCanvas();
-                    timesupElapsetime.StopTime();
+                    timesupElapsetime.StopTime(false);
 
                     cubeTeleport.SetActive(true);
                     // Change the text directly
