@@ -34,13 +34,14 @@ public class HandCollision : MonoBehaviour
 
             if (isButtonDown)
             {
-                Destroy(TVHint);
+               
                 TVScreen.SetActive(false);
                 Debug.Log("Button Pressed: TV Turned Off");
                 CallSwitchCanvasAfterDelayTV();
             }
             else
             {
+
                 TVScreen.SetActive(true);
                 CallSwitchCanvasAfterDelayTV();
                 Debug.Log("Button Pressed: TV Turned On");
@@ -69,6 +70,7 @@ public class HandCollision : MonoBehaviour
         // Check if the task has already been completed
         if (!taskCompleted)
         {
+            Destroy(TVHint);
             StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             Debug.Log("Go bag working");
             remoteTask.IncrementTaskPercentage(10);
