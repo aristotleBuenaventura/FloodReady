@@ -46,8 +46,8 @@ public class DisappearOnGrab : MonoBehaviour
                     goBagIcon.SetUncheckIconVisible(false);
                     task.SetCheckIconVisible(true);
                     task.SetUncheckIconVisible(false);
-                    retrieveGoBagPercentage.IncrementTaskPercentage(20);
-                    points.IncrementPoints(2000);
+                    retrieveGoBagPercentage.IncrementTaskPercentage(10);
+                    points.IncrementPoints(1000);
                 }
             }
         }

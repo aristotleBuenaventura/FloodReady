@@ -6,11 +6,14 @@ public class Flashlight_Hand : MonoBehaviour
 {
     public GameObject flashlight; // Reference to the GameObject to toggle
     public EscapeCanvasController EscapeCanvasController;
-
+    public TaskPercentage task;
+    public TotalPoints points;
     private bool isVisible = false;
     private bool hasShownCanvas = false; // Flag to track if canvas has been shown
     public bool isAllowed = false;
     public GameObject FlashLightCollider;
+    public TurnOnFlashlightIcon checklist;
+    public TurnOnFlashlightEvalRoom check;
 
     // Update is called once per frame
     void Start()
@@ -25,6 +28,12 @@ public class Flashlight_Hand : MonoBehaviour
         {
             isVisible = !isVisible;
             flashlight.SetActive(isVisible); // Set the active state of the flashlight
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
+            task.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             FlashLightCollider.SetActive(false);
             if (isVisible && !hasShownCanvas)
             {
