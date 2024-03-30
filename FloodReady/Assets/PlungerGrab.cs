@@ -12,6 +12,7 @@ public class PlungerGrab : MonoBehaviour
     public TotalPoints points;
     public TaskPercentage percent;
     public RecoveryCanvasController canvas;
+    public GameObject DestroyHint;
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class PlungerGrab : MonoBehaviour
             // Check if the percentage has already been incremented
             if (!hasIncrementedPercentage)
             {
+                Destroy(DestroyHint);
                 task.SetCheckIconVisible(true);
                 task.SetUncheckIconVisible(false);
                 checklist.SetCheckIconVisible(true);

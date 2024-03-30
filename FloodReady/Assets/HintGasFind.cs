@@ -11,6 +11,7 @@ public class HintGasFind : MonoBehaviour
     public gasleakIcon check;
     public TaskPercentage task;
     public LookForGasLeakIcon checklist;
+    public GameObject GasHissingHint;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class HintGasFind : MonoBehaviour
 
             // Set the flag to true to indicate that the canvas has been shown
             hasShownCanvas = true;
+            Destroy(GasHissingHint);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.SetCheckIconVisible(true);
