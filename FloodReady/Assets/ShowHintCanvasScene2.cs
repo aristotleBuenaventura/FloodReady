@@ -10,6 +10,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
     public GameObject BreakWindow;
     public GameObject LocateEmergencyDevice;
     public GameObject Dial161;
+    public GameObject TurnOnFL;
 
     void Start()
     {
@@ -35,6 +36,10 @@ public class ShowHintCanvasScene2 : MonoBehaviour
 
         if (Dial161.activeSelf)
             Dial161.SetActive(false);
+
+
+        if (TurnOnFL.activeSelf)
+            TurnOnFL.SetActive(false);
     }
 
     public void ShowGoBagCanvas()
@@ -45,6 +50,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(false);
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
     }
 
     public void ShowMainBreakerCanvas()
@@ -55,6 +61,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(false);
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
     }
 
     public void ShowPryBarCanvas()
@@ -65,6 +72,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(false);
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
     }
 
     public void ShowBreakWindowCanvas()
@@ -75,6 +83,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(true);
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
     }
 
     public void ShowLocateEmergencyDeviceCanvas()
@@ -85,6 +94,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(false);
         LocateEmergencyDevice.SetActive(true);
         Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
     }
 
     public void ShowDial161Canvas()
@@ -95,5 +105,18 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         BreakWindow.SetActive(false);
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(true);
+        TurnOnFL.SetActive(false);
+    }
+
+
+    public void TurnOnFLCanvas()
+    {
+        GoBag.SetActive(false);
+        MainBreaker.SetActive(false);
+        PryBar.SetActive(false);
+        BreakWindow.SetActive(false);
+        LocateEmergencyDevice.SetActive(false);
+        Dial161.SetActive(false);
+        TurnOnFL.SetActive(true);
     }
 }
