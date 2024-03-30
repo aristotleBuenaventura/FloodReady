@@ -9,7 +9,6 @@ public class OpenHintDialS2 : MonoBehaviour
     private bool canActivate = true; // Flag to track if canvas activation is allowed
     public TotalPoints points;
     private bool canDeduct = false;
-    public EscapeCanvasController EscapeCanvasController;
 
     void Start()
     {
@@ -23,7 +22,6 @@ public class OpenHintDialS2 : MonoBehaviour
 
       
             hintCanvas.ShowDial161Canvas();
-            EscapeCanvasController.HideAllCanvas();
             if (!canDeduct)
             {
                 points.DecrementPoints(200);

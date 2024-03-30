@@ -9,7 +9,6 @@ public class OpenHintAssessHouse : MonoBehaviour
     private bool canActivate = true; // Flag to track if canvas activation is allowed
     public TotalPoints points;
     private bool canDeduct = false;
-    public RecoveryCanvasController RecoveryCanvasController;
 
     void Start()
     {
@@ -22,7 +21,6 @@ public class OpenHintAssessHouse : MonoBehaviour
         {
 
             hintCanvas.ShowAssessHouseCanvas();
-            RecoveryCanvasController.HideAllCanvas();
             if (!canDeduct)
             {
                 points.DecrementPoints(50);
