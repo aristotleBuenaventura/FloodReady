@@ -9,7 +9,7 @@ public class OpenHintPink : MonoBehaviour
     private bool canActivate = true; // Flag to track if canvas activation is allowed
     public TotalPoints points;
     private bool canDeduct = false;
-    public RecoveryCanvasController RecoveryCanvasController;
+
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class OpenHintPink : MonoBehaviour
         {
 
             hintCanvas.ShowCloth2Canvas();
-            RecoveryCanvasController.HideAllCanvas();
+        
             if (!canDeduct)
             {
                 points.DecrementPoints(50);

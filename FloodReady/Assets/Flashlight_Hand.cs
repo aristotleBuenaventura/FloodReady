@@ -14,6 +14,7 @@ public class Flashlight_Hand : MonoBehaviour
     public GameObject FlashLightCollider;
     public TurnOnFlashlightIcon checklist;
     public TurnOnFlashlightEvalRoom check;
+    public GameObject DestoryHint;
 
     // Update is called once per frame
     void Start()
@@ -26,6 +27,7 @@ public class Flashlight_Hand : MonoBehaviour
         // Check for button press to toggle visibility
         if (OVRInput.GetDown(OVRInput.Button.Two) && isAllowed == true) // Change the button as per your requirement
         {
+            Destroy(DestoryHint);
             isVisible = !isVisible;
             flashlight.SetActive(isVisible); // Set the active state of the flashlight
             checklist.SetCheckIconVisible(true);
