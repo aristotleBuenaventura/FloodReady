@@ -8,6 +8,7 @@ public class UnderWaterEffects : MonoBehaviour
     public bool isUnderwater { get; private set; }
     public GameObject paglubog;
     public GameObject nakalubog;
+    public GameObject UnderWaterWarning;
 
     void Update()
     {
@@ -22,12 +23,14 @@ public class UnderWaterEffects : MonoBehaviour
                 RenderSettings.fog = isFogActive;
                 nakalubog.SetActive(true);
                 paglubog.SetActive(true);
+                UnderWaterWarning.SetActive(true);
                 isUnderwater = true;
             }
             else
             {
                 isFogActive = false;
                 RenderSettings.fog = isFogActive;
+                UnderWaterWarning.SetActive(false);
                 nakalubog.SetActive(false);
                 paglubog.SetActive(false);
                 isUnderwater = false;

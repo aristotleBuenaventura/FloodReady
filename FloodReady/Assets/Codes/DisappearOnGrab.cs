@@ -11,13 +11,13 @@ public class DisappearOnGrab : MonoBehaviour
     public float delayBeforeDisappear = 1.0f;
     public retrieveIcon goBagIcon; // Reference to the retrieveIcon script
     public TaskPercentage retrieveGoBagPercentage;
-    public Flashlight_Hand flashlight;
+    
     public RetrieveGoBagScene2Icon task;
     public TotalPoints points;
     public GameObject hintRetrieve;
 
     void Start(){
-        flashlight = flashlight.GetComponent<Flashlight_Hand>();
+        
     }
 
     void Update()
@@ -36,10 +36,7 @@ public class DisappearOnGrab : MonoBehaviour
                 StartCoroutine(DisappearWithDelay());
                 isGrabbed = true;
                 
-                if (flashlight != null)
-                {
-                    flashlight.isAllowed = true;
-                }
+                
 
                 // Assuming goBagIcon is not null, set the check and uncheck icons accordingly
                 if (goBagIcon != null)
