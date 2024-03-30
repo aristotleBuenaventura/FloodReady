@@ -9,7 +9,7 @@ public class OpenDoorOnTrigger : MonoBehaviour
     public GameObject targetObject; // The object to rotate
     public string handTag = "Hand"; // Tag for the hand objects
     public AudioClip doorOpeningSound; // Sound to play when door opens
-
+    public string handTag2 = "TurnOnButton";
     private bool isOpening = false; // Flag to check if door is opening
     private bool soundPlayed = false; // Flag to check if sound has been played
     private AudioSource audioSource; // Reference to AudioSource component
@@ -22,7 +22,7 @@ public class OpenDoorOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(handTag))
+        if (other.CompareTag(handTag) || other.CompareTag(handTag2))
         {
             Debug.Log("Player detected! Opening door...");
 
