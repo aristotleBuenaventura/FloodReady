@@ -9,6 +9,7 @@ public class ShowBreakerCanvas : MonoBehaviour
     public CanvasController BreakerCanvas;
     public iconforunplug unplug;
     public unplugcablescheck checklist;
+    public AllowGrabTVPlugCube breaker;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class ShowBreakerCanvas : MonoBehaviour
             unplug.SetUncheckIconVisible(false);
             checklist.SetCheckIconVisible(true);
             checklist.SetUncheckIconVisible(false);
+            breaker.EnableCollider();
 
         }
     }
