@@ -7,6 +7,8 @@ public class CheckPlayer : MonoBehaviour
     public CheckNeighborhoodIcon checklist;
     public RecoveryCanvasController UsePhoneCanvas;
     public GameObject goBag;
+    public GameObject DestroyHint;
+
 
 
 
@@ -18,6 +20,8 @@ public class CheckPlayer : MonoBehaviour
             if (objectsToDisable.activeSelf)
             {
                 // Disable the object
+
+                Destroy(DestroyHint);
                 objectsToDisable.SetActive(false);
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);

@@ -12,6 +12,7 @@ public class CanvasTrigger : MonoBehaviour
     public GameObject waterSpray;
     public TotalPoints points;
     public AssessHouseIcon checklist;
+    public GameObject DestroyHint;
 
 
     void Update()
@@ -45,6 +46,7 @@ public class CanvasTrigger : MonoBehaviour
         // If all GameObjects are disabled and canvas has not been shown yet, show the canvas
         if (allDisabled && !canvasShown)
         {
+            Destroy(DestroyHint);
             waterSpray.SetActive(true);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);

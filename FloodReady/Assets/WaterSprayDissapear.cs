@@ -18,6 +18,8 @@ public class WaterSprayDisappear : MonoBehaviour
     public TotalPoints points;
     public FindWaterNozzleICon checklist;
 
+    public GameObject DestroyHint;
+
 
     void Update()
     {
@@ -36,6 +38,7 @@ public class WaterSprayDisappear : MonoBehaviour
 
     IEnumerator DisappearWithDelay()
     {
+        Destroy(DestroyHint);
         yield return new WaitForSeconds(delayBeforeDisappear);
         waterspray.Show_WaterSpray();
         waterspray.isAllowed = true;

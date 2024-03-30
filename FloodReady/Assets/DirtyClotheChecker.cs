@@ -28,6 +28,14 @@ public class ClothesDetector : MonoBehaviour
     public GatherDirtyClothesIcon checklist;
     public GatherDirtyClothesIconEval check;
 
+
+    public GameObject redObjectHint;
+    public GameObject blueObjectHint;
+    public GameObject pinkObjectHint;
+    public GameObject whiteObjectHint;
+    public GameObject yellowObjectHint;
+  
+
     void Start()
     {
         // Populate the itemObjects dictionary with the GameObjects attached to this script
@@ -103,23 +111,23 @@ public class ClothesDetector : MonoBehaviour
                 switch (itemName)
                 {
                     case "ClothesRed":
-                       
+                        Destroy(redObjectHint);
                         red.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'red' object
                         break;
                     case "ClothesBlue":
-                       
+                        Destroy(blueObjectHint);
                         blue.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'blue' object
                         break;
                     case "ClothesPink":
-                     
+                        Destroy(pinkObjectHint);
                         pink.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'pink' object
                         break;
                     case "ClothesDirtyWhite":
-                     
+                        Destroy(whiteObjectHint);
                         white.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'white' object
                         break;
                     case "ClothesYellow":
-                      
+                        Destroy(yellowObjectHint);
                         yellow.SetCheckIconVisible(true); // Assuming the check icon is associated with the 'yellow' object
                         break;
                     default:

@@ -10,6 +10,8 @@ public class Calling_UI_S3 : MonoBehaviour
     public RecoveryCanvasController success;
     public GameObject portal;
     public DialScene3Icon checklist;
+    public GameObject DestroyHint;
+
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class Calling_UI_S3 : MonoBehaviour
 
     IEnumerator DelayedAction()
     {
+
+        Destroy(DestroyHint);
         yield return new WaitForSeconds(9f);
         reportIcon.SetCheckIconVisible(true);
         reportIcon.SetUncheckIconVisible(false);
