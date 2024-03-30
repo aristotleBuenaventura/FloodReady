@@ -6,7 +6,6 @@ public class OpenHintCanvasScene3 : MonoBehaviour
     private bool canTrigger = true; // Flag to control trigger activation
 
     public GameObject objectToMonitor1;
-    public GameObject objectToMonitor2;
     public GameObject objectToMonitor3;
     public GameObject objectToMonitor4;
     public GameObject objectToMonitor5;
@@ -22,7 +21,6 @@ public class OpenHintCanvasScene3 : MonoBehaviour
         {
 
             SetObjectActive(objectToMonitor1, true); // sinu-sure lang na i true lahat ng icons 
-            SetObjectActive(objectToMonitor2, true);
             SetObjectActive(objectToMonitor3, true);
             SetObjectActive(objectToMonitor4, true);
             SetObjectActive(objectToMonitor5, true);
