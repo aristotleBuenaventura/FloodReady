@@ -11,11 +11,11 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public TaskPercentage CloseBag;
     public iconforretrievegobag CloseBagCheck;
     public TotalPoints points;
-    public Flashlight_Hand flashlight;
     public retrievegobagcheck checklist;
     public AllowGrabFan fanplug;
     public AllowGrabTVPlugCube tvplugcube;
     public AllowGrabTVPLug tvplug;
+    public GameObject GoBagDestroy;
 
 
     // You can adjust this variable to control the delay before the object disappears
@@ -23,7 +23,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
 
     void Start()
     {
-        flashlight = flashlight.GetComponent<Flashlight_Hand>();
+
     }
 
     void Update()
@@ -37,10 +37,6 @@ public class Go_bag_closed_retrieve : MonoBehaviour
             {
                 StartCoroutine(DisappearWithDelay());
                 isGrabbed = true;
-                if (flashlight != null)
-                {
-                    flashlight.isAllowed = true;
-                }
             }
         }
     }
@@ -60,5 +56,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         fanplug.EnableCollider();
         tvplugcube.EnableCollider();
         tvplug.EnableCollider();
+
+        Destroy(GoBagDestroy);
     }
 }

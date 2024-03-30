@@ -16,6 +16,7 @@ public class HandCollision : MonoBehaviour
     public GameObject TVScreen;
 
     private AudioSource audioSource; // Reference to the AudioSource component
+    public GameObject TVHint;
 
     // Flag to check if the task has already been completed
     private bool taskCompleted = false;
@@ -33,6 +34,7 @@ public class HandCollision : MonoBehaviour
 
             if (isButtonDown)
             {
+                Destroy(TVHint);
                 TVScreen.SetActive(false);
                 Debug.Log("Button Pressed: TV Turned Off");
                 CallSwitchCanvasAfterDelayTV();
