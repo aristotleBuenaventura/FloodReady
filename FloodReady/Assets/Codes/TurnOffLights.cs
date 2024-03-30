@@ -16,13 +16,14 @@ public class TurnOffLights : MonoBehaviour
     private bool mainBreakerPercentageIncremented = false;
     public TurnOffMainBreakerScene2Icon task;
     public AudioClip buttonPressSound; // Sound to play when button is pressed
-
+    public Flashlight_Hand flashlight;
     private bool soundPlayed = false; // Flag to check if sound has been played
     public TotalPoints points;
     public GameObject hintMainbreaker;
 
     void Start()
     {
+        flashlight = flashlight.GetComponent<Flashlight_Hand>();
         sound = GetComponent<AudioSource>();
         isPressed = false;
     }
@@ -36,6 +37,10 @@ public class TurnOffLights : MonoBehaviour
             foreach (GameObject pointLight in pointLights)
             {
                 pointLight.SetActive(false);
+            }
+            if (flashlight != null)
+            {
+                flashlight.isAllowed = true;
             }
 
             // Check if the lights are turned off
