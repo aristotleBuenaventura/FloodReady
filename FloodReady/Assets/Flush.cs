@@ -12,7 +12,6 @@ public class Flush : MonoBehaviour
     public CleaningChecklistCanvas cleaningCanvas;
     public TotalPoints points;
     public PlungeToiletIcon checklist;
-    public GameObject DestroyHint;
 
     private bool hasExecuted = false; // Track if the code has already been executed
 
@@ -34,8 +33,7 @@ public class Flush : MonoBehaviour
             points.IncrementPoints(1000);
             canvasController.ShowgatherDirtyclothesCanvas();
             cleaningCanvas.ShowGatherClothesCanvas();
-            Destroy(DestroyHint);
-
+ 
             // Check if flushSound is assigned
             if (flushSound != null)
             {
