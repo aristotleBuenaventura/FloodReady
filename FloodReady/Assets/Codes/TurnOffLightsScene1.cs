@@ -62,7 +62,6 @@ public class TurnOffLights1 : MonoBehaviour
                 checklist.SetUncheckIconVisible(false);
                 doorClosed.SetActive(false);
                 doorOpenned.SetActive(true);
-                portal.SetActive(true);
             }
 
             presser = other.gameObject;

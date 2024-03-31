@@ -11,6 +11,7 @@ public class CanvasController : MonoBehaviour
     public GameObject UnplugCableCanvas;
     public GameObject TurnOffBreakerCanvas;
     public GameObject ExitTheHouseCanvas;
+    public GameObject CirclePoint;
     public GameObject InvisibleWallStair1;
     public GameObject InvisibleWallStair2;
     public GameObject InvisibleWallKitchen;
@@ -47,6 +48,7 @@ public class CanvasController : MonoBehaviour
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
     }
 
     private void ShowTVCanvas()
@@ -61,6 +63,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -79,6 +82,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -94,6 +98,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -108,6 +113,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -122,6 +128,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -136,6 +143,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(true);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -150,6 +158,22 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(true);
         FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
+        messageCanvas.OpenCanvasAgain();
+    }
+
+    public void ShowCirclePoint()
+    {
+        welcomeCanvas.SetActive(false);
+        tvCanvas.SetActive(false);
+        GoBagCanvas.SetActive(false);
+        RetrieveGoBagCanvas.SetActive(false);
+        UnplugCableCanvas.SetActive(false);
+        TurnOffBreakerCanvas.SetActive(false);
+        ExitTheHouseCanvas.SetActive(false);
+        SuccessCanvas.SetActive(false);
+        FailedCanvas.SetActive(false);
+        CirclePoint.SetActive(true);
         messageCanvas.OpenCanvasAgain();
     }
 
@@ -164,6 +188,7 @@ public class CanvasController : MonoBehaviour
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
         FailedCanvas.SetActive(true);
+        CirclePoint.SetActive(false);
         messageCanvas.OpenCanvasAgain();
     }
     public void HideAllCanvas()
@@ -176,6 +201,7 @@ public class CanvasController : MonoBehaviour
         TurnOffBreakerCanvas.SetActive(false);
         ExitTheHouseCanvas.SetActive(false);
         SuccessCanvas.SetActive(false);
+        CirclePoint.SetActive(false);
         FailedCanvas.SetActive(false);
         
     }

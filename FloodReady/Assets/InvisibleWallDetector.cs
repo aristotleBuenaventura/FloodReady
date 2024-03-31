@@ -7,7 +7,6 @@ public class InvisibleWallDetector : MonoBehaviour
     public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
     public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
     public CanvasController congratulationcanvas;
-    public iconforleavethehouse leavethehousecheck;
     public Timer_welldone welldomeStopTime;
     public Timer wristwatchStopTime;
     public Timer screenTimer;
@@ -20,8 +19,6 @@ public class InvisibleWallDetector : MonoBehaviour
         {
             Debug.Log("Player detected! Teleporting...");
             congratulationcanvas.ShowSuccessCanvas();
-            leavethehousecheck.SetCheckIconVisible(true);
-            leavethehousecheck.SetUncheckIconVisible(false);
             welldomeStopTime.StopTime(false);
             screenTimer.StopTimer();
             //wristwatchStopTime.StopTimer();
