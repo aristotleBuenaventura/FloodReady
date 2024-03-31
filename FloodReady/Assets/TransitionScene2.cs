@@ -18,7 +18,7 @@ public class TransitionScene2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Hand") || other.CompareTag("TurnOnButton"))
         {
             StartCoroutine(LoadSceneWithAudio("Recovery_Resilience"));
         }
