@@ -26,7 +26,7 @@ public class RetryScene3 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Hand") || other.CompareTag("TurnOnButton"))
         {
             int numAttempts = attempts.GetAttemptsToPass();
             PlayerPrefs.SetInt("attemptsScene3", numAttempts);
