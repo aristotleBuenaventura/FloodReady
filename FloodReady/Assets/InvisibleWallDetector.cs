@@ -10,6 +10,8 @@ public class InvisibleWallDetector : MonoBehaviour
     public Timer_welldone welldomeStopTime;
     public Timer wristwatchStopTime;
     public Timer screenTimer;
+    public NumberOfAttemptsScene1 attempts;
+    public attemptsLeft finalAttempts;
 
 
 
@@ -21,6 +23,8 @@ public class InvisibleWallDetector : MonoBehaviour
             congratulationcanvas.ShowSuccessCanvas();
             welldomeStopTime.StopTime(false);
             screenTimer.StopTimer();
+            attempts.SetNumberOfAttempts();
+            finalAttempts.updateAttempts();
             //wristwatchStopTime.StopTimer();
 
             // Teleport the player to the desired position and rotation
