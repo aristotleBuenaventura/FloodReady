@@ -20,7 +20,7 @@ public class OpenHintCloseValve : MonoBehaviour
         if (other.CompareTag("Hand") && canActivate)
         {
 
-            hintCanvas.ShowGasValveCanvas();
+    
             if (!canDeduct)
             {
                 points.DecrementPoints(50);

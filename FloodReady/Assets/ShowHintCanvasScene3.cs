@@ -6,7 +6,6 @@ public class ShowHintCanvasScene3 : MonoBehaviour
 {
     // to call the gameobjects that we will create functions 
     public GameObject GasHint;
-    public GameObject GasValve;
     public GameObject AssessHouse;
     public GameObject FindWaterNozzle;
     public GameObject FindPlunger;
@@ -15,7 +14,6 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public GameObject Cloth3;
     public GameObject Cloth4;
     public GameObject Cloth5;
-    public GameObject PlungerToilet;
     public GameObject CheckNeighborhood;
     public GameObject Dial161;
 
@@ -29,9 +27,6 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     {
         if (GasHint.activeSelf)
             GasHint.SetActive(false);
-
-        if (GasValve.activeSelf)
-            GasValve.SetActive(false);  
 
         if (AssessHouse.activeSelf)
             AssessHouse.SetActive(false);
@@ -57,9 +52,6 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         if (Cloth5.activeSelf)
             Cloth5.SetActive(false);
 
-        if (PlungerToilet.activeSelf)
-            PlungerToilet.SetActive(false);
-
         if (CheckNeighborhood.activeSelf)
             CheckNeighborhood.SetActive(false);
 
@@ -72,7 +64,6 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowGasHintCanvas()
     {
         GasHint.SetActive(true);
-        GasValve.SetActive(false);
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -81,32 +72,15 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
 
-    public void ShowGasValveCanvas()
-    {
-        GasHint.SetActive(false);
-        GasValve.SetActive(true);
-        AssessHouse.SetActive(false);
-        FindWaterNozzle.SetActive(false);
-        FindPlunger.SetActive(false);
-        Cloth1.SetActive(false);
-        Cloth2.SetActive(false);
-        Cloth3.SetActive(false);
-        Cloth4.SetActive(false);
-        Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
-        CheckNeighborhood.SetActive(false);
-        Dial161.SetActive(false);
-    }
 
     public void ShowAssessHouseCanvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(true);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -115,7 +89,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -123,7 +97,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowFindWaterNozzleCanvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(true);
         FindPlunger.SetActive(false);
@@ -132,7 +106,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -140,7 +114,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowFindPlungerCanvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(true);
@@ -149,7 +123,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -157,7 +131,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowCloth1Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -166,7 +140,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -174,7 +148,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowCloth2Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -183,7 +157,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -191,7 +165,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowCloth3Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -200,7 +174,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(true);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -208,7 +182,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowCloth4Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -217,7 +191,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(true);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
@@ -225,7 +199,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowCloth5Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -234,32 +208,16 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(true);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(false);
     }
 
-    public void ShowPlungerToiletCanvas()
-    {
-        GasHint.SetActive(false);
-        GasValve.SetActive(false);
-        AssessHouse.SetActive(false);
-        FindWaterNozzle.SetActive(false);
-        FindPlunger.SetActive(false);
-        Cloth1.SetActive(false);
-        Cloth2.SetActive(false);
-        Cloth3.SetActive(false);
-        Cloth4.SetActive(false);
-        Cloth5.SetActive(false);
-        PlungerToilet.SetActive(true);
-        CheckNeighborhood.SetActive(false);
-        Dial161.SetActive(false);
-    }
 
     public void ShowCheckNeighborhoodCanvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -268,7 +226,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(true);
         Dial161.SetActive(false);
     }
@@ -276,7 +234,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
     public void ShowDial161Canvas()
     {
         GasHint.SetActive(false);
-        GasValve.SetActive(false);
+
         AssessHouse.SetActive(false);
         FindWaterNozzle.SetActive(false);
         FindPlunger.SetActive(false);
@@ -285,7 +243,7 @@ public class ShowHintCanvasScene3 : MonoBehaviour
         Cloth3.SetActive(false);
         Cloth4.SetActive(false);
         Cloth5.SetActive(false);
-        PlungerToilet.SetActive(false);
+ 
         CheckNeighborhood.SetActive(false);
         Dial161.SetActive(true);
     }
