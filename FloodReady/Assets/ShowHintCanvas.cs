@@ -20,6 +20,7 @@ public class ShowHintCanvas : MonoBehaviour
     public GameObject RetrieveHint;
     public GameObject UnplugHint;
     public GameObject MainBreakerHint;
+    public GameObject LeaveHouseHint;
 
 
     void Start()
@@ -66,6 +67,8 @@ public class ShowHintCanvas : MonoBehaviour
 
         if (MainBreakerHint.activeSelf)
             MainBreakerHint.SetActive(false);
+        if (LeaveHouseHint.activeSelf)
+            LeaveHouseHint.SetActive(false);
     }
 
     public void ShowCannedCanvas()
@@ -82,6 +85,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
 
 
     }
@@ -100,6 +104,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShoWaterCanvas()
@@ -116,6 +121,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
 
@@ -133,6 +139,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowClothesCanvas()
@@ -149,6 +156,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowFirstAidCanvas()
@@ -165,6 +173,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowFlashlightCanvas()
@@ -181,6 +190,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowPhoneCanvas()
@@ -197,6 +207,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
 
@@ -214,6 +225,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
 
     }
 
@@ -232,6 +244,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(true);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowUnplugCanvas()
@@ -248,6 +261,7 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(true);
         MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
     }
 
     public void ShowMainBreakerCanvas()
@@ -264,5 +278,24 @@ public class ShowHintCanvas : MonoBehaviour
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
         MainBreakerHint.SetActive(true);
+        LeaveHouseHint.SetActive(false);
+    }
+
+
+    public void ShowLeaveHouseCanvas()
+    {
+        cannedgoodHint.SetActive(false);
+        energybarHint.SetActive(false);
+        waterHint.SetActive(false);
+        moneyHint.SetActive(false);
+        clothesHints.SetActive(false);
+        firstaidHint.SetActive(false);
+        flashlightHint.SetActive(false);
+        phoneHint.SetActive(false);
+        TVHint.SetActive(false);
+        RetrieveHint.SetActive(false);
+        UnplugHint.SetActive(false);
+        MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(true);
     }
 }

@@ -10,6 +10,8 @@ public class OpenHintMainS1 : MonoBehaviour
     public GameObject objectToMonitor3;
     public GameObject objectToMonitor4;
     public GameObject objectToMonitor5;
+    public GameObject objectToMonitor6;
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +25,8 @@ public class OpenHintMainS1 : MonoBehaviour
             SetObjectActive(objectToMonitor3, true);
             SetObjectActive(objectToMonitor4, true);
             SetObjectActive(objectToMonitor5, true);
- 
+            SetObjectActive(objectToMonitor6, true);
+
         }
     }
 
