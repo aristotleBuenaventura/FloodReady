@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Make sure to add this for UI elements
+using UnityEditor;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class SceneChanger : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        EditorApplication.isPlaying = false;
     }
 
     IEnumerator LoadScene(string sceneName)

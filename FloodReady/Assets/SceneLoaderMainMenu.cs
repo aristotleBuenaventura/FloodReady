@@ -86,6 +86,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        EditorApplication.isPlaying = false;
     }
 
     IEnumerator LoadScene(string sceneName)
