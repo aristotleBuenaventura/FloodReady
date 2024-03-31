@@ -9,6 +9,9 @@ public class InvisibleWallScene3 : MonoBehaviour
     public RecoveryCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
     public Timer screenTimer;
+    public NumberOfAttemptsScene3 attempts;
+    public attemptsLeftScene3 finalAttempts;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +20,8 @@ public class InvisibleWallScene3 : MonoBehaviour
             TeleportPlayer(other.gameObject);
             Debug.Log("Player detected! Teleporting...");
             screenTimer.StopTimer();
+            attempts.SetNumberOfAttempts();
+            finalAttempts.updateAttempts();
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
