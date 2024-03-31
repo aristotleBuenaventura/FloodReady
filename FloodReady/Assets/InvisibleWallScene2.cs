@@ -9,6 +9,8 @@ public class InvisibleWallScene2 : MonoBehaviour
     public EscapeCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
     public Timer screenTimer;
+    public NumberOfAttemptsScene2 attempts;
+    public attemptsLeftScene2 finalAttempts;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,8 @@ public class InvisibleWallScene2 : MonoBehaviour
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
             screenTimer.StopTimer();
+            attempts.SetNumberOfAttempts();
+            finalAttempts.updateAttempts();
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
             
