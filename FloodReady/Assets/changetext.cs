@@ -15,7 +15,7 @@ public class ChangeText : MonoBehaviour
     public void ChangeToTimeRunOut()
     {
         // Change the text
-        textMeshPro.text = "TIME RUN OUT!";
+        textMeshPro.text = "TIME RAN OUT!";
 
     } 
 
