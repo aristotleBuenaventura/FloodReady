@@ -30,7 +30,7 @@ public class TurnOffLights : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed)
+        if (!isPressed && (other.CompareTag("Hand") || other.CompareTag("TurnOnButton")))
         {
             // Find all GameObjects with the name "pointlight" and turn them off
             GameObject[] pointLights = GameObject.FindGameObjectsWithTag("pointlight");
