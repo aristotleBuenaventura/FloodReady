@@ -37,6 +37,8 @@ public class InventoryManager : MonoBehaviour
     public TotalPoints points;
     public GoBagItemsCheck checklist;
 
+    // disable go bag
+    public GameObject disabledGobag;
 
     // for wrist canvas
 
@@ -62,6 +64,7 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         GoBagClosed.SetActive(false);
+        disabledGobag.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)

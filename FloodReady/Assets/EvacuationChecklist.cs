@@ -6,7 +6,7 @@ public class EvacuationChecklist : MonoBehaviour
 {
     public GameObject HowToPrepareGoBag;
     public GameObject Scene1Checklist;
-
+    public GameObject GobagTurnOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class EvacuationChecklist : MonoBehaviour
 
     public void HowToPrepareGoBagCanvas()
     {
+        GobagTurnOn.SetActive(true);
         Scene1Checklist.SetActive(false);
         HowToPrepareGoBag.SetActive(true);
     }
