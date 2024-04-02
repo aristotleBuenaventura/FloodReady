@@ -15,6 +15,7 @@ public class Flashlight_Hand : MonoBehaviour
     public TurnOnFlashlightIcon checklist;
     public TurnOnFlashlightEvalRoom check;
     public GameObject DestoryHint;
+    private bool isAdded = false;
 
     // Update is called once per frame
     void Start()
@@ -34,8 +35,12 @@ public class Flashlight_Hand : MonoBehaviour
             checklist.SetUncheckIconVisible(false);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
-            task.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            if (isAdded == false)
+            {
+                task.IncrementTaskPercentage(10);
+                points.IncrementPoints(1000);
+            }
+            isAdded = true;
             FlashLightCollider.SetActive(false);
             if (isVisible && !hasShownCanvas)
             {
