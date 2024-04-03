@@ -12,12 +12,14 @@ public class LeaveHouseImmediately : MonoBehaviour
     public leavethehouseicon checklist;
     public CanvasController canvas;
     public GameObject portal;
+    public GameObject LeaveTheHouseHint;
 
     private void OnTriggerEnter(Collider other)
     {
         // Check if the trigger collider is with an object tagged as "Player" and the interaction hasn't occurred yet
         if (!hasInteracted && other.CompareTag("Player"))
         {
+            
             points.IncrementPoints(1000);
             leave.IncrementTaskPercentage(10);
             leavethehousecheck.SetCheckIconVisible(true);
@@ -26,6 +28,10 @@ public class LeaveHouseImmediately : MonoBehaviour
             checklist.SetUncheckIconVisible(false);
             canvas.ShowCirclePoint();
             portal.SetActive(true);
+            if(LeaveTheHouseHint != null)
+            {
+                Destroy(LeaveTheHouseHint);
+            }
             hasInteracted = true;
         }
     }

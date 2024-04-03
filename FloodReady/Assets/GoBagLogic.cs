@@ -50,6 +50,7 @@ public class GoBagLogic : MonoBehaviour
     public GameObject HintEnergyBar;
     bool[] collectedItems = new bool[8]; // Assuming there are 8 items
     private HashSet<string> collectedItemsAll = new HashSet<string>();
+    public iconforgatherdessentialgoods check;
 
     private void Start()
     {
@@ -218,6 +219,8 @@ public class GoBagLogic : MonoBehaviour
         GoBagCompleted.ShowRetrieveGoBagCanvas();
         checklist.SetCheckIconVisible(true);
         checklist.SetUncheckIconVisible(false);
+        check.SetCheckIconVisible(true);
+        check.SetUncheckIconVisible(false);
         Destroy(GoBag);
         Destroy(Canned_good);
         Destroy(Energy_bar);
