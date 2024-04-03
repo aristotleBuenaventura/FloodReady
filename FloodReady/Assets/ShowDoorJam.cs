@@ -3,7 +3,8 @@ using UnityEngine;
 public class ShowDoorJam : MonoBehaviour
 {
     public EscapeCanvasController escapeCanvasController;
-
+    public TaskPercentage leavethehouse;
+    public TotalPoints points;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,8 @@ public class ShowDoorJam : MonoBehaviour
 
             // Call the ShowDoorJamCanvas method in EscapeCanvasController with the parameter true
             escapeCanvasController.ShowDoorJamCanvas(true);
-
+            leavethehouse.IncrementTaskPercentage(10);
+            points.IncrementPoints(1000);
             // Optionally, disable the collider to prevent repeated triggers
             // GetComponent<Collider>().enabled = false;
         }
