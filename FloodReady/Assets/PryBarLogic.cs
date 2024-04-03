@@ -17,12 +17,7 @@ public class PryBarLogic : MonoBehaviour
     public LocateTheSurvivalToolScene2Icon task;
     public TotalPoints points;
     public GameObject hintPrybar;
-    public GameObject prybar;
     
-    void Start()
-    {
-        prybar.SetActive(false);
-    }
 
     public void Update()
     {
@@ -61,9 +56,7 @@ public class PryBarLogic : MonoBehaviour
         }
 
         // Mark the "Retrieve a Survival Tool" task as done
-        Destroy(hintPrybar);
-        survivalToolIcon.SetCheckIconVisible(true);
-        survivalToolIcon.SetUncheckIconVisible(false);
+        
 
         // Check if the percentage has already been incremented
         if (!hasIncrementedPercentage)
@@ -73,8 +66,13 @@ public class PryBarLogic : MonoBehaviour
             points.IncrementPoints(1000);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
+            Destroy(hintPrybar);
+            survivalToolIcon.SetCheckIconVisible(true);
+            survivalToolIcon.SetUncheckIconVisible(false);
             hasIncrementedPercentage = true;
         }
     }
+
+
 }
 

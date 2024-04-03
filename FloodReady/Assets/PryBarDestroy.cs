@@ -7,19 +7,14 @@ public class PryBarDestroy : MonoBehaviour
     public OVRGrabber leftGrabber; // Assign the left OVRGrabber component in the Unity Editor
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     private bool isGrabbed = false;
-    public WaterSpraySpawn waterspray;
-    public RecoveryCanvasController canvasController;
-    public TaskPercentage task;
-    public CleaningCollider colliderWall;
-    public CleaningChecklistCanvas canvas;
-    // You can adjust this variable to control the delay before the object disappears
-    public float delayBeforeDisappear = 0.5f;
-    public findthewaternozzleIcon check;
-    public TotalPoints points;
-    public FindWaterNozzleICon checklist;
+    public GameObject prybarOnHand;
+    public GameObject prybarOnTable;
 
-    public GameObject DestroyHint;
-
+    void Start()
+    {
+        prybarOnTable.SetActive(true);
+        prybarOnHand.SetActive(false);
+    }
 
     void Update()
     {
@@ -38,22 +33,8 @@ public class PryBarDestroy : MonoBehaviour
 
     IEnumerator DisappearWithDelay()
     {
-        Destroy(DestroyHint);
-        yield return new WaitForSeconds(delayBeforeDisappear);
-        waterspray.Show_WaterSpray();
-        waterspray.isAllowed = true;
-        check.SetCheckIconVisible(true);
-        check.SetUncheckIconVisible(false);
-        checklist.SetCheckIconVisible(true);
-        checklist.SetUncheckIconVisible(false);
-        canvasController.ShowcleansecondhallwayCanvas();
-        task.IncrementTaskPercentage(10);
-        points.IncrementPoints(1000);
-        colliderWall.SecondFloorColliders();
-        canvas.ShowHallwayCanvas();
-
-        // Deactivate the GameObject instead of destroying it
-        gameObject.SetActive(false);
-
+        yield return new WaitForSeconds(0.5f);
+        prybarOnHand.SetActive(true);
+        prybarOnTable.SetActive(false);
     }
 }
