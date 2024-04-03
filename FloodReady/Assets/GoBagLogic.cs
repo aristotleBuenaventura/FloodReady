@@ -73,71 +73,32 @@ public class GoBagLogic : MonoBehaviour
 
         if (allItemsCollected)
         {
-            ShowGoBagCompletedCanvasWithDelay();
+            StartCoroutine(DisappearWithDelay());
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator DisappearWithDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        ShowGoBagCompletedCanvasWithDelay();
+
+    }
+
+    void OnTriggerExit(Collider other)
     {
         string collidedObjectName = other.gameObject.name;
 
         if (!collectedItemsAll.Contains(collidedObjectName))
         { 
-            if(collidedObjectName == "Canned good")
-            {
-                cannedgood.SetCheckIconVisible(false);
-                cannedgood.SetUncheckIconVisible(true);
-                wristcannedgood.SetCheckIconVisible(false);
-                wristcannedgood.SetUncheckIconVisible(true);
-            } else if(collidedObjectName == "Energy bar")
-            {
-                energybar.SetCheckIconVisible(false);
-                energybar.SetUncheckIconVisible(true);
-                wristenergybar.SetCheckIconVisible(false);
-                wristenergybar.SetUncheckIconVisible(true);
-            } else if (collidedObjectName == "Money")
-            {
-                money.SetCheckIconVisible(false);
-                money.SetUncheckIconVisible(true);
-                wristmoney.SetCheckIconVisible(false);
-                wristmoney.SetUncheckIconVisible(true);
-            } else if (collidedObjectName == "Bottled water")
-            {
-                bottledwater.SetCheckIconVisible(false);
-                bottledwater.SetUncheckIconVisible(true);
-                wristbottledwater.SetCheckIconVisible(false);
-                wristbottledwater.SetUncheckIconVisible(true);
-            } else if (collidedObjectName == "Clothes")
-            {
-                clothes.SetCheckIconVisible(false);
-                clothes.SetUncheckIconVisible(true);
-                wristclothes.SetCheckIconVisible(false);
-                wristclothes.SetUncheckIconVisible(true);
-            } else if(collidedObjectName == "Flashlight")
-            {
-                flashlight.SetCheckIconVisible(false);
-                flashlight.SetUncheckIconVisible(true);
-                wristflashlight.SetCheckIconVisible(false);
-                wristflashlight.SetUncheckIconVisible(true);
-            } else if (collidedObjectName == "Mobile Phone")
-            {
-                mobilephone.SetCheckIconVisible(false);
-                mobilephone.SetUncheckIconVisible(true);
-                wristmobilephone.SetCheckIconVisible(false);
-                wristmobilephone.SetUncheckIconVisible(true);
-            } else if (collidedObjectName == "First aid kit")
-            {
-                firstaidkit.SetCheckIconVisible(false);
-                firstaidkit.SetUncheckIconVisible(true);
-                wristfirstaidkit.SetCheckIconVisible(false);
-                wristfirstaidkit.SetUncheckIconVisible(true);
-            } 
-
             switch (collidedObjectName)
             {
             case "Canned good":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                cannedgood.SetCheckIconVisible(true);
+                cannedgood.SetUncheckIconVisible(false);
+                wristcannedgood.SetCheckIconVisible(true);
+                wristcannedgood.SetUncheckIconVisible(false);
                 if (HintCanned_good != null)
                 {
                     Destroy(HintCanned_good);
@@ -147,6 +108,10 @@ public class GoBagLogic : MonoBehaviour
             case "Energy bar":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                energybar.SetCheckIconVisible(true);
+                energybar.SetUncheckIconVisible(false);
+                wristenergybar.SetCheckIconVisible(true);
+                wristenergybar.SetUncheckIconVisible(false);
                 if (HintEnergy_bar != null)
                 {
                     Destroy(HintEnergy_bar);
@@ -156,6 +121,10 @@ public class GoBagLogic : MonoBehaviour
             case "Money":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                money.SetCheckIconVisible(true);
+                money.SetUncheckIconVisible(false);
+                wristmoney.SetCheckIconVisible(true);
+                wristmoney.SetUncheckIconVisible(false);
                 if (HintMoney != null)
                 {
                     Destroy(HintMoney);
@@ -165,6 +134,10 @@ public class GoBagLogic : MonoBehaviour
             case "Bottled water":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                bottledwater.SetCheckIconVisible(true);
+                bottledwater.SetUncheckIconVisible(false);
+                wristbottledwater.SetCheckIconVisible(true);
+                wristbottledwater.SetUncheckIconVisible(false);
                 if (HintBottled_water != null)
                 {
                     Destroy(HintBottled_water);
@@ -174,6 +147,10 @@ public class GoBagLogic : MonoBehaviour
             case "Clothes":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                clothes.SetCheckIconVisible(true);
+                clothes.SetUncheckIconVisible(false);
+                wristclothes.SetCheckIconVisible(true);
+                wristclothes.SetUncheckIconVisible(false);
                 if (HintClothes != null)
                 {
                     Destroy(HintClothes);
@@ -183,6 +160,10 @@ public class GoBagLogic : MonoBehaviour
             case "Flashlight":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                flashlight.SetCheckIconVisible(true);
+                flashlight.SetUncheckIconVisible(false);
+                wristflashlight.SetCheckIconVisible(true);
+                wristflashlight.SetUncheckIconVisible(false);
                 if (HintFlashlight != null)
                 {
                     Destroy(HintFlashlight);
@@ -192,6 +173,10 @@ public class GoBagLogic : MonoBehaviour
             case "Mobile Phone":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                mobilephone.SetCheckIconVisible(true);
+                mobilephone.SetUncheckIconVisible(false);
+                wristmobilephone.SetCheckIconVisible(true);
+                wristmobilephone.SetUncheckIconVisible(false);
                 if (HintMobilePhone != null)
                 {
                     Destroy(HintMobilePhone);
@@ -201,6 +186,10 @@ public class GoBagLogic : MonoBehaviour
             case "First aid kit":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
+                firstaidkit.SetCheckIconVisible(true);
+                firstaidkit.SetUncheckIconVisible(false);
+                wristfirstaidkit.SetCheckIconVisible(true);
+                wristfirstaidkit.SetUncheckIconVisible(false);
                 if (HintFirst_aid_kit != null)
                 {
                     Destroy(HintFirst_aid_kit);
