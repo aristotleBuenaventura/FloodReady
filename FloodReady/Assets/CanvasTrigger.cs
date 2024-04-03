@@ -52,8 +52,8 @@ public class CanvasTrigger : MonoBehaviour
             check.SetUncheckIconVisible(false);
             checklist.SetCheckIconVisible(true);
             checklist.SetUncheckIconVisible(false);
-            task.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            task.IncrementTaskPercentage(5);
+            points.IncrementPoints(500);
             canvasController.ShowfindnozzleCanvas();
             canvasShown = true; // Set canvasShown to true to indicate that the canvas has been shown
             // Disable this script to prevent further updates

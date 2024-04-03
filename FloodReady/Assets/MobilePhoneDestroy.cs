@@ -9,6 +9,9 @@ public class MobilePhoneDestroy : MonoBehaviour
     private bool isGrabbed = false;
     public GameObject MobilePhoneOnHand;
     public GameObject MobilePhoneOnBag;
+    public TaskPercentage score;
+    public TotalPoints points;
+
 
     void Start()
     {
@@ -34,6 +37,8 @@ public class MobilePhoneDestroy : MonoBehaviour
     IEnumerator DisappearWithDelay()
     {
         yield return new WaitForSeconds(0.5f);
+        score.IncrementTaskPercentage(5);
+        points.IncrementPoints(500);
         MobilePhoneOnHand.SetActive(true);
         MobilePhoneOnBag.SetActive(false);
     }

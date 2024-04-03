@@ -47,8 +47,8 @@ public class WaterSprayDisappear : MonoBehaviour
         checklist.SetCheckIconVisible(true);
         checklist.SetUncheckIconVisible(false);
         canvasController.ShowcleansecondhallwayCanvas();
-        task.IncrementTaskPercentage(10);
-        points.IncrementPoints(1000);
+        task.IncrementTaskPercentage(5);
+        points.IncrementPoints(500);
         colliderWall.SecondFloorColliders();
         canvas.ShowHallwayCanvas();
 

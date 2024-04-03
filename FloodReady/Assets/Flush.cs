@@ -29,8 +29,8 @@ public class Flush : MonoBehaviour
             check.SetUncheckIconVisible(false);
             checklist.SetCheckIconVisible(true);
             checklist.SetUncheckIconVisible(false);
-            task.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            task.IncrementTaskPercentage(5);
+            points.IncrementPoints(500);
             canvasController.ShowgatherDirtyclothesCanvas();
             cleaningCanvas.ShowGatherClothesCanvas();
  

@@ -8,7 +8,8 @@ public class CheckPlayer : MonoBehaviour
     public RecoveryCanvasController UsePhoneCanvas;
     public GameObject goBag;
     public GameObject DestroyHint;
-
+    public TaskPercentage score;
+    public TotalPoints points;
 
 
 
@@ -22,6 +23,8 @@ public class CheckPlayer : MonoBehaviour
                 // Disable the object
 
                 Destroy(DestroyHint);
+                score.IncrementTaskPercentage(5);
+                points.IncrementPoints(500);
                 objectsToDisable.SetActive(false);
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);
