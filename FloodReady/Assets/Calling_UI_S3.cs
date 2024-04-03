@@ -8,10 +8,10 @@ public class Calling_UI_S3 : MonoBehaviour
     // Start is called before the first frame update
     public reportfallenIcon reportIcon;
     public RecoveryCanvasController success;
-    public GameObject portal;
     public DialScene3Icon checklist;
     public GameObject DestroyHint;
-
+    public GameObject MobilePhoneOnHand;
+    public GameObject GoBag;
 
     void Start()
     {
@@ -23,8 +23,6 @@ public class Calling_UI_S3 : MonoBehaviour
 
     IEnumerator DelayedAction()
     {
-
-        Destroy(DestroyHint);
         yield return new WaitForSeconds(9f);
         reportIcon.SetCheckIconVisible(true);
         reportIcon.SetUncheckIconVisible(false);
@@ -32,6 +30,10 @@ public class Calling_UI_S3 : MonoBehaviour
         checklist.SetUncheckIconVisible(false);
         success.Showdial1161CanvasCanvas();
         StartCoroutine(CirclePoint());
+        if (DestroyHint != null)
+        {
+            Destroy(DestroyHint);
+        }
 
     }
 
@@ -39,7 +41,8 @@ public class Calling_UI_S3 : MonoBehaviour
     {
         yield return new WaitForSeconds(6f);
         success.ShowdialCirclePointCanvasCanvas();
-        portal.SetActive(true);
+        MobilePhoneOnHand.SetActive(false);
+        GoBag.SetActive(false);
 
     }
 }
