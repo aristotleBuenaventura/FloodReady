@@ -5,6 +5,9 @@ public class ShowDoorJam : MonoBehaviour
     public EscapeCanvasController escapeCanvasController;
     public TaskPercentage leavethehouse;
     public TotalPoints points;
+    public TryToLeaveTheHouseChecklist check;
+    public TryToLeaveTheHouseIcon task;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,10 @@ public class ShowDoorJam : MonoBehaviour
             escapeCanvasController.ShowDoorJamCanvas(true);
             leavethehouse.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
+            check.SetCheckIconVisible(true);
+            check.SetUncheckIconVisible(false);
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
             // Optionally, disable the collider to prevent repeated triggers
             // GetComponent<Collider>().enabled = false;
         }
