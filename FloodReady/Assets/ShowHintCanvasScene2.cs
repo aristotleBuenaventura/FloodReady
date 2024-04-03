@@ -12,6 +12,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
     public GameObject Dial161;
     public GameObject TurnOnFL;
 
+    public GameObject LeaveHouse;
     void Start()
     {
 
@@ -40,6 +41,9 @@ public class ShowHintCanvasScene2 : MonoBehaviour
 
         if (TurnOnFL.activeSelf)
             TurnOnFL.SetActive(false);
+
+        if (LeaveHouse.activeSelf)
+            LeaveHouse.SetActive(false);
     }
 
     public void ShowGoBagCanvas()
@@ -51,6 +55,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
     public void ShowMainBreakerCanvas()
@@ -62,6 +67,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
     public void ShowPryBarCanvas()
@@ -73,6 +79,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
     public void ShowBreakWindowCanvas()
@@ -84,6 +91,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
     public void ShowLocateEmergencyDeviceCanvas()
@@ -95,6 +103,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(true);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
     public void ShowDial161Canvas()
@@ -106,6 +115,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(true);
         TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
     }
 
 
@@ -118,5 +128,18 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         LocateEmergencyDevice.SetActive(false);
         Dial161.SetActive(false);
         TurnOnFL.SetActive(true);
+        LeaveHouse.SetActive(false);
+    }
+
+    public void LeaveHouseCanvas()
+    {
+        GoBag.SetActive(false);
+        MainBreaker.SetActive(false);
+        PryBar.SetActive(false);
+        BreakWindow.SetActive(false);
+        LocateEmergencyDevice.SetActive(false);
+        Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(true);
     }
 }

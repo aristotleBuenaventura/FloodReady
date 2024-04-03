@@ -13,6 +13,7 @@ public class OpenHintCanvasScene2 : MonoBehaviour
     public GameObject objectToMonitor6;
     public GameObject objectToMonitor7;
     public GameObject objectToMonitor8;
+    public GameObject objectToMonitor9;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,6 +29,7 @@ public class OpenHintCanvasScene2 : MonoBehaviour
             SetObjectActive(objectToMonitor6, true);
             SetObjectActive(objectToMonitor7, true);
             SetObjectActive(objectToMonitor8, true);
+            SetObjectActive(objectToMonitor9, true);
 
 
 
