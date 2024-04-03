@@ -30,12 +30,7 @@ public class GoBagLogic : MonoBehaviour
     public iconforfirstaidkit firstaidkit;
     public TotalPoints points;
     public GoBagItemsCheck checklist;
-
-    // disable go bag
     public GameObject disabledGobag;
-
-    // for wrist canvas
-
     public iconforcannedgood wristcannedgood;
     public iconforenergybar wristenergybar;
     public iconformoney wristmoney;
@@ -44,7 +39,6 @@ public class GoBagLogic : MonoBehaviour
     public iconforflashlight wristflashlight;
     public iconformobilephone wristmobilephone;
     public iconforfirstaidkit wristfirstaidkit;
-
     public GameObject HintCanned_good;
     public GameObject HintEnergy_bar;
     public GameObject HintMoney;
@@ -64,10 +58,8 @@ public class GoBagLogic : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-        // Check if all items are collected
         bool allItemsCollected = true;
         foreach (bool itemCollected in collectedItems)
         {
@@ -78,7 +70,7 @@ public class GoBagLogic : MonoBehaviour
             }
         }
 
-        // If all items are collected, display "Completed"
+
         if (allItemsCollected)
         {
             ShowGoBagCompletedCanvasWithDelay();
@@ -91,13 +83,59 @@ public class GoBagLogic : MonoBehaviour
 
         if (!collectedItemsAll.Contains(collidedObjectName))
         { 
-            switch (collidedObjectName)
+            if(collidedObjectName == "Canned good")
             {
-            case "Canned good":
                 cannedgood.SetCheckIconVisible(false);
                 cannedgood.SetUncheckIconVisible(true);
                 wristcannedgood.SetCheckIconVisible(false);
                 wristcannedgood.SetUncheckIconVisible(true);
+            } else if(collidedObjectName == "Energy bar")
+            {
+                energybar.SetCheckIconVisible(false);
+                energybar.SetUncheckIconVisible(true);
+                wristenergybar.SetCheckIconVisible(false);
+                wristenergybar.SetUncheckIconVisible(true);
+            } else if (collidedObjectName == "Money")
+            {
+                money.SetCheckIconVisible(false);
+                money.SetUncheckIconVisible(true);
+                wristmoney.SetCheckIconVisible(false);
+                wristmoney.SetUncheckIconVisible(true);
+            } else if (collidedObjectName == "Bottled water")
+            {
+                bottledwater.SetCheckIconVisible(false);
+                bottledwater.SetUncheckIconVisible(true);
+                wristbottledwater.SetCheckIconVisible(false);
+                wristbottledwater.SetUncheckIconVisible(true);
+            } else if (collidedObjectName == "Clothes")
+            {
+                clothes.SetCheckIconVisible(false);
+                clothes.SetUncheckIconVisible(true);
+                wristclothes.SetCheckIconVisible(false);
+                wristclothes.SetUncheckIconVisible(true);
+            } else if(collidedObjectName == "Flashlight")
+            {
+                flashlight.SetCheckIconVisible(false);
+                flashlight.SetUncheckIconVisible(true);
+                wristflashlight.SetCheckIconVisible(false);
+                wristflashlight.SetUncheckIconVisible(true);
+            } else if (collidedObjectName == "Mobile Phone")
+            {
+                mobilephone.SetCheckIconVisible(false);
+                mobilephone.SetUncheckIconVisible(true);
+                wristmobilephone.SetCheckIconVisible(false);
+                wristmobilephone.SetUncheckIconVisible(true);
+            } else if (collidedObjectName == "First aid kit")
+            {
+                firstaidkit.SetCheckIconVisible(false);
+                firstaidkit.SetUncheckIconVisible(true);
+                wristfirstaidkit.SetCheckIconVisible(false);
+                wristfirstaidkit.SetUncheckIconVisible(true);
+            } 
+
+            switch (collidedObjectName)
+            {
+            case "Canned good":
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 if (HintCanned_good != null)
@@ -107,10 +145,6 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(0);
                 break;
             case "Energy bar":
-                energybar.SetCheckIconVisible(false);
-                energybar.SetUncheckIconVisible(true);
-                wristenergybar.SetCheckIconVisible(false);
-                wristenergybar.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 if (HintEnergy_bar != null)
@@ -120,10 +154,6 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(1);
                 break;
             case "Money":
-                money.SetCheckIconVisible(false);
-                money.SetUncheckIconVisible(true);
-                wristmoney.SetCheckIconVisible(false);
-                wristmoney.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 if (HintMoney != null)
@@ -133,10 +163,6 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(2);
                 break;
             case "Bottled water":
-                bottledwater.SetCheckIconVisible(false);
-                bottledwater.SetUncheckIconVisible(true);
-                wristbottledwater.SetCheckIconVisible(false);
-                wristbottledwater.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 if (HintBottled_water != null)
@@ -146,10 +172,6 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(3);
                 break;
             case "Clothes":
-                clothes.SetCheckIconVisible(false);
-                clothes.SetUncheckIconVisible(true);
-                wristclothes.SetCheckIconVisible(false);
-                wristclothes.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 if (HintClothes != null)
@@ -159,13 +181,8 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(4);
                 break;
             case "Flashlight":
-                flashlight.SetCheckIconVisible(false);
-                flashlight.SetUncheckIconVisible(true);
-                wristflashlight.SetCheckIconVisible(false);
-                wristflashlight.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
-                
                 if (HintFlashlight != null)
                 {
                     Destroy(HintFlashlight);
@@ -173,13 +190,8 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(5);
                 break;
             case "Mobile Phone":
-                mobilephone.SetCheckIconVisible(false);
-                mobilephone.SetUncheckIconVisible(true);
-                wristmobilephone.SetCheckIconVisible(false);
-                wristmobilephone.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
-                
                 if (HintMobilePhone != null)
                 {
                     Destroy(HintMobilePhone);
@@ -187,13 +199,8 @@ public class GoBagLogic : MonoBehaviour
                 SetCollectedStatus(6);
                 break;
             case "First aid kit":
-                firstaidkit.SetCheckIconVisible(false);
-                firstaidkit.SetUncheckIconVisible(true);
-                wristfirstaidkit.SetCheckIconVisible(false);
-                wristfirstaidkit.SetUncheckIconVisible(true);
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
-                
                 if (HintFirst_aid_kit != null)
                 {
                     Destroy(HintFirst_aid_kit);
