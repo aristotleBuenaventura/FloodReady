@@ -22,6 +22,6 @@ public class ChangeText : MonoBehaviour
     public void ChangeToPlayerDead()
     {
         // Change the text
-        textMeshPro.text = "YOU'RE DEAD";
+        textMeshPro.text = "YOU ARE DEAD";
     }
 }
