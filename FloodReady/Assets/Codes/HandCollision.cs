@@ -30,7 +30,7 @@ public class HandCollision : MonoBehaviour
     {
         if (other.CompareTag("TurnOnButton") && canPressButton)
         {
-            StopAllCoroutines(); // Stop any existing coroutines
+            //StopAllCoroutines(); // Stop any existing coroutines
 
             if (isButtonDown)
             {
