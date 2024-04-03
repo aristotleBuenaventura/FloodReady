@@ -53,8 +53,8 @@ public class TurnOffLights1 : MonoBehaviour
                 Destroy(MainBreakerHint);
                 // Mark the task as done
                 exitthehouse.ShowExitHouseCanvas();
-                turnofflightspercentage.IncrementTaskPercentage(20);
-                points.IncrementPoints(2000);
+                turnofflightspercentage.IncrementTaskPercentage(10);
+                points.IncrementPoints(1000);
                 taskIncremented = true; // Set the flag to true after incrementing the task
                 turnofflightscheck.SetCheckIconVisible(true);
                 turnofflightscheck.SetUncheckIconVisible(false);
