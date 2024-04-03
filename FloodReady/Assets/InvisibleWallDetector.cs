@@ -12,6 +12,8 @@ public class InvisibleWallDetector : MonoBehaviour
     public Timer screenTimer;
     public NumberOfAttemptsScene1 attempts;
     public attemptsLeft finalAttempts;
+    public GameObject retryBtn;
+    public GameObject proceedBtn;
 
 
 
@@ -25,9 +27,8 @@ public class InvisibleWallDetector : MonoBehaviour
             screenTimer.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
-            //wristwatchStopTime.StopTimer();
-
-            // Teleport the player to the desired position and rotation
+            retryBtn.SetActive(false);
+            proceedBtn.SetActive(true);
             TeleportPlayer(other.gameObject);
         }
     }

@@ -11,6 +11,8 @@ public class InvisibleWallScene2 : MonoBehaviour
     public Timer screenTimer;
     public NumberOfAttemptsScene2 attempts;
     public attemptsLeftScene2 finalAttempts;
+    public GameObject retryBtn;
+    public GameObject proceedBtn;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +26,8 @@ public class InvisibleWallScene2 : MonoBehaviour
             screenTimer.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
+            retryBtn.SetActive(false);
+            proceedBtn.SetActive(true);
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
             

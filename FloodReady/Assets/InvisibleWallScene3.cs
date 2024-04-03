@@ -11,7 +11,8 @@ public class InvisibleWallScene3 : MonoBehaviour
     public Timer screenTimer;
     public NumberOfAttemptsScene3 attempts;
     public attemptsLeftScene3 finalAttempts;
-
+    public GameObject retryBtn;
+    public GameObject proceedBtn;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,8 +26,10 @@ public class InvisibleWallScene3 : MonoBehaviour
             //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
+            retryBtn.SetActive(false);
+            proceedBtn.SetActive(true);
             // Teleport the player to the desired position and rotation
-            
+
 
         }
     }
