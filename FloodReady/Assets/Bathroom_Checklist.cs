@@ -47,8 +47,12 @@ public class Bathroom_Checklist : MonoBehaviour
             yield return new WaitForSeconds(delay);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
+            if(checklistIcon != null)
+            {
+
             checklistIcon.SetCheckIconVisible(true);
             checklistIcon.SetUncheckIconVisible(false);
+            }
             //cleaningCanvas.deactivate();
             mainCanvas.ShowfindPlungerCanvas();
             wall.BathroomColliders();

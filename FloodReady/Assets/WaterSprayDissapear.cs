@@ -38,14 +38,18 @@ public class WaterSprayDisappear : MonoBehaviour
 
     IEnumerator DisappearWithDelay()
     {
-        Destroy(DestroyHint);
+        
         yield return new WaitForSeconds(delayBeforeDisappear);
         waterspray.Show_WaterSpray();
         waterspray.isAllowed = true;
         check.SetCheckIconVisible(true);
         check.SetUncheckIconVisible(false);
-        checklist.SetCheckIconVisible(true);
-        checklist.SetUncheckIconVisible(false);
+        if(checklist != null)
+        {
+            checklist.SetCheckIconVisible(true);
+            checklist.SetUncheckIconVisible(false);
+            Destroy(DestroyHint);
+        }
         canvasController.ShowcleansecondhallwayCanvas();
         task.IncrementTaskPercentage(5);
         points.IncrementPoints(500);
