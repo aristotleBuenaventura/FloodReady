@@ -6,6 +6,7 @@ public class WaterControllerHTP : MonoBehaviour
     public AudioSource waterSound;
     public bool isButtonPressed = false;
     public bool isHandColliding = false;
+    public WaterNozzleIcon nozzle;
 
     void Start()
     {
@@ -62,6 +63,8 @@ public class WaterControllerHTP : MonoBehaviour
             if (waterSound != null)
             {
                 waterSound.Play();
+                nozzle.SetUncheckIconVisible(false);
+                nozzle.SetCheckIconVisible(true);
             }
         }
 

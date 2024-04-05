@@ -18,6 +18,7 @@ public class ButtonVR : MonoBehaviour
     bool isPlaying;
     bool canPressButton = true;
     public float delayDuration = 1f; // Adjust this value as needed
+    public PlayVideoIcon videoIcon;
 
     void Start()
     {
@@ -83,6 +84,8 @@ public class ButtonVR : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         // Video has finished playing, reset button text to "START"
+        videoIcon.SetUncheckIconVisible(false);
+        videoIcon.SetCheckIconVisible(true);
         videoPlayer.Stop();
         videoCanvas.gameObject.SetActive(false);
         buttonText.text = "START";
