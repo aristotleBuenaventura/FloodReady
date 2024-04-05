@@ -11,6 +11,7 @@ public class UnPlug : MonoBehaviour
     private bool hasBeenUnplugged = false; // Flag to ensure unplugging happens only once
     public TaskPercentage FanUnplugPercentage;
     public TotalPoints points;
+    public FanHeadMovement fanmovement;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class UnPlug : MonoBehaviour
         {
             isPlugAttached = true;
             RotateVRObject.SetShouldRotate(true);
+            fanmovement.StartMovement();
         }
     }
 
@@ -42,6 +44,7 @@ public class UnPlug : MonoBehaviour
                 FanUnplugPercentage.IncrementTaskPercentage(10);
                 points.IncrementPoints(1000);
             }
+            fanmovement.StopMovement();
             hasBeenUnplugged = true; // Set the flag to true to ensure this block executes only once
             RotateVRObject.SetShouldRotate(false);
             ShowCanvas.SetBooleanFan(true);
