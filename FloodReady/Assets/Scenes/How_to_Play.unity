@@ -77280,6 +77280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1322178871}
   - {fileID: 1507082645}
   - {fileID: 506310731}
   - {fileID: 1631432}
@@ -77693,6 +77694,81 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 42.000004, z: 3}
   m_Center: {x: -1.2499923, y: -18.999994, z: 46.749985}
+--- !u!1 &1322178870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322178871}
+  - component: {fileID: 1322178872}
+  - component: {fileID: 1322178873}
+  m_Layer: 0
+  m_Name: StopperColliderBalcony
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322178871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322178870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.094, y: 1.425, z: -0.574}
+  m_LocalScale: {x: 1, y: 4.0072, z: 4.5196486}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1311360639}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1322178872
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322178870}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1322178873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322178870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ca0e4e3aa23c242b74af982256a84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToMonitor:
+  - {fileID: 1288410796}
+  - {fileID: 557620038}
+  - {fileID: 1449154377}
+  - {fileID: 207183969}
+  - {fileID: 61466031}
+  - {fileID: 1594842037}
+  - {fileID: 935345423}
+  Collider: {fileID: 1322178870}
 --- !u!1001 &1324941909
 PrefabInstance:
   m_ObjectHideFlags: 0
