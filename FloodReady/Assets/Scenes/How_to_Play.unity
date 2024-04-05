@@ -34457,7 +34457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &584727190
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61766,6 +61766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067799720}
+  - component: {fileID: 1067799721}
   m_Layer: 0
   m_Name: Checklist
   m_TagString: Untagged
@@ -61790,6 +61791,22 @@ Transform:
   - {fileID: 584727190}
   m_Father: {fileID: 975279178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067799721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067799719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f13bbf2ac8dde04fa63b9df08c6e50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Portal: {fileID: 1829954062}
+  PortalBarricade: {fileID: 1999210770}
+  TrainingRoomChecklist: {fileID: 194851358}
+  HouseFamiliarizationChecklist: {fileID: 584727189}
 --- !u!1001 &1068658561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88631,7 +88648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f339db3b58d904b8e1391b6421578f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 194851358}
+  canvas: {fileID: 1067799719}
 --- !u!64 &1552248645
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -104363,7 +104380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1829954063
 Transform:
   m_ObjectHideFlags: 0
