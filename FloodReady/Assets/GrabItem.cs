@@ -8,7 +8,7 @@ public class GrabItem : MonoBehaviour
     public OVRGrabber rightGrabber; // Assign the right OVRGrabber component in the Unity Editor
     private bool isGrabbed = false;
     public FlashlightIcon grab;
-
+    public GameObject HintDestroy;
 
     void Update()
     {
@@ -27,6 +27,7 @@ public class GrabItem : MonoBehaviour
 
     IEnumerator DisappearWithDelay()
     {
+        Destroy(HintDestroy);
         yield return new WaitForSeconds(0.5f);
         grab.SetUncheckIconVisible(false);
         grab.SetCheckIconVisible(true);

@@ -6,7 +6,7 @@ public class KeyPadCallHTP : MonoBehaviour
     private bool canPress = true; // Flag to track if the button can be pressed
     private float cooldownTime = 1f; // Cooldown period in seconds
     public AudioSource keySound;
-
+  
     private void Start()
     {
         // Find the NumberArrayManager script in the scene
@@ -19,6 +19,7 @@ public class KeyPadCallHTP : MonoBehaviour
         // Check if the collider that entered has the tag "TurnOnButton" and can press
         if (other.CompareTag("TurnOnButton") && canPress)
         {
+  
             // Call the CheckEmergencyCall function in NumberArrayManager with a coroutine
             StartCoroutine(CallEmergencyWithCooldown());
         }
@@ -29,7 +30,7 @@ public class KeyPadCallHTP : MonoBehaviour
     {
         // Prevent further pressing during the cooldown
         canPress = false;
-
+     
         // Call the CheckEmergencyCall function in NumberArrayManager
         arrayManager.CheckEmergencyCall();
         keySound.Play();

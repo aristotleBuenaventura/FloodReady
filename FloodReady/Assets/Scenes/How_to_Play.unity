@@ -5538,7 +5538,7 @@ GameObject:
   - component: {fileID: 74882391}
   - component: {fileID: 74882393}
   - component: {fileID: 74882392}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6603,6 +6603,7 @@ MonoBehaviour:
   leftGrabber: {fileID: 975279179}
   rightGrabber: {fileID: 1602867327}
   grab: {fileID: 278565505}
+  HintDestroy: {fileID: 1944203285}
 --- !u!1001 &94262692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7772,7 +7773,7 @@ GameObject:
   - component: {fileID: 110041640}
   - component: {fileID: 110041642}
   - component: {fileID: 110041641}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9159,7 +9160,7 @@ GameObject:
   - component: {fileID: 137406669}
   - component: {fileID: 137406671}
   - component: {fileID: 137406670}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10920,7 +10921,7 @@ GameObject:
   - component: {fileID: 180356519}
   - component: {fileID: 180356518}
   - component: {fileID: 180356517}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: HintGrabFirstAid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16286,7 +16287,7 @@ GameObject:
   - component: {fileID: 271142775}
   - component: {fileID: 271142777}
   - component: {fileID: 271142776}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16968,7 +16969,7 @@ GameObject:
   - component: {fileID: 278587791}
   - component: {fileID: 278587793}
   - component: {fileID: 278587792}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23263,7 +23264,7 @@ GameObject:
   - component: {fileID: 385382134}
   - component: {fileID: 385382136}
   - component: {fileID: 385382135}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24014,12 +24015,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404804822}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.026344722, y: -0.9563565, z: 0.29084414, w: -0.00989157}
-  m_LocalPosition: {x: 0.0208, y: 0.001, z: 0.0059}
+  m_LocalRotation: {x: 0.030697083, y: -0.9562267, z: 0.2897377, w: -0.027207118}
+  m_LocalPosition: {x: -0.0014619274, y: 0.0008319619, z: 0.0059001823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1320970475}
+  m_Father: {fileID: 825105556}
   m_LocalEulerAnglesHint: {x: -13.414, y: 14.781, z: 67.773}
 --- !u!65 &404804824
 BoxCollider:
@@ -28260,6 +28261,7 @@ MonoBehaviour:
   leftGrabber: {fileID: 975279179}
   rightGrabber: {fileID: 1602867327}
   grab: {fileID: 1370208367}
+  HintDestroy: {fileID: 858474709}
 --- !u!1001 &466368515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28575,7 +28577,7 @@ GameObject:
   - component: {fileID: 471832009}
   - component: {fileID: 471832011}
   - component: {fileID: 471832010}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30413,7 +30415,7 @@ GameObject:
   - component: {fileID: 495189479}
   - component: {fileID: 495189478}
   - component: {fileID: 495189477}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: HintGrabCannedGood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33240,7 +33242,7 @@ GameObject:
   - component: {fileID: 539690389}
   - component: {fileID: 539690391}
   - component: {fileID: 539690390}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33604,7 +33606,7 @@ GameObject:
   - component: {fileID: 543333619}
   - component: {fileID: 543333618}
   - component: {fileID: 543333617}
-  - component: {fileID: 543333616}
+  - component: {fileID: 543333620}
   m_Layer: 1
   m_Name: Dial161Hint
   m_TagString: Untagged
@@ -33631,21 +33633,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0521, y: 0.1075}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &543333616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543333614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 543333614}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &543333617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33665,8 +33652,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.06813414}
+  m_Center: {x: 0.017941121, y: -0.013998465, z: -0.00084059197}
 --- !u!114 &543333618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33705,6 +33692,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543333614}
   m_CullTransparentMesh: 1
+--- !u!114 &543333620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543333614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1709a4c5e24d60408c4811b454b8f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 543333614}
+  hintCanvas: {fileID: 589069855}
 --- !u!1001 &543615281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34753,7 +34754,7 @@ GameObject:
   - component: {fileID: 560002727}
   - component: {fileID: 560002726}
   - component: {fileID: 560002725}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: PlayCellphoneHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36085,7 +36086,7 @@ GameObject:
   - component: {fileID: 573843485}
   - component: {fileID: 573843484}
   - component: {fileID: 573843483}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: HintGrabFlashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36775,7 +36776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589069853}
   - component: {fileID: 589069855}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: HintsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40856,7 +40857,7 @@ GameObject:
   - component: {fileID: 665803714}
   - component: {fileID: 665803716}
   - component: {fileID: 665803715}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40931,7 +40932,7 @@ GameObject:
   - component: {fileID: 666405103}
   - component: {fileID: 666405105}
   - component: {fileID: 666405104}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41028,7 +41029,7 @@ GameObject:
   - component: {fileID: 669217472}
   - component: {fileID: 669217474}
   - component: {fileID: 669217473}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41653,7 +41654,7 @@ GameObject:
   - component: {fileID: 680157013}
   - component: {fileID: 680157015}
   - component: {fileID: 680157014}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42282,7 +42283,7 @@ GameObject:
   - component: {fileID: 689357710}
   - component: {fileID: 689357709}
   - component: {fileID: 689357708}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: PlayWaterNozzleHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45045,6 +45046,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 2021854633}
   delayDuration: 1
   videoIcon: {fileID: 174309533}
+  HintDestroy: {fileID: 1239596988}
 --- !u!82 &744691302
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47463,7 +47465,7 @@ GameObject:
   - component: {fileID: 793744373}
   - component: {fileID: 793744375}
   - component: {fileID: 793744374}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47699,7 +47701,7 @@ GameObject:
   - component: {fileID: 796297298}
   - component: {fileID: 796297300}
   - component: {fileID: 796297299}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49171,6 +49173,7 @@ MonoBehaviour:
   leftGrabber: {fileID: 975279179}
   rightGrabber: {fileID: 1602867327}
   grab: {fileID: 962579168}
+  HintDestroy: {fileID: 1840258339}
 --- !u!64 &812803060
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49761,6 +49764,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824434758}
   m_CullTransparentMesh: 1
+--- !u!4 &825105556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4111008495003244, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+  m_PrefabInstance: {fileID: 1602867325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &826882461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50795,7 +50803,7 @@ GameObject:
   - component: {fileID: 857339043}
   - component: {fileID: 857339045}
   - component: {fileID: 857339044}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50951,7 +50959,7 @@ GameObject:
   - component: {fileID: 858474714}
   - component: {fileID: 858474713}
   - component: {fileID: 858474712}
-  - component: {fileID: 858474711}
+  - component: {fileID: 858474715}
   m_Layer: 1
   m_Name: FirstAidHint
   m_TagString: Untagged
@@ -50978,21 +50986,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0527, y: -0.0409}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &858474711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858474709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 858474709}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &858474712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51012,8 +51005,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.061533473}
+  m_Center: {x: 0.017941123, y: -0.013998466, z: 0.0024597277}
 --- !u!114 &858474713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51052,6 +51045,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858474709}
   m_CullTransparentMesh: 1
+--- !u!114 &858474715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858474709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5482d387e11b2214cbc21b683b98ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 858474709}
+  hintCanvas: {fileID: 589069855}
 --- !u!1 &862070472
 GameObject:
   m_ObjectHideFlags: 0
@@ -53435,7 +53442,7 @@ GameObject:
   - component: {fileID: 918100591}
   - component: {fileID: 918100593}
   - component: {fileID: 918100592}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57734,7 +57741,7 @@ GameObject:
   - component: {fileID: 967040145}
   - component: {fileID: 967040147}
   - component: {fileID: 967040146}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62110,7 +62117,7 @@ GameObject:
   - component: {fileID: 1029332912}
   - component: {fileID: 1029332911}
   - component: {fileID: 1029332910}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: PlayGrabHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64077,7 +64084,7 @@ GameObject:
   - component: {fileID: 1048961941}
   - component: {fileID: 1048961943}
   - component: {fileID: 1048961942}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68680,7 +68687,7 @@ GameObject:
   - component: {fileID: 1116644635}
   - component: {fileID: 1116644637}
   - component: {fileID: 1116644636}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69778,7 +69785,7 @@ GameObject:
   - component: {fileID: 1131102281}
   - component: {fileID: 1131102283}
   - component: {fileID: 1131102282}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71035,7 +71042,7 @@ GameObject:
   - component: {fileID: 1150254064}
   - component: {fileID: 1150254066}
   - component: {fileID: 1150254065}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71322,7 +71329,7 @@ GameObject:
   - component: {fileID: 1156273766}
   - component: {fileID: 1156273768}
   - component: {fileID: 1156273767}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72596,7 +72603,7 @@ GameObject:
   - component: {fileID: 1185737356}
   - component: {fileID: 1185737358}
   - component: {fileID: 1185737357}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73628,7 +73635,7 @@ GameObject:
   - component: {fileID: 1198009782}
   - component: {fileID: 1198009784}
   - component: {fileID: 1198009783}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74937,7 +74944,7 @@ GameObject:
   - component: {fileID: 1218015097}
   - component: {fileID: 1218015099}
   - component: {fileID: 1218015098}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75890,7 +75897,7 @@ GameObject:
   - component: {fileID: 1227569557}
   - component: {fileID: 1227569559}
   - component: {fileID: 1227569558}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76756,7 +76763,7 @@ GameObject:
   - component: {fileID: 1239596993}
   - component: {fileID: 1239596992}
   - component: {fileID: 1239596991}
-  - component: {fileID: 1239596990}
+  - component: {fileID: 1239596994}
   m_Layer: 1
   m_Name: PhoneVideoHint
   m_TagString: Untagged
@@ -76783,21 +76790,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0521, y: 0.1344}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1239596990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239596988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 1239596988}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &1239596991
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76817,8 +76809,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.06617215}
+  m_Center: {x: 0.017941121, y: -0.013998466, z: 0.00014039174}
 --- !u!114 &1239596992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76857,6 +76849,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239596988}
   m_CullTransparentMesh: 1
+--- !u!114 &1239596994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239596988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0134a89989f61f743976d4cb9623f6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 1239596988}
+  hintCanvas: {fileID: 589069855}
 --- !u!1001 &1241548328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81442,11 +81448,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1286621418}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!4 &1320970475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4421233779495850, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
-  m_PrefabInstance: {fileID: 1602867325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1321094465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86929,7 +86930,7 @@ GameObject:
   - component: {fileID: 1434228457}
   - component: {fileID: 1434228459}
   - component: {fileID: 1434228458}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88390,7 +88391,7 @@ GameObject:
   - component: {fileID: 1453647170}
   - component: {fileID: 1453647172}
   - component: {fileID: 1453647171}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88548,7 +88549,7 @@ GameObject:
   - component: {fileID: 1456480952}
   - component: {fileID: 1456480954}
   - component: {fileID: 1456480953}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89740,7 +89741,7 @@ GameObject:
   - component: {fileID: 1480699945}
   - component: {fileID: 1480699947}
   - component: {fileID: 1480699946}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95260,7 +95261,7 @@ GameObject:
   - component: {fileID: 1543422980}
   - component: {fileID: 1543422982}
   - component: {fileID: 1543422981}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96289,7 +96290,7 @@ GameObject:
   - component: {fileID: 1560528251}
   - component: {fileID: 1560528253}
   - component: {fileID: 1560528252}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96885,7 +96886,7 @@ GameObject:
   - component: {fileID: 1574852652}
   - component: {fileID: 1574852654}
   - component: {fileID: 1574852653}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97912,7 +97913,7 @@ GameObject:
   - component: {fileID: 1589579336}
   - component: {fileID: 1589579338}
   - component: {fileID: 1589579337}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98134,6 +98135,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 1057380360}
   delayDuration: 1
   videoIcon: {fileID: 89756449}
+  HintDestroy: {fileID: 2032012633}
 --- !u!82 &1595034062
 AudioSource:
   m_ObjectHideFlags: 0
@@ -98620,8 +98622,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4421233779495850, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
-      insertIndex: 1
+    - targetCorrespondingSourceObject: {fileID: 4111008495003244, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 404804823}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
@@ -98756,7 +98758,7 @@ GameObject:
   - component: {fileID: 1605421788}
   - component: {fileID: 1605421790}
   - component: {fileID: 1605421789}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100519,6 +100521,7 @@ MonoBehaviour:
   isButtonPressed: 0
   isHandColliding: 0
   nozzle: {fileID: 786377598}
+  HintDestroy: {fileID: 1733792979}
 --- !u!82 &1628232021
 AudioSource:
   m_ObjectHideFlags: 0
@@ -103614,7 +103617,7 @@ GameObject:
   - component: {fileID: 1686849302}
   - component: {fileID: 1686849304}
   - component: {fileID: 1686849303}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103711,7 +103714,7 @@ GameObject:
   - component: {fileID: 1690262584}
   - component: {fileID: 1690262586}
   - component: {fileID: 1690262585}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: QuickTips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104481,6 +104484,7 @@ MonoBehaviour:
   videoPlayer: {fileID: 2008004007}
   delayDuration: 1
   videoIcon: {fileID: 866238775}
+  HintDestroy: {fileID: 1745566366}
 --- !u!82 &1698848210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -106526,7 +106530,7 @@ GameObject:
   - component: {fileID: 1733792984}
   - component: {fileID: 1733792983}
   - component: {fileID: 1733792982}
-  - component: {fileID: 1733792981}
+  - component: {fileID: 1733792985}
   m_Layer: 1
   m_Name: WaterNozzleHint
   m_TagString: Untagged
@@ -106553,21 +106557,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0521, y: 0.0339}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1733792981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733792979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 1733792979}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &1733792982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106587,8 +106576,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.05775991}
+  m_Center: {x: 0.017941123, y: -0.013998467, z: 0.0043465663}
 --- !u!114 &1733792983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106627,6 +106616,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733792979}
   m_CullTransparentMesh: 1
+--- !u!114 &1733792985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733792979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2461c302d7b54b04785e6fe1480c110a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 1733792979}
+  hintCanvas: {fileID: 589069855}
 --- !u!1 &1738325215
 GameObject:
   m_ObjectHideFlags: 0
@@ -107478,7 +107481,7 @@ GameObject:
   - component: {fileID: 1745566371}
   - component: {fileID: 1745566370}
   - component: {fileID: 1745566369}
-  - component: {fileID: 1745566368}
+  - component: {fileID: 1745566372}
   m_Layer: 1
   m_Name: WaterNozzleVideoHint
   m_TagString: Untagged
@@ -107505,21 +107508,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0521, y: 0.0844}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1745566368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745566366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 1745566366}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &1745566369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107539,8 +107527,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.067110844}
+  m_Center: {x: 0.017941121, y: -0.013998466, z: -0.0003289462}
 --- !u!114 &1745566370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107579,6 +107567,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745566366}
   m_CullTransparentMesh: 1
+--- !u!114 &1745566372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745566366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae04ac64fdf85494d8588b5087351158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 1745566366}
+  hintCanvas: {fileID: 589069855}
 --- !u!64 &1745691024
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -108571,7 +108573,7 @@ GameObject:
   - component: {fileID: 1760717449}
   - component: {fileID: 1760717451}
   - component: {fileID: 1760717450}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109989,7 +109991,7 @@ GameObject:
   - component: {fileID: 1788069975}
   - component: {fileID: 1788069977}
   - component: {fileID: 1788069976}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113099,7 +113101,7 @@ GameObject:
   - component: {fileID: 1840258344}
   - component: {fileID: 1840258343}
   - component: {fileID: 1840258342}
-  - component: {fileID: 1840258341}
+  - component: {fileID: 1840258345}
   m_Layer: 1
   m_Name: CannedGoodHint
   m_TagString: Untagged
@@ -113126,21 +113128,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0527, y: -0.0641}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1840258341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840258339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 1840258339}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &1840258342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113160,8 +113147,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.07317132}
+  m_Center: {x: 0.01794112, y: -0.013998466, z: -0.0033591855}
 --- !u!114 &1840258343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113200,6 +113187,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840258339}
   m_CullTransparentMesh: 1
+--- !u!114 &1840258345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840258339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b7ea3533060f040b7743645894a5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 1840258339}
+  hintCanvas: {fileID: 589069855}
 --- !u!1 &1841190527
 GameObject:
   m_ObjectHideFlags: 0
@@ -116071,7 +116072,7 @@ GameObject:
   - component: {fileID: 1892615397}
   - component: {fileID: 1892615399}
   - component: {fileID: 1892615398}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117010,6 +117011,7 @@ MonoBehaviour:
   call: {fileID: 325226023}
   Contact: {fileID: 1709389420}
   icon: {fileID: 294423437}
+  HintDestroy: {fileID: 543333614}
 --- !u!1 &1907838665
 GameObject:
   m_ObjectHideFlags: 0
@@ -117663,7 +117665,7 @@ GameObject:
   - component: {fileID: 1920733017}
   - component: {fileID: 1920733016}
   - component: {fileID: 1920733015}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: HintCellphoneHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118673,7 +118675,7 @@ GameObject:
   - component: {fileID: 1944203290}
   - component: {fileID: 1944203289}
   - component: {fileID: 1944203288}
-  - component: {fileID: 1944203287}
+  - component: {fileID: 1944203291}
   m_Layer: 1
   m_Name: FlashlightHint
   m_TagString: Untagged
@@ -118700,21 +118702,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0525, y: -0.0157}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1944203287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944203285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 1944203285}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &1944203288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118734,8 +118721,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.065133564}
+  m_Center: {x: 0.017941121, y: -0.013998466, z: 0.0006596825}
 --- !u!114 &1944203289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118774,6 +118761,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944203285}
   m_CullTransparentMesh: 1
+--- !u!114 &1944203291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944203285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9a21f0335e3554796a217b83e6c68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 1944203285}
+  hintCanvas: {fileID: 589069855}
 --- !u!1 &1946849022
 GameObject:
   m_ObjectHideFlags: 0
@@ -120795,7 +120796,7 @@ GameObject:
   - component: {fileID: 1973842803}
   - component: {fileID: 1973842805}
   - component: {fileID: 1973842804}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121059,7 +121060,7 @@ GameObject:
   - component: {fileID: 1979732774}
   - component: {fileID: 1979732776}
   - component: {fileID: 1979732775}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124841,7 +124842,7 @@ GameObject:
   - component: {fileID: 2029920795}
   - component: {fileID: 2029920797}
   - component: {fileID: 2029920796}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: ImageHint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124917,7 +124918,7 @@ GameObject:
   - component: {fileID: 2032012638}
   - component: {fileID: 2032012637}
   - component: {fileID: 2032012636}
-  - component: {fileID: 2032012635}
+  - component: {fileID: 2032012639}
   m_Layer: 1
   m_Name: GrabVideoHint
   m_TagString: Untagged
@@ -124944,21 +124945,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0523, y: 0.0097}
   m_SizeDelta: {x: 0.48619, y: 0.32763}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2032012635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032012633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a40ace2c126c3041bdcaf0e708d3a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TV: {fileID: 2032012633}
-  hintCanvas: {fileID: 0}
-  points: {fileID: 0}
 --- !u!65 &2032012636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124978,8 +124964,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22167164, y: 0.124468856, z: 0.023376431}
-  m_Center: {x: 0.01794113, y: -0.013998474, z: 0.021538265}
+  m_Size: {x: 0.22167164, y: 0.124468885, z: 0.06401729}
+  m_Center: {x: 0.017941121, y: -0.013998466, z: 0.001217865}
 --- !u!114 &2032012637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125018,6 +125004,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032012633}
   m_CullTransparentMesh: 1
+--- !u!114 &2032012639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032012633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6ec619d4f6d6444a664ac9725b63c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 2032012633}
+  hintCanvas: {fileID: 589069855}
 --- !u!1001 &2032056215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125517,7 +125517,7 @@ GameObject:
   - component: {fileID: 2039801180}
   - component: {fileID: 2039801179}
   - component: {fileID: 2039801178}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: HintWaterNozzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127096,7 +127096,7 @@ GameObject:
   - component: {fileID: 2064234883}
   - component: {fileID: 2064234885}
   - component: {fileID: 2064234884}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127813,7 +127813,7 @@ GameObject:
   - component: {fileID: 2073759219}
   - component: {fileID: 2073759221}
   - component: {fileID: 2073759220}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128906,7 +128906,7 @@ GameObject:
   - component: {fileID: 2089018993}
   - component: {fileID: 2089018995}
   - component: {fileID: 2089018994}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: SubText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129527,7 +129527,7 @@ GameObject:
   - component: {fileID: 2102564437}
   - component: {fileID: 2102564439}
   - component: {fileID: 2102564438}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130350,7 +130350,7 @@ GameObject:
   - component: {fileID: 2125628596}
   - component: {fileID: 2125628598}
   - component: {fileID: 2125628597}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: TextHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}

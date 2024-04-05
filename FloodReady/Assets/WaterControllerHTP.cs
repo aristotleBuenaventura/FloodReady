@@ -7,6 +7,7 @@ public class WaterControllerHTP : MonoBehaviour
     public bool isButtonPressed = false;
     public bool isHandColliding = false;
     public WaterNozzleIcon nozzle;
+    public GameObject HintDestroy;
 
     void Start()
     {
@@ -65,6 +66,7 @@ public class WaterControllerHTP : MonoBehaviour
                 waterSound.Play();
                 nozzle.SetUncheckIconVisible(false);
                 nozzle.SetCheckIconVisible(true);
+                Destroy(HintDestroy);
             }
         }
 

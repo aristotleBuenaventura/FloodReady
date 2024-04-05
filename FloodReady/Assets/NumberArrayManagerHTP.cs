@@ -11,6 +11,7 @@ public class NumberArrayManagerHTP : MonoBehaviour
     public GameObject Contact;
     private bool isTaskPercentageIncremented = false;
     public Dial161Icon icon;
+    public GameObject HintDestroy;
 
     private void Start()
     {
@@ -72,7 +73,7 @@ public class NumberArrayManagerHTP : MonoBehaviour
 
         if (currentNumber == "161" && !isTaskPercentageIncremented)
         {
-
+            Destroy(HintDestroy);
             dial.SetActive(true);
             icon.SetCheckIconVisible(true);
             icon.SetUncheckIconVisible(false);
