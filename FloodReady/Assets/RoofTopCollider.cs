@@ -7,7 +7,7 @@ public class RoofTopCollider : MonoBehaviour
 
     public RooftopIcon wholehousecheck;
     public GameObject DestroyCollider;
-
+    public AudioClip disableSound; // Sound to play when object is disabled
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,7 +16,11 @@ public class RoofTopCollider : MonoBehaviour
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
             Destroy(DestroyCollider);
-
+            // Play the disable sound
+            if (disableSound != null)
+            {
+                AudioSource.PlayClipAtPoint(disableSound, wholehousecheck.transform.position);
+            }
         }
 
     }
