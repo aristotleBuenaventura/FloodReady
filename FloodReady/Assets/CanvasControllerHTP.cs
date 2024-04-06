@@ -17,6 +17,7 @@ public class CanvasControllerHTP : MonoBehaviour
     public GameObject OpenChecklist;
     public MessageCanvas messageCanvas;
 
+    public GameObject FirstChecklist;
 
     private void Start()
     {
@@ -35,6 +36,8 @@ public class CanvasControllerHTP : MonoBehaviour
         StorageRoomArea.SetActive(false);
         BalconyArea.SetActive(false);
         ProoceedSceneArea.SetActive(false);
+
+        FirstChecklist.SetActive(false);
     }
 
 
