@@ -16,6 +16,7 @@ public class OpenHintHTP : MonoBehaviour
     public GameObject objectToMonitor7;
     public GameObject objectToMonitor8;
     public GameObject objectToMonitor9;
+    public GameObject objectToMonitor10;
 
 
 
@@ -34,6 +35,7 @@ public class OpenHintHTP : MonoBehaviour
             SetObjectActive(objectToMonitor7, true);
             SetObjectActive(objectToMonitor8, true);
             SetObjectActive(objectToMonitor9, true);
+            SetObjectActive(objectToMonitor10, true);
 
         }
     }
