@@ -32,7 +32,7 @@ public class HandCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TurnOnButton") && canPressButton)
+        if (other.CompareTag("TurnOnButton") || other.CompareTag("Hand") && canPressButton)
         {
             //StopAllCoroutines(); // Stop any existing coroutines
 
