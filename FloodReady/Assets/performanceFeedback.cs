@@ -39,18 +39,18 @@ public class PerformanceFeedback : MonoBehaviour
         }
         else if (points >= 6000 && points <= 8000)
         {
-            feedbackText.text = "ACCEPTABLE PERFORMANCE";
+            feedbackText.text = "GOOD BUT NEED MORE PRACTICE";
             feedbackText2.text = "Your performance is acceptable, but lacks depth in flood preparedness";
         }
         else if (points >= 3000 && points <= 5000)
         {
-            feedbackText.text = "BAD PERFORMANCE";
-            feedbackText2.text = "Your performance is unacceptable. Immediate improvement is required.";
+            feedbackText.text = "YOU NEED PRACTICE";
+            feedbackText2.text = "Immediate improvement is required.";
         }
         else if (points >= 0 && points <= 2000)
         {
-            feedbackText.text = "TERRIBLE PERFORMANCE";
-            feedbackText2.text = "You failed your flood preparedness training. You are not floodready!";
+            feedbackText.text = "YOU ARE NOT FLOODREADY";
+            feedbackText2.text = "You failed your training. You need to be floodready!";
         }
     }
 }
