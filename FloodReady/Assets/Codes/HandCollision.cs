@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
+using UnityEngine.Events;
 
 public class HandCollision : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class HandCollision : MonoBehaviour
     public AudioClip buttonPressSound; // Sound to play when button is pressed
     public TotalPoints points;
     public TurnOnTVCheck checklist;
-    public GameObject TVScreen;
+    public VideoPlayer TVScreen;
 
     private AudioSource audioSource; // Reference to the AudioSource component
     public GameObject TVHint;
@@ -24,6 +26,8 @@ public class HandCollision : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+                                                   // Subscribe to the loopPointReached event
+        TVScreen.loopPointReached += OnVideoEnd;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,17 +38,19 @@ public class HandCollision : MonoBehaviour
 
             if (isButtonDown)
             {
-               
-                TVScreen.SetActive(false);
-                Debug.Log("Button Pressed: TV Turned Off");
+
+                TVScreen.gameObject.SetActive(false);
                 CallSwitchCanvasAfterDelayTV();
+                Debug.Log("Button Pressed: TV Turned On");
+
+  
             }
             else
             {
 
-                TVScreen.SetActive(true);
+                TVScreen.gameObject.SetActive(true);
+                Debug.Log("Button Pressed: TV Turned Off");
                 CallSwitchCanvasAfterDelayTV();
-                Debug.Log("Button Pressed: TV Turned On");
             }
 
             isButtonDown = !isButtonDown;
@@ -59,6 +65,17 @@ public class HandCollision : MonoBehaviour
         }
     }
 
+    private void OnVideoEnd(VideoPlayer vp)
+    {
+        // Video has finished playing, reset button text to "START"
+
+
+        TVScreen.gameObject.SetActive(false);
+  
+
+    }
+
+
     private IEnumerator ButtonCooldown()
     {
         yield return new WaitForSeconds(buttonCooldown);
@@ -71,8 +88,8 @@ public class HandCollision : MonoBehaviour
         if (!taskCompleted)
         {
             Destroy(TVHint);
-            StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             Debug.Log("Go bag working");
+            StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             remoteTask.IncrementTaskPercentage(10);
             points.IncrementPoints(1000);
             check.SetCheckIconVisible(true);
@@ -82,5 +99,10 @@ public class HandCollision : MonoBehaviour
             // Set the flag to indicate that the task has been completed
             taskCompleted = true;
         }
+    }
+
+    private void OnDestroy()
+    {
+        TVScreen.loopPointReached -= OnVideoEnd;
     }
 }
