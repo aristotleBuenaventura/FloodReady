@@ -9,6 +9,7 @@ public class ChecklistHTP : MonoBehaviour
     public GameObject PortalBarricade;
     public GameObject TrainingRoomChecklist;
     public GameObject HouseFamiliarizationChecklist;
+    public CanvasControllerFirstCanvasHTP ShowProceedHouseCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class ChecklistHTP : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
-
+            ShowProceedHouseCanvas.ShowProceedHouseCanvas();
             ShowPortal();
             enabled = false;
         }
