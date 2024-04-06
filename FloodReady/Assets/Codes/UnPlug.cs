@@ -41,8 +41,8 @@ public class UnPlug : MonoBehaviour
         {
             if (!hasBeenUnplugged)
             {
-                FanUnplugPercentage.IncrementTaskPercentage(10);
-                points.IncrementPoints(1000);
+                FanUnplugPercentage.IncrementTaskPercentage(5);
+                points.IncrementPoints(500);
             }
             fanmovement.StopMovement();
             hasBeenUnplugged = true; // Set the flag to true to ensure this block executes only once
