@@ -12,12 +12,12 @@ public class ShowHintHTP : MonoBehaviour
     public GameObject HintGrabFirstAid;
     public GameObject HintGrabCannedGood;
     public GameObject HintWaterNozzle;
+    public GameObject PlayTutorialHint;
 
     void Start()
     {
 
     }
-
     public void HideAllCanvas()
     {
         if (PlayGrabHint.activeSelf)
@@ -43,7 +43,12 @@ public class ShowHintHTP : MonoBehaviour
 
         if (HintWaterNozzle.activeSelf)
             HintWaterNozzle.SetActive(false);
+
+
+        if (PlayTutorialHint.activeSelf)
+            PlayTutorialHint.SetActive(false);
     }
+
 
     public void ShowPlayGrabHint()
     {
@@ -55,6 +60,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowPlayWaterNozzleHint()
@@ -67,6 +73,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowPlayCellphoneHint()
@@ -79,6 +86,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowHintCellphoneHint()
@@ -91,6 +99,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowHintGrabFlashlight()
@@ -103,6 +112,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowHintGrabFirstAid()
@@ -115,6 +125,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(true);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowHintGrabCannedGood()
@@ -127,6 +138,7 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(true);
         HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(false);
     }
 
     public void ShowHintWaterNozzle()
@@ -139,5 +151,19 @@ public class ShowHintHTP : MonoBehaviour
         HintGrabFirstAid.SetActive(false);
         HintGrabCannedGood.SetActive(false);
         HintWaterNozzle.SetActive(true);
+        PlayTutorialHint.SetActive(false);
+    }
+
+    public void ShowPlayTutorialHint()
+    {
+        PlayGrabHint.SetActive(false);
+        PlayWaterNozzleHint.SetActive(false);
+        PlayCellphoneHint.SetActive(false);
+        HintCellphoneHint.SetActive(false);
+        HintGrabFlashlight.SetActive(false);
+        HintGrabFirstAid.SetActive(false);
+        HintGrabCannedGood.SetActive(false);
+        HintWaterNozzle.SetActive(false);
+        PlayTutorialHint.SetActive(true);
     }
 }

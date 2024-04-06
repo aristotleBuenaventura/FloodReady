@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChecklistHTP : MonoBehaviour
 {
-    public bool[] checklist = { false, false, false, false, false, false, false, false };
+    public bool[] checklist = { false, false, false, false, false, false, false, false, false };
     public GameObject Portal;
     public GameObject PortalBarricade;
     public GameObject TrainingRoomChecklist;
