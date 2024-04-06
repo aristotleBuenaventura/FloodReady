@@ -27,6 +27,8 @@ public class GoBagLogic : MonoBehaviour
     public GameObject First_aid_kit;
     public GameObject Flashlight;
     public GameObject MobilePhone;
+    public GameObject Documents;
+    public GameObject Whistle;
     public Canvas Check_list;
     public TaskPercentage bagPercentage;
     public iconforcannedgood cannedgood;
@@ -38,6 +40,8 @@ public class GoBagLogic : MonoBehaviour
     public iconformobilephone mobilephone;
     public iconforgatherdessentialgoods gatheredessentialgoods;
     public iconforfirstaidkit firstaidkit;
+    public iconfordocuments documents;
+    public iconforwhistle whistle;
     public TotalPoints points;
     public GoBagItemsCheck checklist;
     public GameObject disabledGobag;
@@ -49,6 +53,8 @@ public class GoBagLogic : MonoBehaviour
     public iconforflashlight wristflashlight;
     public iconformobilephone wristmobilephone;
     public iconforfirstaidkit wristfirstaidkit;
+    public iconfordocuments wristdocuments;
+    public iconforwhistle wristwhistle;
     public GameObject HintCanned_good;
     public GameObject HintEnergy_bar;
     public GameObject HintMoney;
@@ -58,7 +64,9 @@ public class GoBagLogic : MonoBehaviour
     public GameObject HintFlashlight;
     public GameObject HintMobilePhone;
     public GameObject HintEnergyBar;
-    bool[] collectedItems = new bool[8]; // Assuming there are 8 items
+    public GameObject HintDocuments;
+    public GameObject HintWhistle;
+    bool[] collectedItems = new bool[10]; // Assuming there are 10 items
     private HashSet<string> collectedItemsAll = new HashSet<string>();
     public iconforgatherdessentialgoods check;
 
@@ -206,6 +214,32 @@ public class GoBagLogic : MonoBehaviour
                     Destroy(HintFirst_aid_kit);
                 }
                 SetCollectedStatus(7);
+                break;   
+            case "Documents":
+                bagPercentage.IncrementTaskPercentage(5);
+                points.IncrementPoints(500);
+                documents.SetCheckIconVisible(true);
+                documents.SetUncheckIconVisible(true);
+                wristdocuments.SetCheckIconVisible(true);
+                wristdocuments.SetUncheckIconVisible(false);
+                if (HintDocuments != null)
+                {
+                    Destroy(HintDocuments);
+                }
+                SetCollectedStatus(8);
+                break;  
+            case "Whistle":
+                bagPercentage.IncrementTaskPercentage(5);
+                points.IncrementPoints(500);
+                whistle.SetCheckIconVisible(true);
+                whistle.SetUncheckIconVisible(false);
+                wristwhistle.SetCheckIconVisible(true);
+                wristwhistle.SetUncheckIconVisible(false);
+                if (HintWhistle != null)
+                {
+                    Destroy(HintWhistle);
+                }
+                SetCollectedStatus(9);
                 break;
             }
             collectedItemsAll.Add(collidedObjectName);
@@ -252,6 +286,8 @@ public class GoBagLogic : MonoBehaviour
         Destroy(Flashlight);
         Destroy(Check_list);
         Destroy(MobilePhone);
+        Destroy(Documents);
+        Destroy(Whistle);
         GoBagClosed.SetActive(true);
 
         Debug.Log("go bag completed");

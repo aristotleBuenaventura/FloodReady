@@ -12,6 +12,8 @@ public class ShowHintCanvas : MonoBehaviour
     public GameObject firstaidHint;
     public GameObject flashlightHint;
     public GameObject phoneHint;
+    public GameObject documentsHint;
+    public GameObject whistleHint;
 
 
     // main checklist
@@ -55,6 +57,12 @@ public class ShowHintCanvas : MonoBehaviour
         if (phoneHint.activeSelf)
             phoneHint.SetActive(false);
 
+        if (documentsHint.activeSelf)
+            documentsHint.SetActive(false);
+
+        if (whistleHint.activeSelf)
+            whistleHint.SetActive(false);
+
         // Additional hints
         if (TVHint.activeSelf)
             TVHint.SetActive(false);
@@ -81,6 +89,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -100,6 +110,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -117,6 +129,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -135,6 +149,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -152,6 +168,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -169,6 +187,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(true);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -186,6 +206,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(true);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -203,6 +225,46 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(true);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
+        TVHint.SetActive(false);
+        RetrieveHint.SetActive(false);
+        UnplugHint.SetActive(false);
+        MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
+    }
+
+    public void ShowDocumentsCanvas()
+    {
+        cannedgoodHint.SetActive(false);
+        energybarHint.SetActive(false);
+        waterHint.SetActive(false);
+        moneyHint.SetActive(false);
+        clothesHints.SetActive(false);
+        firstaidHint.SetActive(false);
+        flashlightHint.SetActive(false);
+        phoneHint.SetActive(false);
+        documentsHint.SetActive(true);
+        whistleHint.SetActive(false);
+        TVHint.SetActive(false);
+        RetrieveHint.SetActive(false);
+        UnplugHint.SetActive(false);
+        MainBreakerHint.SetActive(false);
+        LeaveHouseHint.SetActive(false);
+    }
+
+    public void ShowWhistleCanvas()
+    {
+        cannedgoodHint.SetActive(false);
+        energybarHint.SetActive(false);
+        waterHint.SetActive(false);
+        moneyHint.SetActive(false);
+        clothesHints.SetActive(false);
+        firstaidHint.SetActive(false);
+        flashlightHint.SetActive(false);
+        phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(true);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -221,6 +283,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(true);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -240,6 +304,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(true);
         UnplugHint.SetActive(false);
@@ -257,6 +323,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(true);
@@ -274,6 +342,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
@@ -292,6 +362,8 @@ public class ShowHintCanvas : MonoBehaviour
         firstaidHint.SetActive(false);
         flashlightHint.SetActive(false);
         phoneHint.SetActive(false);
+        documentsHint.SetActive(false);
+        whistleHint.SetActive(false);
         TVHint.SetActive(false);
         RetrieveHint.SetActive(false);
         UnplugHint.SetActive(false);
