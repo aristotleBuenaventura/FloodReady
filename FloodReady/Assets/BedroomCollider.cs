@@ -8,11 +8,15 @@ public class BedroomCollider : MonoBehaviour
     public BedroomIcon wholehousecheck;
     public GameObject DestroyCollider;
     public AudioClip disableSound; // Sound to play when object is disabled
+    public CanvasControllerHTP CanvasControllerHTP;
+    public GameObject DestroryPathCollider;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-
+            CanvasControllerHTP.ShowBedroomAreaCanvas();
+            Destroy(DestroryPathCollider);
+            Destroy(DestroryPathCollider);
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
             Destroy(DestroyCollider);

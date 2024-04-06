@@ -8,11 +8,14 @@ public class RoofTopCollider : MonoBehaviour
     public RooftopIcon wholehousecheck;
     public GameObject DestroyCollider;
     public AudioClip disableSound; // Sound to play when object is disabled
+    public CanvasControllerHTP CanvasControllerHTP;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-
+            CanvasControllerHTP.ShowProoceedSceneAreaCanvas();
+  
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
             Destroy(DestroyCollider);

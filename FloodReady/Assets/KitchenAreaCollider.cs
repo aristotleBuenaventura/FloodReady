@@ -8,10 +8,15 @@ public class KitchenAreaCollider : MonoBehaviour
     public KitchenIcon wholehousecheck;
     public GameObject DestroyCollider;
     public AudioClip disableSound; // Sound to play when object is disabled
+    public CanvasControllerHTP CanvasControllerHTP;
+    public GameObject DestroryPathCollider;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+
+            CanvasControllerHTP.ShowKitchenAreaCanvas();
+            Destroy(DestroryPathCollider);
 
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);

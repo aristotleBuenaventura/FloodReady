@@ -5,8 +5,11 @@ using UnityEngine;
 public class WashingAreaCollider : MonoBehaviour
 {
     public WashingRoomIcon wholehousecheck;
-    public GameObject DestroyCollider;
+
     public AudioClip disableSound; // Sound to play when object is disabled
+    public CanvasControllerHTP CanvasControllerHTP;
+    public GameObject DestroyCollider;
+    public GameObject DestroryPathCollider;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag( "Player"))
@@ -14,6 +17,11 @@ public class WashingAreaCollider : MonoBehaviour
 
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
+
+            CanvasControllerHTP.ShowWashingAreaCanvas();
+            Destroy(DestroryPathCollider);
+
+
             Destroy(DestroyCollider);
             // Play the disable sound
             if (disableSound != null)

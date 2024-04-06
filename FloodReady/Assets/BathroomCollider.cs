@@ -7,10 +7,14 @@ public class BathroomCollider : MonoBehaviour
     public BathroomIcon wholehousecheck;
     public GameObject DestroyCollider;
     public AudioClip disableSound; // Sound to play when object is disabled
+    public CanvasControllerHTP CanvasControllerHTP;
+    public GameObject DestroryPathCollider;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            CanvasControllerHTP.ShowBathRoomAreaCanvas();
+            Destroy(DestroryPathCollider);
 
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
