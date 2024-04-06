@@ -219,7 +219,7 @@ public class GoBagLogic : MonoBehaviour
                 bagPercentage.IncrementTaskPercentage(5);
                 points.IncrementPoints(500);
                 documents.SetCheckIconVisible(true);
-                documents.SetUncheckIconVisible(true);
+                documents.SetUncheckIconVisible(false);
                 wristdocuments.SetCheckIconVisible(true);
                 wristdocuments.SetUncheckIconVisible(false);
                 if (HintDocuments != null)
