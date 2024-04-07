@@ -18,7 +18,10 @@ public class UnPlugTV : MonoBehaviour
     void Start()
     {
         // Turn off the TV at the start
-        TVScreen.SetActive(false);
+        if(TVScreen != null)
+        {
+            TVScreen.SetActive(false);
+        }
 
         // Initialize other states
         isPlugAttached = false;
@@ -34,7 +37,7 @@ public class UnPlugTV : MonoBehaviour
             // Turn on the TV only if it was turned off initially
 
             
-            if (isPlugAttached)
+            if (isPlugAttached != null)
             {
                 TVScreen.SetActive(true);
             }
@@ -64,7 +67,7 @@ public class UnPlugTV : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
 
         // Check if the plug is still attached after the delay
-        if (!isPlugAttached)
+        if (!isPlugAttached != null)
         {
             TVScreen.SetActive(false);
             ShowCanvas.SetBooleanTV(true);

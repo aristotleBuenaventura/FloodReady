@@ -73,13 +73,10 @@ public class BreakableWindow : MonoBehaviour
 
         if (currentMaterialIndex >= windowMaterials.Length - 1) // Check if the current material is the last one
         {
-            Destroy(hintWindow);
+           
             // Set it as the last window
             SetIsLastWindow(true);
-            windowBreakIcon.SetCheckIconVisible(true);
-            windowBreakIcon.SetUncheckIconVisible(false);
-            task.SetCheckIconVisible(true);
-            task.SetUncheckIconVisible(false);
+            
 
         }
         else
@@ -113,6 +110,11 @@ public class BreakableWindow : MonoBehaviour
             breakSound.Play(); // Play break sound when window is destroyed
             breakwindowpercentage.IncrementTaskPercentage(20);
             points.IncrementPoints(2000);
+            windowBreakIcon.SetCheckIconVisible(true);
+            windowBreakIcon.SetUncheckIconVisible(false);
+            task.SetCheckIconVisible(true);
+            task.SetUncheckIconVisible(false);
+            Destroy(hintWindow);
         }
 
         if (renderer != null)

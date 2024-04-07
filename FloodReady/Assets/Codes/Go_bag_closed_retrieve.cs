@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Go_bag_closed_retrieve : MonoBehaviour
 {
@@ -16,14 +17,16 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public AllowGrabTVPlugCube tvplugcube;
     public AllowGrabTVPLug tvplug;
     public GameObject GoBagDestroy;
-
+    public SocketCollider socket;
+    public GameObject tvscreen;
+    public VideoPlayer videoPlayer;
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
 
     void Start()
     {
-
+        videoPlayer = GetComponent<VideoPlayer>();
     }
 
     void Update()
@@ -45,6 +48,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeDisappear);
         // Deactivate the GameObject instead of destroying it
+
         gameObject.SetActive(false);
         GoBagRetrieve.ShowUnplugCableCanvas();
         CloseBag.IncrementTaskPercentage(10);
@@ -56,7 +60,12 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         fanplug.EnableCollider();
         tvplugcube.EnableCollider();
         tvplug.EnableCollider();
-
+        socket.EnableCollider();
+        if (videoPlayer != null)
+        {
+            videoPlayer.enabled = false;
+            tvscreen.SetActive(false);
+        }
         Destroy(GoBagDestroy);
     }
 }
