@@ -7,6 +7,14 @@ public class LivingRoom_MiniGame : MonoBehaviour
     public bool[] checklist = { false, false, false, false, false, false, false, false, false };
     public CleaningChecklistCanvas checklistCanvas;
     public RecoveryCanvasController MainCanvas;
+    public GameObject Cleaned;
+    public GameObject Dirty;
+
+    void Start()
+    {
+        Dirty.SetActive(true);
+        Cleaned.SetActive(false);
+    }
     // Start is called before the first frame update
     void Update()
     {
@@ -24,6 +32,8 @@ public class LivingRoom_MiniGame : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
+            Dirty.SetActive(false);
+            Cleaned.SetActive(true);
             MainCanvas.ShowfindPlungerCanvas();
             checklistCanvas.deactivate();
             enabled = false;
