@@ -20,7 +20,7 @@ public class RetryScene1 : MonoBehaviour
     // This method is called when the button is clicked
     public void MoveToEvacuation_Essential()
     {
-        coll.enabled = false;
+      
         int numAttempts = attempts.GetAttemptsToPass();
         PlayerPrefs.SetInt("attempts", numAttempts);
         StartCoroutine(LoadSceneWithAudio("Evacuation_Essential"));
@@ -30,6 +30,7 @@ public class RetryScene1 : MonoBehaviour
     {
         if (other.CompareTag("Hand") || other.CompareTag("TurnOnButton"))
         {
+            coll.enabled = false;
             int numAttempts = attempts.GetAttemptsToPass();
             PlayerPrefs.SetInt("attempts", numAttempts);
             StartCoroutine(LoadSceneWithAudio("Evacuation_Essential"));

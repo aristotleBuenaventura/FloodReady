@@ -9,16 +9,18 @@ public class RetryScene3 : MonoBehaviour
     public AudioClip oneTimeAudioClip; // Reference to your one-time audio clip
     private bool soundPlayed = false; // Flag to check if sound has been played
     private AudioSource audioSource; // Reference to AudioSource component
-
+    private Collider coll; // Reference to the collider component
     void Start()
     {
         // Get the AudioSource component attached to the same GameObject
         audioSource = GetComponent<AudioSource>();
+        coll = GetComponent<Collider>();
     }
 
     // This method is called when the button is clicked
     public void MoveToRecovery_Resilience()
     {
+        coll.enabled = false;
         int numAttempts = attempts.GetAttemptsToPass();
         PlayerPrefs.SetInt("attemptsScene3", numAttempts);
         StartCoroutine(LoadSceneWithAudio("Recovery_Resilience"));
