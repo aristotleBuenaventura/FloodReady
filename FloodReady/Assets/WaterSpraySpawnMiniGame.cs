@@ -11,7 +11,7 @@ public class WaterSpraySpawnMiniGame : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        WaterSpray.SetActive(false);
+        WaterSpray.SetActive(true);
     }
 
     void Update()

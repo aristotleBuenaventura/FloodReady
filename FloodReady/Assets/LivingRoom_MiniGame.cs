@@ -5,8 +5,7 @@ using UnityEngine;
 public class LivingRoom_MiniGame : MonoBehaviour
 {
     public bool[] checklist = { false, false, false, false, false, false, false, false, false };
-    public CleaningChecklistCanvas checklistCanvas;
-    public RecoveryCanvasController MainCanvas;
+    public CanvasMiniGame MainCanvas;
     public GameObject Cleaned;
     public GameObject Dirty;
 
@@ -34,8 +33,7 @@ public class LivingRoom_MiniGame : MonoBehaviour
         {
             Dirty.SetActive(false);
             Cleaned.SetActive(true);
-            MainCanvas.ShowfindPlungerCanvas();
-            checklistCanvas.deactivate();
+            MainCanvas.showCleaningDone();
             enabled = false;
         }
 
