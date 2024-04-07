@@ -22,7 +22,7 @@ public class TransitionMinigame : MonoBehaviour
         if (other.CompareTag("Hand") || other.CompareTag("TurnOnButton"))
         {
             coll.enabled = false;
-            StartCoroutine(LoadSceneWithAudio("Cleaning_Free_Mode"));
+            StartCoroutine(LoadSceneWithAudio("Cleaning_Free_Mode_Test"));
         }
     }
 
