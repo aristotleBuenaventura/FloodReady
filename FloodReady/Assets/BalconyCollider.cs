@@ -10,6 +10,7 @@ public class BalconyCollider : MonoBehaviour
     public AudioClip disableSound; // Sound to play when object is disabled
     public CanvasControllerHTP CanvasControllerHTP;
     public GameObject DestroryPathCollider;
+    public GameObject DestroyHint;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,8 +22,9 @@ public class BalconyCollider : MonoBehaviour
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
             Destroy(DestroyCollider);
-                  // Play the disable sound
-                if (disableSound != null)
+            Destroy(DestroyHint);
+            // Play the disable sound
+            if (disableSound != null)
                 {
                     AudioSource.PlayClipAtPoint(disableSound, wholehousecheck.transform.position);
                 }
