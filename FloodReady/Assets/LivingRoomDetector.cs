@@ -2,17 +2,15 @@ using UnityEngine;
 
 public class LivingRoomDetector : MonoBehaviour
 {
-
-    public GameObject CubeDetector;
-
+    public teleportMiniGame TP; // Corrected class name to "TeleportMiniGame"
+    public GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hand"))
         {
-            CubeDetector.SetActive(true);
-}
-
+            // Pass the GameObject of the hand to the LivingRoom method
+            TP.LivingRoom(player);
+        }
     }
-
 }

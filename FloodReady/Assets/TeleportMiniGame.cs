@@ -5,24 +5,17 @@ using UnityEngine;
 public class teleportMiniGame : MonoBehaviour
 {
     // Expose the desired position and rotation in the Inspector
-    [Header("Teleport Settings")]
-    public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
-    public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
+    private Vector3 desiredPosition;
+    private Vector3 desiredRotation;
   
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            TeleportPlayer(other.gameObject);
-        }
-    }
 
-    private void TeleportPlayer(GameObject player)
+    public void LivingRoom(GameObject player)
     {
         if (player != null)
         {
-
+            desiredPosition = new Vector3(-1.235f, 2.22f, -2.919f);
+            desiredRotation = new Vector3(0f, 231.814f, 0.0f);
             // Set the desired position from the Inspector
             player.transform.position = desiredPosition;
 
@@ -32,4 +25,6 @@ public class teleportMiniGame : MonoBehaviour
 
         }
     }
+
+
 }
