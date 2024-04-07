@@ -9,6 +9,7 @@ public class LivingRoomCollider : MonoBehaviour
     public AudioClip disableSound; // Sound to play when object is disabled
     public CanvasControllerHTP CanvasControllerHTP;
     public GameObject DestroryPathCollider;
+    public GameObject DestroyHint;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,6 +19,7 @@ public class LivingRoomCollider : MonoBehaviour
             wholehousecheck.SetCheckIconVisible(true);
             Destroy(DestroyCollider);
             Destroy(DestroryPathCollider);
+            Destroy(DestroyHint);
             // Play the disable sound
             if (disableSound != null)
             {

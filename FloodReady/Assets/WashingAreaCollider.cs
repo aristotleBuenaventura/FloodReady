@@ -10,6 +10,7 @@ public class WashingAreaCollider : MonoBehaviour
     public CanvasControllerHTP CanvasControllerHTP;
     public GameObject DestroyCollider;
     public GameObject DestroryPathCollider;
+    public GameObject DestroyHint;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag( "Player"))
@@ -20,7 +21,7 @@ public class WashingAreaCollider : MonoBehaviour
 
             CanvasControllerHTP.ShowWashingAreaCanvas();
             Destroy(DestroryPathCollider);
-
+            Destroy(DestroyHint);
 
             Destroy(DestroyCollider);
             // Play the disable sound

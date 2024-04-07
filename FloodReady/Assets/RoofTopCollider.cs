@@ -9,6 +9,7 @@ public class RoofTopCollider : MonoBehaviour
     public GameObject DestroyCollider;
     public AudioClip disableSound; // Sound to play when object is disabled
     public CanvasControllerHTP CanvasControllerHTP;
+    public GameObject DestroyHint;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class RoofTopCollider : MonoBehaviour
   
             wholehousecheck.SetUncheckIconVisible(false);
             wholehousecheck.SetCheckIconVisible(true);
+            Destroy(DestroyHint);
             Destroy(DestroyCollider);
             // Play the disable sound
             if (disableSound != null)
