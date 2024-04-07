@@ -13,6 +13,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public attemptsLeftScene2 finalAttempts;
     public GameObject retryBtn;
     public GameObject proceedBtn;
+    public GameObject maximumText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,6 +29,7 @@ public class InvisibleWallScene2 : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
+            maximumText.SetActive(false);
             // Teleport the player to the desired position and rotation
             TeleportPlayer(other.gameObject);
             
