@@ -25,7 +25,7 @@ public class Hallway_MiniGame : MonoBehaviour
         if (allTrue)
         {
             MainCanvas.ShowfindPlungerCanvas();
-            checklistCanvas.ShowHallwayCanvas();
+            checklistCanvas.deactivate();
             enabled = false;
         }
 
