@@ -13,6 +13,7 @@ public class UnPlugTV : MonoBehaviour
     private bool hasIncrementedPercentage = false;
     private bool isCoroutineRunning = false;
     public TotalPoints points;
+    public bool IsGoBag = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class UnPlugTV : MonoBehaviour
             // Turn on the TV only if it was turned off initially
 
             
-            if (isPlugAttached != null)
+            if (isPlugAttached != null && IsGoBag)
             {
                 TVScreen.SetActive(true);
             }
@@ -86,5 +87,10 @@ public class UnPlugTV : MonoBehaviour
         {
             isPlugAttached = false;
         }
+    }
+
+    public void setIsGoBagtoFalse()
+    {
+        IsGoBag = false;
     }
 }

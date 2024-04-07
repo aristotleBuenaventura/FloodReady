@@ -20,6 +20,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
     public SocketCollider socket;
     public GameObject tvscreen;
     public VideoPlayer videoPlayer;
+    public UnPlugTV isGoBag;
 
     // You can adjust this variable to control the delay before the object disappears
     public float delayBeforeDisappear = 0.5f;
@@ -61,6 +62,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         tvplugcube.EnableCollider();
         tvplug.EnableCollider();
         socket.EnableCollider();
+        isGoBag.setIsGoBagtoFalse();
         if (videoPlayer != null)
         {
             videoPlayer.enabled = false;
