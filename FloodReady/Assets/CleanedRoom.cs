@@ -5,7 +5,7 @@ using UnityEngine;
 public class CleanedRoom : MonoBehaviour
 {
     public bool[] checklist = { false, false, false, false, false};
-    public RecoveryCanvasController MainCanvas;
+    public CanvasMiniGame MainCanvas;
 
     // Start is called before the first frame update
     void Update()
@@ -24,7 +24,7 @@ public class CleanedRoom : MonoBehaviour
         // If all elements are true, display debug.log("Finish")
         if (allTrue)
         {
-            MainCanvas.ShowfindPlungerCanvas();
+            MainCanvas.showCleaningFinish();
             enabled = false;
         }
 

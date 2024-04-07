@@ -5,7 +5,6 @@ using UnityEngine;
 public class Hallway_MiniGame : MonoBehaviour
 {
     public bool[] checklist = { false, false, false, false, false, false, false, false, false };
-    public CleaningChecklistCanvas checklistCanvas;
     public CanvasMiniGame MainCanvas;
     public GameObject Cleaned;
     public GameObject Dirty;
@@ -35,7 +34,6 @@ public class Hallway_MiniGame : MonoBehaviour
             Dirty.SetActive(false);
             Cleaned.SetActive(true);
             MainCanvas.showCleaningDone();
-            checklistCanvas.deactivate();
             enabled = false;
         }
 
