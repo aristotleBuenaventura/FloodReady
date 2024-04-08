@@ -14,6 +14,8 @@ public class OpenHintCanvas : MonoBehaviour
     public GameObject objectToMonitor7;
     public GameObject objectToMonitor8;
     public GameObject objectToMonitor9;
+    public GameObject objectToMonitor10;
+    public GameObject objectToMonitor11;
 
     private void OnTriggerEnter(Collider other)
     {
