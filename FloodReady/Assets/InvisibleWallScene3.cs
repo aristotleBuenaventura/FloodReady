@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class InvisibleWallScene3 : MonoBehaviour
 {
-    // Expose the desired position and rotation in the Inspector
+    // Expose the target object in the Inspector
     [Header("Teleport Settings")]
-    public Vector3 desiredPosition;
-    public Vector3 desiredRotation;
+    public Transform targetObject;
     public RecoveryCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
     public Timer screenTimer;
@@ -24,30 +23,24 @@ public class InvisibleWallScene3 : MonoBehaviour
             screenTimer.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
-            //wristwatchStopTime.StopTimer();
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
             retryBtn.SetActive(false);
             limit.SetActive(false);
             proceedBtn.SetActive(true);
-            // Teleport the player to the desired position and rotation
-
-
         }
     }
 
     private void TeleportPlayer(GameObject player)
     {
-        if (player != null)
+        if (player != null && targetObject != null)
         {
+            // Copy the world transform of the target object
+            Transform targetTransform = targetObject.transform;
 
-            // Set the desired position from the Inspector
-            player.transform.position = desiredPosition;
-
-            // Set the desired rotation from the Inspector
-            player.transform.rotation = Quaternion.Euler(desiredRotation);
-
-
+            // Paste the world transform to the player
+            player.transform.position = targetTransform.position;
+            player.transform.rotation = targetTransform.rotation;
         }
     }
 }
