@@ -13,6 +13,7 @@ public class InvisibleWallScene3 : MonoBehaviour
     public attemptsLeftScene3 finalAttempts;
     public GameObject retryBtn;
     public GameObject proceedBtn;
+    public GameObject limit;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +28,7 @@ public class InvisibleWallScene3 : MonoBehaviour
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
             retryBtn.SetActive(false);
+            limit.SetActive(false);
             proceedBtn.SetActive(true);
             // Teleport the player to the desired position and rotation
 
