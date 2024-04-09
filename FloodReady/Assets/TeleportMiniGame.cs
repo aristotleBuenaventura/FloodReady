@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class teleportMiniGame : MonoBehaviour
 {
-    // Expose the desired position and rotation in the Inspector
-    private Vector3 desiredPosition;
-    private Vector3 desiredRotation;
-  
-
+    // Expose the target object in the Inspector
+    public Transform targetObject;
 
     public void LivingRoom(GameObject player)
     {
-        if (player != null)
+        if (player != null && targetObject != null)
         {
-            desiredPosition = new Vector3(-1.235f, 2.22f, -2.919f);
-            desiredRotation = new Vector3(0f, 231.814f, 0.0f);
-            // Set the desired position from the Inspector
-            player.transform.position = desiredPosition;
+            // Copy the world transform of the target object
+            Transform targetTransform = targetObject.transform;
 
-            // Set the desired rotation from the Inspector
-            player.transform.rotation = Quaternion.Euler(desiredRotation);
-
-
+            // Paste the world transform to the player
+            player.transform.position = targetTransform.position;
+            player.transform.rotation = targetTransform.rotation;
         }
     }
-
-
 }

@@ -32,6 +32,8 @@ public class OpenHintCanvas : MonoBehaviour
             SetObjectActive(objectToMonitor7, true);
             SetObjectActive(objectToMonitor8, true);
             SetObjectActive(objectToMonitor9, true);
+            SetObjectActive(objectToMonitor10, true);
+            SetObjectActive(objectToMonitor11, true);
         }
     }
 
