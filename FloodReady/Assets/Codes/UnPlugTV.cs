@@ -19,7 +19,7 @@ public class UnPlugTV : MonoBehaviour
     void Start()
     {
         // Turn off the TV at the start
-        if(TVScreen != null)
+        if (TVScreen != null)
         {
             TVScreen.SetActive(false);
         }
@@ -35,15 +35,6 @@ public class UnPlugTV : MonoBehaviour
         if (other.CompareTag("Plug"))
         {
             isPlugAttached = true;
-            // Turn on the TV only if it was turned off initially
-
-            
-            if (isPlugAttached != null && IsGoBag)
-            {
-                TVScreen.SetActive(true);
-            }
-
-
         }
     }
 
@@ -59,7 +50,6 @@ public class UnPlugTV : MonoBehaviour
         isPlugAttached = other.CompareTag("Plug");
     }
 
-
     private IEnumerator DelayedUnplugCheck()
     {
         // Set the flag to indicate that the coroutine is running
@@ -68,7 +58,7 @@ public class UnPlugTV : MonoBehaviour
         yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
 
         // Check if the plug is still attached after the delay
-        if (!isPlugAttached != null)
+        if (!isPlugAttached)
         {
             TVScreen.SetActive(false);
             ShowCanvas.SetBooleanTV(true);
