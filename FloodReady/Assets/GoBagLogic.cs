@@ -66,6 +66,7 @@ public class GoBagLogic : MonoBehaviour
     public GameObject HintEnergyBar;
     public GameObject HintDocuments;
     public GameObject HintWhistle;
+    public GameObject items;
     bool[] collectedItems = new bool[10]; // Assuming there are 10 items
     private HashSet<string> collectedItemsAll = new HashSet<string>();
     public iconforgatherdessentialgoods check;
@@ -74,6 +75,7 @@ public class GoBagLogic : MonoBehaviour
     {
         GoBagClosed.SetActive(false);
         disabledGobag.SetActive(false);
+        items.SetActive(false);
     }
 
 
@@ -288,6 +290,7 @@ public class GoBagLogic : MonoBehaviour
         Destroy(MobilePhone);
         Destroy(Documents);
         Destroy(Whistle);
+        items.SetActive(true);
         GoBagClosed.SetActive(true);
 
         Debug.Log("go bag completed");
