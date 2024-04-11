@@ -9,6 +9,7 @@ public class GrabItem : MonoBehaviour
     private bool isGrabbed = false;
     public FlashlightIcon grab;
     public GameObject HintDestroy;
+    public AudioSource item;
 
     void Update()
     {
@@ -23,12 +24,17 @@ public class GrabItem : MonoBehaviour
                 isGrabbed = true;
             }
         }
+        else
+        {
+            isGrabbed = false; // Reset the flag when the object is released
+        }
     }
 
     IEnumerator DisappearWithDelay()
     {
         Destroy(HintDestroy);
         yield return new WaitForSeconds(0.5f);
+        item.Play();
         grab.SetUncheckIconVisible(false);
         grab.SetCheckIconVisible(true);
     }
