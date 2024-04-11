@@ -12,13 +12,21 @@ public class Calling_UI_S3 : MonoBehaviour
     public GameObject DestroyHint;
     public GameObject MobilePhoneOnHand;
     public GameObject GoBag;
+    public AudioSource father;
 
     void Start()
     {
-        call.Play();
-
-        StartCoroutine(DelayedAction());
         
+        father.Play();
+        StartCoroutine(fatherVoice());
+        
+    }
+
+    IEnumerator fatherVoice()
+    {
+        yield return new WaitForSeconds(8f);
+        call.Play();
+        StartCoroutine(DelayedAction());
     }
 
     IEnumerator DelayedAction()
