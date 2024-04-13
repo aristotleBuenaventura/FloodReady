@@ -1024,8 +1024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85710de58264a343b81e278519c2842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerResultCanvas: {fileID: 0}
-  playerAccomplishmentsCanvas: {fileID: 0}
 --- !u!65 &188558417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2725,6 +2723,8 @@ GameObject:
   - component: {fileID: 561132406}
   - component: {fileID: 561132405}
   - component: {fileID: 561132404}
+  - component: {fileID: 561132408}
+  - component: {fileID: 561132407}
   m_Layer: 0
   m_Name: InteractableCanvas
   m_TagString: Untagged
@@ -2802,6 +2802,35 @@ MonoBehaviour:
   _selectSurface: {fileID: 0}
   _movementProvider: {fileID: 0}
   _tiebreakerScore: 0
+--- !u!114 &561132407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561132402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2518c50cb3fc6a6458d4b743c2f69c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  _useInitialPressPositionForDrag: 1
+--- !u!114 &561132408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561132402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &675053771
 GameObject:
   m_ObjectHideFlags: 0
@@ -8383,8 +8412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85710de58264a343b81e278519c2842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerResultCanvas: {fileID: 0}
-  playerAccomplishmentsCanvas: {fileID: 0}
 --- !u!65 &1823098801
 BoxCollider:
   m_ObjectHideFlags: 0
