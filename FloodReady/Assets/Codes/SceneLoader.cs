@@ -34,7 +34,7 @@ public class SceneChanger : MonoBehaviour
 
     public void MoveToCleaning_Mini_Game_Quest()
     {
-        StartCoroutine(LoadScene("Cleaning_Mini_Game_Quest"));
+        StartCoroutine(LoadScene("Free_Mode"));
     }
 
     public void QuitGame()

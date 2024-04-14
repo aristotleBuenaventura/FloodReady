@@ -7,7 +7,7 @@ public class InvisibleWallScene3 : MonoBehaviour
     public Transform targetObject;
     public RecoveryCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
-    public Timer screenTimer;
+    public ScreenTimer screenTimer;
     public NumberOfAttemptsScene3 attempts;
     public attemptsLeftScene3 finalAttempts;
     public GameObject retryBtn;

@@ -79,7 +79,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
     public void MoveToCleaning_Mini_Game_Quest()
     {
-        StartCoroutine(LoadScene("Cleaning_Free_Mode_Test"));
+        StartCoroutine(LoadScene("Free_Mode"));
     }
 
     public void QuitGame()

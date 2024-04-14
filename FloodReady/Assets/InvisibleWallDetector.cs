@@ -8,7 +8,7 @@ public class InvisibleWallDetector : MonoBehaviour
     public CanvasController congratulationcanvas;
     public Timer_welldone welldomeStopTime;
     public Timer wristwatchStopTime;
-    public Timer screenTimer;
+    public ScreenTimer screenTimer;
     public NumberOfAttemptsScene1 attempts;
     public attemptsLeft finalAttempts;
     public GameObject retryBtn;
