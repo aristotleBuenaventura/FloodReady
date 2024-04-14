@@ -1,12 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Make sure to add this for UI elements
-using UnityEditor;
+using UnityEngine.UI;
 
 public class SceneLoaderMainMenu : MonoBehaviour
 {
-    public GameObject loadingScreen; // Reference to your loading screen UI element
+    public GameObject loadingScreen;
     private int isReady;
     public GameObject Scene1;
     public GameObject Scene2;
@@ -41,7 +40,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
         {
             Scene1.SetActive(true);
         }
-        
+
     }
 
     public void MoveToEscape_Survive()
@@ -86,7 +85,6 @@ public class SceneLoaderMainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
     }
 
     IEnumerator LoadScene(string sceneName)

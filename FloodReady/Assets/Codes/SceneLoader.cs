@@ -1,14 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Make sure to add this for UI elements
-using UnityEditor;
+using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
 {
-    public GameObject loadingScreen; // Reference to your loading screen UI element
+    public GameObject loadingScreen;
 
-    // This method is called when the button is clicked
     public void MoveToEvacuation_Essential()
     {
         StartCoroutine(LoadScene("Evacuation_Essential"));
@@ -42,24 +40,16 @@ public class SceneChanger : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
     }
 
     IEnumerator LoadScene(string sceneName)
     {
-        // Activate the loading screen
         loadingScreen.SetActive(true);
-
-        // Load the scene synchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-
-        // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-
-        // Deactivate the loading screen after the scene is loaded
         loadingScreen.SetActive(false);
     }
 }
