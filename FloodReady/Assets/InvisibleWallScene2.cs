@@ -7,7 +7,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public Transform targetObject;
     public EscapeCanvasController congratulationcanvas;
     public Timer_welldone stoptime;
-    public Timer screenTimer;
+    public ScreenTimer screenTimer;
     public NumberOfAttemptsScene2 attempts;
     public attemptsLeftScene2 finalAttempts;
     public GameObject retryBtn;
