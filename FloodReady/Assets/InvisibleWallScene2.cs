@@ -13,6 +13,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject maximumText;
+    public GameObject playerOVR;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,20 +31,20 @@ public class InvisibleWallScene2 : MonoBehaviour
             maximumText.SetActive(false);
 
             // Teleport the player by copying the world transform of the target object
-            TeleportPlayer(other.gameObject);
+            TeleportPlayer();
         }
     }
 
-    private void TeleportPlayer(GameObject player)
+    private void TeleportPlayer()
     {
-        if (player != null && targetObject != null)
+        if (playerOVR != null && targetObject != null)
         {
             // Copy the world transform of the target object
             Transform targetTransform = targetObject.transform;
 
             // Paste the world transform to the player
-            player.transform.position = targetTransform.position;
-            player.transform.rotation = targetTransform.rotation;
+            playerOVR.transform.position = targetTransform.position;
+            playerOVR.transform.rotation = targetTransform.rotation;
         }
     }
 }

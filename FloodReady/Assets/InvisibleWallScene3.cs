@@ -13,12 +13,13 @@ public class InvisibleWallScene3 : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject limit;
+    public GameObject playerOVR;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            TeleportPlayer(other.gameObject);
+            TeleportPlayer();
             Debug.Log("Player detected! Teleporting...");
             screenTimer.StopTimer();
             attempts.SetNumberOfAttempts();
@@ -31,16 +32,16 @@ public class InvisibleWallScene3 : MonoBehaviour
         }
     }
 
-    private void TeleportPlayer(GameObject player)
+    private void TeleportPlayer()
     {
-        if (player != null && targetObject != null)
+        if (playerOVR != null && targetObject != null)
         {
             // Copy the world transform of the target object
             Transform targetTransform = targetObject.transform;
 
             // Paste the world transform to the player
-            player.transform.position = targetTransform.position;
-            player.transform.rotation = targetTransform.rotation;
+            playerOVR.transform.position = targetTransform.position;
+            playerOVR.transform.rotation = targetTransform.rotation;
         }
     }
 }

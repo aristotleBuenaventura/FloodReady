@@ -13,6 +13,7 @@ public class InvisibleWallDetector : MonoBehaviour
     public attemptsLeft finalAttempts;
     public GameObject retryBtn;
     public GameObject proceedBtn;
+    public GameObject playerOVR;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,20 +27,20 @@ public class InvisibleWallDetector : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
-            TeleportPlayer(other.gameObject);
+            TeleportPlayer();
         }
     }
 
-    private void TeleportPlayer(GameObject player)
+    private void TeleportPlayer()
     {
-        if (player != null && targetObject != null)
+        if (playerOVR != null && targetObject != null)
         {
             // Copy the world transform of the target object
             Transform targetTransform = targetObject.transform;
 
             // Paste the world transform to the player
-            player.transform.position = targetTransform.position;
-            player.transform.rotation = targetTransform.rotation;
+            playerOVR.transform.position = targetTransform.position;
+            playerOVR.transform.rotation = targetTransform.rotation;
         }
     }
 }
