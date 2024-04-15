@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 
 public class NumberOfAttemptsScene3 : MonoBehaviour
 {
@@ -20,6 +21,24 @@ public class NumberOfAttemptsScene3 : MonoBehaviour
 
         // Set the text of the TextMeshProUGUI component
         attempts.text = attemptsToPass.ToString();
+
+        // Register the OnPlayModeStateChanged method to be called when the play mode state changes
+        EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+    }
+
+    // Callback method to handle play mode state changes
+    public void OnPlayModeStateChanged(PlayModeStateChange state)
+    {
+        // If exiting play mode
+        if (state == PlayModeStateChange.ExitingPlayMode)
+        {
+            // Reset the attempts to zero
+            attemptsToPass = 0;
+
+            // Update the PlayerPrefs to reflect the reset
+            PlayerPrefs.SetInt("attemptsScene3", attemptsToPass);
+            PlayerPrefs.Save(); // Make sure to save changes immediately
+        }
     }
 
     public void SetNumberOfAttempts()
@@ -36,12 +55,9 @@ public class NumberOfAttemptsScene3 : MonoBehaviour
         return attemptsToPass;
     }
 
-    // Call this method to reset the attempts
-    public void ResetAttempts()
+    // Unregister the event when the script is destroyed
+    private void OnDestroy()
     {
-        attemptsToPass = 0;
-        attempts.text = attemptsToPass.ToString();
-        PlayerPrefs.SetInt("attemptsScene3", attemptsToPass);
-        PlayerPrefs.Save();
+        EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
     }
 }
