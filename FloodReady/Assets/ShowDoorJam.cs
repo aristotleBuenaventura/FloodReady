@@ -7,7 +7,7 @@ public class ShowDoorJam : MonoBehaviour
     public TotalPoints points;
     public TryToLeaveTheHouseChecklist check;
     public TryToLeaveTheHouseIcon task;
-
+    public GameObject trytogooutside;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +35,7 @@ public class ShowDoorJam : MonoBehaviour
             check.SetUncheckIconVisible(false);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
+            Destroy(trytogooutside);
             // Optionally, disable the collider to prevent repeated triggers
             // GetComponent<Collider>().enabled = false;
         }

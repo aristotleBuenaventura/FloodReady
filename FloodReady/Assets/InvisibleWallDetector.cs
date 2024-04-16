@@ -23,7 +23,8 @@ public class InvisibleWallDetector : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
-            
+
+
         }
     }
 
