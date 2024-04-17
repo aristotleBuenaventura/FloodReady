@@ -10,6 +10,7 @@ public class TransitionScene2 : MonoBehaviour
     private bool soundPlayed = false; // Flag to check if sound has been played
     private AudioSource audioSource; // Reference to AudioSource component
     private Collider coll; // Reference to the collider component
+    public NumberOfAttemptsScene2 attempts;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class TransitionScene2 : MonoBehaviour
         if (other.CompareTag("Hand") || other.CompareTag("TurnOnButton"))
         {
             coll.enabled = false;
+            attempts.ResetAttempts();
             StartCoroutine(LoadSceneWithAudio("Recovery_Resilience"));
         }
     }
