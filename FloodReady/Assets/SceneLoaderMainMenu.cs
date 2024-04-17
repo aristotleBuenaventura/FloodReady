@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SceneLoaderMainMenu : MonoBehaviour
 {
     public GameObject loadingScreen;
+    public GameObject loadingScreen2;
     private int isReady;
     public GameObject Scene1;
     public GameObject Scene2;
@@ -91,6 +92,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
     {
         // Activate the loading screen
         loadingScreen.SetActive(true);
+        loadingScreen2.SetActive(true);
 
         // Load the scene synchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
@@ -103,5 +105,6 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
         // Deactivate the loading screen after the scene is loaded
         loadingScreen.SetActive(false);
+        loadingScreen2.SetActive(false);
     }
 }
