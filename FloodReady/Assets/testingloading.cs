@@ -9,7 +9,7 @@ public class testingloading : MonoBehaviour
     void Start()
     {
 
-        loading.MoveToRecovery_Resilience();
+        loading.MoveToEvacuation_Essential();
     }
 
     // Update is called once per frame
