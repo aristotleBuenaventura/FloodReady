@@ -2,12 +2,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class SceneLoaderMainMenu : MonoBehaviour
 {
     public GameObject loadingScreen;
     public GameObject loadingScreen2;
     private int isReady;
+    public Slider loadingSlider;
+    public TextMeshProUGUI progressText;
     public GameObject Scene1;
     public GameObject Scene2;
     public GameObject Scene3;
@@ -94,10 +98,31 @@ public class SceneLoaderMainMenu : MonoBehaviour
         loadingScreen.SetActive(true);
         loadingScreen2.SetActive(true);
 
-        // Load the scene synchronously
+        float progress = 0f;
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
-        // Wait until the asynchronous scene fully loads
+        asyncLoad.allowSceneActivation = false; //scene will not load while this value is false
+
+        while (progress < 1f)
+        {
+            progress += 0.01f;
+
+            // Ensure progress stays within the range [0, 1]
+            progress = Mathf.Clamp01(progress);
+
+            loadingSlider.value = progress;
+
+            // Update the progress text
+            progressText.text = "Loading: " + (progress * 100f).ToString("F0") + "%";
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        // Allow the scene to be activated
+        asyncLoad.allowSceneActivation = true;
+
+        // Wait for the scene to finish loading
         while (!asyncLoad.isDone)
         {
             yield return null;
@@ -107,4 +132,5 @@ public class SceneLoaderMainMenu : MonoBehaviour
         loadingScreen.SetActive(false);
         loadingScreen2.SetActive(false);
     }
+
 }
