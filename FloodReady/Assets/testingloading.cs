@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class testingloading : MonoBehaviour
 {
-    public SceneLoaderMainMenu loading;
+    public SceneChanger loading;
     // Start is called before the first frame update
     void Start()
     {

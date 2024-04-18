@@ -7,7 +7,8 @@ using TMPro;
 public class SceneChanger : MonoBehaviour
 {
     public GameObject loadingScreen;
-    public GameObject loadingScreen2;
+    public GameObject bottomBlack;
+    public GameObject topBlack;
     public Slider loadingSlider;
     public TextMeshProUGUI progressText;
 
@@ -50,8 +51,10 @@ public class SceneChanger : MonoBehaviour
     IEnumerator LoadScene(string sceneName)
     {
         // Activate the loading screen
+        bottomBlack.SetActive(true);
+        topBlack.SetActive(true);
         loadingScreen.SetActive(true);
-        loadingScreen2.SetActive(true);
+        
 
         float progress = 0f;
 
@@ -85,6 +88,7 @@ public class SceneChanger : MonoBehaviour
 
         // Deactivate the loading screen after the scene is loaded
         loadingScreen.SetActive(false);
-        loadingScreen2.SetActive(false);
+        bottomBlack.SetActive(false);
+        topBlack.SetActive(false);
     }
 }
