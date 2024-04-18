@@ -62,7 +62,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
     public void MoveToRecovery_Resilience()
     {
-        if (isReady == 1)
+        if (isReady == 0)
         {
             StartCoroutine(LoadScene("Recovery_Resilience"));
         }
