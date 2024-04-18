@@ -16,6 +16,8 @@ public class SceneLoaderMainMenu : MonoBehaviour
     public GameObject Scene2;
     public GameObject Scene3;
     public int isReadyValue;
+    public Button[] buttonsToCooldown; // Buttons to apply cooldown to
+    public float cooldownDuration = 1f; // Cooldown duration in seconds
 
     void Start()
     {
@@ -94,6 +96,11 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
+        foreach (Button button in buttonsToCooldown)
+        {
+            button.interactable = false; // Disable the button
+        }
+
         // Activate the loading screen
         loadingScreen.SetActive(true);
         loadingScreen2.SetActive(true);
@@ -131,6 +138,13 @@ public class SceneLoaderMainMenu : MonoBehaviour
         // Deactivate the loading screen after the scene is loaded
         loadingScreen.SetActive(false);
         loadingScreen2.SetActive(false);
+
+        yield return new WaitForSeconds(cooldownDuration);
+
+        foreach (Button button in buttonsToCooldown)
+        {
+            button.interactable = true; // Enable the button after cooldown
+        }
     }
 
 }
