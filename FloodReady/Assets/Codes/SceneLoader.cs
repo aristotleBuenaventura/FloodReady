@@ -11,7 +11,16 @@ public class SceneChanger : MonoBehaviour
     public GameObject topBlack;
     public Slider loadingSlider;
     public TextMeshProUGUI progressText;
+    public Slider ScreenloadingSlider;
+    public TextMeshProUGUI ScreenprogressText;
+    public GameObject ScreenLoadingDisplay;
+    public GameObject ScreenDisplay;
 
+    void Start()
+    {
+        ScreenLoadingDisplay.SetActive(false);
+        ScreenDisplay.SetActive(true);
+    }
 
     public void MoveToEvacuation_Essential()
     {
@@ -54,7 +63,9 @@ public class SceneChanger : MonoBehaviour
         bottomBlack.SetActive(true);
         topBlack.SetActive(true);
         loadingScreen.SetActive(true);
-        
+        ScreenLoadingDisplay.SetActive(true);
+        ScreenDisplay.SetActive(false);
+
 
         float progress = 0f;
 
@@ -73,6 +84,11 @@ public class SceneChanger : MonoBehaviour
 
             // Update the progress text
             progressText.text = "Loading: " + (progress * 100f).ToString("F0") + "%";
+
+            ScreenloadingSlider.value = progress;
+
+            // Update the progress text
+            ScreenprogressText.text = "Loading: " + (progress * 100f).ToString("F0") + "%";
 
             yield return new WaitForSeconds(0.01f);
         }

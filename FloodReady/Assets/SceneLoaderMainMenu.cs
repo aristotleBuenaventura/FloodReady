@@ -12,12 +12,16 @@ public class SceneLoaderMainMenu : MonoBehaviour
     private int isReady;
     public Slider loadingSlider;
     public TextMeshProUGUI progressText;
+    public Slider ScreenloadingSlider;
+    public TextMeshProUGUI ScreenprogressText;
     public GameObject Scene1;
     public GameObject Scene2;
     public GameObject Scene3;
     public int isReadyValue;
     public Button[] buttonsToCooldown; // Buttons to apply cooldown to
     public float cooldownDuration = 1f; // Cooldown duration in seconds
+    public GameObject ScreenDisplay;
+    public GameObject ScreenLoading;
 
     void Start()
     {
@@ -26,6 +30,8 @@ public class SceneLoaderMainMenu : MonoBehaviour
         Scene1.SetActive(false);
         Scene2.SetActive(false);
         Scene3.SetActive(false);
+        ScreenDisplay.SetActive(true);
+        ScreenLoading.SetActive(false);
     }
     // Unregister the event when the script is destroyed
     private void OnApplicationQuit()
@@ -64,7 +70,7 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
     public void MoveToRecovery_Resilience()
     {
-        if (isReady == 1)
+        if (isReady == 0)
         {
             StartCoroutine(LoadScene("Recovery_Resilience"));
         }
@@ -96,14 +102,18 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
+        // Activate the loading screen
+        loadingScreen.SetActive(true);
+        loadingScreen2.SetActive(true);
+        ScreenDisplay.SetActive(false);
+        ScreenLoading.SetActive(true);
+
         foreach (Button button in buttonsToCooldown)
         {
             button.interactable = false; // Disable the button
         }
 
-        // Activate the loading screen
-        loadingScreen.SetActive(true);
-        loadingScreen2.SetActive(true);
+        
 
         float progress = 0f;
 
@@ -122,6 +132,11 @@ public class SceneLoaderMainMenu : MonoBehaviour
 
             // Update the progress text
             progressText.text = "Loading: " + (progress * 100f).ToString("F0") + "%";
+
+            ScreenloadingSlider.value = progress;
+
+            // Update the progress text
+            ScreenprogressText.text = "Loading: " + (progress * 100f).ToString("F0") + "%";
 
             yield return new WaitForSeconds(0.01f);
         }
