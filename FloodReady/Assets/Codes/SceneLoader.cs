@@ -15,6 +15,7 @@ public class SceneChanger : MonoBehaviour
     public TextMeshProUGUI ScreenprogressText;
     public GameObject ScreenLoadingDisplay;
     public GameObject ScreenDisplay;
+    public CanvasToggleX deactivate;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class SceneChanger : MonoBehaviour
     IEnumerator LoadScene(string sceneName)
     {
         // Activate the loading screen
+        deactivate.DeactivateScript();
         bottomBlack.SetActive(true);
         topBlack.SetActive(true);
         loadingScreen.SetActive(true);

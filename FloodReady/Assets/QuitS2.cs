@@ -7,7 +7,6 @@ public class QuitS2 : MonoBehaviour
 {
     public NumberOfAttemptsScene2 attempts;
 
-
     public void QuitGame()
     {
         attempts.ResetAttempts();
