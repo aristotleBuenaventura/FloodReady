@@ -27,7 +27,7 @@ public class MoveObjectController : MonoBehaviour
 		fpsCam = Camera.main;
 		if (fpsCam == null)	//a reference to Camera is required for rayasts
 		{
-			Debug.LogError("A camera tagged 'MainCamera' is missing.");
+			Debug.Log("A camera tagged 'MainCamera' is missing.");
 		}
 
 		//create AnimatorOverrideController to re-use animationController for sliding draws.
