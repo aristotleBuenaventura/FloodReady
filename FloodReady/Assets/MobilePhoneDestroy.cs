@@ -34,7 +34,7 @@ public class MobilePhoneDestroy : MonoBehaviour
 
     IEnumerator DisappearWithDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         MobilePhoneOnHand.SetActive(true);
         MobilePhoneOnBag.SetActive(false);
     }

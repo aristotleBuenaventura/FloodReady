@@ -8,7 +8,7 @@ public class DisappearOnGrab : MonoBehaviour
     public OVRGrabber rightGrabber;
     public EscapeCanvasController ShowMainBreakerCanvas;
     public bool isGrabbed = false;
-    public float delayBeforeDisappear = 1.0f;
+    public float delayBeforeDisappear = 2.0f;
     public retrieveIcon goBagIcon; // Reference to the retrieveIcon script
     public TaskPercentage retrieveGoBagPercentage;
     
