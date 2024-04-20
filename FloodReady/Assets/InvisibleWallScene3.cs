@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class InvisibleWallScene3 : MonoBehaviour
 {
@@ -29,8 +30,14 @@ public class InvisibleWallScene3 : MonoBehaviour
             limit.SetActive(false);
             proceedBtn.SetActive(true);
             cube1.SetActive(true);
-            cube2.SetActive(true);
+            StartCoroutine(ActivateCube2WithDelay());
         }
+    }
+
+    private IEnumerator ActivateCube2WithDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
+        cube2.SetActive(true); // Activate cube2 after the delay
     }
 
 }
