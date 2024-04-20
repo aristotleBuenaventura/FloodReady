@@ -12,6 +12,8 @@ public class InvisibleWallScene3 : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject limit;
+    public GameObject cube1;
+    public GameObject cube2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +28,8 @@ public class InvisibleWallScene3 : MonoBehaviour
             retryBtn.SetActive(false);
             limit.SetActive(false);
             proceedBtn.SetActive(true);
+            cube1.SetActive(true);
+            cube2.SetActive(true);
         }
     }
 

@@ -11,6 +11,8 @@ public class InvisibleWallDetector : MonoBehaviour
     public attemptsLeft finalAttempts;
     public GameObject retryBtn;
     public GameObject proceedBtn;
+    public GameObject cube1;
+    public GameObject cube2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,8 +25,8 @@ public class InvisibleWallDetector : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
-
-
+            cube1.SetActive(true);
+            cube2.SetActive(true);
         }
     }
 
