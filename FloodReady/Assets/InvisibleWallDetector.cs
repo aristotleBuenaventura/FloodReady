@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class InvisibleWallDetector : MonoBehaviour
 {
@@ -25,9 +26,14 @@ public class InvisibleWallDetector : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
-            cube1.SetActive(true);
-            cube2.SetActive(true);
+            cube1.SetActive(true); // This cube is activated immediately
+            StartCoroutine(ActivateCube2WithDelay());
         }
     }
 
+    private IEnumerator ActivateCube2WithDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
+        cube2.SetActive(true); // Activate cube2 after the delay
+    }
 }
