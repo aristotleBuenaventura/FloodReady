@@ -12,6 +12,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject maximumText;
+    public GameObject evalroom;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +28,7 @@ public class InvisibleWallScene2 : MonoBehaviour
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
             maximumText.SetActive(false);
+            evalroom.SetActive(true);
         }
     }
 
