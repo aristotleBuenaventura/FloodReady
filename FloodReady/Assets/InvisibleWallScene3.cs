@@ -13,8 +13,9 @@ public class InvisibleWallScene3 : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject limit;
-    public GameObject cube1;
-    public GameObject cube2;
+    public GameObject evalroom;
+    public GameObject objecttodestroy;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,15 +30,10 @@ public class InvisibleWallScene3 : MonoBehaviour
             retryBtn.SetActive(false);
             limit.SetActive(false);
             proceedBtn.SetActive(true);
-            cube1.SetActive(true);
-            StartCoroutine(ActivateCube2WithDelay());
+            objecttodestroy.SetActive(false);
+            evalroom.SetActive(true);
         }
     }
 
-    private IEnumerator ActivateCube2WithDelay()
-    {
-        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
-        cube2.SetActive(true); // Activate cube2 after the delay
-    }
 
 }

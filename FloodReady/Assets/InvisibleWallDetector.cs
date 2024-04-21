@@ -12,8 +12,7 @@ public class InvisibleWallDetector : MonoBehaviour
     public attemptsLeft finalAttempts;
     public GameObject retryBtn;
     public GameObject proceedBtn;
-    public GameObject cube1;
-    public GameObject cube2;
+    public GameObject evalroom;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,14 +25,9 @@ public class InvisibleWallDetector : MonoBehaviour
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
-            cube1.SetActive(true); // This cube is activated immediately
-            StartCoroutine(ActivateCube2WithDelay());
+            evalroom.SetActive(true);
         }
     }
 
-    private IEnumerator ActivateCube2WithDelay()
-    {
-        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
-        cube2.SetActive(true); // Activate cube2 after the delay
-    }
+
 }
