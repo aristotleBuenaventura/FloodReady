@@ -13,6 +13,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public GameObject proceedBtn;
     public GameObject maximumText;
     public GameObject evalroom;
+    public GameObject toDestroy;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +30,7 @@ public class InvisibleWallScene2 : MonoBehaviour
             proceedBtn.SetActive(true);
             maximumText.SetActive(false);
             evalroom.SetActive(true);
+            toDestroy.SetActive(false);
         }
     }
 
