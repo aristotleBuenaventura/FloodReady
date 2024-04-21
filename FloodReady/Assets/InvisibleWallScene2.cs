@@ -14,6 +14,7 @@ public class InvisibleWallScene2 : MonoBehaviour
     public GameObject maximumText;
     public GameObject evalroom;
     public GameObject toDestroy;
+    public TimerScene2 timer;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,7 @@ public class InvisibleWallScene2 : MonoBehaviour
             congratulationcanvas.SuccessCanvas();
             stoptime.StopTime(false);
             screenTimer.StopTimer();
+            timer.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);

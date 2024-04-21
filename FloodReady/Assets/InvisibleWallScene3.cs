@@ -15,6 +15,7 @@ public class InvisibleWallScene3 : MonoBehaviour
     public GameObject limit;
     public GameObject evalroom;
     public GameObject objecttodestroy;
+    public TimerScene3 timer;
 
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +24,7 @@ public class InvisibleWallScene3 : MonoBehaviour
         {
             Debug.Log("Player detected! Teleporting...");
             screenTimer.StopTimer();
+            timer.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
             congratulationcanvas.SuccessCanvas();
