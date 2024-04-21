@@ -13,6 +13,8 @@ public class InvisibleWallDetector : MonoBehaviour
     public GameObject retryBtn;
     public GameObject proceedBtn;
     public GameObject evalroom;
+    public GameObject toDestroy;
+    public Timer time;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,11 +23,13 @@ public class InvisibleWallDetector : MonoBehaviour
             congratulationcanvas.ShowSuccessCanvas();
             welldomeStopTime.StopTime(false);
             screenTimer.StopTimer();
+            time.StopTimer();
             attempts.SetNumberOfAttempts();
             finalAttempts.updateAttempts();
             retryBtn.SetActive(false);
             proceedBtn.SetActive(true);
             evalroom.SetActive(true);
+            toDestroy.SetActive(false);
         }
     }
 
