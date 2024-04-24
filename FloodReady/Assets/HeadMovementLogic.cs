@@ -58,7 +58,7 @@ public class HeadMovementLogic : MonoBehaviour
             TL.SetUncheckIconVisible(false);
         }
         
-        if (zRotation >= 280f && zRotation <= 290f)
+        if (zRotation >= 270f && zRotation <= 300f)
         {
             TR.SetCheckIconVisible(true);
             TR.SetUncheckIconVisible(false);
