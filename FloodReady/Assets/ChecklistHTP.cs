@@ -6,6 +6,7 @@ public class ChecklistHTP : MonoBehaviour
 {
     public bool[] checklist = { false, false, false, false, false, false, false, false, false };
     public GameObject Portal;
+    public GameObject Portal2;
     public GameObject PortalBarricade;
     public GameObject TrainingRoomChecklist;
     public GameObject IMUChecklist;
@@ -16,6 +17,7 @@ public class ChecklistHTP : MonoBehaviour
     void Start()
     {
         Portal.SetActive(false);
+        Portal2.SetActive(false);
         PortalBarricade.SetActive(true);
         TrainingRoomChecklist.SetActive(true);
         IMUChecklist.SetActive(false);
