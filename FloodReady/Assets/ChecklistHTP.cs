@@ -9,7 +9,7 @@ public class ChecklistHTP : MonoBehaviour
     public GameObject Portal2;
     public GameObject PortalBarricade;
     public GameObject TrainingRoomChecklist;
-    public GameObject IMUChecklist;
+    //public GameObject IMUChecklist;
     public GameObject HouseFamiliarizationChecklist;
     public CanvasControllerFirstCanvasHTP ShowProceedHouseCanvas;
 
@@ -20,7 +20,7 @@ public class ChecklistHTP : MonoBehaviour
         Portal2.SetActive(false);
         PortalBarricade.SetActive(true);
         TrainingRoomChecklist.SetActive(true);
-        IMUChecklist.SetActive(false);
+        //IMUChecklist.SetActive(false);
         HouseFamiliarizationChecklist.SetActive(false);
     }
 
@@ -29,7 +29,7 @@ public class ChecklistHTP : MonoBehaviour
         Portal.SetActive(true);
         PortalBarricade.SetActive(false);
         TrainingRoomChecklist.SetActive(false);
-        IMUChecklist.SetActive(true);
+        //IMUChecklist.SetActive(true);
         HouseFamiliarizationChecklist.SetActive(false);
     }
 
