@@ -30,7 +30,7 @@ public class OpenHintLeaveHouse: MonoBehaviour
 
             if (!canDeduct)
             {
-                points.DecrementPoints(200);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 

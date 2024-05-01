@@ -30,7 +30,7 @@ public class OpenHintWhistle : MonoBehaviour
       
             if (!canDeduct)
             {
-                points.DecrementPoints(100);
+                points.DecrementPoints(1);
                 canDeduct = true;
             }
 

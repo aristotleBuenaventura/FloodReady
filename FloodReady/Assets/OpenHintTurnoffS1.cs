@@ -30,7 +30,7 @@ public class OpenHintTurnfOffS1 : MonoBehaviour
 
             if (!canDeduct)
             {
-                points.DecrementPoints(200);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 

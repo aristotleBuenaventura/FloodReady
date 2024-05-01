@@ -30,7 +30,7 @@ public class OpenHintTV : MonoBehaviour
       
             if (!canDeduct)
             {
-                points.DecrementPoints(100);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 
