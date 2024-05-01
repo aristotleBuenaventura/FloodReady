@@ -86,7 +86,7 @@ public class ClothesDetector : MonoBehaviour
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);
                 score.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 cleaningCanvas.deactivate();
                 // You can perform any action you want here when all clothes are detected
             }

@@ -24,7 +24,7 @@ public class CheckPlayer : MonoBehaviour
 
                 Destroy(DestroyHint);
                 score.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 objectsToDisable.SetActive(false);
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);

@@ -76,7 +76,7 @@ public class NumberArrayManagerScene3 : MonoBehaviour
         {
             
             task.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
 
             dial.SetActive(true);
             Contact.SetActive(false);

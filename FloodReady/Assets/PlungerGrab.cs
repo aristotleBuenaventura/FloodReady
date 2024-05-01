@@ -29,7 +29,7 @@ public class PlungerGrab : MonoBehaviour
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);
                 percent.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 canvas.ShowplungedtoiletCanvas();
                 hasIncrementedPercentage = true;
             }

@@ -52,7 +52,7 @@ public class WaterSprayDisappear : MonoBehaviour
         }
         canvasController.ShowcleansecondhallwayCanvas();
         task.IncrementTaskPercentage(5);
-        points.IncrementPoints(500);
+        points.IncrementPoints(5);
         colliderWall.SecondFloorColliders();
         canvas.ShowHallwayCanvas();
 

@@ -30,7 +30,7 @@ public class LivingRoom_Checklist : MonoBehaviour
             
             StartCoroutine(ShowKitchenCanvasAfterDelay(2f));
             score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             enabled = false; // Disable the script
 
         }

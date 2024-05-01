@@ -30,7 +30,7 @@ public class Bedroom_Checklist : MonoBehaviour
         {
             StartCoroutine(ShowBathroomCanvasAfterDelay(2f));
             score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             // Disable the script
             enabled = false;
         }

@@ -38,7 +38,7 @@ public class Bathroom_Checklist : MonoBehaviour
             
             StartCoroutine(ShowPlungerCanvasAfterDelay(2f));
             score.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             enabled = false;
         }
 

@@ -46,7 +46,7 @@ public class GasBottleRotation : MonoBehaviour
             checklist.SetCheckIconVisible(true);
             checklist.SetUncheckIconVisible(false);
             task.IncrementTaskPercentage(5);
-            points.IncrementPoints(500);
+            points.IncrementPoints(5);
             // Disable the collider to prevent further collisions
             gasBottleCollider.enabled = false;
 
