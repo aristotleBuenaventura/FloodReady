@@ -63,7 +63,7 @@ public class PryBarLogic : MonoBehaviour
         {
             escapeCanvasController.ShowBreakWindowCanvas();
             PryBarPercentage.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             Destroy(hintPrybar);

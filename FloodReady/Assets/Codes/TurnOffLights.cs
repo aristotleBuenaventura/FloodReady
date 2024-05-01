@@ -53,7 +53,7 @@ public class TurnOffLights : MonoBehaviour
                     // Mark the task as done
                     EscapeCanvasController.ShowFlashlightCanvas();
                     MainBreakerPercentage.IncrementTaskPercentage(10);
-                    points.IncrementPoints(1000);
+                    points.IncrementPoints(10);
                     task.SetCheckIconVisible(true);
                     task.SetUncheckIconVisible(false);
 

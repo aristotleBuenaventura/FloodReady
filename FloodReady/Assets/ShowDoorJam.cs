@@ -30,7 +30,7 @@ public class ShowDoorJam : MonoBehaviour
             // Call the ShowDoorJamCanvas method in EscapeCanvasController with the parameter true
             escapeCanvasController.ShowDoorJamCanvas(true);
             leavethehouse.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             task.SetCheckIconVisible(true);

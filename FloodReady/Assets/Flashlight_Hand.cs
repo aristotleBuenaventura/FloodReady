@@ -38,7 +38,7 @@ public class Flashlight_Hand : MonoBehaviour
             if (isAdded == false)
             {
                 task.IncrementTaskPercentage(10);
-                points.IncrementPoints(1000);
+                points.IncrementPoints(10);
             }
             isAdded = true;
             FlashLightCollider.SetActive(false);

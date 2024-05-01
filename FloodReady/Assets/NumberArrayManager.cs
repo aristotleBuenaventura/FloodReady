@@ -81,7 +81,7 @@ public class NumberArrayManager : MonoBehaviour
             task.SetUncheckIconVisible(false);
             // Increment the task percentage only if it hasn't been done before
             dial161increment.IncrementTaskPercentage(20);
-            points.IncrementPoints(2000);
+            points.IncrementPoints(20);
             isTaskPercentageIncremented = true;
             Contact.SetActive(false);
             // StartCoroutine(DelayedSuccessCanvas(10f));

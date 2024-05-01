@@ -29,7 +29,7 @@ public class GoBagSpawn : MonoBehaviour
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
             locateCPincrement.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);   
+            points.IncrementPoints(10);   
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
 
