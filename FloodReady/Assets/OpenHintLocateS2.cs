@@ -27,7 +27,7 @@ public class OpenHintLocateS2 : MonoBehaviour
             
             if (!canDeduct)
             {
-                points.DecrementPoints(100);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 

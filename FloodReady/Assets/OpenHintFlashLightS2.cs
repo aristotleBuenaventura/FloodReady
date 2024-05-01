@@ -26,7 +26,7 @@ public class OpenHintFlashLightS2 : MonoBehaviour
             hintCanvas.TurnOnFLCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(100);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 

@@ -27,7 +27,7 @@ public class OpenHintTryleaveHouseS2 : MonoBehaviour
             hintCanvas.LeaveHouseCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(50);
+                points.DecrementPoints(2);
                 
                 canDeduct = true;
             }

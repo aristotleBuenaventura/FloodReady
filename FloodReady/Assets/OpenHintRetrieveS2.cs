@@ -24,7 +24,7 @@ public class OpenHintRetrieveS2 : MonoBehaviour
             hintCanvas.ShowGoBagCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(200);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 
