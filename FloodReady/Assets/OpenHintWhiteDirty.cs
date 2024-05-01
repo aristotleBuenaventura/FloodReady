@@ -25,7 +25,7 @@ public class OpenHintWhiteDirty : MonoBehaviour
     
             if (!canDeduct)
             {
-                points.DecrementPoints(50);
+                points.DecrementPoints(1);
                 canDeduct = true;
             }
 

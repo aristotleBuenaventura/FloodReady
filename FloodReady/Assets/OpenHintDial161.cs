@@ -23,7 +23,7 @@ public class OpenHintDial161 : MonoBehaviour
             hintCanvas.ShowDial161Canvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(50);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 

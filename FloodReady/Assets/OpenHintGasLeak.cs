@@ -24,7 +24,7 @@ public class OpenHintGasLeak : MonoBehaviour
             hintCanvas.ShowGasHintCanvas(); // calling the hint canvas to show the hint 
             if (!canDeduct)
             {
-                points.DecrementPoints(50);
+                points.DecrementPoints(1);
                 canDeduct = true;
             }
 

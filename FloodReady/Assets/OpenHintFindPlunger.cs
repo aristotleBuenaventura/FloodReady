@@ -23,7 +23,7 @@ public class OpenHintFindPlunger : MonoBehaviour
             hintCanvas.ShowFindPlungerCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(50);
+                points.DecrementPoints(1);
                 canDeduct = true;
             }
 
