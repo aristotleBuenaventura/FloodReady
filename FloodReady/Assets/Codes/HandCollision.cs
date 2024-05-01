@@ -91,7 +91,7 @@ public class HandCollision : MonoBehaviour
             Debug.Log("Go bag working");
             StartCoroutine(messageCanvas.SwitchCanvasAfterDelayTV());
             remoteTask.IncrementTaskPercentage(10);
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             check.SetCheckIconVisible(true);
             check.SetUncheckIconVisible(false);
             checklist.SetCheckIconVisible(true);

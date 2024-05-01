@@ -20,7 +20,7 @@ public class LeaveHouseImmediately : MonoBehaviour
         if (!hasInteracted && other.CompareTag("Player"))
         {
             
-            points.IncrementPoints(1000);
+            points.IncrementPoints(10);
             leave.IncrementTaskPercentage(10);
             leavethehousecheck.SetCheckIconVisible(true);
             leavethehousecheck.SetUncheckIconVisible(false);

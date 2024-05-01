@@ -63,7 +63,7 @@ public class UnPlugTV : MonoBehaviour
             TVScreen.SetActive(false);
             ShowCanvas.SetBooleanTV(true);
             TvUnplugPercentage.IncrementTaskPercentage(5);
-            points.IncrementPoints(500);
+            points.IncrementPoints(5);
             hasIncrementedPercentage = true;
         }
 

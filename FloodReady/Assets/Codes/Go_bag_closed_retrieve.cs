@@ -53,7 +53,7 @@ public class Go_bag_closed_retrieve : MonoBehaviour
         gameObject.SetActive(false);
         GoBagRetrieve.ShowUnplugCableCanvas();
         CloseBag.IncrementTaskPercentage(10);
-        points.IncrementPoints(1000);
+        points.IncrementPoints(10);
         CloseBagCheck.SetCheckIconVisible(true);
         CloseBagCheck.SetUncheckIconVisible(false);
         checklist.SetCheckIconVisible(true);

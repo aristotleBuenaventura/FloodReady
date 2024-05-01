@@ -115,7 +115,7 @@ public class GoBagLogic : MonoBehaviour
             {
             case "Canned good":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 cannedgood.SetCheckIconVisible(true);
                 cannedgood.SetUncheckIconVisible(false);
                 wristcannedgood.SetCheckIconVisible(true);
@@ -128,7 +128,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Energy bar":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 energybar.SetCheckIconVisible(true);
                 energybar.SetUncheckIconVisible(false);
                 wristenergybar.SetCheckIconVisible(true);
@@ -141,7 +141,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Money":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 money.SetCheckIconVisible(true);
                 money.SetUncheckIconVisible(false);
                 wristmoney.SetCheckIconVisible(true);
@@ -154,7 +154,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Bottled water":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 bottledwater.SetCheckIconVisible(true);
                 bottledwater.SetUncheckIconVisible(false);
                 wristbottledwater.SetCheckIconVisible(true);
@@ -167,7 +167,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Clothes":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 clothes.SetCheckIconVisible(true);
                 clothes.SetUncheckIconVisible(false);
                 wristclothes.SetCheckIconVisible(true);
@@ -180,7 +180,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Flashlight":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 flashlight.SetCheckIconVisible(true);
                 flashlight.SetUncheckIconVisible(false);
                 wristflashlight.SetCheckIconVisible(true);
@@ -193,7 +193,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "Mobile Phone":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 mobilephone.SetCheckIconVisible(true);
                 mobilephone.SetUncheckIconVisible(false);
                 wristmobilephone.SetCheckIconVisible(true);
@@ -206,7 +206,7 @@ public class GoBagLogic : MonoBehaviour
                 break;
             case "First aid kit":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 firstaidkit.SetCheckIconVisible(true);
                 firstaidkit.SetUncheckIconVisible(false);
                 wristfirstaidkit.SetCheckIconVisible(true);
@@ -219,7 +219,7 @@ public class GoBagLogic : MonoBehaviour
                 break;   
             case "Documents":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 documents.SetCheckIconVisible(true);
                 documents.SetUncheckIconVisible(false);
                 wristdocuments.SetCheckIconVisible(true);
@@ -232,7 +232,7 @@ public class GoBagLogic : MonoBehaviour
                 break;  
             case "Whistle":
                 bagPercentage.IncrementTaskPercentage(5);
-                points.IncrementPoints(500);
+                points.IncrementPoints(5);
                 whistle.SetCheckIconVisible(true);
                 whistle.SetUncheckIconVisible(false);
                 wristwhistle.SetCheckIconVisible(true);
