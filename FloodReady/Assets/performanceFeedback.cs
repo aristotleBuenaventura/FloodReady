@@ -22,27 +22,27 @@ public class PerformanceFeedback : MonoBehaviour
     {
         int points = totalPointsScript.points;
 
-        if (points >= 130)
+        if (points >= 100 && points <= 130)
         {
             feedbackText.text = "YOU ARE NOW FLOODREADY";
             feedbackText2.text = "Your performance showcases mastery in flood preparedness training";
         }
-        else if (points >= 100 && points <= 120)
+        else if (points >= 80 && points <= 100)
         {
             feedbackText.text = "YOU ARE ON THE RIGHT PATH";
             feedbackText2.text = "Your performance indicates progress, but additional effort is required";
         }
-        else if (points >= 80 && points <= 90)
+        else if (points >= 60 && points <= 80)
         {
             feedbackText.text = "YOU ARE DOING WELL";
             feedbackText2.text = "Your performance demonstrates noticeable progress in flood response";
         }
-        else if (points >= 60 && points <= 80)
+        else if (points >= 40 && points <= 60)
         {
             feedbackText.text = "GOOD BUT NEED MORE PRACTICE";
             feedbackText2.text = "Your performance is acceptable, but lacks depth in flood preparedness";
         }
-        else if (points >= 30 && points <= 50)
+        else if (points >= 20 && points <= 40)
         {
             feedbackText.text = "YOU NEED PRACTICE";
             feedbackText2.text = "Immediate improvement is required.";
