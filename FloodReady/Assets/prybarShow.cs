@@ -6,6 +6,8 @@ public class PrybarShow : MonoBehaviour
     private bool hasInteracted = false;
     public TryToLeaveTheHouseChecklist check;
     public TryToLeaveTheHouseIcon task;
+    public TotalPoints points;
+    public TaskPercentage taskpoints;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class PrybarShow : MonoBehaviour
             check.SetUncheckIconVisible(false);
             task.SetCheckIconVisible(true);
             task.SetUncheckIconVisible(false);
+            taskpoints.IncrementTaskPercentage(10);
+            points.IncrementPoints(10);
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
 
