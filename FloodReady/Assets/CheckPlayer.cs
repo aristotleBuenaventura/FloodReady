@@ -10,7 +10,7 @@ public class CheckPlayer : MonoBehaviour
     public GameObject DestroyHint;
     public TaskPercentage score;
     public TotalPoints points;
-
+    public reportfallenIcon task;
 
 
     void OnTriggerEnter(Collider other)
@@ -28,6 +28,8 @@ public class CheckPlayer : MonoBehaviour
                 objectsToDisable.SetActive(false);
                 checklist.SetCheckIconVisible(true);
                 checklist.SetUncheckIconVisible(false);
+                task.SetCheckIconVisible(true);
+                task.SetUncheckIconVisible(false);
                 UsePhoneCanvas.UsePhoneCanvas();
                 goBag.SetActive(true);
 
