@@ -8,6 +8,7 @@ public class PrybarShow : MonoBehaviour
     public TryToLeaveTheHouseIcon task;
     public TotalPoints points;
     public TaskPercentage taskpoints;
+    public GameObject DestroyHint;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class PrybarShow : MonoBehaviour
             points.IncrementPoints(10);
             // Set the flag to true to indicate that the interaction has occurred
             hasInteracted = true;
+            Destroy(DestroyHint);
 
         }
     }

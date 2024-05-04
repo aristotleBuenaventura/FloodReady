@@ -13,6 +13,8 @@ public class ShowHintCanvasScene2 : MonoBehaviour
     public GameObject TurnOnFL;
 
     public GameObject LeaveHouse;
+
+    public GameObject Escape2ndFloor;
     void Start()
     {
 
@@ -44,6 +46,9 @@ public class ShowHintCanvasScene2 : MonoBehaviour
 
         if (LeaveHouse.activeSelf)
             LeaveHouse.SetActive(false);
+
+        if (Escape2ndFloor.activeSelf)
+            Escape2ndFloor.SetActive(false);
     }
 
     public void ShowGoBagCanvas()
@@ -56,6 +61,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void ShowMainBreakerCanvas()
@@ -68,6 +74,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void ShowPryBarCanvas()
@@ -80,6 +87,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void ShowBreakWindowCanvas()
@@ -92,6 +100,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void ShowLocateEmergencyDeviceCanvas()
@@ -104,6 +113,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void ShowDial161Canvas()
@@ -116,6 +126,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(true);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
 
@@ -129,6 +140,7 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(true);
         LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(false);
     }
 
     public void LeaveHouseCanvas()
@@ -141,5 +153,19 @@ public class ShowHintCanvasScene2 : MonoBehaviour
         Dial161.SetActive(false);
         TurnOnFL.SetActive(false);
         LeaveHouse.SetActive(true);
+        Escape2ndFloor.SetActive(false);
+    }
+
+    public void Escape2ndFloorCanvas()
+    {
+        GoBag.SetActive(false);
+        MainBreaker.SetActive(false);
+        PryBar.SetActive(false);
+        BreakWindow.SetActive(false);
+        LocateEmergencyDevice.SetActive(false);
+        Dial161.SetActive(false);
+        TurnOnFL.SetActive(false);
+        LeaveHouse.SetActive(false);
+        Escape2ndFloor.SetActive(true);
     }
 }
