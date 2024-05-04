@@ -108,8 +108,8 @@ public class BreakableWindow : MonoBehaviour
         {
             Destroy(col);
             breakSound.Play(); // Play break sound when window is destroyed
-            breakwindowpercentage.IncrementTaskPercentage(20);
-            points.IncrementPoints(20);
+            breakwindowpercentage.IncrementTaskPercentage(10);
+            points.IncrementPoints(10);
             windowBreakIcon.SetCheckIconVisible(true);
             windowBreakIcon.SetUncheckIconVisible(false);
             task.SetCheckIconVisible(true);

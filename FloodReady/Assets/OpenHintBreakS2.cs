@@ -27,7 +27,7 @@ public class OpenHintBreakS2 : MonoBehaviour
             hintCanvas.ShowBreakWindowCanvas();
             if (!canDeduct)
             {
-                points.DecrementPoints(4);
+                points.DecrementPoints(2);
                 canDeduct = true;
             }
 
