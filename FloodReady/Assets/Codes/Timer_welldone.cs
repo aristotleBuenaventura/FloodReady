@@ -10,11 +10,7 @@ public class Timer_welldone : MonoBehaviour
     [SerializeField] float elapsedTime; // Changed from remainingTime to elapsedTime
     public float maxTime = 600f; // 10 minutes in seconds
 
-    // Expose player position and rotation in the Inspector
-    [Header("Player Settings")]
-    public GameObject player;
-    public Vector3 desiredPosition = new Vector3(1.0f, 2.0f, 3.0f);
-    public Vector3 desiredRotation = new Vector3(45.0f, 90.0f, 0.0f);
+
 
     private bool isTimeStopped = false;
     public TotalPoints points;
@@ -43,15 +39,7 @@ public class Timer_welldone : MonoBehaviour
                 timerText.color = Color.red;
                 Debug.Log("Max Time Reached");
 
-                // Change player's position and rotation
-                if (player != null)
-                {
-                    // Set the desired position from the Inspector
-                    player.transform.position = desiredPosition;
-
-                    // Set the desired rotation from the Inspector
-                    player.transform.rotation = Quaternion.Euler(desiredRotation);
-                }
+           
 
             }
         }
