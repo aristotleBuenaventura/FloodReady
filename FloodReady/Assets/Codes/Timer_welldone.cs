@@ -24,7 +24,6 @@ public class Timer_welldone : MonoBehaviour
         get { return elapsedTime; }
     }
 
-    [SerializeField] GameObject loadingScreen;
 
     void Update()
     {
@@ -54,8 +53,6 @@ public class Timer_welldone : MonoBehaviour
                     player.transform.rotation = Quaternion.Euler(desiredRotation);
                 }
 
-                // Wait for 10 seconds before loading the MainMenu
-                StartCoroutine(WaitAndLoadScene("MainMenu", 10f));
             }
         }
     }
@@ -69,20 +66,20 @@ public class Timer_welldone : MonoBehaviour
             // Debug log if elapsedTime is less than or equal to 3 minutes
             if (elapsedTime <= 180) // 3 minutes in seconds
             {
-                points.IncrementPoints(3000);
+                points.IncrementPoints(30);
             }
             // Debug log if elapsedTime is less than or equal to 5 minutes
             else if (elapsedTime <= 300) // 5 minutes in seconds
             {
-                points.IncrementPoints(1500);
+                points.IncrementPoints(15);
             }
             else if (elapsedTime <= 480) // 8 minutes in seconds
             {
-                points.IncrementPoints(750);
+                points.IncrementPoints(7);
             }
             else
             {
-                points.IncrementPoints(200);
+                points.IncrementPoints(3);
             }
         }
        
@@ -91,23 +88,4 @@ public class Timer_welldone : MonoBehaviour
         // You can add any additional logic here when time is stopped
     }
 
-    IEnumerator WaitAndLoadScene(string sceneName, float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        // Activate the loading screen
-        loadingScreen.SetActive(true);
-
-        // Load the scene asynchronously
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        // Deactivate the loading screen after the scene is loaded
-        loadingScreen.SetActive(false);
-    }
 }
