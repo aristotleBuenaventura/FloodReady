@@ -20,8 +20,13 @@ public class TotalPoints : MonoBehaviour
         points += incrementValue;
     }
 
+    // Function to decrement taskPercentage by a specified value
     public void DecrementPoints(int decrementValue)
     {
         points -= decrementValue;
+        if (points < 0)
+        {
+            points = 0; // Ensure points does not go negative
+        }
     }
 }
