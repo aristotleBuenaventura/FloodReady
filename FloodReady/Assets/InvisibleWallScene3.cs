@@ -6,7 +6,7 @@ public class InvisibleWallScene3 : MonoBehaviour
     // Expose the target object in the Inspector
     [Header("Teleport Settings")]
     public RecoveryCanvasController congratulationcanvas;
-    public Timer_welldone stoptime;
+    public Timer_welldone_3 stoptime;
     public ScreenTimer screenTimer;
     public NumberOfAttemptsScene3 attempts;
     public attemptsLeftScene3 finalAttempts;
