@@ -16,7 +16,7 @@ public class TimerScene3 : MonoBehaviour
 
     public TextMeshProUGUI welldonetext;
 
-    public Timer_welldone timesupElapsetime;
+    public Timer_welldone_3 timesupElapsetime;
     public NumberOfAttemptsScene3 retry;
     public attemptsLeftScene3 finalAttempts;
     public GameObject cubeTeleport;
